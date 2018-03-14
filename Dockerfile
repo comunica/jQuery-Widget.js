@@ -1,4 +1,4 @@
-FROM node:6.7.0
+FROM node:8.10.0
 
 # Install location
 ENV dir /var/www/online-client
