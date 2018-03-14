@@ -1,40 +1,52 @@
+var Comunica = require('@comunica/actor-init-sparql/engine-default.js');
+var RdfString = require('rdf-string');
+
 // The active fragments client and the current results
-var fragmentsClient, resultsIterator;
+var resultsIterator;
 
 // Set up logging
-var logger = new ldf.Logger();
-ldf.Logger.setLevel('info');
-logger._print = function (items) {
-  postMessage({ type: 'log', log: items.slice(2).join(' ').trim() + '\n' });
-};
+// TODO
 
 // Handlers of incoming messages
 var handlers = {
   // Execute the given query with the given options
   query: function (config) {
     // Create a client to fetch the fragments through HTTP
-    config.logger = logger;
-    config.fragmentsClient = fragmentsClient =
-      new ldf.FragmentsClient(config.datasources, config);
+    Comunica.evaluateQuery(config.query, config.context)
+      .then(function (result) {
+        // Post query metadata
+        postMessage({ type: 'queryInfo', queryType: result.type });
 
-    // Create an iterator to evaluate the query
-    try { resultsIterator = new ldf.SparqlIterator(config.query, config); }
-    catch (error) { return postMessage({ type: 'error', error: error }); }
+        var bindings = result.type === 'bindings';
+        switch (result.type) {
+        case 'quads':
+          resultsIterator = result.quadStream;
+          break;
+        case 'bindings':
+          resultsIterator = result.bindingsStream;
+          break;
+        case 'boolean':
+          result.booleanResult.then(function (exists) {
+            postMessage({ type: 'result', result: exists });
+            postMessage({ type: 'end' });
+          }).catch(postError);
+          break;
+        }
 
-    // Post query metadata
-    postMessage({ type: 'queryInfo', queryType: resultsIterator.queryType });
-
-    // Post iterator events
-    resultsIterator.on('data', function (result) {
-      postMessage({ type: 'result', result: result });
-    });
-    resultsIterator.on('end', function () {
-      postMessage({ type: 'end' });
-    });
-    resultsIterator.on('error', function (error) {
-      error = { message: error.message || error.toString() };
-      postMessage({ type: 'error', error: error });
-    });
+        if (resultsIterator) {
+          resultsIterator.on('data', function (result) {
+            if (bindings)
+              result = result.map(RdfString.termToString).toObject();
+            else
+              result = RdfString.quadToStringQuad(result);
+            postMessage({ type: 'result', result: result });
+          });
+          resultsIterator.on('end', function () {
+            postMessage({ type: 'end' });
+          });
+          resultsIterator.on('error', postError);
+        }
+      }).catch(postError);
   },
 
   // Stop the execution of the current query
@@ -43,12 +55,14 @@ var handlers = {
       resultsIterator.removeAllListeners();
       resultsIterator = null;
     }
-    if (fragmentsClient) {
-      fragmentsClient.abortAll();
-      fragmentsClient = null;
-    }
+    // TODO: cancel promises
   },
 };
+
+function postError(error) {
+  error = { message: error.message || error.toString() };
+  postMessage({ type: 'error', error: error });
+}
 
 // Send incoming message to the appropriate handler
 self.onmessage = function (m) { handlers[m.data.type](m.data); };

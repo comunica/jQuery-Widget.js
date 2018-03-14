@@ -1,6 +1,10 @@
 /*! @license MIT ©2014–2016 Ruben Verborgh, Ghent University – imec */
 // jQuery widget for Triple Pattern Fragments query execution
 
+// This exports the webpacked jQuery.
+window.jQuery = require('../deps/jquery-2.1.0.js');
+var N3 = require('n3');
+
 (function ($) {
   // Query UI main entry point, which mimics the jQuery UI widget interface:
   // - $(element).queryui(options) initializes the widget
@@ -379,12 +383,21 @@
       this._startTimer();
 
       // Let the worker execute the query
+      var context = {
+        sources: datasources.map(function (datasource) {
+          // TODO: support other source types in the future
+          return { type: 'hypermedia', value: datasource };
+        }),
+        datetime: parseDate(this.options.datetime),
+      };
+      var prefixesString = '';
+      for (var prefix in this.options.prefixes)
+        prefixesString += 'PREFIX ' + prefix + ': <' + this.options.prefixes[prefix] + '>\n';
+      var query = prefixesString + this.$query.val();
       this._queryWorker.postMessage({
         type: 'query',
-        query: this.$query.val(),
-        datasources: datasources,
-        prefixes: this.options.prefixes,
-        datetime: parseDate(this.options.datetime),
+        query: query,
+        context: context,
       });
     },
 
@@ -409,7 +422,7 @@
       var resultAppender = this._resultAppender;
       switch (queryType) {
       // For SELECT queries, add the rows to the result
-      case 'SELECT':
+      case 'bindings':
         this._writeResult = function (row) {
           this._resultsScroller.addContent([row]);
         };
@@ -420,8 +433,7 @@
         break;
       // For CONSTRUCT and DESCRIBE queries,
       // write a Turtle representation of the triples
-      case 'CONSTRUCT':
-      case 'DESCRIBE':
+      case 'quads':
         var writer = new N3.Writer({
           write: function (chunk, encoding, done) {
             resultAppender(chunk), done && done();
@@ -431,7 +443,7 @@
         this._writeEnd = function () { writer.end(); };
         break;
       // For ASK queries, write whether an answer exists
-      case 'ASK':
+      case 'boolean':
         this._writeResult = function (exists) { resultAppender(exists); };
         this._writeEnd = $.noop;
         break;
