@@ -6,7 +6,7 @@
     "production": "webpack --config webpack.config.js -p"
   },
   "dependencies": {
-    "@comunica/actor-init-sparql": "^0.0.1",
+    "@comunica/actor-init-sparql": "^1.0.0",
     "n3": "^0.8.1",
     "rdf-string": "^1.1.1"
   },
