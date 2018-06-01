@@ -385,8 +385,7 @@ var N3 = require('n3');
       // Let the worker execute the query
       var context = {
         sources: datasources.map(function (datasource) {
-          // TODO: support other source types in the future
-          return { type: 'hypermedia', value: datasource };
+          return { type: 'auto', value: datasource };
         }),
         datetime: parseDate(this.options.datetime),
       };
