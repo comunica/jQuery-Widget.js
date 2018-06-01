@@ -1,0 +1,10 @@
+# 1. People on DBpedia younger than Ruben Verborgh born in the same place
+# Datasources: http://fragments.dbpedia.org/*/en https://ruben.verborgh.org/profile/#me
+SELECT ?person ?date
+WHERE {
+  ruben:me dbpedia-owl:birthPlace ?place;
+           dbpedia-owl:birthDate  ?dateR.
+  ?person  dbpedia-owl:birthPlace ?place;
+           dbpedia-owl:birthDate  ?date.
+  FILTER(?date > ?dateR)
+}

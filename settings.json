@@ -5,6 +5,14 @@
       "url": "http://fragments.dbpedia.org/2016-04/en"
     },
     {
+      "name": "Ruben Verborgh's Profile",
+      "url": "https://ruben.verborgh.org/profile/#me"
+    },
+    {
+      "name": "DBpedia SPARQL",
+      "url": "https://dbpedia.org/sparql"
+    },
+    {
       "name": "DBpedia 2015-10",
       "url": "http://fragments.dbpedia.org/2015-10/en"
     },
@@ -44,6 +52,7 @@
     "dbpedia":     "http://dbpedia.org/resource/",
     "dbpedia-owl": "http://dbpedia.org/ontology/",
     "dbpprop":     "http://dbpedia.org/property/",
+    "ruben":       "https://ruben.verborgh.org/profile/#",
     "schema":      "http://schema.org/"
   },
   "queries": "(Will be generated from the 'queries' folder by running the './queries-to-json' script.)"

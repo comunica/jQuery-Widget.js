@@ -1,0 +1,8 @@
+# 2. All interests of Ruben
+# Datasources: https://ruben.verborgh.org/profile/#me https://dbpedia.org/sparql
+SELECT ?interestName
+WHERE {
+  ruben:me foaf:topic_interest ?interest.
+  ?interest rdfs:label ?interestName.
+  FILTER LANGMATCHES(LANG(?interestName),  "EN")
+}
