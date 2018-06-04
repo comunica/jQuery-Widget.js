@@ -57,7 +57,8 @@
     "dbpedia-owl": "http://dbpedia.org/ontology/",
     "dbpprop":     "http://dbpedia.org/property/",
     "ruben":       "https://ruben.verborgh.org/profile/#",
-    "schema":      "http://schema.org/"
+    "schema":      "http://schema.org/",
+    "bow":         "https://betweenourworlds.org/ontology/"
   },
   "queries": "(Will be generated from the 'queries' folder by running the './queries-to-json' script.)"
 }

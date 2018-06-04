@@ -1,7 +1,5 @@
 # 3. Find Anime TV series and their available streaming services
 # Datasources: https://data.betweenourworlds.org/2018-06 https://dbpedia.org/sparql
-PREFIX bow: <https://betweenourworlds.org/ontology/>
-
 SELECT ?animeName ?providerName WHERE {
   ?stream a bow:Stream.
   ?stream bow:object ?anime.
