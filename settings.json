@@ -39,6 +39,10 @@
     {
       "name": "Harvard Library",
       "url": "http://data.linkeddatafragments.org/harvard"
+    },
+    {
+      "name": "Between Our Worlds 2018-06",
+      "url": "https://data.betweenourworlds.org/2018-06"
     }
   ],
   "prefixes": {
