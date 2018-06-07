@@ -35,25 +35,29 @@ module.exports = [
     module: {
       rules: [
         {
+          type: 'javascript/auto',
           test: /\.(html|json)$/,
           use: [
-            { loader: 'file-loader', options: { name: 'build/[name].[ext]' } },
+            { loader: 'file-loader', options: { name: '[name].[ext]' } },
           ],
         },
         {
           test: /\.(jpg|png|gif|svg|ico)$/,
           use: [
-            { loader: 'file-loader', options: { name: 'build/images/[name].[ext]' } },
+            { loader: 'file-loader', options: { name: 'images/[name].[ext]' } },
           ],
         },
         {
           test: /\.css$/,
           use: [
-            { loader: 'file-loader', options: { name: 'build/styles/[name].[ext]' } },
+            { loader: 'file-loader', options: { name: 'styles/[name].[ext]' } },
           ],
         },
         { test: /images\/*\.svg$/, use: 'file-loader' },
       ],
+    },
+    optimization: {
+      minimize: true,
     },
   },
   {
@@ -68,7 +72,7 @@ module.exports = [
     },
     devtool: 'cheap-module-source-map',
     module: {
-      loaders: [
+      rules: [
         { // This fixes a problem where the setImmediate of asynciterator would conflict with webpack's polyfill
           test: /asynciterator\.js$/,
           loader: StringReplacePlugin.replace({
@@ -77,19 +81,6 @@ module.exports = [
                 pattern: /if \(typeof process !== 'undefined' && !process\.browser\)/i,
                 replacement: function () {
                   return 'if (true)';
-                },
-              },
-            ] }),
-        },
-        { // This fixes an issue where UglifyJS would fail because labeled declarations are not allowed in strict mode
-          // This is a problem that should be fixed in jison: https://github.com/zaach/jison/issues/351
-          test: /SparqlParser\.js$/,
-          loader: StringReplacePlugin.replace({
-            replacements: [
-              {
-                pattern: /_token_stack:/i,
-                replacement: function () {
-                  return '';
                 },
               },
             ] }),
@@ -105,7 +96,8 @@ module.exports = [
                   return 'lodash.assign';
                 },
               },
-            ] }),
+            ],
+          }),
         },
         {
           test: /\.js$/,
@@ -121,6 +113,9 @@ module.exports = [
           },
         },
       ],
+    },
+    optimization: {
+      minimize: true,
     },
     plugins: [
       new StringReplacePlugin(),
