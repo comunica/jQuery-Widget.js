@@ -2,7 +2,7 @@
 [<img src="http://linkeddatafragments.org/images/logo.svg" width="200" align="right" alt="" />](http://linkeddatafragments.org/)
 
 [![Build Status](https://travis-ci.org/comunica/jQuery-Widget.js.svg?branch=master)](https://travis-ci.org/comunica/jQuery-Widget.js)
-[![Docker Automated Build](https://img.shields.io/docker/automated/comunica/jquery-widget.js.svg)](https://hub.docker.com/r/comunica/jquery-widget.js/)
+[![Docker Automated Build](https://img.shields.io/docker/automated/comunica/jquery-widget.js.svg)](https://hub.docker.com/r/comunica/jquery-widget.js/) [![Greenkeeper badge](https://badges.greenkeeper.io/comunica/jQuery-Widget.js.svg)](https://greenkeeper.io/)
 
 **[Try the _Comunica SPARQL jQuery Widget_ online.](http://client.linkeddatafragments.org/)**
 
