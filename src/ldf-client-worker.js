@@ -1,4 +1,5 @@
-var Comunica = require('@comunica/actor-init-sparql/engine-default.js');
+var Comunica = require('@comunica/actor-init-sparql');
+var engine = null;
 var RdfString = require('rdf-string');
 
 // The active fragments client and the current results
@@ -11,8 +12,12 @@ var resultsIterator;
 var handlers = {
   // Execute the given query with the given options
   query: function (config) {
+    // Create an engine lazily
+    if (!engine)
+      engine = Comunica.newEngine();
+
     // Create a client to fetch the fragments through HTTP
-    Comunica.evaluateQuery(config.query, config.context)
+    engine.query(config.query, config.context)
       .then(function (result) {
         // Post query metadata
         postMessage({ type: 'queryInfo', queryType: result.type });
@@ -52,10 +57,9 @@ var handlers = {
   // Stop the execution of the current query
   stop: function () {
     if (resultsIterator) {
-      resultsIterator.removeAllListeners();
+      resultsIterator.destroy();
       resultsIterator = null;
     }
-    // TODO: cancel promises
   },
 };
 
