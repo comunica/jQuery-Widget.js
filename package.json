@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "@comunica/actor-init-sparql": "^1.1.0",
-    "n3": "^0.8.1",
+    "n3": "^0.11.3",
     "rdf-string": "^1.1.1"
   },
   "devDependencies": {
@@ -17,7 +17,7 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
-    "eslint": "^4.3.0",
+    "eslint": "^5.1.0",
     "file-loader": "^1.1.11",
     "pre-commit": "^1.2.2",
     "string-replace-webpack-plugin": "^0.1.3",
