@@ -1,4 +1,3 @@
-var Comunica = require('@comunica/actor-init-sparql');
 var engine = null;
 var RdfString = require('rdf-string');
 
@@ -14,7 +13,7 @@ var handlers = {
   query: function (config) {
     // Create an engine lazily
     if (!engine)
-      engine = Comunica.newEngine();
+      engine = require('../comunica-engine');
 
     // Create a client to fetch the fragments through HTTP
     engine.query(config.query, config.context)
