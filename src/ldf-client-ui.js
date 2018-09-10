@@ -384,10 +384,10 @@ var N3 = require('n3');
 
       // Let the worker execute the query
       var context = {
-        sources: datasources.map(function (datasource) {
+        'sources': datasources.map(function (datasource) {
           return { type: 'auto', value: datasource };
         }),
-        datetime: parseDate(this.options.datetime),
+        '@comunica/actor-http-memento:datetime': parseDate(this.options.datetime),
       };
       var prefixesString = '';
       for (var prefix in this.options.prefixes)
