@@ -1,11 +1,15 @@
 var engine = null;
 var RdfString = require('rdf-string');
+var LoggerPretty = require('@comunica/logger-pretty').LoggerPretty;
 
 // The active fragments client and the current results
 var resultsIterator;
 
 // Set up logging
-// TODO
+var logger = new LoggerPretty({ level: 'info' });
+logger.log = function (level, message, data) {
+  postMessage({ type: 'log', log: message + (data ? (' ' + JSON.stringify(data)) : '') + '\n' });
+};
 
 // Handlers of incoming messages
 var handlers = {
@@ -16,6 +20,7 @@ var handlers = {
       engine = require('../comunica-engine');
 
     // Create a client to fetch the fragments through HTTP
+    config.context.log = logger;
     engine.query(config.query, config.context)
       .then(function (result) {
         // Post query metadata
