@@ -3,7 +3,7 @@
     "lint": "eslint src/*.js",
     "prepare": "comunica-compile-config config/config-default.json > comunica-engine.js",
     "start": "npm run prepare && webpack-dev-server --config webpack.config.js --mode production",
-    "build": "npm run prepare && webpack --config webpack.config.js --mode development",
+    "build": "npm run prepare && webpack-dev-server --config webpack.config.js --mode development",
     "production": "npm run prepare && webpack --config webpack.config.js --mode production"
   },
   "dependencies": {
