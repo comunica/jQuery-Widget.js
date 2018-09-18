@@ -32,7 +32,29 @@
         <li>
           <label>Type or pick a query</label>
           <select class="query"></select>
-          <textarea class="queryText"></textarea>
+
+          <div>
+            <ul class="query-texts">
+              <li><a id="sparql"><img src="images/sparql.png" alt="SPARQL" />SPARQL</a></li>
+              <li><a id="graphql"><img src="images/graphql.svg" alt="GraphQL" />GraphQL-LD</a></li>
+            </ul>
+          </div>
+
+          <div class="query-text-containers">
+            <div class="query-text-container" id="tab-sparql">
+              <textarea class="querytext querytext-sparql"></textarea>
+            </div>
+            <div class="query-text-container" id="tab-graphql">
+              <label class="muted">GraphQL Query</label>
+              <textarea class="querytext querytext-graphql"></textarea>
+
+              <label class="muted">JSON-LD context</label>
+              <textarea class="querycontext querycontext-graphql"></textarea>
+
+              <label class="muted">Compact results</label>
+              <input type="checkbox" checked="checked" class="results-to-tree results-to-tree-graphql" />
+            </div>
+          </div>
         </li>
 
         <li>
