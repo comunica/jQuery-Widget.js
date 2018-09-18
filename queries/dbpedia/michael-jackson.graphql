@@ -1,0 +1,19 @@
+# Bands Michael Jackson wrote a song for
+# Datasource: http://fragments.dbpedia.org/*/en
+{
+  label
+  writer(label_en: "Michael Jackson")
+  artist {
+    label
+  }
+}
+
+{
+  "@context": {
+    "label": { "@id": "http://www.w3.org/2000/01/rdf-schema#label", "@singular": true },
+    "label_en": { "@id": "http://www.w3.org/2000/01/rdf-schema#label", "@language": "en" },
+    "writer": { "@id": "http://dbpedia.org/ontology/writer", "@singular": true },
+    "artist": { "@id": "http://dbpedia.org/ontology/musicalArtist", "@singular": true },
+    "artist_label": { "@singular": true }
+  }
+}
