@@ -32,8 +32,14 @@ jQuery(function ($) {
       }
       $queryui.queryui('option', 'selectedDatasources', datasources);
     }
+    if (uiState.queryFormat)
+      $queryui.queryui('option', 'queryFormat', uiState.queryFormat);
     if (uiState.query)
       $queryui.queryui('option', 'query', uiState.query);
+    if (uiState.queryContext)
+      $queryui.queryui('option', 'queryContext', uiState.queryContext);
+    if (uiState.resultsToTree)
+      $queryui.queryui('option', 'resultsToTree', uiState.resultsToTree !== 'false');
     if (uiState.datetime)
       $queryui.queryui('option', 'datetime', uiState.datetime);
   }
@@ -43,7 +49,7 @@ jQuery(function ($) {
     var queryString = [],
         options = $queryui.queryui('option'),
         datasources = { persistent: [], transient: [] },
-        hasDefaultQuery = options.query === (options.queries[0] || {}).sparql;
+        hasDefaultQuery = options.query === (options.queries[0] || {}).query;
     Object.keys(options.selectedDatasources || {}).forEach(function (url) {
       datasources[options.selectedDatasources[url]].push(url);
     });
@@ -54,6 +60,12 @@ jQuery(function ($) {
       queryString.push('transientDatasources=' + datasources.transient.map(encodeURIComponent).join(';'));
     if (!hasDefaultQuery)
       queryString.push('query=' + encodeURIComponent(options.query || ''));
+    if (!hasDefaultQuery && options.queryContext)
+      queryString.push('queryContext=' + encodeURIComponent(options.queryContext || ''));
+    if (!hasDefaultQuery && options.queryFormat !== 'sparql')
+      queryString.push('resultsToTree=' + encodeURIComponent(options.resultsToTree));
+    if (options.queryFormat !== 'sparql')
+      queryString.push('queryFormat=' + encodeURIComponent(options.queryFormat || ''));
     if (options.datetime)
       queryString.push('datetime=' + encodeURIComponent(options.datetime));
 
