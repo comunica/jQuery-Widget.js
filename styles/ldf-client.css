@@ -28,6 +28,10 @@ a, button, input:hover, label {
   cursor: pointer;
   text-decoration: none;
 }
+.muted {
+  font-size: 0.8em;
+  color: #a8a1a2;
+}
 a:hover {
   color: #be1622;
   text-decoration: underline;
@@ -223,6 +227,57 @@ textarea {
   -webkit-overflow-scrolling: touch;
   position: relative;
   contain: layout;
+}
+
+.query-text-containers {
+  display: block;
+  clear: both;
+}
+
+.query-texts li {
+  float:left;
+  list-style:none;
+}
+
+.query-texts li a {
+  font-weight: bold;
+  font-size: 12px;
+  color: black;
+  display: block;
+  background-color: white;
+  border: 1px solid #999999;
+  border-radius: 3px 3px 0px 0px;
+  border-bottom: none;
+  margin: 0;
+  padding: 5px 8px 6px;
+  cursor: pointer;
+}
+
+.query-texts li a img {
+  width: 14px;
+  height: 14px;
+  padding-right: 1px;
+  vertical-align: top;
+}
+
+.query-texts li a.inactive {
+  background-color: #f6f6f6;
+  padding: 5px 8px 5px;
+}
+
+.query-texts li a:hover {
+  background-color: white;
+  text-decoration: none;
+}
+
+.query-texts li a:active {
+  margin: 1px -1px -1px 1px;
+}
+
+.query-texts {
+  margin-top: 2px;
+  height: 27px;
+  border-bottom: 1px solid #999999;
 }
 
 footer {
@@ -427,9 +482,19 @@ li.active-result {
 li.query {
   font-style: normal;
   color: #000000;
+  background-repeat: no-repeat;
+  background-position-y: 4px;
+  background-size: 14px;
+  padding-left: 16px;
 }
 li.query:not(.query-relevant) {
   color: #777777;
+}
+li.query-type-sparql {
+  background-image: url('../images/sparql.png');
+}
+li.query-type-graphql {
+  background-image: url('../images/graphql.svg');
 }
 li.highlighted {
   background-color: #be1622;
