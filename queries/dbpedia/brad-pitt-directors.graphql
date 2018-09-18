@@ -1,0 +1,19 @@
+# 1. Directors of movies starring Brad Pitt with their directors
+# Datasource: http://fragments.dbpedia.org/*/en
+{
+  label
+  director {
+    label
+  }
+  starring(label_en: "Brad Pitt")
+}
+
+{
+  "@context": {
+    "label": { "@id": "http://www.w3.org/2000/01/rdf-schema#label", "@singular": true },
+    "label_en": { "@id": "http://www.w3.org/2000/01/rdf-schema#label", "@language": "en" },
+    "director": { "@id": "http://dbpedia.org/ontology/director", "@singular": true },
+    "director_label": { "@singular": true },
+    "starring": { "@id": "http://dbpedia.org/ontology/starring", "@singular": true }
+  }
+}
