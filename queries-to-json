@@ -88,5 +88,10 @@ function readQuery(queryFile) {
     query.query = outputLines.join('\n').trim();
   }
 
+  // Skip disabled query formats
+  if (!settings.queryFormats[query.queryFormat]) {
+    return [];
+  }
+
   return query;
 }
