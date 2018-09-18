@@ -64,6 +64,9 @@ var N3 = require('n3');
       self._queryWorker.onerror = $.noop;
       self._stopExecution(error);
     };
+
+    // Initialize the query text tabs
+    this._initQueryTabs();
   }
 
   LdfQueryUI.prototype = {
@@ -81,7 +84,12 @@ var N3 = require('n3');
           $element = this.element,
           $stop = this.$stop = $('.stop', $element),
           $start = this.$start = $('.start', $element),
-          $query = this.$query = $('.queryText', $element),
+          $queryTexts = $('.querytext'),
+          $queryContexts = $('.querycontext'),
+          $queryResultsToTrees = $('.results-to-tree'),
+          $queryTextsIndexed = this.$queryTextsIndexed = {},
+          $queryContextsIndexed = this.$queryContextsIndexed = {},
+          $queryResultsToTreesIndexed = this.$queryResultsToTreesIndexed = {},
           $queries = this.$queries = $('.query', $element),
           $log = $('.log', $element),
           $results = $('.results', $element),
@@ -113,15 +121,45 @@ var N3 = require('n3');
       });
 
       // When a query is selected, load it into the editor
-      $query.edited = $query.val() !== '';
-      $query.change(function () {
-        options.query = $query.val();
-        $query.edited = true;
+      $queryTexts.each(function () {
+        var $query = $(this);
+        var type = $query.parent().attr('id').substr(4);
+        $queryTextsIndexed[type] = $query;
+        $query.edited = $query.val() !== '';
+        $query.change(function () {
+          options.query = $query.val();
+          $query.edited = true;
+        });
+      });
+      $queryContexts.each(function () {
+        var $queryContext = $(this);
+        var type = $queryContext.parent().attr('id').substr(4);
+        $queryContextsIndexed[type] = $queryContext;
+        $queryContext.edited = $queryContext.val() !== '';
+        $queryContext.change(function () {
+          options.queryContext = $queryContext.val();
+          $queryContext.edited = true;
+        });
+      });
+      $queryResultsToTrees.each(function () {
+        var $queryResultsToTree = $(this);
+        var type = $queryResultsToTree.parent().attr('id').substr(4);
+        $queryResultsToTreesIndexed[type] = $queryResultsToTree;
+        $queryResultsToTree.edited = $queryResultsToTree.val() !== '';
+        $queryResultsToTree.change(function () {
+          options.resultsToTree = $queryResultsToTree.is(':checked');
+          $queryResultsToTree.edited = true;
+        });
       });
       $queries.chosen({ skip_no_results: true, placeholder_text: ' ' });
       $queries.change(function (query) {
         if ((options.query !== $queries.val()) && (query = $queries.val())) {
-          $query.val(options.query = query).edited = false;
+          // Set the query text
+          self._setOption('queryFormat', $queries.find(':selected').attr('queryFormat'));
+          var queryContext = $queries.find(':selected').attr('queryContext');
+          if ($queryContextsIndexed[options.queryFormat])
+            $queryContextsIndexed[options.queryFormat].val(options.queryContext = queryContext).edited = false;
+          $queryTextsIndexed[options.queryFormat].val(options.query = query).edited = false;
 
           // Set the new selected datasources
           var newDatasources = self._getHashedQueryDatasources(self._getSelectedQueryId());
@@ -215,8 +253,52 @@ var N3 = require('n3');
         break;
       // Set the query
       case 'query':
-        this.$query.val(value).change();
+        // First clear all query text fields
+        for (var f1 in this.$queryTextsIndexed)
+          this.$queryTextsIndexed[f1].val('');
+
+        this.$queryTextsIndexed[options.queryFormat].val(value).change();
         this._refreshQueries($queries);
+        break;
+      case 'queryContext':
+        // First clear all query context text fields
+        for (var f2 in this.$queryContextsIndexed)
+          this.$queryContextsIndexed[f2].val('');
+
+        if (this.$queryContextsIndexed[options.queryFormat])
+          this.$queryContextsIndexed[options.queryFormat].val(value).change();
+        break;
+      case 'resultsToTree':
+        // First reset all query results to tree checkboxes
+        for (var f3 in this.$queryResultsToTreesIndexed)
+          this.$queryResultsToTreesIndexed[f3][0].checked = false;
+
+        if (this.$queryResultsToTreesIndexed[options.queryFormat]) {
+          this.$queryResultsToTreesIndexed[options.queryFormat][0].checked = value;
+          this.$queryResultsToTreesIndexed[options.queryFormat].change();
+        }
+        break;
+      case 'queryFormat':
+        // Update visual state
+        var targetNode = $('#' + value);
+        if (targetNode.hasClass('inactive')) {
+          this.element.find('.query-texts').find('li a').addClass('inactive');
+          targetNode.removeClass('inactive');
+
+          self.element.find('.query-text-container').hide();
+          $('#tab-' + value).show();
+        }
+
+        // Set the internal query value
+        this.options.query = this.$queryTextsIndexed[options.queryFormat].val();
+        this.options.queryContext = this.$queryContextsIndexed[options.queryFormat] ?
+          this.$queryContextsIndexed[options.queryFormat].val() : '';
+        this.options.resultsToTree = this.$queryResultsToTreesIndexed[options.queryFormat] ?
+          this.$queryResultsToTreesIndexed[options.queryFormat][0].checked : false;
+
+        // Trigger URL state saving
+        this.element.change();
+
         break;
       // Set the list of all possible queries
       case 'queries':
@@ -249,9 +331,12 @@ var N3 = require('n3');
         value = value || [];
         // If the current query was not edited and not in the list,
         // load the first selectable query
-        if (!this.$query.edited &&
-            !value.some(function (v) { return v.sparql === options.query; }))
-          value[0] && this._setOption('query', value[0].sparql);
+        if (!this.$queryTextsIndexed[options.queryFormat].edited &&
+            !value.some(function (v) { return v.query === options.query; }) && value[0]) {
+          this._setOption('queryFormat', value[0].queryFormat);
+          this._setOption('query', value[0].query);
+          this._setOption('queryContext', value[0].queryContext);
+        }
         this._refreshQueries($queries);
         break;
       // Load settings from a JSON resource
@@ -302,7 +387,7 @@ var N3 = require('n3');
     _getSelectedQueryId: function () {
       var queryId = -1;
       this.options.queries.forEach(function (predefinedQuery, id) {
-        if (predefinedQuery.sparql === this.options.query)
+        if (predefinedQuery.query === this.options.query)
           queryId = id;
       }, this);
       return queryId;
@@ -336,8 +421,11 @@ var N3 = require('n3');
     _refreshQueries: function (queries) {
       var options = this.options;
       queries.empty().append($('<option>'), options.queries.map(function (query) {
-        return $('<option>', { text: query.name, value: query.sparql,
-          selected: options.query === query.sparql })
+        return $('<option>', { text: query.name, value: query.query,
+          selected: options.query === query.query })
+          .attr('queryFormat', query.queryFormat)
+          .attr('queryContext', query.context)
+          .addClass('query-type-' + query.queryFormat)
           .addClass('query')
           .toggleClass('query-relevant', options.relevantQueries.indexOf(query) >= 0);
       })).trigger('chosen:updated').change();
@@ -388,15 +476,28 @@ var N3 = require('n3');
           return { type: 'auto', value: datasource };
         }),
         '@comunica/actor-http-memento:datetime': parseDate(this.options.datetime),
+        'queryFormat': this.options.queryFormat,
       };
+      if (this.options.queryContext) {
+        try {
+          var queryContextObject = JSON.parse(this.options.queryContext);
+          Object.assign(context, queryContextObject);
+        }
+        catch (e) {
+          this._resultAppender(e.message + '\n');
+        }
+      }
       var prefixesString = '';
-      for (var prefix in this.options.prefixes)
-        prefixesString += 'PREFIX ' + prefix + ': <' + this.options.prefixes[prefix] + '>\n';
-      var query = prefixesString + this.$query.val();
+      if (this.options.queryFormat === 'sparql') {
+        for (var prefix in this.options.prefixes)
+          prefixesString += 'PREFIX ' + prefix + ': <' + this.options.prefixes[prefix] + '>\n';
+      }
+      var query = prefixesString + this.$queryTextsIndexed[this.options.queryFormat].val();
       this._queryWorker.postMessage({
         type: 'query',
         query: query,
         context: context,
+        resultsToTree: this.options.resultsToTree,
       });
     },
 
@@ -504,6 +605,22 @@ var N3 = require('n3');
       this.$details.slideUp(150);
       this.$showDetails.removeClass('enabled');
     },
+
+    // Initialize the query text tabs
+    _initQueryTabs: function () {
+      var $queryTexts = this.element.find('.query-texts');
+      $queryTexts.find('li a:not(:first)').addClass('inactive');
+
+      this.element.find('.query-text-container').hide();
+      this.element.find('.query-text-container:first').show();
+      this.options.queryFormat = $queryTexts.find('li a:first').attr('id');
+
+      var self = this;
+      $queryTexts.find('li a').click(function () {
+        var id = $(this).attr('id');
+        self._setOption('queryFormat', id);
+      });
+    },
   };
 
   // Creates a function that appends text to the given element in a throttled way
@@ -586,7 +703,7 @@ var N3 = require('n3');
   function renderResult(row, container) {
     container = container || $('<div>', { class: 'result' }).append($('<dl>'))[0];
     $(container.firstChild).empty().append($.map(row, function (value, variable) {
-      return [$('<dt>', { text: variable }), $('<dd>', { html: escape(value) })];
+      return [$('<dt>', { text: variable }), $('<dd>', { html: escape(value).split('\n').join('<br/>').split(' ').join('&nbsp;') })];
     }));
     return container;
   }

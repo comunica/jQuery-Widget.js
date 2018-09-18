@@ -1,6 +1,8 @@
 var engine = null;
 var RdfString = require('rdf-string');
 var LoggerPretty = require('@comunica/logger-pretty').LoggerPretty;
+var bindingsStreamToGraphQl = require('@comunica/actor-sparql-serialize-tree').bindingsStreamToGraphQl;
+var actionContext = require('@comunica/core').ActionContext;
 
 // The active fragments client and the current results
 var resultsIterator;
@@ -27,6 +29,7 @@ var handlers = {
         postMessage({ type: 'queryInfo', queryType: result.type });
 
         var bindings = result.type === 'bindings';
+        var resultsToTree = config.resultsToTree;
         switch (result.type) {
         case 'quads':
           resultsIterator = result.quadStream;
@@ -43,17 +46,29 @@ var handlers = {
         }
 
         if (resultsIterator) {
-          resultsIterator.on('data', function (result) {
-            if (bindings)
-              result = result.map(RdfString.termToString).toObject();
-            else
-              result = RdfString.quadToStringQuad(result);
-            postMessage({ type: 'result', result: result });
-          });
-          resultsIterator.on('end', function () {
-            postMessage({ type: 'end' });
-          });
-          resultsIterator.on('error', postError);
+          if (resultsToTree) {
+            bindingsStreamToGraphQl(resultsIterator, actionContext(config.context), { materializeRdfJsTerms: true })
+              .then(function (results) {
+                (Array.isArray(results) ? results : [results]).forEach(function (result) {
+                  postMessage({ type: 'result', result: { result: '\n' + JSON.stringify(result, null, '  ') } });
+                });
+                postMessage({ type: 'end' });
+              })
+              .catch(postError);
+          }
+          else {
+            resultsIterator.on('data', function (result) {
+              if (bindings)
+                result = result.map(RdfString.termToString).toObject();
+              else
+                result = RdfString.quadToStringQuad(result);
+              postMessage({ type: 'result', result: result });
+            });
+            resultsIterator.on('end', function () {
+              postMessage({ type: 'end' });
+            });
+            resultsIterator.on('error', postError);
+          }
         }
       }).catch(postError);
   },
