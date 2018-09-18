@@ -200,6 +200,23 @@ var N3 = require('n3');
       // Apply the chosen option
       var self = this, $datasources = this.$datasources, $queries = this.$queries;
       switch (key) {
+      case 'queryFormats':
+        var firstActiveFormat = null;
+        var hasMultipleActiveQueryFormats = false;
+        for (var queryFormat in value) {
+          if (!value[queryFormat])
+            $('#' + queryFormat).hide();
+          else if (!firstActiveFormat)
+            firstActiveFormat = queryFormat;
+          else
+            hasMultipleActiveQueryFormats = true;
+        }
+
+        if (firstActiveFormat)
+          this._setOption('queryFormat', firstActiveFormat);
+        if (!hasMultipleActiveQueryFormats)
+          this.element.find('.query-texts').hide();
+        break;
       // Set the datasources available for querying
       case 'datasources':
         // Validate datasources object, each URL can only occur once

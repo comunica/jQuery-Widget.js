@@ -1,4 +1,8 @@
 {
+  "queryFormats": {
+    "sparql": true,
+    "graphql": true
+  },
   "datasources": [
     {
       "name": "DBpedia 2016-04",
