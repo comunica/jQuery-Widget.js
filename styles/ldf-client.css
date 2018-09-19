@@ -229,6 +229,10 @@ textarea {
   contain: layout;
 }
 
+.querytext {
+  display: block;
+}
+
 .query-text-containers {
   display: block;
   clear: both;
