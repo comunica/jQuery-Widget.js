@@ -687,10 +687,12 @@ var N3 = require('n3');
 
   // Escapes special HTML characters and convert URLs into links
   function escape(text) {
-    return (text + '').replace(/(<)|(>)|(&)|http(s?:\/\/[^\s<>]+)/g, escapeMatch);
+    return (text + '').split('\n').map(function (line) {
+      return line.replace(/( )|(<)|(>)|(&)|http(s?:\/\/[^\s<>]+)/g, escapeMatch);
+    }).join('<br/>');
   }
-  function escapeMatch(match, lt, gt, amp, url) {
-    return lt && '&lt;' || gt && '&gt;' || amp && '&amp;' ||
+  function escapeMatch(match, space, lt, gt, amp, url) {
+    return space && '&nbsp;' || lt && '&lt;' || gt && '&gt;' || amp && '&amp;' ||
            (url = 'http' + escape(url)) &&
            '<a href="' + url + '" target=_blank>' + url + '</a>';
   }
@@ -720,7 +722,7 @@ var N3 = require('n3');
   function renderResult(row, container) {
     container = container || $('<div>', { class: 'result' }).append($('<dl>'))[0];
     $(container.firstChild).empty().append($.map(row, function (value, variable) {
-      return [$('<dt>', { text: variable }), $('<dd>', { html: escape(value).split('\n').join('<br/>').split(' ').join('&nbsp;') })];
+      return [$('<dt>', { text: variable }), $('<dd>', { html: escape(value) })];
     }));
     return container;
   }
