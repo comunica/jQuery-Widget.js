@@ -32,6 +32,14 @@ a, button, input:hover, label {
   font-size: 0.8em;
   color: #a8a1a2;
 }
+.help {
+  display: block;
+  font-size: 0.8em;
+  color: #a8a1a2;
+  text-decoration: underline;
+  float: right;
+  font-style: italic;
+}
 a:hover {
   color: #be1622;
   text-decoration: underline;
