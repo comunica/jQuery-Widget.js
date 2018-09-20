@@ -255,6 +255,7 @@ textarea {
   margin: 0;
   padding: 5px 8px 6px;
   cursor: pointer;
+  height: 16px;
 }
 
 .query-texts li a img {
@@ -279,7 +280,7 @@ textarea {
 }
 
 .query-texts {
-  margin-top: 2px;
+  margin-top: 10px;
   height: 27px;
   border-bottom: 1px solid #999999;
 }
