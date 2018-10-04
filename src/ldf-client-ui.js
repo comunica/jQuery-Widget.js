@@ -3,6 +3,8 @@
 
 // This exports the webpacked jQuery.
 window.jQuery = require('../deps/jquery-2.1.0.js');
+var YASQE = require('yasgui-yasqe/src/main.js');
+require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
 var N3 = require('n3');
 
 (function ($) {
@@ -130,6 +132,23 @@ var N3 = require('n3');
           options.query = $query.val();
           $query.edited = true;
         });
+
+        $queryTextsIndexed[type].sync = function () {
+          // Update YASQE editor if applicable
+          if ($query.yasqe && $query.yasqe.getValue() !== options.query)
+            $query.yasqe.setValue(options.query);
+        };
+
+        // Prettify SPARQL editors with YASQE
+        if ($query.hasClass('yasqe')) {
+          $query.yasqe = YASQE.fromTextArea($query[0], {
+            createShareLink: null,
+          });
+          $query.yasqe.on('change', function () {
+            $query.val($query.yasqe.getValue());
+            $query.change();
+          });
+        }
       });
       $queryContexts.each(function () {
         var $queryContext = $(this);
@@ -160,6 +179,7 @@ var N3 = require('n3');
           if ($queryContextsIndexed[options.queryFormat])
             $queryContextsIndexed[options.queryFormat].val(options.queryContext = queryContext).edited = false;
           $queryTextsIndexed[options.queryFormat].val(options.query = query).edited = false;
+          $queryTextsIndexed[options.queryFormat].sync();
 
           // Set the new selected datasources
           var newDatasources = self._getHashedQueryDatasources(self._getSelectedQueryId());
