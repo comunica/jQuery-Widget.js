@@ -64,7 +64,7 @@ module.exports = [
   },
   {
     entry: [
-      'babel-polyfill',
+      '@babel/polyfill',
       './src/ldf-client-worker.js',
     ],
     output: {
@@ -75,6 +75,14 @@ module.exports = [
     devtool: 'cheap-module-source-map',
     module: {
       rules: [
+        {
+          // This is needed because our internal graphql dependency uses .mjs files,
+          // and Webpack's define plugin doesn't work well with it (yet).
+          // In the future this should be removed.
+          type: 'javascript/auto',
+          test: /\.mjs$/,
+          use: []
+        },
         { // This fixes a problem where the setImmediate of asynciterator would conflict with webpack's polyfill
           test: /asynciterator\.js$/,
           loader: StringReplacePlugin.replace({
@@ -106,10 +114,10 @@ module.exports = [
           use: {
             loader: 'babel-loader',
             options: {
-              presets: ['es2015'],
+              presets: ['@babel/preset-env'],
               plugins: [
-                require('babel-plugin-transform-async-to-generator'),
-                require('babel-plugin-transform-object-rest-spread'),
+                require('@babel/plugin-transform-async-to-generator'),
+                require('@babel/plugin-syntax-object-rest-spread'),
               ],
             },
           },
