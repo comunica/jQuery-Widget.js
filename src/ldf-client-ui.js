@@ -3,9 +3,11 @@
 
 // This exports the webpacked jQuery.
 window.jQuery = require('../deps/jquery-2.1.0.js');
+var N3 = require('n3');
+
+// Comment out the following two lines if you want to disable YASQE
 var YASQE = require('yasgui-yasqe/src/main.js');
 require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
-var N3 = require('n3');
 
 (function ($) {
   // Query UI main entry point, which mimics the jQuery UI widget interface:
@@ -140,7 +142,7 @@ var N3 = require('n3');
         };
 
         // Prettify SPARQL editors with YASQE
-        if ($query.hasClass('yasqe')) {
+        if (YASQE && $query.hasClass('yasqe')) {
           $query.yasqe = YASQE.fromTextArea($query[0], {
             createShareLink: null,
           });
