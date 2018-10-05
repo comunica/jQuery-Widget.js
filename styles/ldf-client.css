@@ -297,6 +297,16 @@ footer {
   font-size: .8em;
 }
 
+.yasqe .CodeMirror {
+  border-radius: 0px 0px 3px 3px;
+  border: 1px solid #999999;
+  border-top: none;
+}
+
+.yasqe .CodeMirror-gutters {
+  border-top: 1px solid #ddd;
+}
+
 @media (max-width: 725px) {
   body {
     padding: .1em 1em;
