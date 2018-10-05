@@ -145,6 +145,7 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
         if (YASQE && $query.hasClass('yasqe')) {
           $query.yasqe = YASQE.fromTextArea($query[0], {
             createShareLink: null,
+            persistent: null,
           });
           $query.yasqe.on('change', function () {
             $query.val($query.yasqe.getValue());
@@ -297,6 +298,7 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
           this.$queryTextsIndexed[f1].val('');
 
         this.$queryTextsIndexed[options.queryFormat].val(value).change();
+        this.$queryTextsIndexed[options.queryFormat].sync();
         this._refreshQueries($queries);
         break;
       case 'queryContext':
