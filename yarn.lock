@@ -3884,13 +3884,13 @@ n3@1.0.0-beta.2, n3@^1.0.0-beta.1:
   version "1.0.0-beta.2"
   resolved "https://registry.yarnpkg.com/n3/-/n3-1.0.0-beta.2.tgz#fc5cce503fce06048cbc1cd804ba086f2f643a41"
 
-n3@^0.11.3:
-  version "0.11.3"
-  resolved "https://registry.yarnpkg.com/n3/-/n3-0.11.3.tgz#8e587495240dd21408c2c3aae385ec1651a837f8"
-
 n3@^0.9.1:
   version "0.9.1"
   resolved "https://registry.yarnpkg.com/n3/-/n3-0.9.1.tgz#430b547d58dc7381408c45784dd8058171903932"
+
+n3@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/n3/-/n3-1.0.1.tgz#f590b4bcbfff93bc6eab40fe314bfbc7deaf82f0"
 
 nan@^2.10.0, nan@^2.9.2:
   version "2.11.0"
