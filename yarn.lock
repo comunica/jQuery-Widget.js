@@ -637,10 +637,10 @@
     isomorphic-fetch "^2.2.1"
     parse-link-header "^1.0.1"
 
-"@comunica/actor-init-sparql@1.5.2":
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-init-sparql/-/actor-init-sparql-1.5.2.tgz#d7ec27454edf48c2a3381a06ce2f285a55532e4e"
-  integrity sha512-p72+GAjbqiuivMJjwtp4GUj9mZK/weR/Cp7U5t6lgsECi1yepE/5ed/b6PRpYPmNLJmVXvyuJcfvFWXw33v+DA==
+"@comunica/actor-init-sparql@1.5.3":
+  version "1.5.3"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-init-sparql/-/actor-init-sparql-1.5.3.tgz#e15091d5092e88dfa49c7f5bf88212508e6a4daa"
+  integrity sha512-9sjkHUG8gFXFxU8NPuUkr7NvYrlhi3N1mQdeGdHQLcIZXx8R+d5Q2swdCb9rDnhWOOhM7oZbtFN5XY0q7IZKRA==
   dependencies:
     "@comunica/actor-abstract-bindings-hash" "^1.4.4"
     "@comunica/actor-abstract-mediatyped" "^1.4.0"
@@ -698,8 +698,8 @@
     "@comunica/actor-rdf-source-identifier-file-content-type" "^1.5.1"
     "@comunica/actor-rdf-source-identifier-hypermedia-qpf" "^1.5.1"
     "@comunica/actor-rdf-source-identifier-sparql" "^1.5.1"
-    "@comunica/actor-sparql-parse-algebra" "^1.4.5"
-    "@comunica/actor-sparql-parse-graphql" "^1.4.3"
+    "@comunica/actor-sparql-parse-algebra" "^1.5.3"
+    "@comunica/actor-sparql-parse-graphql" "^1.5.3"
     "@comunica/actor-sparql-serialize-json" "^1.4.4"
     "@comunica/actor-sparql-serialize-rdf" "^1.4.4"
     "@comunica/actor-sparql-serialize-simple" "^1.4.4"
@@ -1145,19 +1145,19 @@
   resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-source-identifier-sparql/-/actor-rdf-source-identifier-sparql-1.5.1.tgz#572b1e937ff3de43563fa86564f2d4aa87a2b970"
   integrity sha512-i7yhFmppBhS3HlXow+BsjNZN7tAhiQDBpxLKTk4cTD7R/Dt9olxalP86rqsZMOh0PbvC0JwrMVaMrbRsHQlKnQ==
 
-"@comunica/actor-sparql-parse-algebra@^1.4.5":
-  version "1.4.5"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-sparql-parse-algebra/-/actor-sparql-parse-algebra-1.4.5.tgz#ef92177913a666fae156cd480404844875142ffb"
-  integrity sha512-By21ugNeZubzbOGg8087WyiGvM01yoXHzCzUegjWiqw1LNl4Hg5PoIwnHGCmHuWUWT1LGpGVmjS5JgW8AE1GbQ==
+"@comunica/actor-sparql-parse-algebra@^1.5.3":
+  version "1.5.3"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-sparql-parse-algebra/-/actor-sparql-parse-algebra-1.5.3.tgz#b4031aa486d9ef4a393a6ca2d9bfe353a79638fa"
+  integrity sha512-75tma3F1qxzF4wVf0WcsZA6p6N7ixkQjRnf3bwKOFcNzqLrsEUmgGBjrOvpK0tR1ZW5CT2faAGwJ0tUnPEFV9w==
   dependencies:
     sparqlalgebrajs "^1.4.0"
 
-"@comunica/actor-sparql-parse-graphql@^1.4.3":
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-sparql-parse-graphql/-/actor-sparql-parse-graphql-1.4.3.tgz#c19e93ccd8c3d8d8cec0b49c1a331a43fa9fbc15"
-  integrity sha512-ZfVt8ByHGQhEQNqjt2k/S7uzx4+p92fuM41tN7nMQBVNVE8aPtMDeiVD818dK2/pOymUfBma9O4AhmHXr095Mw==
+"@comunica/actor-sparql-parse-graphql@^1.5.3":
+  version "1.5.3"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-sparql-parse-graphql/-/actor-sparql-parse-graphql-1.5.3.tgz#49b2dbb80a0a4b38a6b0d5facfcba7f6914adfe1"
+  integrity sha512-Bhtw+40XwB9Ei8Gh/b0u8EI6iGDNOYHroEucheCKORKSq9bwvUm+dk2S3Gew1k4lNfmjzFOW0Lu8umU/IUCUQg==
   dependencies:
-    graphql-to-sparql "^1.4.1"
+    graphql-to-sparql "^1.5.0"
 
 "@comunica/actor-sparql-serialize-json@^1.4.4":
   version "1.4.4"
@@ -3434,16 +3434,16 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.2:
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.15.tgz#ffb703e1066e8a0eeaa4c8b80ba9253eeefbfb00"
   integrity sha512-6uHUhOPEBgQ24HM+r6b/QwWfZq+yiFcipKFrOFiBEnWdy5sdzYoi+pJeQaPI5qOLRFqWmAXUPQNsielzdLoecA==
 
-graphql-to-sparql@^1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/graphql-to-sparql/-/graphql-to-sparql-1.4.1.tgz#947bf8fa01211cbc7a418f97d49e71e6e17d69f9"
-  integrity sha512-Jk4gfE1BbqQiOsEhgwufinlC4WefJb29JzcX7QoTxxgw8/ddz0N7IvMd2V56oNuKyZUj8sDKAhgUNjUVEpc/VA==
+graphql-to-sparql@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/graphql-to-sparql/-/graphql-to-sparql-1.5.0.tgz#a3905e8238f90cdf9ffdd977d4738da43883471d"
+  integrity sha512-NhXHDMPO1Zw0a7kyu5/CndxNi5daZb+/dru1ECCms2tSA1qedF19HZwrkqZISgBlxcBoovSH4BFRodNEpAsu4Q==
   dependencies:
     "@rdfjs/data-model" "^1.1.1"
     "@types/rdf-js" "^2.0.1"
     graphql "^14.0.0"
     minimist "^1.2.0"
-    sparqlalgebrajs "^1.3.1"
+    sparqlalgebrajs "^1.4.2"
 
 graphql@^14.0.0:
   version "14.0.2"
@@ -5863,7 +5863,7 @@ sparqlalgebrajs@^1.1.0:
     rdf-string "^1.3.1"
     sparqljs "^2.0.3"
 
-sparqlalgebrajs@^1.3.1, sparqlalgebrajs@^1.4.0:
+sparqlalgebrajs@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/sparqlalgebrajs/-/sparqlalgebrajs-1.4.0.tgz#ed3b0a01e4d65569bcae3d615de5204b24db6425"
   integrity sha512-IZHzIjaxPY/989snNr37hH94gzwoqGmj0foCZXfRuM8C47EmH2r2RLk4+plrOH8R28XbssSR1u9jS3JKg/EX1Q==
@@ -5873,6 +5873,17 @@ sparqlalgebrajs@^1.3.1, sparqlalgebrajs@^1.4.0:
     minimist "^1.2.0"
     rdf-string "^1.3.1"
     sparqljs "^2.0.3"
+
+sparqlalgebrajs@^1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/sparqlalgebrajs/-/sparqlalgebrajs-1.4.2.tgz#bd91294d9a923310a412e8cd837bf0f93173dacb"
+  integrity sha512-gkLgH4T1exMRl0MAvCBePnkOx2WVj8lYwME1mxNEcgC2TPHuOMuImDJgnM2RJ+nZfbQ1CRsEe8y9UQJz06QLnw==
+  dependencies:
+    "@rdfjs/data-model" "^1.1.1"
+    lodash.isequal "^4.5.0"
+    minimist "^1.2.0"
+    rdf-string "^1.3.1"
+    sparqljs "^2.2.1"
 
 sparqlee@0.0.2:
   version "0.0.2"
@@ -5893,6 +5904,11 @@ sparqljs@^2.0.3:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/sparqljs/-/sparqljs-2.1.0.tgz#4c53bd4dcc9ec1e9a851201c654c4e2adbb42f45"
   integrity sha512-WXb2utLh6A9tbpkz4I23grNuv42fh2ttxGONLz1mz5TvZtJEelody0jEpC7U84cZZn+sNqOQSTdv+kcESHlGqw==
+
+sparqljs@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/sparqljs/-/sparqljs-2.2.1.tgz#9bac98bc783ade98b802a8e1794339f65a516e86"
+  integrity sha512-nvwCxdqZbggDEFc/1b4FfAUxAzBjAkpruDRwqQSMApyvr94qxta6DG9hCFI423i/1wJkPi5pggLmN0q2YdgpCg==
 
 sparqljson-parse@^1.5.0:
   version "1.5.0"
