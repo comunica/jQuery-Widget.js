@@ -4,7 +4,7 @@
 [![Build Status](https://travis-ci.org/comunica/jQuery-Widget.js.svg?branch=master)](https://travis-ci.org/comunica/jQuery-Widget.js)
 [![Docker Automated Build](https://img.shields.io/docker/automated/comunica/jquery-widget.js.svg)](https://hub.docker.com/r/comunica/jquery-widget.js/) [![Greenkeeper badge](https://badges.greenkeeper.io/comunica/jQuery-Widget.js.svg)](https://greenkeeper.io/)
 
-**[Try the _Comunica SPARQL jQuery Widget_ online.](http://client.linkeddatafragments.org/)**
+**[Try the _Comunica SPARQL jQuery Widget_ online.](http://query.linkeddatafragments.org/)**
 
 This jQuery widget is a browser-based user interface to the [Comunica SPARQL client](https://github.com/comunica/comunica/tree/master/packages/actor-init-sparql).
 It allows users to execute SPARQL queries over one or multiple heterogeneous interfaces, such as [Triple Pattern Fragments interfaces](http://www.hydra-cg.com/spec/latest/triple-pattern-fragments/).
