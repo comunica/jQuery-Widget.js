@@ -646,10 +646,10 @@
     isomorphic-fetch "^2.2.1"
     parse-link-header "^1.0.1"
 
-"@comunica/actor-init-sparql@1.6.1":
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-init-sparql/-/actor-init-sparql-1.6.1.tgz#225979feb47f43d0a3ac6af36e29b04a83acff8e"
-  integrity sha512-+qgQpIxmjvfQE4/96X+c8M4dLoca8HCm4hWhTNTAUSC1xVj/WkWLXshyEiJgKp5hIi5HCaYQkL6PhoCOdQxCVg==
+"@comunica/actor-init-sparql@1.6.2":
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-init-sparql/-/actor-init-sparql-1.6.2.tgz#ba88c119563c810370f2cfadd0191268cc8fc8c9"
+  integrity sha512-cREBGDm5TJVGvh5+Va+wn6BRTlPu8xPJluKX02Nrt9LTHBBKmfVh2TnBQu/BKjvA5hoeA1lCV7/v4imwCIQW7A==
   dependencies:
     "@comunica/actor-abstract-bindings-hash" "^1.6.0"
     "@comunica/actor-abstract-mediatyped" "^1.6.0"
@@ -692,7 +692,7 @@
     "@comunica/actor-rdf-join-nestedloop" "^1.6.0"
     "@comunica/actor-rdf-metadata-extract-hydra-controls" "^1.6.0"
     "@comunica/actor-rdf-metadata-extract-hydra-count" "^1.6.0"
-    "@comunica/actor-rdf-metadata-primary-topic" "^1.6.0"
+    "@comunica/actor-rdf-metadata-primary-topic" "^1.6.2"
     "@comunica/actor-rdf-metadata-triple-predicate" "^1.6.0"
     "@comunica/actor-rdf-parse-jsonld" "^1.6.0"
     "@comunica/actor-rdf-parse-n3" "^1.6.0"
@@ -1035,10 +1035,10 @@
   resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-metadata-extract-hydra-count/-/actor-rdf-metadata-extract-hydra-count-1.6.0.tgz#939b5270c057f5d3ed6838968679c3a8fffc3deb"
   integrity sha512-TsyPqnPzKejLtrjdQzZHu0aVPt7dX+B90VJF/HNAf6INXv8bFtAf78XaRwSX03PnvfG4pE/vODW3sDJWt2tr+g==
 
-"@comunica/actor-rdf-metadata-primary-topic@^1.6.0":
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-metadata-primary-topic/-/actor-rdf-metadata-primary-topic-1.6.0.tgz#5a27b7ee4b44ccfca815df436724799cddc2caba"
-  integrity sha512-B3ATHdpkm/E77CytYRmudaqisyAzB+NjnG7+PARmU8aCYnG9jfGHL5Prk5GLWLZZ/eWa1CZ5+Iec+A+bN4661g==
+"@comunica/actor-rdf-metadata-primary-topic@^1.6.2":
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-metadata-primary-topic/-/actor-rdf-metadata-primary-topic-1.6.2.tgz#956729984cbf230b34bf6f53e95271d03f31697f"
+  integrity sha512-jMwMxUieWx8g4syIH9qJLGNZgmqnrbPihs8r9wHRSXjZDwyndWmw+hQCth32q8qacsPYkjhnWrapeu3WokNOOA==
 
 "@comunica/actor-rdf-metadata-triple-predicate@^1.6.0":
   version "1.6.0"
