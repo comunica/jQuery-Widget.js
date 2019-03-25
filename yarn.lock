@@ -4564,11 +4564,6 @@ mute-stream@0.0.7:
   resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.7.tgz#3075ce93bc21b8fab43e1bc4da7e8115ed1e7bab"
   integrity sha1-MHXOk7whuPq0PhvE2n6BFe0ee6s=
 
-n3@^0.11.3:
-  version "0.11.3"
-  resolved "https://registry.yarnpkg.com/n3/-/n3-0.11.3.tgz#8e587495240dd21408c2c3aae385ec1651a837f8"
-  integrity sha512-Hk5GSXBeAZrYoqi+NeS/U0H47Hx0Lzj7K6nLWCZpC9E04iUwEwBcrlMb/5foAli7QF4newPNQQQGgM6IAxTxGg==
-
 n3@^0.9.1:
   version "0.9.1"
   resolved "https://registry.yarnpkg.com/n3/-/n3-0.9.1.tgz#430b547d58dc7381408c45784dd8058171903932"
@@ -4578,6 +4573,11 @@ n3@^1.0.0:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/n3/-/n3-1.0.4.tgz#6c7d67e1cf307e1e5e37d9d040bdd7d15b9108bd"
   integrity sha512-iMHI7n3OsmMsUf6u9un6f8TCPgN1Zs6uKKcXrpTFUNXaswaOFk3H2/YuzuLE4T5Mhd+1haXAuufBFmsbRaULzw==
+
+n3@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/n3/-/n3-1.0.5.tgz#5452fa543146dfadc03f9c32b13a37e5d2908396"
+  integrity sha512-IAYc2P5UYbfYCSVoud9iITl1r2IWW/8pyMYbqTeG38RujMPlm10NfTUrz1l4YMFOsh7MbMwb+W/bibcciGYmVg==
 
 nan@^2.9.2:
   version "2.12.1"
