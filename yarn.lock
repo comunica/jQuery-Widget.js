@@ -648,10 +648,10 @@
     isomorphic-fetch "^2.2.1"
     parse-link-header "^1.0.1"
 
-"@comunica/actor-init-sparql@1.7.1":
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-init-sparql/-/actor-init-sparql-1.7.1.tgz#a8fd74e729fe5ea3eee4073598100a5f4e8c8aa6"
-  integrity sha512-hfaTRqcLzCGhEi5ndgILdLmkjkEUZpo4ch52iDwF+QayEJWK3zGZ5HiRVcYMh/DTftO1Wytv8CEOwY9cQGK3Xg==
+"@comunica/actor-init-sparql@1.7.2":
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-init-sparql/-/actor-init-sparql-1.7.2.tgz#929660824b16b6eb5921eee51c057af8cb247d6d"
+  integrity sha512-VqY6dnKP2m+cvkBeU3KflFjjXnNTtRL3EOsfaSHS9ffnNFLLaj8ijZjv5qXaN+63H6Qlr4TywSllWVhEIOTTQA==
   dependencies:
     "@comunica/actor-abstract-bindings-hash" "^1.7.0"
     "@comunica/actor-abstract-mediatyped" "^1.6.3"
@@ -690,7 +690,7 @@
     "@comunica/actor-query-operation-sparql-endpoint" "^1.7.1"
     "@comunica/actor-query-operation-union" "^1.6.5"
     "@comunica/actor-query-operation-values" "^1.6.5"
-    "@comunica/actor-rdf-dereference-http-parse" "^1.7.1"
+    "@comunica/actor-rdf-dereference-http-parse" "^1.7.2"
     "@comunica/actor-rdf-dereference-paged-next" "^1.6.6"
     "@comunica/actor-rdf-join-nestedloop" "^1.6.5"
     "@comunica/actor-rdf-metadata-extract-hydra-controls" "^1.6.3"
@@ -1011,10 +1011,10 @@
     asynciterator "^2.0.1"
     rdf-string "^1.3.1"
 
-"@comunica/actor-rdf-dereference-http-parse@^1.7.1":
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-dereference-http-parse/-/actor-rdf-dereference-http-parse-1.7.1.tgz#23d3e2749f23e9eca14d2a9e08b1f9d487d6df86"
-  integrity sha512-vHlyNQHMganddjDcQMpZxZpQRhIhwc0UKhuw2Etfy3zkWVPF3HxsG42Snt6epbGjW2+T2JuOcFyrT32wrpQM3w==
+"@comunica/actor-rdf-dereference-http-parse@^1.7.2":
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-dereference-http-parse/-/actor-rdf-dereference-http-parse-1.7.2.tgz#3d548808d693329a44a6d85d4b8d82a64847d49f"
+  integrity sha512-dINcTTMJ/N/gwOCW6WcPO4r61mNnCLaQ3OcJbekQB4bASBuX18qhWPNQtbrF06z2QxXeRp6VQ7V5sCuQ0I9D0w==
 
 "@comunica/actor-rdf-dereference-paged-next@^1.6.6":
   version "1.6.6"
