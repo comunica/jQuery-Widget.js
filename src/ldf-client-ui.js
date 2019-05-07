@@ -394,6 +394,12 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
           this._setOption('queryFormat', value[0].queryFormat);
           this._setOption('query', value[0].query);
           this._setOption('queryContext', value[0].queryContext);
+
+          // Special-case: if the first query has more than 2 sources, and we were initialized with 1 transient datasource, update the list of datasources
+          if (value[0].datasources.length > 1 &&
+            Object.keys(options.selectedDatasources).length === 1 &&
+            options.selectedDatasources[Object.keys(options.selectedDatasources)[0]] === 'transient')
+            self._setOption('selectedDatasources', this._getHashedQueryDatasources(this._getSelectedQueryId()));
         }
         this._refreshQueries($queries);
         break;
