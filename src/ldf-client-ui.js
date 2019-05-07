@@ -65,7 +65,6 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
       }
     };
     this._queryWorker.onerror = function (error) {
-      self._queryWorker.onerror = $.noop;
       self._stopExecution(error);
     };
 
