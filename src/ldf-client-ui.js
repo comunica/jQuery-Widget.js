@@ -109,9 +109,27 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
 
       // When a datasource is selected, load the corresponding query set
       $datasources.chosen({
-        create_option: true, persistent_create_option: true,
-        skip_no_results: true, search_contains: true, display_selected_options: false,
-        placeholder_text: ' ', create_option_text: 'Add datasource',
+        create_option: function (url) {
+          if (options.datasources.map(function (datasource) { return datasource.url; }).indexOf(url) >= 0) {
+            // If the URL exists, select it
+            options.selectedDatasources[url] = 'persistent';
+            self._setOption('selectedDatasources', Object.assign({}, options.selectedDatasources));
+            return false;
+          }
+          else {
+            // If the URL does not exist, create it
+            return this.select_append_option({
+              value: url,
+              text: url,
+            });
+          }
+        },
+        persistent_create_option: true,
+        skip_no_results: true,
+        search_contains: true,
+        display_selected_options: false,
+        placeholder_text: ' ',
+        create_option_text: 'Add datasource',
       });
       $datasources.change(function () {
         // Inherit the transience of the previous selected datasources
