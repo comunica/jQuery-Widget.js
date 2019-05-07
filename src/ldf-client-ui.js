@@ -552,7 +552,7 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
       this.$stop.hide();
       this.$start.show();
       if (error && error.message)
-        this._resultAppender(error.message);
+        this._resultAppender('# ' + error.message);
       this._resultAppender.flush();
       this._logAppender.flush();
       this._writeResult = this._writeEnd = null;
