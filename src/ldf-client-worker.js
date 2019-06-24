@@ -2,7 +2,6 @@ var engine = null;
 var RdfString = require('rdf-string');
 var LoggerPretty = require('@comunica/logger-pretty').LoggerPretty;
 var bindingsStreamToGraphQl = require('@comunica/actor-sparql-serialize-tree').bindingsStreamToGraphQl;
-var actionContext = require('@comunica/core').ActionContext;
 
 // The active fragments client and the current results
 var resultsIterator;
@@ -47,7 +46,7 @@ var handlers = {
 
         if (resultsIterator) {
           if (resultsToTree) {
-            bindingsStreamToGraphQl(resultsIterator, actionContext(config.context), { materializeRdfJsTerms: true })
+            bindingsStreamToGraphQl(resultsIterator, result.context, { materializeRdfJsTerms: true })
               .then(function (results) {
                 (Array.isArray(results) ? results : [results]).forEach(function (result) {
                   postMessage({ type: 'result', result: { result: '\n' + JSON.stringify(result, null, '  ') } });
