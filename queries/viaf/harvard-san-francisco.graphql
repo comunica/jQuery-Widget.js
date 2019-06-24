@@ -1,8 +1,8 @@
 # 5. Books by San Franciscans in Harvard Library
 # Datasources: http://fragments.dbpedia.org/*/en http://data.linkeddatafragments.org/viaf http://data.linkeddatafragments.org/harvard
 {
-  birthPlace(label_en: "San Francisco")
-  viafPerson {
+  birthPlace(label_en: "San Francisco") @single
+  viafPerson @single(scope: all) {
     name {
       nameOf {
         contributedTo {
@@ -17,12 +17,8 @@
   "@context": {
     "label": { "@id": "http://www.w3.org/2000/01/rdf-schema#label" },
     "label_en": { "@id": "http://www.w3.org/2000/01/rdf-schema#label", "@language": "en" },
-    "birthPlace": { "@id": "http://dbpedia.org/ontology/birthPlace", "@singular": true },
-    "viafPerson": { "@reverse": "http://schema.org/sameAs", "@singular": true },
-    "viafPerson_name": { "@singular": true },
-    "viafPerson_name_nameOf": { "@singular": true },
-    "viafPerson_name_nameOf_contributedTo": { "@singular": true },
-    "viafPerson_name_nameOf_contributedTo_bookTitle": { "@singular": true },
+    "birthPlace": "http://dbpedia.org/ontology/birthPlace",
+    "viafPerson": { "@reverse": "http://schema.org/sameAs" },
     "name": { "@id": "http://schema.org/name" },
     "nameOf": { "@reverse": "http://xmlns.com/foaf/0.1/name" },
     "contributedTo": { "@reverse": "http://purl.org/dc/terms/contributor" },

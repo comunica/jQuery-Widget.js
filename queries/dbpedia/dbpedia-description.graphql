@@ -1,14 +1,13 @@
 # Description of the DBpedia ontology
 # Datasource: http://fragments.dbpedia.org/*/en
-{
+query @single(scope: all) {
   name(_:"The DBpedia Ontology")
   description
 }
 
 {
   "@context": {
-    "": { "@singular": true },
     "name": { "@id": "http://purl.org/dc/terms/title", "@language": "en" },
-    "description": { "@id": "http://purl.org/dc/terms/description", "@singular": true }
+    "description": "http://purl.org/dc/terms/description"
   }
 }

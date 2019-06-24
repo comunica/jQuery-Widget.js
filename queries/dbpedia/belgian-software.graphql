@@ -1,8 +1,8 @@
 # Belgian software
 # Datasource: http://fragments.dbpedia.org/*/en
 {
-  softwareName: label
-  developer {
+  softwareName: label @single
+  developer @single(scope: all) {
     label
     country(label_en: "Belgium")
   }
@@ -10,12 +10,9 @@
 
 {
   "@context": {
-    "softwareName": { "@singular": true },
     "label": { "@id": "http://www.w3.org/2000/01/rdf-schema#label" },
     "label_en": { "@id": "http://www.w3.org/2000/01/rdf-schema#label", "@language": "en" },
-    "developer": { "@id": "http://dbpedia.org/ontology/developer", "@singular": true },
-    "developer_country": { "@singular": true },
-    "developer_label": { "@singular": true },
+    "developer": { "@id": "http://dbpedia.org/ontology/developer" },
     "country": { "@id": "http://dbpedia.org/ontology/locationCountry" }
   }
 }
