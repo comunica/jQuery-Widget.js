@@ -129,11 +129,15 @@ select {
   float: right;
 }
 
-input.datetime {
+input.datetime, input.httpProxy {
   float: right;
   font-size: 13px;
   border: 1px solid #999999;
   border-radius: 3px;
+}
+
+input.httpProxy {
+  width: 418px;
 }
 
 .details {
@@ -146,14 +150,14 @@ input.datetime {
   margin: 0 -35px;
   float: right;
   cursor: pointer;
-  background: url(../images/memento.svg) no-repeat center center / contain;
+  background: url(../images/settings.svg) no-repeat center center / contain;
   opacity: .8;
 }
 .details-toggle:hover, .details-toggle.enabled {
   opacity: 1;
 }
 .details-toggle.enabled {
-  background-image: url(../images/memento.svg#active);
+  background-image: url(../images/settings.svg#active);
   width: 25px; /* for Chrome */
 }
 
@@ -325,7 +329,7 @@ footer {
   select {
     width: 350px;
   }
-  .chosen, input.datetime {
+  .chosen, input.datetime, input.httpProxy {
     float: none;
     margin-bottom: 0;
   }

@@ -42,6 +42,8 @@ jQuery(function ($) {
       $queryui.queryui('option', 'resultsToTree', uiState.resultsToTree !== 'false');
     if (uiState.datetime)
       $queryui.queryui('option', 'datetime', uiState.datetime);
+    if (uiState.httpProxy)
+      $queryui.queryui('option', 'httpProxy', uiState.httpProxy);
   }
 
   // Stores the current UI state in the URL
@@ -68,6 +70,8 @@ jQuery(function ($) {
       queryString.push('queryFormat=' + encodeURIComponent(options.queryFormat || ''));
     if (options.datetime)
       queryString.push('datetime=' + encodeURIComponent(options.datetime));
+    if (options.httpProxy)
+      queryString.push('httpProxy=' + encodeURIComponent(options.httpProxy));
 
     // Compose new URL with query string
     queryString = queryString.length ? '#' + queryString.join('&') : '';

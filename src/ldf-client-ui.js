@@ -99,6 +99,7 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
           $resultsText = $('<div>', { class: 'text' }),
           $datasources = this.$datasources = $('.datasources', $element),
           $datetime = this.$datetime = $('.datetime', $element),
+          $httpProxy = this.$httpProxy = $('.httpProxy', $element),
           $details = this.$details = $('.details', $element),
           $showDetails = this.$showDetails = $('.details-toggle', $element);
 
@@ -209,6 +210,9 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
 
       // Update datetime on change
       $datetime.change(function () { self._setOption('datetime', $datetime.val()); });
+
+      // Update http proxy on change
+      $httpProxy.change(function () { self._setOption('httpProxy', $httpProxy.val()); });
 
       // Set up starting and stopping
       $start.click(this._startExecution.bind(this));
@@ -384,6 +388,11 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
           this._showDetails();
         this.$datetime.val(value).change();
         break;
+      case 'httpProxy':
+        if (value)
+          this._showDetails();
+        this.$httpProxy.val(value).change();
+        break;
       // Set the list of selectable queries
       case 'relevantQueries':
         value = value || [];
@@ -536,11 +545,12 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
 
       // Let the worker execute the query
       var context = {
-        'sources': datasources.map(function (datasource) {
+        sources: datasources.map(function (datasource) {
           return { type: 'auto', value: datasource };
         }),
-        '@comunica/actor-http-memento:datetime': parseDate(this.options.datetime),
-        'queryFormat': this.options.queryFormat,
+        datetime: parseDate(this.options.datetime),
+        queryFormat: this.options.queryFormat,
+        httpProxy: this.options.httpProxy,
       };
       if (this.options.queryContext) {
         try {
@@ -735,13 +745,12 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
   // Escapes special HTML characters and convert URLs into links
   function escape(text) {
     return (text + '').split('\n').map(function (line) {
-      return line.replace(/( )|(<)|(>)|(&)|http(s?:\/\/[^\s<>]+)/g, escapeMatch);
+      return line.replace(/([\s"])(https?:\/\/[^\s<>"]+)/g, escapeMatchUrl);
     }).join('<br/>');
   }
-  function escapeMatch(match, space, lt, gt, amp, url) {
-    return space && '&nbsp;' || lt && '&lt;' || gt && '&gt;' || amp && '&amp;' ||
-           (url = 'http' + escape(url)) &&
-           '<a href="' + url + '" target=_blank>' + url + '</a>';
+  function escapeMatchUrl(match, preUrl, url) {
+    url = escape(url);
+    return preUrl + '<a href="' + url + '" target=_blank>' + url + '</a>';
   }
 
   // Escapes the string for usage as a regular expression

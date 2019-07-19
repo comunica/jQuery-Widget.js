@@ -2,6 +2,7 @@ var engine = null;
 var RdfString = require('rdf-string');
 var LoggerPretty = require('@comunica/logger-pretty').LoggerPretty;
 var bindingsStreamToGraphQl = require('@comunica/actor-sparql-serialize-tree').bindingsStreamToGraphQl;
+var ProxyHandlerStatic = require('@comunica/actor-http-proxy').ProxyHandlerStatic;
 
 // The active fragments client and the current results
 var resultsIterator;
@@ -19,6 +20,10 @@ var handlers = {
     // Create an engine lazily
     if (!engine)
       engine = require('../comunica-engine');
+
+    // Set up a proxy handler
+    if (config.context.httpProxy)
+      config.context.httpProxyHandler = new ProxyHandlerStatic(config.context.httpProxy);
 
     // Create a client to fetch the fragments through HTTP
     config.context.log = logger;
