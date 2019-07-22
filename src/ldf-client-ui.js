@@ -101,7 +101,8 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
           $datetime = this.$datetime = $('.datetime', $element),
           $httpProxy = this.$httpProxy = $('.httpProxy', $element),
           $details = this.$details = $('.details', $element),
-          $showDetails = this.$showDetails = $('.details-toggle', $element);
+          $showDetails = this.$showDetails = $('.details-toggle', $element),
+          $proxyDefault = $('.proxy-default', $element);
 
       // Replace non-existing elements by an empty text box
       if (!$datasources.length) $datasources = this.$datasources = $('<select>');
@@ -229,6 +230,12 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
       this._resultAppender = appenderFor($resultsText);
       this._logAppender = appenderFor($log);
       this.$timing = $('.timing', $element);
+
+      // Set the default proxy
+      $proxyDefault.on('click', function () {
+        $httpProxy.val('http://proxy.linkeddatafragments.org/');
+        return false;
+      });
 
       // Apply all options
       for (var key in options)

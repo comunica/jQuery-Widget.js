@@ -137,7 +137,15 @@ input.datetime, input.httpProxy {
 }
 
 input.httpProxy {
-  width: 418px;
+  width: 340px;
+  height: 23px;
+  margin-left: 2px;
+}
+
+.proxy-default {
+  font-size: 12px;
+  padding: 4px;
+  float: right;
 }
 
 .details {
