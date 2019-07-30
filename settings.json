@@ -51,6 +51,10 @@
     {
       "name": "Between Our Worlds 2018-06",
       "url": "https://data.betweenourworlds.org/2018-06"
+    },
+    {
+      "name": "Wikidata",
+      "url": "https://query.wikidata.org/bigdata/ldf"
     }
   ],
   "prefixes": {
@@ -64,10 +68,12 @@
     "dbpedia":     "http://dbpedia.org/resource/",
     "dbpedia-owl": "http://dbpedia.org/ontology/",
     "dbpprop":     "http://dbpedia.org/property/",
+    "wdprop":      "http://www.wikidata.org/prop/direct/",
     "ruben":       "https://ruben.verborgh.org/profile/#",
     "rubent":      "https://www.rubensworks.net/#",
     "schema":      "http://schema.org/",
-    "bow":         "https://betweenourworlds.org/ontology/"
+    "bow":         "https://betweenourworlds.org/ontology/",
+    "lc":          "http://semweb.mmlab.be/ns/linkedconnections#"
   },
   "queries": "(Will be generated from the 'queries' folder by running the './queries-to-json' script.)"
 }

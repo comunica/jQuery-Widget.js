@@ -1,0 +1,14 @@
+# Closed stations that have been reopened after 2000
+# Datasources: https://graph.irail.be/sncb/connections https://query.wikidata.org/bigdata/ldf
+
+SELECT ?officialOpening ?departureStop ?label ?wikidataDepartureStop WHERE {
+ GRAPH ?g {
+   	?connection lc:departureStop ?departureStop.
+  }
+  
+  ?wikidataDepartureStop wdprop:P2888 ?departureStop ;                 
+                         rdfs:label ?label;
+                         wdprop:P1619 ?officialOpening .
+
+  FILTER(YEAR(?officialOpening) > 2000)
+}
