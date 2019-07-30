@@ -752,8 +752,13 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
   // Escapes special HTML characters and convert URLs into links
   function escape(text) {
     return (text + '').split('\n').map(function (line) {
-      return line.replace(/([\s"])(https?:\/\/[^\s<>"]+)/g, escapeMatchUrl);
+      return line
+        .replace(/(<)|(>)|(&)/g, escapeMatch)
+        .replace(/([\s"])(https?:\/\/[^\s<>"]+)/g, escapeMatchUrl);
     }).join('<br/>');
+  }
+  function escapeMatch(match, lt, gt, amp) {
+    return lt && '&lt;' || gt && '&gt;' || amp && '&amp;';
   }
   function escapeMatchUrl(match, preUrl, url) {
     url = escape(url);
