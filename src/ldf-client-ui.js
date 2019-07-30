@@ -233,7 +233,7 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
 
       // Set the default proxy
       $proxyDefault.on('click', function () {
-        $httpProxy.val('http://proxy.linkeddatafragments.org/');
+        $httpProxy.val('http://proxy.linkeddatafragments.org/').change();
         return false;
       });
 
