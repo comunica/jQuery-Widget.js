@@ -10,7 +10,11 @@
     },
     {
       "name": "Ruben Verborgh's Profile",
-      "url": "https://ruben.verborgh.org/profile/#me"
+      "url": "https://ruben.verborgh.org/profile/"
+    },
+    {
+      "name": "Ruben Taelman's Profile",
+      "url": "https://www.rubensworks.net/"
     },
     {
       "name": "DBpedia SPARQL",
@@ -61,6 +65,7 @@
     "dbpedia-owl": "http://dbpedia.org/ontology/",
     "dbpprop":     "http://dbpedia.org/property/",
     "ruben":       "https://ruben.verborgh.org/profile/#",
+    "rubent":      "https://www.rubensworks.net/#me",
     "schema":      "http://schema.org/",
     "bow":         "https://betweenourworlds.org/ontology/"
   },
