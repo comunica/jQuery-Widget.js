@@ -55,6 +55,10 @@
     {
       "name": "Wikidata",
       "url": "https://query.wikidata.org/bigdata/ldf"
+    },
+    {
+      "name": "SNCB",
+      "url": "https://graph.irail.be/sncb/connections"
     }
   ],
   "prefixes": {
