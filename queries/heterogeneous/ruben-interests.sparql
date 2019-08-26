@@ -1,5 +1,5 @@
 # 2. All interests of Ruben
-# Datasources: https://ruben.verborgh.org/profile/#me https://dbpedia.org/sparql
+# Datasources: https://ruben.verborgh.org/profile/ https://dbpedia.org/sparql
 SELECT ?interestName
 WHERE {
   ruben:me foaf:topic_interest ?interest.
