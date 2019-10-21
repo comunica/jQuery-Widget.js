@@ -647,10 +647,10 @@
   resolved "https://registry.yarnpkg.com/@comunica/actor-http-proxy/-/actor-http-proxy-1.9.2.tgz#1fa1f7dd7bad505a71a1fd9258be67bd94285926"
   integrity sha512-T56j6zU/md8XULgVehCiKEW84WuaBr3cyzjk0g1mxJ42GZ5GrtbMnhsNdP3WK08AsBkN1g/sJ5f1TTrmSnIeew==
 
-"@comunica/actor-init-sparql@1.9.3":
-  version "1.9.3"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-init-sparql/-/actor-init-sparql-1.9.3.tgz#bd4edc625f1661abf32fc3661b619402ab25c3cd"
-  integrity sha512-rAo+YOKgeo9sLFu+jn+g/hWZN0zm9kZY5cYefpWwbIpOLCMZpOfT74GdYI8D5fu4k+EMIojxYqljegSY+90g2g==
+"@comunica/actor-init-sparql@1.9.4":
+  version "1.9.4"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-init-sparql/-/actor-init-sparql-1.9.4.tgz#f45848412fff15c268210d475b5f8f8fbd99845d"
+  integrity sha512-+9/RiE8sbyfiQhTV7eTpN9Ib2kYuzrZHEevmKTsb798ilGQe/rwvL/RobyX48qnu5hbTyV6yJ68XxZmDIBP5Rg==
   dependencies:
     "@comunica/actor-abstract-bindings-hash" "^1.9.3"
     "@comunica/actor-abstract-mediatyped" "^1.9.2"
@@ -749,8 +749,8 @@
     "@comunica/mediator-combine-union" "^1.9.2"
     "@comunica/mediator-number" "^1.9.2"
     "@comunica/mediator-race" "^1.9.2"
-    "@comunica/runner" "^1.9.2"
-    "@comunica/runner-cli" "^1.9.2"
+    "@comunica/runner" "^1.9.4"
+    "@comunica/runner-cli" "^1.9.4"
     asyncreiterable "^1.1.1"
     minimist "^1.2.0"
     negotiate "^1.0.1"
@@ -1417,12 +1417,12 @@
   resolved "https://registry.yarnpkg.com/@comunica/mediator-race/-/mediator-race-1.9.2.tgz#79cb5edd147200efabcd13c5139432940ad4b4d0"
   integrity sha512-8BivIVQX7VRD/xyFjwXoko1mMAs6uS9ntQYW12U9HZ156PrE0m9K+Ge0f+dya7i3A/GsJCAfn05dmHb7L1JmVg==
 
-"@comunica/runner-cli@^1.9.2":
-  version "1.9.2"
-  resolved "https://registry.yarnpkg.com/@comunica/runner-cli/-/runner-cli-1.9.2.tgz#60008b604e9dc6c86f8ef9f2ad5e3613366d8c41"
-  integrity sha512-tfaXI8w3T2DlIym6NM4mkPILDl2POvaOoZlnrMSPk8MQEQTaAiawzw/SG7vznjMeril/nVhKWixQMIr/tr/olg==
+"@comunica/runner-cli@^1.9.4":
+  version "1.9.4"
+  resolved "https://registry.yarnpkg.com/@comunica/runner-cli/-/runner-cli-1.9.4.tgz#7f5641e5b3b3d6d3f331a4e45b57aaa12bb968d4"
+  integrity sha512-8E18otM4wGVIyeeb0gYeSVr+tUtSowj0bJ14IfB32VThxVVU/EBvmkXwH4xLwkta/WXMkegC/pCpk9CJMNRVTw==
   dependencies:
-    "@comunica/runner" "^1.9.2"
+    "@comunica/runner" "^1.9.4"
 
 "@comunica/runner@^1.6.0":
   version "1.6.0"
@@ -1433,12 +1433,12 @@
     lodash.assign "^4.2.0"
     lodash.defaults "^4.2.0"
 
-"@comunica/runner@^1.9.2":
-  version "1.9.2"
-  resolved "https://registry.yarnpkg.com/@comunica/runner/-/runner-1.9.2.tgz#f06c74f55d08556d47a9184859511d0bcfbdc6f2"
-  integrity sha512-r1J5UkaFTvynn9lLsD/38LFLhsLLj9FJur/4rz1MoYpdoHYpg/vbQrvFltG52nzvcj35A6WkoshCMJ++D3VmcQ==
+"@comunica/runner@^1.9.4":
+  version "1.9.4"
+  resolved "https://registry.yarnpkg.com/@comunica/runner/-/runner-1.9.4.tgz#e34646175a99840db077ceebed9c457dd860fccf"
+  integrity sha512-Rjp3O4F+AqLPXMtQEiBf60Nw4ichjUV1wEsc0osEfZ2dvWpZMyCrfWWGXRZgtiRXVUKi/gybbI2EhZJez9ZObA==
   dependencies:
-    componentsjs "^3.2.1"
+    componentsjs "^3.3.0"
     lodash.assign "^4.2.0"
     lodash.defaults "^4.2.0"
 
@@ -2370,10 +2370,22 @@ component-emitter@^1.2.1:
   resolved "https://registry.yarnpkg.com/component-emitter/-/component-emitter-1.2.1.tgz#137918d6d78283f7df7a6b7c5a63e140e69425e6"
   integrity sha1-E3kY1teCg/ffemt8WmPhQOaUJeY=
 
-componentsjs@^3.2.0, componentsjs@^3.2.1:
+componentsjs@^3.2.0:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/componentsjs/-/componentsjs-3.2.1.tgz#bfec8772c20d5063d421ad289f1cd199344d3f90"
   integrity sha512-/oBIU1aGFY/qgf/PEas554pHBaq9phkRgAASRG3yHFeYmFGmb21ab0bWPVgSYYMuchjcK4oPhZ6o6kFVICJPFA==
+  dependencies:
+    global-modules "^1.0.0"
+    jsonld "^0.4.11"
+    lodash "^4.17.4"
+    minimist "^1.2.0"
+    n3 "^0.9.1"
+    requireg "^0.1.7"
+
+componentsjs@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/componentsjs/-/componentsjs-3.3.0.tgz#6f881b3889212f0a153636bf9f87de4b3d82743e"
+  integrity sha512-0ETmraF8ClssNbGbZqp6kTSCwm8YBK6eFly34pglwiJo007HgVWdeXcsLttXsRtJbiVxA0Ox+A/mvjDfExES4A==
   dependencies:
     global-modules "^1.0.0"
     jsonld "^0.4.11"
