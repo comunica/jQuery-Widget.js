@@ -1,18 +1,21 @@
-FROM node:8.10.0
+## Build the website
+FROM node:8.10.0 as builder
 
-# Install location
-ENV dir /var/www/online-client
+WORKDIR /webapp
 
-# Copy the client files
-ADD . ${dir}
+ADD . .
 
 # Install the node module
-RUN cd ${dir} && npm install --unsafe-perm
-RUN cd ${dir} && cp settings.json /tmp && cp -r queries /tmp/queries/
+RUN npm install --unsafe-perm
 
-# Expose the default port
-EXPOSE 3000
+RUN npm run production
 
-# Run base binary
-WORKDIR ${dir}
-CMD cp /tmp/settings.json settings.json && rm -rf queries && cp -r /tmp/queries queries/ && npm start
+
+## Deploy the website using nginx
+FROM nginx:1.17.7-alpine
+
+# Copy build folder from 'builder' to the default nginx public folder
+RUN rm -rf /usr/share/nginx/html/*
+COPY --from=builder /webapp/build/ /usr/share/nginx/html
+
+CMD ["nginx", "-g", "daemon off;"]
