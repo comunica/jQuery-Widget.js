@@ -1430,7 +1430,7 @@
   dependencies:
     "@comunica/runner" "^1.9.4"
 
-"@comunica/runner@^1.6.0":
+"@comunica/runner@1.6.0":
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/@comunica/runner/-/runner-1.6.0.tgz#964c4687bc02d18a2a4492a2ae7e557aa7ccf6d2"
   integrity sha512-vNWsSfJNNebQcMUuAM5t8jfdhSTZgD7fjf9qbw8peoJNV/uRDVgXuq//ANmeHXurnMu7htrKN/QnRqRJ9WeZPA==
@@ -4722,7 +4722,7 @@ mute-stream@0.0.7:
   resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.7.tgz#3075ce93bc21b8fab43e1bc4da7e8115ed1e7bab"
   integrity sha1-MHXOk7whuPq0PhvE2n6BFe0ee6s=
 
-n3@^0.11.3:
+n3@0.11.3:
   version "0.11.3"
   resolved "https://registry.yarnpkg.com/n3/-/n3-0.11.3.tgz#8e587495240dd21408c2c3aae385ec1651a837f8"
   integrity sha512-Hk5GSXBeAZrYoqi+NeS/U0H47Hx0Lzj7K6nLWCZpC9E04iUwEwBcrlMb/5foAli7QF4newPNQQQGgM6IAxTxGg==
@@ -5482,7 +5482,7 @@ rdf-store-stream@^1.0.0:
     "@types/rdf-js" "^2.0.1"
     n3 "^1.1.1"
 
-rdf-string@^1.1.1, rdf-string@^1.2.0, rdf-string@^1.3.1:
+rdf-string@1.3.1, rdf-string@^1.1.1, rdf-string@^1.2.0, rdf-string@^1.3.1:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/rdf-string/-/rdf-string-1.3.1.tgz#a9f49db4dbe0ff06bb17bf46e0389862f6a77e49"
   integrity sha512-Pcw6aZRfto2cZodK5kSqFZW8mz6nfKLxSfjOSrTi5ajb2CSIwzqGx7UniysgKoV2i7tQL5dpPgCgY80upCiRUw==
@@ -7024,7 +7024,7 @@ yasgui-utils@^1.6.7:
   dependencies:
     store "^2.0.4"
 
-yasgui-yasqe@^2.11.22:
+yasgui-yasqe@2.11.22:
   version "2.11.22"
   resolved "https://registry.yarnpkg.com/yasgui-yasqe/-/yasgui-yasqe-2.11.22.tgz#6da6cc234157924e986cc566f319b09519edd5f3"
   integrity sha512-8yNcjune6ONTJXJ2s6bZhRXBxyvuNErXjNAIQCbVyQbnG1feZBTR1SPjTKxkFWaCB/f0f19hmJPtcOkLOcOjUw==
