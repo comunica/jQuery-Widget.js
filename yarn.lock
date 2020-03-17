@@ -1430,16 +1430,7 @@
   dependencies:
     "@comunica/runner" "^1.9.4"
 
-"@comunica/runner@1.6.0":
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/@comunica/runner/-/runner-1.6.0.tgz#964c4687bc02d18a2a4492a2ae7e557aa7ccf6d2"
-  integrity sha512-vNWsSfJNNebQcMUuAM5t8jfdhSTZgD7fjf9qbw8peoJNV/uRDVgXuq//ANmeHXurnMu7htrKN/QnRqRJ9WeZPA==
-  dependencies:
-    componentsjs "^3.2.0"
-    lodash.assign "^4.2.0"
-    lodash.defaults "^4.2.0"
-
-"@comunica/runner@^1.9.4":
+"@comunica/runner@1.9.4", "@comunica/runner@^1.9.4":
   version "1.9.4"
   resolved "https://registry.yarnpkg.com/@comunica/runner/-/runner-1.9.4.tgz#e34646175a99840db077ceebed9c457dd860fccf"
   integrity sha512-Rjp3O4F+AqLPXMtQEiBf60Nw4ichjUV1wEsc0osEfZ2dvWpZMyCrfWWGXRZgtiRXVUKi/gybbI2EhZJez9ZObA==
@@ -2375,18 +2366,6 @@ component-emitter@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/component-emitter/-/component-emitter-1.2.1.tgz#137918d6d78283f7df7a6b7c5a63e140e69425e6"
   integrity sha1-E3kY1teCg/ffemt8WmPhQOaUJeY=
-
-componentsjs@^3.2.0:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/componentsjs/-/componentsjs-3.2.1.tgz#bfec8772c20d5063d421ad289f1cd199344d3f90"
-  integrity sha512-/oBIU1aGFY/qgf/PEas554pHBaq9phkRgAASRG3yHFeYmFGmb21ab0bWPVgSYYMuchjcK4oPhZ6o6kFVICJPFA==
-  dependencies:
-    global-modules "^1.0.0"
-    jsonld "^0.4.11"
-    lodash "^4.17.4"
-    minimist "^1.2.0"
-    n3 "^0.9.1"
-    requireg "^0.1.7"
 
 componentsjs@^3.3.0:
   version "3.3.0"
