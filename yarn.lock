@@ -5509,10 +5509,10 @@ rdf-store-stream@^1.0.0:
     "@types/rdf-js" "^2.0.1"
     n3 "^1.1.1"
 
-rdf-string@1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/rdf-string/-/rdf-string-1.4.1.tgz#b711bfb0bcbc6cb7e0fbf82ff15be4d48ba95c35"
-  integrity sha512-DZBani7aBqslRZs7a9c/kkrxI5DvdbuhsxnCTBu0YifQwnz7TefXfE2aqYW3unSMnxa8ltyWZpxjY7hzQrDSYw==
+rdf-string@1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/rdf-string/-/rdf-string-1.4.2.tgz#a6fbf0c4b501fa85ba187ce51020dc8e375b8776"
+  integrity sha512-74yYjS0W4N3nYDGbXBZrNsqDmhBTjqChTETO9heC2G2M3iMYaIPtEfUikNsBWUj4+4bIKyqL7vAntWBTfJpFFA==
   dependencies:
     "@rdfjs/data-model" "^1.1.1"
 
