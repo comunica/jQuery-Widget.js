@@ -553,7 +553,13 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
       // Let the worker execute the query
       var context = {
         sources: datasources.map(function (datasource) {
-          return { type: 'auto', value: datasource };
+          var type = 'auto';
+          var posAt = datasource.indexOf('@');
+          if (posAt > 0) {
+            type = datasource.substr(0, posAt);
+            datasource = datasource.substr(posAt + 1, datasource.length);
+          }
+          return { type: type, value: datasource };
         }),
         datetime: parseDate(this.options.datetime),
         queryFormat: this.options.queryFormat,
