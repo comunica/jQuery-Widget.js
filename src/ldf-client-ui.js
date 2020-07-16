@@ -409,7 +409,7 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
             !value.some(function (v) { return v.query === options.query; }) && value[0]) {
           this._setOption('queryFormat', value[0].queryFormat);
           this._setOption('query', value[0].query);
-          this._setOption('queryContext', value[0].queryContext);
+          this._setOption('queryContext', value[0].context);
 
           // Special-case: if the first query has more than 2 sources, and we were initialized with 1 transient datasource, update the list of datasources
           if (value[0].datasources.length > 1 &&
