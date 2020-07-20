@@ -1,151 +1,107 @@
-<!DOCTYPE html>
+<!doctype html>
 <!-- ©2014–2016 Ruben Verborgh, Ghent University – imec -->
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Linked Data Fragments client</title>
-    <link rel="stylesheet" href="styles/yasqe.css" />
-    <link rel="stylesheet" href="styles/ldf-client.css" />
-    <link
-      rel="stylesheet"
-      href="//fonts.googleapis.com/css?family=Open+Sans:300,400italic,700italic,400,700"
-    />
-    <meta
-      name="viewport"
-      content="width=device-width,minimum-scale=1,maximum-scale=1"
-    />
-  </head>
-  <body>
-    <header>
-      <a class="logo" href="http://linkeddatafragments.org/"
-        ><img src="images/logo.svg" alt=""
-      /></a>
-      <h1><a href="#">Query the Web of Linked Data</a></h1>
-      <p>
-        <a href="http://comunica.linkeddatafragments.org/" target="_blank"
-          >Live in your browser, powered by Comunica</a
-        >.
-      </p>
-    </header>
-    <!--[if lte IE 9]><b>Your browser is unsupported.</b><div style="display:none"><![endif]-->
-    <main>
-      <fieldset class="ldf-client">
-        <ul>
-          <li>
+<head>
+  <meta charset="utf-8">
+  <title>Linked Data Fragments client</title>
+  <link rel=stylesheet href="styles/yasqe.css">
+  <link rel=stylesheet href="styles/ldf-client.css">
+  <link rel=stylesheet href="//fonts.googleapis.com/css?family=Open+Sans:300,400italic,700italic,400,700">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
+</head>
+<body>
+  <header>
+    <a class="logo" href="http://linkeddatafragments.org/"><img src="images/logo.svg" alt="" /></a>
+    <h1><a href="#">Query the Web of Linked Data</a></h1>
+    <p><a href="http://comunica.linkeddatafragments.org/" target="_blank">Live in your browser, powered by Comunica</a>.</p>
+  </header>
+  <!--[if lte IE 9]><b>Your browser is unsupported.</b><div style="display:none"><![endif]-->
+  <main>
+    <fieldset class="ldf-client">
+      <ul>
+        <li>
             <label>Choose datasources</label>
             <span class="details-toggle" title="Show date option"></span>
-            <select
-              title="You can also type in custom source URLs"
-              class="datasources"
-              multiple
-            ></select>
-          </li>
+            <select title="You can also type in custom source URLs" class="datasources" multiple></select>
+        </li>
 
-          <li class="details">
-            <label>Pick a date</label>
-            <input class="datetime" type="date" />
-          </li>
-          <li class="details">
-            <label>Set a HTTP proxy</label>
-            <input class="httpProxy" type="text" />
-            <button class="proxy-default">Set default</button>
-          </li>
+        <li class="details">
+          <label>Pick a date</label>
+          <input class="datetime" type="date">
+        </li>
+        <li class="details">
+          <label>Set a HTTP proxy</label>
+          <input class="httpProxy" type="text">
+          <button class="proxy-default">Set default</button>
+        </li>
 
-          <li>
-            <label>Type or pick a query</label>
-            <select class="query"></select>
+        <li>
+          <label>Type or pick a query</label>
+          <select class="query"></select>
 
-            <div>
-              <ul class="query-texts">
-                <li>
-                  <a id="sparql"
-                    ><img src="images/sparql.png" alt="SPARQL" />SPARQL</a
-                  >
-                </li>
-                <li>
-                  <a id="graphql"
-                    ><img src="images/graphql.svg" alt="GraphQL" />GraphQL-LD</a
-                  >
-                </li>
-              </ul>
+          <div>
+            <ul class="query-texts">
+              <li><a id="sparql"><img src="images/sparql.png" alt="SPARQL" />SPARQL</a></li>
+              <li><a id="graphql"><img src="images/graphql.svg" alt="GraphQL" />GraphQL-LD</a></li>
+            </ul>
+          </div>
+
+          <div class="query-text-containers">
+            <div class="query-text-container" id="tab-sparql">
+              <textarea class="querytext querytext-sparql yasqe" placeholder="Write a SPARQL query or select one from the list"></textarea>
             </div>
+            <div class="query-text-container" id="tab-graphql">
+              <a href="https://gist.github.com/rubensworks/9d6eccce996317677d71944ed1087ea6" class="help" target="_blank">What is GraphQL-LD?</a>
+              <label class="muted">GraphQL Query</label>
+              <textarea class="querytext querytext-graphql" placeholder="Write a GraphQL query or select one from the list"></textarea>
 
-            <div class="query-text-containers">
-              <div class="query-text-container" id="tab-sparql">
-                <textarea
-                  class="querytext querytext-sparql yasqe"
-                  placeholder="Write a SPARQL query or select one from the list"
-                ></textarea>
-              </div>
-              <div class="query-text-container" id="tab-graphql">
-                <a
-                  href="https://gist.github.com/rubensworks/9d6eccce996317677d71944ed1087ea6"
-                  class="help"
-                  target="_blank"
-                  >What is GraphQL-LD?</a
-                >
-                <label class="muted">GraphQL Query</label>
-                <textarea
-                  class="querytext querytext-graphql"
-                  placeholder="Write a GraphQL query or select one from the list"
-                ></textarea>
+              <label class="muted">JSON-LD context</label>
+              <textarea class="querycontext querycontext-graphql" placeholder="Write a JSON-LD context to map GraphQL query fields to URIs"></textarea>
 
-                <label class="muted">JSON-LD context</label>
-                <textarea
-                  class="querycontext querycontext-graphql"
-                  placeholder="Write a JSON-LD context to map GraphQL query fields to URIs"
-                ></textarea>
-
-                <label class="muted">JSON tree results</label>
-                <input
-                  type="checkbox"
-                  class="results-to-tree results-to-tree-graphql"
-                />
-              </div>
+              <label class="muted">JSON tree results</label>
+              <input type="checkbox" class="results-to-tree results-to-tree-graphql" />
             </div>
-          </li>
+          </div>
+        </li>
 
-          <li>
-            <button class="start">Execute query</button>
-            <button class="stop" style="display: none;">Stop execution</button>
-            <span class="timing"></span>
-          </li>
+        <li>
+          <button class="start">Execute query</button>
+          <button class="stop" style="display:none">Stop execution</button>
+          <span class="timing"></span>
+        </li>
 
-          <li>
-            <label>Query results</label>
-            <div class="results"></div>
-          </li>
+        <li>
+          <label>Query results</label>
+          <div class="results"></div>
+        </li>
 
-          <li>
-            <label>Execution log</label>
-            <pre class="log"></pre>
-          </li>
-        </ul>
-      </fieldset>
+        <li>
+          <label>Execution log</label>
+          <pre class="log"></pre>
+        </li>
+      </ul>
+    </fieldset>
 
-      <p>
-        Discover how
-        <a href="http://linkeddatafragments.org" target="_blank"
-          >Linked Data Fragments</a
-        >
-        enable Web-scale querying of Linked Data.
-      </p>
-    </main>
+    <p>
+      Discover how <a href="http://linkeddatafragments.org" target="_blank">Linked Data Fragments</a>
+      enable Web-scale querying of Linked Data.
+    </p>
+  </main>
 
-    <footer>
-      <p>
-        ©2013–2019
-        <a href="http://www.ugent.be/" target="_blank">Ghent University</a> –
-        <a href="http://www.imec.be/" target="_blank">imec</a>, Belgium.
-        <a href="https://github.com/comunica/jQuery-Widget.js">Source code</a>.
-      </p>
-    </footer>
+  <footer>
+    <p>
+      ©2013–2019
+      <a href="http://www.ugent.be/" target="_blank">Ghent University</a> –
+      <a href="http://www.imec.be/" target="_blank">imec</a>, Belgium.
+      <a href="https://github.com/comunica/jQuery-Widget.js">Source code</a>.
+    </p>
+  </footer>
 
-    <script src="scripts/ldf-client-ui.min.js"></script>
-    <script>
-      jQuery(function ($) {
-        $(".ldf-client").queryui({ settings: "queries.json" });
-      });
-    </script>
-  </body>
+  <script src="scripts/ldf-client-ui.min.js"></script>
+  <script>
+    jQuery(function ($) {
+      $('.ldf-client').queryui({ settings: 'queries.json' });
+    });
+  </script>
+</body>
 </html>
