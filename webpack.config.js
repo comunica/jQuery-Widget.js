@@ -1,6 +1,5 @@
 var path = require('path');
 var webpack = require('webpack');
-var StringReplacePlugin = require('string-replace-webpack-plugin');
 
 // Generate queries.json file
 require('./queries-to-json');
@@ -58,13 +57,9 @@ module.exports = [
         { test: /images\/*\.svg$/, use: 'file-loader' },
       ],
     },
-    optimization: {
-      minimize: true,
-    },
   },
   {
     entry: [
-      '@babel/polyfill',
       './src/ldf-client-worker.js',
     ],
     output: {
@@ -72,63 +67,22 @@ module.exports = [
       path: path.join(__dirname, '/build'),
       libraryTarget: 'this', // Fixes hot loading of web worker not working in Webpack
     },
-    devtool: 'cheap-module-source-map',
+    devtool: 'source-map',
     module: {
       rules: [
         {
-          // This is needed because our internal graphql dependency uses .mjs files,
-          // and Webpack's define plugin doesn't work well with it (yet).
-          // In the future this should be removed.
-          type: 'javascript/auto',
-          test: /\.mjs$/,
-          use: []
-        },
-        { // This fixes a problem where the setImmediate of asynciterator would conflict with webpack's polyfill
-          test: /asynciterator\.js$/,
-          loader: StringReplacePlugin.replace({
-            replacements: [
-              {
-                pattern: /if \(typeof process !== 'undefined' && !process\.browser\)/i,
-                replacement: function () {
-                  return 'if (true)';
-                },
-              },
-            ] }),
-        },
-        {
-          // Makes rdf-sink use a modularized lodash function instead of requiring lodash completely
-          test: /rdf-sink\/index\.js$/,
-          loader: StringReplacePlugin.replace({
-            replacements: [
-              {
-                pattern: /lodash\/assign/i,
-                replacement: function () {
-                  return 'lodash.assign';
-                },
-              },
-            ],
-          }),
-        },
-        {
           test: /\.js$/,
-          use: {
-            loader: 'babel-loader',
-            options: {
-              presets: ['@babel/preset-env'],
-              plugins: [
-                require('@babel/plugin-transform-async-to-generator'),
-                require('@babel/plugin-syntax-object-rest-spread'),
-              ],
-            },
-          },
+          loader: 'babel-loader',
+          exclude: /node_modules/,
+        },
+        {
+          test: /\.mjs$/,
+          type: 'javascript/auto',
         },
       ],
     },
-    optimization: {
-      minimize: true,
-    },
     plugins: [
-      new StringReplacePlugin(),
+      new webpack.ProgressPlugin(),
     ],
   },
 ];
