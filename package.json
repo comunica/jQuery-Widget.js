@@ -2,9 +2,9 @@
   "scripts": {
     "lint": "eslint src/*.js",
     "prepare": "comunica-compile-config config/config-default.json > comunica-engine.js",
-    "start": "npm run prepare && webpack-dev-server --config webpack.config.js --mode production",
-    "build": "npm run prepare && webpack-dev-server --config webpack.config.js --mode development",
-    "production": "npm run prepare && webpack --config webpack.config.js --mode production"
+    "dev-prod": "npm run prepare && webpack-dev-server --config webpack.config.js --mode production",
+    "dev": "npm run prepare && webpack-dev-server --config webpack.config.js --mode development",
+    "build": "npm run prepare && webpack --config webpack.config.js --mode production"
   },
   "dependencies": {
     "@comunica/actor-init-sparql": "1.13.1",

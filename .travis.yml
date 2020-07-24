@@ -2,7 +2,7 @@ import: rubensworks/travis-presets:node-base.yml@master
 install: yarn install --ignore-scripts
 script:
 - yarn run lint
-- yarn run production
+- yarn run build
 dist: trusty
 
 cache:

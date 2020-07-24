@@ -11,9 +11,9 @@ It allows users to execute SPARQL queries over one or multiple heterogeneous int
 
 ## Using the code
 - Run `yarn install` to fetch dependencies and build the browser version of the client code.
-- Run `yarn run start` to run a local Web server.
+- Run `yarn run dev` to run a local Web server (`yarn run dev-prod` for minified production output).
 - Edit datasources in `settings.json` and queries in the `queries` folder, and run `queries-to-json` to compile both of them in a single JSON file.
-- Run `yarn run production` to generate a production version in the `build` folder.
+- Run `yarn run build` to generate a production version in the `build` folder.
 
 ## How the browser client works
 The original _Comunica SPARQL_ engine is written for the Node.js environment. The [Webpack](https://webpack.js.org/) library makes it compatible with browsers.
