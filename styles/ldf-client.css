@@ -659,7 +659,10 @@ li.search-choice-focus .search-choice-close {
 }
 
 .extra-information {
-  cursor: pointer;
-  width: 17px; 
-  height: 17px;
+  color:grey;
+  font-style: italic;
+}
+
+.extra-information.highlighted {
+  background-color: grey;
 }
