@@ -4,7 +4,7 @@
 // This exports the webpacked jQuery.
 window.jQuery = require('../deps/jquery-2.1.0.js');
 var N3 = require('n3');
-
+window.comunicaVersion = require('../node_modules/@comunica/actor-init-sparql/package.json').version;
 // Comment out the following two lines if you want to disable YASQE
 var YASQE = require('yasgui-yasqe/src/main.js');
 require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well

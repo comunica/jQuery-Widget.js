@@ -94,7 +94,6 @@
       <a href="http://www.ugent.be/" target="_blank">Ghent University</a> –
       <a href="http://www.imec.be/" target="_blank">imec</a>, Belgium.
       <a href="https://github.com/comunica/jQuery-Widget.js">Source code</a>.
-      <p id="jquery-widget-version"></p>
       <p id="comunica-version"></p>
     </p>
   </footer>
@@ -102,14 +101,8 @@
   <script src="scripts/ldf-client-ui.min.js"></script>
   <script>
     jQuery(function ($) {
-      $('.ldf-client').queryui({ settings: 'queries.json' });
-      $.getJSON('./package.json', function(data) {  
-        document.getElementById("jquery-widget-version").innerHTML = "jQuery Widget version: "+data.version;
-        console.log(data);
-      });
-      $.getJSON('./node_modules/@comunica/actor-init-sparql/package.json', function(data) {         
-        document.getElementById("comunica-version").innerHTML = "Comunica version: "+ data.version;
-      });
+      $('.ldf-client').queryui({ settings: 'queries.json' });      
+      document.getElementById("comunica-version").innerHTML = "Comunica version: " + comunicaVersion;
     });
   </script>
 </body>
