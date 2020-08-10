@@ -288,7 +288,7 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
         });
 
         // Create options for each datasource
-        $datasources.empty().append((value || []).map(function (datasource, index) {
+        $datasources.append((value || []).map(function (datasource, index) {
           return $('<option>', { text: datasource.name, value: datasource.url });
         }));
         // Restore selected datasources
@@ -298,18 +298,20 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
       case 'selectedDatasources':
         // If initializing, choose the first available datasource if none was chosen
         var $options = $datasources.children();
-        if (initialize && !(value && Object.keys(value).length) && $options.length) {
+        if (initialize && !(value && Object.keys(value).length) && $options.length > 1) {
           options[key] = value = {};
-          value[$options.val()] = 'transient';
+          value[$options[1].value] = 'transient';
         }
         var valueKeys = value ? Object.keys(value) : [];
         // Select chosen datasources that were already in the list
         var selected = toHash(valueKeys, 'persistent');
         $options.each(function (index) {
-          var $option = $(this), url = $(this).val();
-          $option.prop('selected', url in selected);
-          $option.toggleClass('search-choice-transient', !!(url in selected && value[url] === 'transient'));
-          selected[url] = 'default';
+          if (index > 0) {
+            var $option = $(this), url = $(this).val();
+            $option.prop('selected', url in selected);
+            $option.toggleClass('search-choice-transient', !!(url in selected && value[url] === 'transient'));
+            selected[url] = 'default';
+          }
         });
         // Add and select chosen datasources that were not in the list yet
         $datasources.append($.map(selected, function (exists, url) {
