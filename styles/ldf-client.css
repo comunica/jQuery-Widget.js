@@ -657,3 +657,12 @@ li.search-choice-focus .search-choice-close {
     background-repeat: no-repeat !important;
   }
 }
+
+.extra-information {
+  color:grey;
+  font-style: italic;
+}
+
+.extra-information.highlighted {
+  background-color: grey;
+}
