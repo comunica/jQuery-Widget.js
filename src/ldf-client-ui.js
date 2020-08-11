@@ -4,11 +4,6 @@
 // This exports the webpacked jQuery.
 window.jQuery = require('../deps/jquery-2.1.0.js');
 var N3 = require('n3');
-// TODO: Dynamically expose the version in ActorInitSparql so that we can retrieve it from there instead of relying on package.json reading.
-window.jQuery(function ($) {
-  document.getElementById('comunica-version').innerHTML = 'Comunica version: ' +
-  require('../node_modules/@comunica/actor-init-sparql/package.json').version;
-});
 // Comment out the following two lines if you want to disable YASQE
 var YASQE = require('yasgui-yasqe/src/main.js');
 require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
@@ -804,4 +799,8 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
     }));
     return container;
   }
+
+  // TODO: Dynamically expose the version in ActorInitSparql so that we can retrieve it from there instead of relying on package.json reading.
+  document.getElementById('comunica-version').innerHTML = 'Comunica version: ' +
+  require('../node_modules/@comunica/actor-init-sparql/package.json').version;
 })(jQuery);
