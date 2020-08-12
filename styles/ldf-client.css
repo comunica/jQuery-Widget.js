@@ -661,6 +661,7 @@ li.search-choice-focus .search-choice-close {
 .extra-information {
   color:grey;
   font-style: italic;
+  pointer-events: none;
 }
 
 .extra-information.highlighted {
