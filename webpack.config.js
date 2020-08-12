@@ -37,7 +37,7 @@ module.exports = [
       rules: [
         {
           type: 'javascript/auto',
-          test: /\.html$/,
+          test: /\.(json|html)$/,
           use: [
             { loader: 'file-loader', options: { name: '[name].[ext]' } },
           ],
