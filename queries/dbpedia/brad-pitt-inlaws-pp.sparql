@@ -1,0 +1,6 @@
+# In-laws of Brad Pitt
+# Datasource: http://fragments.dbpedia.org/*/en
+SELECT ?person
+WHERE {
+  dbpedia:Brad_Pitt dbpedia-owl:spouse* ?person.
+}
