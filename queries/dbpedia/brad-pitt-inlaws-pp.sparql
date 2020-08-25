@@ -1,4 +1,4 @@
-# In-laws of Brad Pitt
+# Chain of in-laws from Brad Pitt
 # Datasource: http://fragments.dbpedia.org/*/en
 SELECT ?person
 WHERE {
