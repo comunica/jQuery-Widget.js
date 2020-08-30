@@ -10,7 +10,7 @@
     "@comunica/actor-init-sparql": "1.16.2",
     "@comunica/runner": "1.16.0",
     "n3": "0.11.3",
-    "rdf-string": "1.4.2",
+    "rdf-string": "1.5.0",
     "yasgui-yasqe": "2.11.22"
   },
   "devDependencies": {
