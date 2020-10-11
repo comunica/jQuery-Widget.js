@@ -23,7 +23,7 @@
     "json-loader": "^0.5.7",
     "pre-commit": "^1.2.2",
     "webpack": "^4.16.1",
-    "webpack-cli": "^3.0.8",
+    "webpack-cli": "^4.0.0",
     "webpack-dev-server": "^3.1.4"
   },
   "pre-commit": [
