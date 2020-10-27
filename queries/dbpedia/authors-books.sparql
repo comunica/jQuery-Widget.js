@@ -1,5 +1,5 @@
 # Authors of books
-# Datasource: http://fragments.dbpedia.org/*/en
+# Datasource: https://fragments.dbpedia.org/*/en
 SELECT DISTINCT ?book ?author
 WHERE {
   ?book rdf:type dbpedia-owl:Book;

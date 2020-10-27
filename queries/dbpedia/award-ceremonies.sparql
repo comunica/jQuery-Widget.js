@@ -1,5 +1,5 @@
 # Award ceremonies in Dutch speaking countries
-# Datasource: http://fragments.dbpedia.org/*/en
+# Datasource: https://fragments.dbpedia.org/*/en
 SELECT ?award WHERE {
   ?award a dbpedia-owl:Award;
          dbpprop:country [ dbpedia-owl:language dbpedia:Dutch_language ].

@@ -1,5 +1,5 @@
 # Belgian software
-# Datasource: http://fragments.dbpedia.org/*/en
+# Datasource: https://fragments.dbpedia.org/*/en
 {
   softwareName: label @single
   developer @single(scope: all) {

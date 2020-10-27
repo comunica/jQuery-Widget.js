@@ -1,5 +1,5 @@
 # Description of the DBpedia ontology
-# Datasource: http://fragments.dbpedia.org/*/en
+# Datasource: https://fragments.dbpedia.org/*/en
 query @single(scope: all) {
   name(_:"The DBpedia Ontology")
   description

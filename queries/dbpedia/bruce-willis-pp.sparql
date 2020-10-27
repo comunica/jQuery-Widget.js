@@ -1,5 +1,5 @@
 # Spouses and children of Bruce Willis
-# Datasource: http://fragments.dbpedia.org/*/en
+# Datasource: https://fragments.dbpedia.org/*/en
 SELECT ?person
 WHERE {
   [ rdfs:label "Bruce Willis"@en ]

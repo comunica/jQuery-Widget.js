@@ -1,5 +1,5 @@
 # Other bands of Queen members
-# Datasource: http://fragments.dbpedia.org/*/en
+# Datasource: https://fragments.dbpedia.org/*/en
 SELECT DISTINCT ?artist ?band ?bandName WHERE {
   { <http://dbpedia.org/resource/Queen_(band)> dbpedia-owl:bandMember ?artist. }
   UNION

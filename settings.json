@@ -6,7 +6,7 @@
   "datasources": [
     {
       "name": "DBpedia 2016-04",
-      "url": "http://fragments.dbpedia.org/2016-04/en"
+      "url": "https://fragments.dbpedia.org/2016-04/en"
     },
     {
       "name": "Ruben Verborgh's Profile",
@@ -22,31 +22,31 @@
     },
     {
       "name": "DBpedia 2015-10",
-      "url": "http://fragments.dbpedia.org/2015-10/en"
+      "url": "https://fragments.dbpedia.org/2015-10/en"
     },
     {
       "name": "DBpedia 2015-04",
-      "url": "http://fragments.dbpedia.org/2015/en"
+      "url": "https://fragments.dbpedia.org/2015/en"
     },
     {
       "name": "DBpedia 2014",
-      "url": "http://fragments.dbpedia.org/2014/en"
+      "url": "https://fragments.dbpedia.org/2014/en"
     },
     {
       "name": "Ghent University Academic Bibliography",
-      "url": "http://data.linkeddatafragments.org/ugent-biblio"
+      "url": "https://data.linkeddatafragments.org/ugent-biblio"
     },
     {
       "name": "Linked Open Vocabularies",
-      "url": "http://data.linkeddatafragments.org/lov"
+      "url": "https://data.linkeddatafragments.org/lov"
     },
     {
       "name": "Virtual International Authority File (VIAF)",
-      "url": "http://data.linkeddatafragments.org/viaf"
+      "url": "https://data.linkeddatafragments.org/viaf"
     },
     {
       "name": "Harvard Library",
-      "url": "http://data.linkeddatafragments.org/harvard"
+      "url": "https://data.linkeddatafragments.org/harvard"
     },
     {
       "name": "Between Our Worlds 2018-06",

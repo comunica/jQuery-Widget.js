@@ -1,5 +1,5 @@
 # Soccer players born in their club's city
-# Datasource: http://fragments.dbpedia.org/*/en
+# Datasource: https://fragments.dbpedia.org/*/en
 SELECT ?clubName ?playerName WHERE {
   ?club a dbpedia-owl:SoccerClub;
         dbpedia-owl:ground ?city;

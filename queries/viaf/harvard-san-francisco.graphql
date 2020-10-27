@@ -1,5 +1,5 @@
 # 5. Books by San Franciscans in Harvard Library
-# Datasources: http://fragments.dbpedia.org/*/en http://data.linkeddatafragments.org/viaf http://data.linkeddatafragments.org/harvard
+# Datasources: https://fragments.dbpedia.org/*/en https://data.linkeddatafragments.org/viaf https://data.linkeddatafragments.org/harvard
 {
   birthPlace(label_en: "San Francisco") @single
   viafPerson @single(scope: all) {
