@@ -2,8 +2,8 @@
   "scripts": {
     "lint": "eslint src/*.js",
     "prepare": "comunica-compile-config config/config-default.json > comunica-engine.js",
-    "dev-prod": "npm run prepare && webpack-dev-server --config webpack.config.js --mode production",
-    "dev": "npm run prepare && webpack-dev-server --config webpack.config.js --mode development",
+    "dev-prod": "npm run prepare && webpack serve --config webpack.config.js --mode production",
+    "dev": "npm run prepare && webpack serve --config webpack.config.js --mode development",
     "build": "npm run prepare && webpack --config webpack.config.js --mode production"
   },
   "dependencies": {
@@ -24,7 +24,7 @@
     "pre-commit": "^1.2.2",
     "webpack": "^4.16.1",
     "webpack-cli": "^4.0.0",
-    "webpack-dev-server": "^3.1.4"
+    "webpack-dev-server": "^3.11.0"
   },
   "pre-commit": [
     "lint"
