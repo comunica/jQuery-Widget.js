@@ -1,7 +1,7 @@
 # Comunica SPARQL jQuery Widget
 [<img src="http://linkeddatafragments.org/images/logo.svg" width="200" align="right" alt="" />](http://linkeddatafragments.org/)
 
-[![Build Status](https://travis-ci.org/comunica/jQuery-Widget.js.svg?branch=master)](https://travis-ci.org/comunica/jQuery-Widget.js)
+[![Build status](https://github.com/comunica/jQuery-Widget.js/workflows/CI/badge.svg)](https://github.com/comunica/jQuery-Widget.js/actions?query=workflow%3ACI)
 [![Docker Automated Build](https://img.shields.io/docker/automated/comunica/jquery-widget.js.svg)](https://hub.docker.com/r/comunica/jquery-widget.js/)
 
 **[Try the _Comunica SPARQL jQuery Widget_ online.](http://query.linkeddatafragments.org/)**
