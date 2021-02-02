@@ -7,8 +7,8 @@
     "build": "npm run prepare && webpack --config webpack.config.js --mode production"
   },
   "dependencies": {
-    "@comunica/actor-init-sparql": "1.19.1",
-    "@comunica/runner": "1.19.0",
+    "@comunica/actor-init-sparql": "1.19.2",
+    "@comunica/runner": "1.19.2",
     "n3": "0.11.3",
     "rdf-string": "1.5.0",
     "yasgui-yasqe": "2.11.22"
