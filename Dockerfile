@@ -12,7 +12,7 @@ RUN npm run production
 
 
 ## Deploy the website using nginx
-FROM nginx:1.19.6-alpine
+FROM nginx:1.19.7-alpine
 
 # Copy build folder from 'builder' to the default nginx public folder
 RUN rm -rf /usr/share/nginx/html/*
