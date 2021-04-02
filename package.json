@@ -52,7 +52,8 @@
     "lint": "eslint src/*.js",
     "dev-prod": "comunica-compile-config config/config-default.json > comunica-engine.js && ./bin/queries-to-json.js && webpack serve --config webpack.config.js --mode production",
     "dev": "./bin/generate.js -m development",
-    "build": "./bin/generate.js"
+    "build": "./bin/generate.js",
+    "version": "manual-git-changelog onversion"
   },
   "dependencies": {
     "@babel/core": "^7.1.2",
@@ -73,6 +74,7 @@
   },
   "devDependencies": {
     "eslint": "^7.0.0",
+    "manual-git-changelog": "^1.0.1",
     "pre-commit": "^1.2.2"
   },
   "pre-commit": [
