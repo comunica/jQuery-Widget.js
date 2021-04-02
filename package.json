@@ -1,4 +1,53 @@
 {
+  "name": "@comunica/web-client-generator",
+  "version": "1.0.0",
+  "description": "A tool to generate a Web-based client for a given Comunica config.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/comunica/jQuery-Widget.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "comunica",
+    "web",
+    "web client",
+    "jquery",
+    "widget",
+    "generator",
+    "sparql",
+    "engine",
+    "query",
+    "update",
+    "sparql engine",
+    "sparql query",
+    "sparql update"
+  ],
+  "license": "MIT",
+  "bin": {
+    "comunica-web-client-generator": "./bin/generate.js"
+  },
+  "bugs": {
+    "url": "https://github.com/comunica/jQuery-Widget.js/issues"
+  },
+  "homepage": "https://comunica.dev/",
+  "files": [
+    "config",
+    "deps",
+    "images",
+    "queries",
+    "src/**/*.js",
+    "bin/**/*.js",
+    "styles/**/*.css",
+    ".babelrc",
+    ".browserslistrc",
+    "favicon.ico",
+    "index.html",
+    "queries-to-json",
+    "settings.json",
+    "webpack.config.js"
+  ],
   "scripts": {
     "lint": "eslint src/*.js",
     "prepare": "comunica-compile-config config/config-default.json > comunica-engine.js",
@@ -11,20 +60,20 @@
     "@comunica/runner": "1.20.0",
     "n3": "0.11.3",
     "rdf-string": "1.5.0",
-    "yasgui-yasqe": "2.11.22"
-  },
-  "devDependencies": {
+    "yasgui-yasqe": "2.11.22",
     "@babel/core": "^7.1.2",
     "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "babel-loader": "^8.0.4",
-    "eslint": "^7.0.0",
     "file-loader": "^6.0.0",
     "json-loader": "^0.5.7",
-    "pre-commit": "^1.2.2",
     "webpack": "^4.16.1",
     "webpack-cli": "^4.0.0",
     "webpack-dev-server": "^3.11.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.0.0",
+    "pre-commit": "^1.2.2"
   },
   "pre-commit": [
     "lint"
