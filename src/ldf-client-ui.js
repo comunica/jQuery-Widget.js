@@ -4,6 +4,7 @@
 // This exports the webpacked jQuery.
 window.jQuery = require('../deps/jquery-2.1.0.js');
 var N3 = require('n3');
+var resolve = require('relative-to-absolute-iri').resolve;
 
 // Comment out the following two lines if you want to disable YASQE
 var YASQE = require('yasgui-yasqe/src/main.js');
@@ -547,6 +548,7 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
             type = datasource.substr(0, posAt);
             datasource = datasource.substr(posAt + 1, datasource.length);
           }
+          datasource = resolve(datasource, window.location.href);
           return { type: type, value: datasource };
         }),
         datetime: parseDate(this.options.datetime),
