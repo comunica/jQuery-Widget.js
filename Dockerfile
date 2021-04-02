@@ -1,5 +1,5 @@
 ## Build the website
-FROM node:8.17.0 as builder
+FROM node:14.16.0 as builder
 
 WORKDIR /webapp
 
@@ -8,7 +8,7 @@ ADD . .
 # Install the node module
 RUN npm install --unsafe-perm
 
-RUN npm run production
+RUN npm run build
 
 
 ## Deploy the website using nginx
