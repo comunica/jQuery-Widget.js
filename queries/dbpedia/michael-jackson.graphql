@@ -1,5 +1,5 @@
 # Bands Michael Jackson wrote a song for
-# Datasource: https://fragments.dbpedia.org/*/en
+# Datasource: //fragments.dbpedia.org/*/en
 {
   label @single
   writer(label_en: "Michael Jackson")  @single

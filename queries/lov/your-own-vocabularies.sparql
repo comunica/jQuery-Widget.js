@@ -1,5 +1,5 @@
 # Find your own vocabularies
-# Datasource: https://data.linkeddatafragments.org/lov
+# Datasource: //data.linkeddatafragments.org/lov
 prefix vann: <http://purl.org/vocab/vann/>
 SELECT distinct ?ontology ?prefix WHERE {
   ?ontology a owl:Ontology ;

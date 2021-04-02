@@ -1,5 +1,5 @@
 # 2. All common interests of Ruben V and Ruben T
-# Datasources: https://ruben.verborgh.org/profile/ https://www.rubensworks.net/ https://fragments.dbpedia.org/*/en
+# Datasources: https://ruben.verborgh.org/profile/ https://www.rubensworks.net/ //fragments.dbpedia.org/*/en
 SELECT ?interestName
 WHERE {
   ruben:me foaf:topic_interest ?interest.
