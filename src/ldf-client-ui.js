@@ -52,21 +52,7 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
     this.options = $.extend({}, this.options, options);
 
     // Create the query execution Web Worker
-    var self = this;
-    this._queryWorker = new Worker('scripts/ldf-client-worker.min.js');
-    this._queryWorker.onmessage = function (message) {
-      var data = message.data;
-      switch (data.type) {
-      case 'queryInfo': return self._initResults(data.queryType);
-      case 'result':    return self._addResult(data.result);
-      case 'end':       return self._endResults();
-      case 'log':       return self._logAppender(data.log);
-      case 'error':     return this.onerror(data.error);
-      }
-    };
-    this._queryWorker.onerror = function (error) {
-      self._stopExecution(error);
-    };
+    this._createQueryWorker();
 
     // Initialize the query text tabs
     this._initQueryTabs();
@@ -217,7 +203,7 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
 
       // Set up starting and stopping
       $start.click(this._startExecution.bind(this));
-      $stop.click(this._stopExecution.bind(this));
+      $stop.click(this._stopExecutionForcefully.bind(this));
 
       // Set up details toggling
       $showDetails.click(function () {
@@ -590,10 +576,8 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
       });
     },
 
-    // Stops query execution
-    _stopExecution: function (error) {
-      // Stop the worker and the timer
-      this._queryWorker.postMessage({ type: 'stop' });
+    _stopExecutionBase: function (error) {
+      // Stop the timer
       this._stopTimer();
 
       // Reset the UI
@@ -604,6 +588,23 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
       this._resultAppender.flush();
       this._logAppender.flush();
       this._writeResult = this._writeEnd = null;
+    },
+
+    // Stops query execution
+    _stopExecution: function (error) {
+      // Stop the worker
+      this._queryWorker.postMessage({ type: 'stop' });
+
+      this._stopExecutionBase(error);
+    },
+
+    // Stops query execution forcefully
+    _stopExecutionForcefully: function (error) {
+      // Kill the worker and restart
+      this._queryWorker.terminate();
+      this._createQueryWorker();
+
+      this._stopExecutionBase(error);
     },
 
     // Initializes the result display, depending on the query type
@@ -709,6 +710,25 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
         var id = $(this).attr('id');
         self._setOption('queryFormat', id);
       });
+    },
+
+    // Create the query execution Web Worker
+    _createQueryWorker: function () {
+      var self = this;
+      this._queryWorker = new Worker('scripts/ldf-client-worker.min.js');
+      this._queryWorker.onmessage = function (message) {
+        var data = message.data;
+        switch (data.type) {
+        case 'queryInfo': return self._initResults(data.queryType);
+        case 'result':    return self._addResult(data.result);
+        case 'end':       return self._endResults();
+        case 'log':       return self._logAppender(data.log);
+        case 'error':     return this.onerror(data.error);
+        }
+      };
+      this._queryWorker.onerror = function (error) {
+        self._stopExecution(error);
+      };
     },
   };
 
