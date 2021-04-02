@@ -19,7 +19,7 @@ var handlers = {
   query: function (config) {
     // Create an engine lazily
     if (!engine)
-      engine = require('../comunica-engine');
+      engine = require('my-comunica-engine');
 
     // Set up a proxy handler
     if (config.context.httpProxy)

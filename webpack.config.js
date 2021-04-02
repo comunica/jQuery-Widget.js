@@ -1,27 +1,24 @@
 var path = require('path');
 var webpack = require('webpack');
 
-// Generate queries.json file
-require('./queries-to-json');
-
 module.exports = [
   {
     entry: [
-      './deps/jquery-2.1.0.js',
-      './deps/chosen-1.1.0.js',
-      './deps/fast-scroller.js',
-      './src/ldf-client-ui.js',
-      './src/ldf-client-url-state.js',
-      './index.html',
-      './styles/ldf-client.css',
-      './images/chosen-sprite.png',
-      './images/chosen-sprite@2x.png',
-      './images/graphql.svg',
-      './images/logo.svg',
-      './images/settings.svg',
-      './images/sparql.png',
-      './favicon.ico',
-      './queries.json',
+      path.join(__dirname, './deps/jquery-2.1.0.js'),
+      path.join(__dirname, './deps/chosen-1.1.0.js'),
+      path.join(__dirname, './deps/fast-scroller.js'),
+      path.join(__dirname, './src/ldf-client-ui.js'),
+      path.join(__dirname, './src/ldf-client-url-state.js'),
+      path.join(__dirname, './index.html'),
+      path.join(__dirname, './styles/ldf-client.css'),
+      path.join(__dirname, './images/chosen-sprite.png'),
+      path.join(__dirname, './images/chosen-sprite@2x.png'),
+      path.join(__dirname, './images/graphql.svg'),
+      path.join(__dirname, './images/logo.svg'),
+      path.join(__dirname, './images/settings.svg'),
+      path.join(__dirname, './images/sparql.png'),
+      path.join(__dirname, './favicon.ico'),
+      path.join(__dirname, './queries.json'),
     ],
     output: {
       filename: 'scripts/ldf-client-ui.min.js',
@@ -39,28 +36,28 @@ module.exports = [
           type: 'javascript/auto',
           test: /\.(json|html)$/,
           use: [
-            { loader: 'file-loader', options: { name: '[name].[ext]' } },
+            { loader: require.resolve('file-loader'), options: { name: '[name].[ext]' } },
           ],
         },
         {
           test: /\.(jpg|png|gif|svg|ico)$/,
           use: [
-            { loader: 'file-loader', options: { name: 'images/[name].[ext]' } },
+            { loader: require.resolve('file-loader'), options: { name: 'images/[name].[ext]' } },
           ],
         },
         {
           test: /\.css$/,
           use: [
-            { loader: 'file-loader', options: { name: 'styles/[name].[ext]' } },
+            { loader: require.resolve('file-loader'), options: { name: 'styles/[name].[ext]' } },
           ],
         },
-        { test: /images\/*\.svg$/, use: 'file-loader' },
+        { test: /images\/*\.svg$/, use: require.resolve('file-loader') },
       ],
     },
   },
   {
     entry: [
-      './src/ldf-client-worker.js',
+      path.join(__dirname, './src/ldf-client-worker.js'),
     ],
     output: {
       filename: 'scripts/ldf-client-worker.min.js',
@@ -83,6 +80,7 @@ module.exports = [
     },
     plugins: [
       new webpack.ProgressPlugin(),
+      new webpack.NormalModuleReplacementPlugin(/^my-comunica-engine$/, path.join(process.cwd(), '.tmp-comunica-engine.js')),
     ],
   },
 ];
