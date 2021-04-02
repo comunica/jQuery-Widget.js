@@ -50,6 +50,13 @@ In order to override the [default config](https://github.com/comunica/jQuery-Wid
 $ comunica-web-client-generator config/config-default.json
 ```
 
+This assumes that your engine's dependencies are available in your working directory.
+If this is not the case, provide a path to your engine's directory via the `-c` option:
+
+```bash
+$ comunica-web-client-generator path/to/engine/config/config-default.json -c path/to/engine/
+```
+
 ### Change settings and queries
 
 The default datasources and queries can be changed as follows:
