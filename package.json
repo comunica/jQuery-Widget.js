@@ -51,8 +51,8 @@
   "scripts": {
     "lint": "eslint src/*.js",
     "dev-prod": "comunica-compile-config config/config-default.json > .tmp-comunica-engine.js && ./bin/queries-to-json.js && webpack serve --config webpack.config.js --mode production",
-    "dev": "./bin/generate.js -m development",
-    "build": "./bin/generate.js",
+    "dev": "node ./bin/generate.js -m development",
+    "build": "node ./bin/generate.js",
     "version": "manual-git-changelog onversion"
   },
   "dependencies": {
