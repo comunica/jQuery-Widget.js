@@ -2,7 +2,7 @@
   "extends": [
     "github>rubensworks/renovate-presets:js"
   ],
-  
+  "rangeStrategy": "replace",
   "packageRules": [
     {
       "sourceUrlPrefixes": ["https://github.com/comunica/comunica"],
