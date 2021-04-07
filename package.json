@@ -75,6 +75,7 @@
   },
   "devDependencies": {
     "eslint": "^7.0.0",
+    "babel-eslint": "^10.1.0",
     "manual-git-changelog": "^1.0.1",
     "pre-commit": "^1.2.2"
   },

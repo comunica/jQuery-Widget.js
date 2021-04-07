@@ -1,8 +1,10 @@
 {
   env: {
+    es6: true,
     node: true,
-    browser: true,
+    browser: true
   },
+  parser: babel-eslint,
 
   globals: {
     jQuery: true,
@@ -65,7 +67,7 @@
     no-floating-decimal: 2,
     no-implicit-coercion: 0,
     no-implied-eval: 2,
-    no-invalid-this: 2,
+    no-invalid-this: 0,
     no-iterator: 2,
     no-lone-blocks: 2,
     no-loop-func: 0,

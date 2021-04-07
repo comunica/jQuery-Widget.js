@@ -318,6 +318,9 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
         this.$queryTextsIndexed[options.queryFormat].sync();
         this._refreshQueries($queries);
         break;
+      case 'context':
+        this.$contextDefault = value;
+        break;
       case 'queryContext':
         // First clear all query context text fields
         for (var f2 in this.$queryContextsIndexed)
@@ -541,6 +544,7 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
 
       // Let the worker execute the query
       var context = {
+        ...(this.$contextDefault || {}),
         sources: datasources.map(function (datasource) {
           var type = 'auto';
           var posAt = datasource.indexOf('@');
