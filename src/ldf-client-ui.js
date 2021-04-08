@@ -145,6 +145,9 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
           // Update YASQE editor if applicable
           if ($query.yasqe && $query.yasqe.getValue() !== options.query)
             $query.yasqe.setValue(options.query);
+
+          // Load the transient datasources for the current query
+          self._setSelectedDataSourcesForQuery();
         };
 
         // Prettify SPARQL editors with YASQE
@@ -364,11 +367,7 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
       // Set the list of all possible queries
       case 'queries':
         // Load the transient datasources for the current query
-        var queryId = this._getSelectedQueryId();
-        if (queryId >= 0) {
-          var newDatasources = this._getHashedQueryDatasources(this._getSelectedQueryId());
-          self._setOption('selectedDatasources', newDatasources);
-        }
+        this._setSelectedDataSourcesForQuery();
 
         // Set the queries applicable to the set datasources
         value.forEach(function (query) {
@@ -453,6 +452,15 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
           persistedDatasources.push(url);
       }, this);
       return persistedDatasources;
+    },
+
+    // Set the default datasources based on the currently selected query
+    _setSelectedDataSourcesForQuery: function () {
+      var queryId = this._getSelectedQueryId();
+      if (queryId >= 0) {
+        var newDatasources = this._getHashedQueryDatasources(this._getSelectedQueryId());
+        this._setOption('selectedDatasources', newDatasources);
+      }
     },
 
     // Get the query id of the given query
