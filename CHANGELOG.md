@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v1.1.1"></a>
+## [v1.1.1](https://github.com/comunica/jQuery-Widget/compare/v1.1.0...v1.1.1) - 2021-04-12
+
+### Fixed
+* [Fix Comunica version string loader not working from external builds](https://github.com/comunica/jQuery-Widget/commit/4f1529103cbd6f8f2306b448f4583aabf4d2b1e9)
+
 <a name="v1.1.0"></a>
 ## [v1.1.0](https://github.com/comunica/jQuery-Widget/compare/v1.0.0...v1.1.0) - 2021-04-12
 
