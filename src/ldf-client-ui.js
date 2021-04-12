@@ -850,5 +850,5 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
 
   // TODO: Dynamically expose the version in ActorInitSparql so that we can retrieve it from there instead of relying on package.json reading.
   document.getElementById('comunica-version').innerHTML = 'Comunica version: ' +
-  require('!!json-loader!../node_modules/@comunica/actor-init-sparql/package.json').version;
+  require('comunica-packagejson').version;
 })(jQuery);

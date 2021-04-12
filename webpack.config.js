@@ -29,6 +29,7 @@ module.exports = [
       new webpack.ProvidePlugin({
         jQuery: path.join(__dirname, '/deps/jquery-2.1.0.js'),
       }),
+      new webpack.NormalModuleReplacementPlugin(/^comunica-packagejson$/, '!!json-loader!' + require.resolve('@comunica/actor-init-sparql', { paths: [process.cwd()] }) + '/../package.json'),
     ],
     module: {
       rules: [
