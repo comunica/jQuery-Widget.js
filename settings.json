@@ -3,6 +3,12 @@
     "sparql": true,
     "graphql": true
   },
+  "branding": {
+    "title": "Query the Web of Linked Data",
+    "title_href": "https://comunica.dev/",
+    "subtitle": "Live in your browser, powered by Comunica",
+    "subtitle_href": "https://comunica.dev/"
+  },
   "datasources": [
     {
       "name": "DBpedia 2016-04",

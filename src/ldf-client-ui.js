@@ -410,6 +410,17 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
         }
         this._refreshQueries($queries);
         break;
+      // Set branding settings
+      case 'branding':
+        if (value.title)
+          $('body header h1 a').text(value.title);
+        if (value.title_href)
+          $('body header h1 a').attr('href', value.title_href);
+        if (value.title)
+          $('body header p a').text(value.subtitle);
+        if (value.subtitle_href)
+          $('body header p a').attr('href', value.subtitle_href);
+        break;
       // Load settings from a JSON resource
       case 'settings':
         $.getJSON(value, function (settings) {
