@@ -1,6 +1,24 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v1.1.0"></a>
+## [v1.1.0](https://github.com/comunica/jQuery-Widget/compare/v1.0.0...v1.1.0) - 2021-04-12
+
+### Added
+* [Allow sources to be defined as relative URL, Closes #52](https://github.com/comunica/jQuery-Widget/commit/ee4eb64566ef05d525d57a2e9ec8a36645dd996c)
+* [Make LDF-hosted datasource URLs relative to scheme, #52](https://github.com/comunica/jQuery-Widget/commit/825afb11918dd1dae9ba16cd21832013e1d7073e)
+* [Allow default context entries to be passed](https://github.com/comunica/jQuery-Widget/commit/28a8505a49def05657fee222043fe598788292d2)
+* [Allow customizing of branding via settings.json](https://github.com/comunica/jQuery-Widget/commit/8b7ef24249210c4aacd0e664c295a2502c3ae26a)
+
+### Changed
+* [Modernize branding](https://github.com/comunica/jQuery-Widget/commit/5428875be35c4cdc5387f9adcf8bf4b8514a9f10)
+
+### Fixed
+* [Fix broken dev-prod script](https://github.com/comunica/jQuery-Widget/commit/5cfc43c040a230f2d0e6ca4d08c026a30f610a42)
+* [Fix queries still running after pressing stop, Closes #66](https://github.com/comunica/jQuery-Widget/commit/fe122f07d756ad7b0c6eb484c3fff3365a178972)
+* [Fix incorrect path to queries.json in webpack config](https://github.com/comunica/jQuery-Widget/commit/f2aff8688c1a684537e9dcb97bd4ca5b382000bc)
+* [Fix default datasource not being set if not listed first](https://github.com/comunica/jQuery-Widget/commit/f50574504eceb08218d676f54f96d944543f9794)
+
 <a name="v1.0.0"></a>
 ## [v1.0.0] - 2021-04-02
 
