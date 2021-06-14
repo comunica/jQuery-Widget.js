@@ -59,7 +59,7 @@
     "@babel/core": "^7.1.2",
     "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
-    "@comunica/actor-init-sparql": "1.21.1",
+    "@comunica/actor-init-sparql": "1.21.2",
     "@comunica/runner": "1.21.1",
     "babel-loader": "^8.0.4",
     "file-loader": "^6.0.0",
