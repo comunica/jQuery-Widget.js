@@ -955,10 +955,10 @@
     cross-fetch "^3.0.5"
     parse-link-header "^1.0.1"
 
-"@comunica/actor-http-native@^1.21.2":
-  version "1.21.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-http-native/-/actor-http-native-1.21.2.tgz#734c402e617b7e48acad5114f45ecee8e2fa592f"
-  integrity sha512-/SU3SjJep9W3BYC9lWHNb3ErnBFGK1xqykvT/HCO2hOAgEnXbV9qz9y/mkuJiY/snR5c3Hfo/YkTl856DIu/Vg==
+"@comunica/actor-http-native@^1.21.3":
+  version "1.21.3"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-http-native/-/actor-http-native-1.21.3.tgz#bd7e0ebc40430fa7404ff017776f764355dc56ef"
+  integrity sha512-DX/IECNsUpMXNgZyz8e5d/Bpq9PSmlABs7rUqkMVXgqhnOO0KvJOEuWu4P9+ONlkbzqK4O7DKMi6gw3GkKI3OA==
   dependencies:
     "@comunica/context-entries" "^1.21.1"
     "@types/parse-link-header" "^1.0.0"
@@ -981,16 +981,16 @@
   resolved "https://registry.yarnpkg.com/@comunica/actor-http-proxy/-/actor-http-proxy-1.21.1.tgz#6efdec0f921d1d94a95c9b2dc7a0c475a551b99a"
   integrity sha512-Z3NvOzZeffZ+aRBZVg3apbVSNjYvAUE49oOL+BrBtT5CuEf+RUOCcSOV/UhpITIFg21/uuyaxvJaT5RmfH+xzw==
 
-"@comunica/actor-init-sparql@1.21.2":
-  version "1.21.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-init-sparql/-/actor-init-sparql-1.21.2.tgz#a3bc83776b1a08da4ecf9d60519d57adb62bc1d7"
-  integrity sha512-HWYGP9YigYsUK/HEEkzKidT8iFlj0LarqTAJV2zZI90zuPl8HLM5to4GjM9JDDfk+Hflim22/92n8fYmrMsYTA==
+"@comunica/actor-init-sparql@1.21.3":
+  version "1.21.3"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-init-sparql/-/actor-init-sparql-1.21.3.tgz#c0990579e96ab47e278a84182a3f42c7fae805f8"
+  integrity sha512-R7auYy7gppLt0nUAc+Y+3mjYmwaLzr02PTx9XGO/ojUi/LnCuU2lrS2Fik90b9N3kg5kDJYN/znT/XHpy5vdGg==
   dependencies:
     "@comunica/actor-abstract-bindings-hash" "^1.21.1"
     "@comunica/actor-abstract-mediatyped" "^1.21.1"
     "@comunica/actor-context-preprocess-source-to-destination" "^1.21.1"
     "@comunica/actor-http-memento" "^1.21.1"
-    "@comunica/actor-http-native" "^1.21.2"
+    "@comunica/actor-http-native" "^1.21.3"
     "@comunica/actor-http-proxy" "^1.21.1"
     "@comunica/actor-optimize-query-operation-join-bgp" "^1.21.1"
     "@comunica/actor-query-operation-ask" "^1.21.1"
