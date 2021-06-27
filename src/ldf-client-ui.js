@@ -5,6 +5,14 @@
 window.jQuery = require('../deps/jquery-2.1.0.js');
 var N3 = require('n3');
 var resolve = require('relative-to-absolute-iri').resolve;
+var L = require('leaflet');
+var turf = require('turf');
+var Wkt = require('wicket/wicket-leaflet');
+var mymap = L.map('mapid').setView([52.517987721, 6.116665362], 8);
+var myLayer = L.geoJSON().addTo(mymap);
+
+// var popup = L.popup();
+var mapView = false;
 
 // Comment out the following two lines if you want to disable YASQE
 var YASQE = require('yasgui-yasqe/src/main.js');
@@ -89,13 +97,26 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
           $httpProxy = this.$httpProxy = $('.httpProxy', $element),
           $details = this.$details = $('.details', $element),
           $showDetails = this.$showDetails = $('.details-toggle', $element),
-          $proxyDefault = $('.proxy-default', $element);
-
+          $proxyDefault = $('.proxy-default', $element),
+          $mapd = $('.mapd', $element);
       // Replace non-existing elements by an empty text box
       if (!$datasources.length) $datasources = this.$datasources = $('<select>');
       if (!$results.length) $results = $('<div>');
       if (!$log.length) $log = $('<div>');
-
+      if (!mapView) {
+        // var mymap = L.geoJson(feature)
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+          maxZoom: 18,
+          attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+            'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+          id: 'mapbox/streets-v11',
+          tileSize: 512,
+          zoomOffset: -1,
+        }).addTo(mymap);
+        $mapd.hide();
+      }
+      else
+        $mapd.show();
       // When a datasource is selected, load the corresponding query set
       $datasources.chosen({
         create_option: function (url) {
@@ -547,12 +568,21 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
       if (!datasources || !datasources.length)
         return alert('Please choose a datasource to execute the query.');
 
+
+      // Hide map
+      mapView = false;
+      if (!mapView)
+        $('#mapid').hide();
+
       // Clear results and log
       this.$stop.show();
       this.$start.hide();
       this._resultsScroller.removeAll();
       this._resultAppender.clear();
       this._logAppender.clear();
+
+      // Clears the map
+      myLayer.clearLayers();
 
       // Scroll page to the results
       $('html,body').animate({ scrollTop: this.$stop.offset().top });
@@ -608,6 +638,7 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
       // Reset the UI
       this.$stop.hide();
       this.$start.show();
+
       if (error && error.message)
         this._resultAppender('# ' + error.message);
       this._resultAppender.flush();
@@ -673,8 +704,100 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
       if (this._writeResult) {
         this._resultCount++;
         this._writeResult(result);
+
+        for (const value in result) {
+          // This code adds points to the map
+          var checkingResult = `${result[value]}`;
+          if (checkingResult.includes('http://www.openlinksw.com/schemas/virtrdf#Geometry') || checkingResult.includes('http://www.opengis.net/ont/geosparql#wktLiteral')) {
+            let _arrayMap = `${result[value]}`;
+            let _anotherOne = `${value}` + 'Label';
+            // Variable that checks to toggle view the map
+            mapView = true;
+
+            let _arrayName = result[_anotherOne];
+            let _newArray = _arrayMap.split('^^', 1);
+
+            let wkt_geom3 = _newArray[0];
+            let wkt_geom1 = wkt_geom3.replace(/['"]+/g, '');
+
+            let wkt1 = new Wkt.Wkt();
+            wkt1.read(wkt_geom1);
+
+            // Logic to extract  cordinates and useful data obtained results
+            var checker;
+            var someGeojsonFeature;
+            if (_anotherOne in result) {
+              checker = true;
+              let _PointName = _arrayName.split('@', 1);
+              let _newPointName = _PointName[0].replace(/['"]+/g, '');
+              someGeojsonFeature = { type: 'Feature', properties: { name: _newPointName }, geometry: wkt1.toJson() };
+            }
+            else {
+              checker = false;
+              someGeojsonFeature = { type: 'Feature', properties: {}, geometry: wkt1.toJson() };
+            }
+
+            // These are css markers to polygon circle markers
+            var geojsonMarkerOptions = {
+              radius: 8,
+              fillColor: '#ff7800',
+              color: '#000',
+              weight: 1,
+              opacity: 1,
+              fillOpacity: 0.8,
+            };
+
+
+            L.geoJSON(someGeojsonFeature, {
+              onEachFeature: function (feature, layer) {
+                var lon;
+                var lat;
+                if (feature.geometry.type === 'Polygon') {
+                  // This console was to double check if polygon is there console.log('Polygon detected');
+                  var centroid = turf.centroid(feature);
+                  lon = centroid.geometry.coordinates[0];
+                  lat = centroid.geometry.coordinates[1];
+
+                  if (checker) {
+                    L.circleMarker([lat, lon], geojsonMarkerOptions).addTo(mymap).bindPopup(feature.properties.name).openPopup();
+                    myLayer.addData(feature);
+                  }
+                  else {
+                    L.circleMarker([lat, lon], geojsonMarkerOptions).addTo(mymap);
+                    myLayer.addData(feature);
+                  }
+                }
+                if (feature.geometry.type === 'Point') {
+                  lon = feature.geometry.coordinates[0];
+                  lat = feature.geometry.coordinates[1];
+
+                  if (checker) {
+                    L.circleMarker([lat, lon]).addTo(mymap).bindPopup(feature.properties.name).openPopup();
+                    myLayer.addData(feature);
+                  }
+                  else {
+                    L.circleMarker([lat, lon]).addTo(mymap);
+                    myLayer.addData(feature);
+                  }
+                }
+                if (feature.geometry.type !== 'Point' || 'Polygon')
+                  myLayer.addData(feature);
+              },
+            }).addTo(mymap);
+          }
+        }
+        mymap.fitBounds(myLayer.getBounds());
+
+        if (mapView)
+          $('#mapid').show();
+
+        mymap.fitBounds(myLayer.getBounds());
       }
     },
+
+
+
+
 
     // Finalizes the display after all results have been added
     _endResults: function () {

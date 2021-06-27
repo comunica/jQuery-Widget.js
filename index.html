@@ -8,6 +8,11 @@
   <link rel=stylesheet href="styles/ldf-client.css">
   <link rel=stylesheet href="//fonts.googleapis.com/css?family=Open+Sans:300,400italic,700italic,400,700">
   <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+  <script src="https://unpkg.com/@turf/turf@3.5.2/turf.min.js"></script>
+
+
 </head>
 <body>
   <header>
@@ -73,6 +78,12 @@
         </li>
 
         <li>
+          <div id="mapid" style="width: 600px; height: 400px;" class="mapd"></div>
+          
+        </li>
+
+
+        <li>
           <label>Query results</label>
           <div class="results"></div>
         </li>
@@ -83,7 +94,7 @@
         </li>
       </ul>
     </fieldset>
-
+    
     <p>
       Discover how <a href="http://linkeddatafragments.org" target="_blank">Linked Data Fragments</a>
       enable Web-scale querying of Linked Data.
