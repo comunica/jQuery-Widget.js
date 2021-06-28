@@ -319,6 +319,10 @@ footer {
   border-top: 1px solid #ddd;
 }
 
+.mapd {
+  width: 600px;
+  height: 400px;
+}
 @media (max-width: 725px) {
   body {
     padding: .1em 1em;
