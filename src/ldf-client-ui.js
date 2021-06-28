@@ -5,13 +5,17 @@
 window.jQuery = require('../deps/jquery-2.1.0.js');
 var N3 = require('n3');
 var resolve = require('relative-to-absolute-iri').resolve;
+
+// This exports leaflet,turf and wicket  used for map View
 var L = require('leaflet');
 var turf = require('turf');
 var Wkt = require('wicket/wicket-leaflet');
+
+// This sets the initial map view and adds it to a layer
 var mymap = L.map('mapid').setView([52.517987721, 6.116665362], 8);
 var myLayer = L.geoJSON().addTo(mymap);
 
-// var popup = L.popup();
+// This is to hide the map
 var mapView = false;
 
 // Comment out the following two lines if you want to disable YASQE
@@ -99,10 +103,13 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
           $showDetails = this.$showDetails = $('.details-toggle', $element),
           $proxyDefault = $('.proxy-default', $element),
           $mapd = $('.mapd', $element);
+
       // Replace non-existing elements by an empty text box
       if (!$datasources.length) $datasources = this.$datasources = $('<select>');
       if (!$results.length) $results = $('<div>');
       if (!$log.length) $log = $('<div>');
+
+      // The tilelayer used for the map
       if (!mapView) {
         // var mymap = L.geoJson(feature)
         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
@@ -117,6 +124,7 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
       }
       else
         $mapd.show();
+
       // When a datasource is selected, load the corresponding query set
       $datasources.chosen({
         create_option: function (url) {
@@ -568,7 +576,6 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
       if (!datasources || !datasources.length)
         return alert('Please choose a datasource to execute the query.');
 
-
       // Hide map
       mapView = false;
       if (!mapView)
@@ -705,17 +712,18 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
         this._resultCount++;
         this._writeResult(result);
 
+        // Adding wkt points on a map
         for (const value in result) {
           // This code adds points to the map
           var checkingResult = `${result[value]}`;
           if (checkingResult.includes('http://www.openlinksw.com/schemas/virtrdf#Geometry') || checkingResult.includes('http://www.opengis.net/ont/geosparql#wktLiteral')) {
-            let _arrayMap = `${result[value]}`;
+            let wktIncludingVariable = `${result[value]}`;
             let _anotherOne = `${value}` + 'Label';
             // Variable that checks to toggle view the map
             mapView = true;
 
             let _arrayName = result[_anotherOne];
-            let _newArray = _arrayMap.split('^^', 1);
+            let _newArray = wktIncludingVariable.split('^^', 1);
 
             let wkt_geom3 = _newArray[0];
             let wkt_geom1 = wkt_geom3.replace(/['"]+/g, '');
