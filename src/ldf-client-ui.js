@@ -715,7 +715,6 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
           // This code adds points to the map
           var wktIncludingVariable = `${result[value]}`;
           if (wktIncludingVariable.includes('http://www.openlinksw.com/schemas/virtrdf#Geometry') || wktIncludingVariable.includes('http://www.opengis.net/ont/geosparql#wktLiteral')) {
-
             let variableNameLabel = `${value}` + 'Label';
             // Variable that checks to toggle view the map
             mapView = true;
@@ -732,10 +731,7 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
             if (variableNameLabel in result) {
               isLabelDefined = true;
               let newPointName = valueLabel.split('@', 1)[0].replace(/['"]+/g, '');
-              /*
-               let newPointName = pointName[0].replace(/['"]+/g, '');
-               */
-               geojsonFeature = { type: 'Feature', properties: { name: newPointName }, geometry: wkt1.toJson() };
+              geojsonFeature = { type: 'Feature', properties: { name: newPointName }, geometry: wkt1.toJson() };
             }
             else {
               isLabelDefined = false;
