@@ -577,9 +577,7 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
         return alert('Please choose a datasource to execute the query.');
 
       // Hide map
-      mapView = false;
-      if (!mapView)
-        $('#mapid').hide();
+      $('#mapid').hide();
 
       // Clear results and log
       this.$stop.show();
@@ -715,34 +713,33 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
         // Adding wkt points on a map
         for (const value in result) {
           // This code adds points to the map
-          var checkingResult = `${result[value]}`;
-          if (checkingResult.includes('http://www.openlinksw.com/schemas/virtrdf#Geometry') || checkingResult.includes('http://www.opengis.net/ont/geosparql#wktLiteral')) {
-            let wktIncludingVariable = `${result[value]}`;
-            let _anotherOne = `${value}` + 'Label';
+          var wktIncludingVariable = `${result[value]}`;
+          if (wktIncludingVariable.includes('http://www.openlinksw.com/schemas/virtrdf#Geometry') || wktIncludingVariable.includes('http://www.opengis.net/ont/geosparql#wktLiteral')) {
+
+            let variableNameLabel = `${value}` + 'Label';
             // Variable that checks to toggle view the map
             mapView = true;
 
-            let _arrayName = result[_anotherOne];
-            let _newArray = wktIncludingVariable.split('^^', 1);
-
-            let wkt_geom3 = _newArray[0];
-            let wkt_geom1 = wkt_geom3.replace(/['"]+/g, '');
+            let valueLabel = result[variableNameLabel];
+            let wkt_geom1 = wktIncludingVariable.split('^^', 1)[0].replace(/['"]+/g, '');
 
             let wkt1 = new Wkt.Wkt();
             wkt1.read(wkt_geom1);
 
             // Logic to extract  cordinates and useful data obtained results
-            var checker;
-            var someGeojsonFeature;
-            if (_anotherOne in result) {
-              checker = true;
-              let _PointName = _arrayName.split('@', 1);
-              let _newPointName = _PointName[0].replace(/['"]+/g, '');
-              someGeojsonFeature = { type: 'Feature', properties: { name: _newPointName }, geometry: wkt1.toJson() };
+            var isLabelDefined;
+            var geojsonFeature;
+            if (variableNameLabel in result) {
+              isLabelDefined = true;
+              let newPointName = valueLabel.split('@', 1)[0].replace(/['"]+/g, '');
+              /*
+               let newPointName = pointName[0].replace(/['"]+/g, '');
+               */
+               geojsonFeature = { type: 'Feature', properties: { name: newPointName }, geometry: wkt1.toJson() };
             }
             else {
-              checker = false;
-              someGeojsonFeature = { type: 'Feature', properties: {}, geometry: wkt1.toJson() };
+              isLabelDefined = false;
+              geojsonFeature = { type: 'Feature', properties: {}, geometry: wkt1.toJson() };
             }
 
             // These are css markers to polygon circle markers
@@ -756,17 +753,16 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
             };
 
 
-            L.geoJSON(someGeojsonFeature, {
+            L.geoJSON(geojsonFeature, {
               onEachFeature: function (feature, layer) {
                 var lon;
                 var lat;
                 if (feature.geometry.type === 'Polygon') {
-                  // This console was to double check if polygon is there console.log('Polygon detected');
                   var centroid = turf.centroid(feature);
                   lon = centroid.geometry.coordinates[0];
                   lat = centroid.geometry.coordinates[1];
 
-                  if (checker) {
+                  if (isLabelDefined) {
                     L.circleMarker([lat, lon], geojsonMarkerOptions).addTo(mymap).bindPopup(feature.properties.name).openPopup();
                     myLayer.addData(feature);
                   }
@@ -779,7 +775,7 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
                   lon = feature.geometry.coordinates[0];
                   lat = feature.geometry.coordinates[1];
 
-                  if (checker) {
+                  if (isLabelDefined) {
                     L.circleMarker([lat, lon]).addTo(mymap).bindPopup(feature.properties.name).openPopup();
                     myLayer.addData(feature);
                   }

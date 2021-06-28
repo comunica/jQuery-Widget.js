@@ -97,8 +97,8 @@ fieldset {
   padding: 0;
   margin: 0;
 }
-.ldf-client, .ldf-client * {
- /* max-width: 100%;*/
+.ldf-client {
+  max-width: 100%;
 }
 ul {
   list-style: none;
