@@ -1,6 +1,15 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v1.2.0"></a>
+## [v1.2.0](https://github.com/comunica/jQuery-Widget/compare/v1.1.1...v1.2.0) - 2021-06-29
+
+### Added
+* [Added a geo-widget](https://github.com/comunica/jQuery-Widget/commit/76898edbb3f8b97ae8f9e7b23c5ea9935bdd99db)
+
+### Changed
+* [Update dependency @comunica/actor-init-sparql to v1.21.3](https://github.com/comunica/jQuery-Widget/commit/a7377b678e40d8e87ef5df937a34b335adc0b208)
+
 <a name="v1.1.1"></a>
 ## [v1.1.1](https://github.com/comunica/jQuery-Widget/compare/v1.1.0...v1.1.1) - 2021-04-12
 
