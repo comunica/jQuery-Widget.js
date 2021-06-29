@@ -53,6 +53,12 @@ module.exports = [
           ],
         },
         { test: /images\/*\.svg$/, use: require.resolve('file-loader') },
+        {
+          test: /leaflet.*\.png$/,
+          use: [
+            { loader: require.resolve('file-loader'), options: { name: 'styles/images/[name].[ext]' } },
+          ],
+        },
       ],
     },
   },

@@ -15,6 +15,14 @@ var Wkt = require('wicket/wicket-leaflet');
 var YASQE = require('yasgui-yasqe/src/main.js');
 require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
 
+// Import leaflet styles
+require('leaflet/dist/leaflet.css');
+require('leaflet/dist/images/layers.png');
+require('leaflet/dist/images/layers-2x.png');
+require('leaflet/dist/images/marker-icon.png');
+require('leaflet/dist/images/marker-icon-2x.png');
+require('leaflet/dist/images/marker-shadow.png');
+
 (function ($) {
   // Query UI main entry point, which mimics the jQuery UI widget interface:
   // - $(element).queryui(options) initializes the widget
