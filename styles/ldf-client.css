@@ -97,7 +97,7 @@ fieldset {
   padding: 0;
   margin: 0;
 }
-.ldf-client, .ldf-client * {
+.ldf-client {
   max-width: 100%;
 }
 ul {
@@ -319,6 +319,10 @@ footer {
   border-top: 1px solid #ddd;
 }
 
+.results-map {
+  width: 100%;
+  height: 400px;
+}
 @media (max-width: 725px) {
   body {
     padding: .1em 1em;
