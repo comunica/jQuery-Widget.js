@@ -6,17 +6,10 @@ window.jQuery = require('../deps/jquery-2.1.0.js');
 var N3 = require('n3');
 var resolve = require('relative-to-absolute-iri').resolve;
 
-// This exports leaflet,turf and wicket  used for map View
+// This exports map-related dependencies
 var L = require('leaflet');
 var turf = require('turf');
 var Wkt = require('wicket/wicket-leaflet');
-
-// This sets the initial map view and adds it to a layer
-var mymap = L.map('mapid').setView([52.517987721, 6.116665362], 8);
-var myLayer = L.geoJSON().addTo(mymap);
-
-// This is to hide the map
-var mapView = false;
 
 // Comment out the following two lines if you want to disable YASQE
 var YASQE = require('yasgui-yasqe/src/main.js');
@@ -102,28 +95,26 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
           $details = this.$details = $('.details', $element),
           $showDetails = this.$showDetails = $('.details-toggle', $element),
           $proxyDefault = $('.proxy-default', $element),
-          $mapd = $('.mapd', $element);
+          $map = this.$map = $('.results-map', $element),
+          $mapWrapper = this.$mapWrapper = $('.results-map-wrapper', $element);
 
       // Replace non-existing elements by an empty text box
       if (!$datasources.length) $datasources = this.$datasources = $('<select>');
       if (!$results.length) $results = $('<div>');
       if (!$log.length) $log = $('<div>');
 
-      // The tilelayer used for the map
-      if (!mapView) {
-        // var mymap = L.geoJson(feature)
-        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-          maxZoom: 18,
-          attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+      // Initialize map
+      this.map = L.map($map.get(0)).setView([52.517987721, 6.116665362], 8);
+      this.mapLayer = L.geoJSON().addTo(this.map);
+      L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+        maxZoom: 18,
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
             'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-          id: 'mapbox/streets-v11',
-          tileSize: 512,
-          zoomOffset: -1,
-        }).addTo(mymap);
-        $mapd.hide();
-      }
-      else
-        $mapd.show();
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1,
+      }).addTo(this.map);
+      $mapWrapper.hide();
 
       // When a datasource is selected, load the corresponding query set
       $datasources.chosen({
@@ -577,7 +568,7 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
         return alert('Please choose a datasource to execute the query.');
 
       // Hide map
-      $('#mapid').hide();
+      this.$mapWrapper.hide();
 
       // Clear results and log
       this.$stop.show();
@@ -586,8 +577,8 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
       this._resultAppender.clear();
       this._logAppender.clear();
 
-      // Clears the map
-      myLayer.clearLayers();
+      // Clear the map
+      this.mapLayer.clearLayers();
 
       // Scroll page to the results
       $('html,body').animate({ scrollTop: this.$stop.offset().top });
@@ -711,13 +702,12 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
         this._writeResult(result);
 
         // Adding wkt points on a map
+        var self = this;
         for (const value in result) {
           // This code adds points to the map
           var wktIncludingVariable = `${result[value]}`;
           if (wktIncludingVariable.includes('http://www.openlinksw.com/schemas/virtrdf#Geometry') || wktIncludingVariable.includes('http://www.opengis.net/ont/geosparql#wktLiteral')) {
             let variableNameLabel = `${value}` + 'Label';
-            // Variable that checks to toggle view the map
-            mapView = true;
 
             let valueLabel = result[variableNameLabel];
             let wkt_geom1 = wktIncludingVariable.split('^^', 1)[0].replace(/['"]+/g, '');
@@ -748,7 +738,6 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
               fillOpacity: 0.8,
             };
 
-
             L.geoJSON(geojsonFeature, {
               onEachFeature: function (feature, layer) {
                 var lon;
@@ -759,12 +748,12 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
                   lat = centroid.geometry.coordinates[1];
 
                   if (isLabelDefined) {
-                    L.circleMarker([lat, lon], geojsonMarkerOptions).addTo(mymap).bindPopup(feature.properties.name).openPopup();
-                    myLayer.addData(feature);
+                    L.circleMarker([lat, lon], geojsonMarkerOptions).addTo(self.map).bindPopup(feature.properties.name).openPopup();
+                    self.mapLayer.addData(feature);
                   }
                   else {
-                    L.circleMarker([lat, lon], geojsonMarkerOptions).addTo(mymap);
-                    myLayer.addData(feature);
+                    L.circleMarker([lat, lon], geojsonMarkerOptions).addTo(self.map);
+                    self.mapLayer.addData(feature);
                   }
                 }
                 if (feature.geometry.type === 'Point') {
@@ -772,26 +761,25 @@ require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
                   lat = feature.geometry.coordinates[1];
 
                   if (isLabelDefined) {
-                    L.circleMarker([lat, lon]).addTo(mymap).bindPopup(feature.properties.name).openPopup();
-                    myLayer.addData(feature);
+                    L.circleMarker([lat, lon]).addTo(self.map).bindPopup(feature.properties.name).openPopup();
+                    self.mapLayer.addData(feature);
                   }
                   else {
-                    L.circleMarker([lat, lon]).addTo(mymap);
-                    myLayer.addData(feature);
+                    L.circleMarker([lat, lon]).addTo(self.map);
+                    self.mapLayer.addData(feature);
                   }
                 }
                 if (feature.geometry.type !== 'Point' || 'Polygon')
-                  myLayer.addData(feature);
+                  self.mapLayer.addData(feature);
               },
-            }).addTo(mymap);
+            }).addTo(self.map);
+
+            self.map.fitBounds(self.mapLayer.getBounds());
+
+            if (!self.$mapWrapper.is(':visible'))
+              self.$mapWrapper.show();
           }
         }
-        mymap.fitBounds(myLayer.getBounds());
-
-        if (mapView)
-          $('#mapid').show();
-
-        mymap.fitBounds(myLayer.getBounds());
       }
     },
 
