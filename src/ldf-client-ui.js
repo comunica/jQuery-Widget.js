@@ -739,7 +739,6 @@ require('leaflet/dist/images/marker-shadow.png');
             onEachFeature: function (feature) {
               // Add feature data to map
               // self.mapLayer.addData(feature);
-              
               // Determine marker position for different geometry types
               let lon;
               let lat;
@@ -754,7 +753,7 @@ require('leaflet/dist/images/marker-shadow.png');
                 lat = feature.geometry.coordinates[1];
               }
               if (lon && lat) {
-                marker = L.circleMarker([lat, lon]);
+                let marker = L.circleMarker([lat, lon]);
                 self.trialLayerGroup.addLayer(marker).addTo(self.map);
                 if (valueLabel)
                   marker.bindPopup(feature.properties.name).openPopup();
