@@ -5,6 +5,7 @@
 window.jQuery = require('../deps/jquery-2.1.0.js');
 var N3 = require('n3');
 var resolve = require('relative-to-absolute-iri').resolve;
+var markerArray = [];
 
 // This exports map-related dependencies
 var L = require('leaflet');
@@ -579,6 +580,7 @@ require('leaflet/dist/images/marker-shadow.png');
       // Hide and clear map
       this.$mapWrapper.hide();
       this.trialLayerGroup.clearLayers();
+      markerArray = [];
 
       // Clear results and log
       this.$stop.show();
@@ -755,6 +757,7 @@ require('leaflet/dist/images/marker-shadow.png');
               if (lon && lat) {
                 let marker = L.circleMarker([lat, lon]);
                 self.trialLayerGroup.addLayer(marker).addTo(self.map);
+                markerArray.push(marker);
                 if (valueLabel)
                   marker.bindPopup(feature.properties.name).openPopup();
               }
@@ -764,6 +767,8 @@ require('leaflet/dist/images/marker-shadow.png');
           self.trialLayerGroup.addLayer(laayer).addTo(self.map);
 
           // Possibly rescale map view
+          var group = L.featureGroup(markerArray);
+          self.map.fitBounds(group.getBounds()); 
           // self.map.fitBounds(self.mapLayer.getBounds());
           // self.trialLayerGroup.setZIndex(2)
           // Show map if it's not visible yet
