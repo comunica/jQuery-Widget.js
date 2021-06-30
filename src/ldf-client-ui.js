@@ -755,7 +755,7 @@ require('leaflet/dist/images/marker-shadow.png');
               if (lon && lat) {
                 const marker = L.circleMarker([lat, lon]).addTo(self.map);
                 if (valueLabel)
-                  marker.bindPopup(feature.properties.name).openPopup();
+                  marker.bindPopup(feature.properties.name);
               }
             },
           }).addTo(self.map);
