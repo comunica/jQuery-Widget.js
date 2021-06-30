@@ -113,7 +113,7 @@ require('leaflet/dist/images/marker-shadow.png');
 
       // Initialize map
       this.map = L.map($map.get(0)).setView([52.517987721, 6.116665362], 8);
-      this.mapLayer = L.geoJSON().addTo(this.map);
+      this.mapLayer = L.layerGroup().addTo(this.map);
       L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
         maxZoom: 18,
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
@@ -578,6 +578,7 @@ require('leaflet/dist/images/marker-shadow.png');
       // Hide and clear map
       this.$mapWrapper.hide();
       this.mapLayer.clearLayers();
+      this.markerArray = [];
 
       // Clear results and log
       this.$stop.show();
@@ -734,11 +735,8 @@ require('leaflet/dist/images/marker-shadow.png');
             geoFeature.properties.name = valueLabel.split('@', 1)[0].replace(/['"]+/g, '');
 
           // Add feature to map
-          L.geoJSON(geoFeature, {
+          let newMapLayer = L.geoJSON(geoFeature, {
             onEachFeature: function (feature) {
-              // Add feature data to map
-              self.mapLayer.addData(feature);
-
               // Determine marker position for different geometry types
               let lon;
               let lat;
@@ -753,15 +751,18 @@ require('leaflet/dist/images/marker-shadow.png');
                 lat = feature.geometry.coordinates[1];
               }
               if (lon && lat) {
-                const marker = L.circleMarker([lat, lon]).addTo(self.map);
+                let marker = L.circleMarker([lat, lon]);
+                self.mapLayer.addLayer(marker).addTo(self.map);
+                self.markerArray.push(marker);
                 if (valueLabel)
                   marker.bindPopup(feature.properties.name).openPopup();
               }
             },
-          }).addTo(self.map);
+          });
+          self.mapLayer.addLayer(newMapLayer).addTo(self.map);
 
           // Possibly rescale map view
-          self.map.fitBounds(self.mapLayer.getBounds());
+          self.map.fitBounds(L.featureGroup(self.markerArray).getBounds());
 
           // Show map if it's not visible yet
           if (!self.$mapWrapper.is(':visible'))
