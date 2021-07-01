@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v1.2.1"></a>
+## [v1.2.1](https://github.com/comunica/jQuery-Widget/compare/v1.2.0...v1.2.1) - 2021-07-01
+
+### Fixed
+* [Clear map upon each new query, Closes #89](https://github.com/comunica/jQuery-Widget/commit/6117380bd7cf47bfe764a8bac45b7dd1c77cd7ef)
+* [Slightly improve map performance by not always showing popups, #90](https://github.com/comunica/jQuery-Widget/commit/6147d3a300f6eed54f7a9002a64e43a707a3ff85)
+
 <a name="v1.2.0"></a>
 ## [v1.2.0](https://github.com/comunica/jQuery-Widget/compare/v1.1.1...v1.2.0) - 2021-06-29
 
