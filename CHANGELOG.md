@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v1.3.0"></a>
+## [v1.3.0](https://github.com/comunica/jQuery-Widget/compare/v1.2.1...v1.3.0) - 2021-07-19
+
+### Added
+* [Allow page title to be configured](https://github.com/comunica/jQuery-Widget/commit/802fe54540bd76daa965b9661afed04d7b730e7b)
+* [Allow map settings to be changed](https://github.com/comunica/jQuery-Widget/commit/5fe3e94f38bca23533daaf0890ca91a19abb1f2d)
+
 <a name="v1.2.1"></a>
 ## [v1.2.1](https://github.com/comunica/jQuery-Widget/compare/v1.2.0...v1.2.1) - 2021-07-01
 
