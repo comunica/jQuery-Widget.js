@@ -102,27 +102,15 @@ require('leaflet/dist/images/marker-shadow.png');
           $httpProxy = this.$httpProxy = $('.httpProxy', $element),
           $details = this.$details = $('.details', $element),
           $showDetails = this.$showDetails = $('.details-toggle', $element),
-          $proxyDefault = $('.proxy-default', $element),
-          $map = this.$map = $('.results-map', $element),
-          $mapWrapper = this.$mapWrapper = $('.results-map-wrapper', $element);
+          $proxyDefault = $('.proxy-default', $element);
+
+      // Hide map
+      $('.results-map-wrapper', this.element).hide();
 
       // Replace non-existing elements by an empty text box
       if (!$datasources.length) $datasources = this.$datasources = $('<select>');
       if (!$results.length) $results = $('<div>');
       if (!$log.length) $log = $('<div>');
-
-      // Initialize map
-      this.map = L.map($map.get(0)).setView([52.517987721, 6.116665362], 8);
-      this.mapLayer = L.layerGroup().addTo(this.map);
-      L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-        maxZoom: 18,
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
-            'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-        id: 'mapbox/streets-v11',
-        tileSize: 512,
-        zoomOffset: -1,
-      }).addTo(this.map);
-      $mapWrapper.hide();
 
       // When a datasource is selected, load the corresponding query set
       $datasources.chosen({
@@ -269,22 +257,21 @@ require('leaflet/dist/images/marker-shadow.png');
       // Apply the chosen option
       var self = this, $datasources = this.$datasources, $queries = this.$queries;
       switch (key) {
-      case 'queryFormats':
-        var firstActiveFormat = null;
-        var hasMultipleActiveQueryFormats = false;
-        for (var queryFormat in value) {
-          if (!value[queryFormat])
-            $('#' + queryFormat).hide();
-          else if (!firstActiveFormat)
-            firstActiveFormat = queryFormat;
-          else
-            hasMultipleActiveQueryFormats = true;
-        }
+      // Initialize map
+      case 'map':
+        const $map = this.$map = $('.results-map', this.element);
+        const $mapWrapper = this.$mapWrapper = $('.results-map-wrapper', this.element);
 
-        if (firstActiveFormat)
-          this._setOption('queryFormat', firstActiveFormat);
-        if (!hasMultipleActiveQueryFormats)
-          this.element.find('.query-texts').hide();
+        this.map = L.map($map.get(0)).setView([52.517987721, 6.116665362], 8);
+        this.mapLayer = L.layerGroup().addTo(this.map);
+        L.tileLayer(value.url, {
+          maxZoom: 18,
+          attribution: value.attribution,
+          id: 'mapbox/streets-v11',
+          tileSize: 512,
+          zoomOffset: -1,
+        }).addTo(this.map);
+        $mapWrapper.hide();
         break;
       // Set the datasources available for querying
       case 'datasources':
@@ -576,9 +563,11 @@ require('leaflet/dist/images/marker-shadow.png');
         return alert('Please choose a datasource to execute the query.');
 
       // Hide and clear map
-      this.$mapWrapper.hide();
-      this.mapLayer.clearLayers();
-      this.markerArray = [];
+      if (this.$mapWrapper) {
+        this.$mapWrapper.hide();
+        this.mapLayer.clearLayers();
+        this.markerArray = [];
+      }
 
       // Clear results and log
       this.$stop.show();
@@ -708,7 +697,8 @@ require('leaflet/dist/images/marker-shadow.png');
         this._resultCount++;
         this._writeResult(result);
 
-        this._handleGeospatialResult(result);
+        if (this.map)
+          this._handleGeospatialResult(result);
       }
     },
 
