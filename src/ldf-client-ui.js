@@ -104,9 +104,6 @@ require('leaflet/dist/images/marker-shadow.png');
           $showDetails = this.$showDetails = $('.details-toggle', $element),
           $proxyDefault = $('.proxy-default', $element);
 
-      // Hide map
-      $('.results-map-wrapper', this.element).hide();
-
       // Replace non-existing elements by an empty text box
       if (!$datasources.length) $datasources = this.$datasources = $('<select>');
       if (!$results.length) $results = $('<div>');
@@ -272,6 +269,24 @@ require('leaflet/dist/images/marker-shadow.png');
           zoomOffset: -1,
         }).addTo(this.map);
         $mapWrapper.hide();
+        break;
+      // Disable unused query formats
+      case 'queryFormats':
+        var firstActiveFormat = null;
+        var hasMultipleActiveQueryFormats = false;
+        for (var queryFormat in value) {
+          if (!value[queryFormat])
+            $('#' + queryFormat).hide();
+          else if (!firstActiveFormat)
+            firstActiveFormat = queryFormat;
+          else
+            hasMultipleActiveQueryFormats = true;
+        }
+
+        if (firstActiveFormat)
+          this._setOption('queryFormat', firstActiveFormat);
+        if (!hasMultipleActiveQueryFormats)
+          this.element.find('.query-texts').hide();
         break;
       // Set the datasources available for querying
       case 'datasources':
