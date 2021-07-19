@@ -435,6 +435,8 @@ require('leaflet/dist/images/marker-shadow.png');
           $('body header p a').text(value.subtitle);
         if (value.subtitle_href)
           $('body header p a').attr('href', value.subtitle_href);
+        if (value.page_title)
+          $('head title').text(value.page_title);
         break;
       // Load settings from a JSON resource
       case 'settings':
