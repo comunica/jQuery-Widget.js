@@ -1,6 +1,15 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v1.3.2"></a>
+## [v1.3.2](https://github.com/comunica/jQuery-Widget/compare/v1.3.1...v1.3.2) - 2021-09-30
+
+### Changed
+* [Update Comunica monorepo packages to v1.22.0 (#98)](https://github.com/comunica/jQuery-Widget/commit/cd1104c4fd7fea1615538e637dbf58d39f87c5a9)
+
+### Fixed
+* [Fix crash when building from globally installed module, Closes #99](https://github.com/comunica/jQuery-Widget/commit/37f573a6113d395806a0b80b1fa61acd98d094d6)
+
 <a name="v1.3.1"></a>
 ## [v1.3.1](https://github.com/comunica/jQuery-Widget/compare/v1.3.0...v1.3.1) - 2021-07-19
 
