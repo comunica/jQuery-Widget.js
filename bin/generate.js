@@ -31,7 +31,7 @@ if (args.h || args.help || args._.length > 1) {
 (async function() {
     // Compile JS version of engine to temporary file
     const comunicaConfig = args._[0] ? path.resolve(process.cwd(), args._[0]) : path.resolve(__dirname, '..', 'config/config-default.json');
-    const mainModulePath = args.c || process.cwd();
+    const mainModulePath = args.c || (args._[0] ? process.cwd() : path.resolve(__dirname, '..'));
     const configResourceUri = 'urn:comunica:my';
     const exportVariableName = 'urn:comunica:sparqlinit';
     await compileConfig(mainModulePath, comunicaConfig, configResourceUri, exportVariableName)
