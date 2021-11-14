@@ -61,6 +61,11 @@ button:hover {
 button:active {
   margin: 1px -1px -1px 1px;
 }
+button:disabled {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}
 input {
   padding: 1px 5px;
   font-size: 10pt;
@@ -129,7 +134,7 @@ select {
   float: right;
 }
 
-input.datetime, input.httpProxy {
+input.datetime, input.httpProxy, input.idp {
   float: right;
   font-size: 13px;
   border: 1px solid #999999;
@@ -142,9 +147,34 @@ input.httpProxy {
   margin-left: 2px;
 }
 
+.solid-auth {
+  display: none;
+}
+
+input.idp, .webid {
+  width: 340px;
+  height: 23px;
+  margin-left: 2px;
+}
+
+.webid {
+  font-size: 10px;
+  display: inline-block;
+  float: right;
+  padding: 4px 6px 1px;
+  overflow: scroll;
+}
+
 .proxy-default {
   font-size: 12px;
   padding: 4px;
+  float: right;
+}
+
+.login {
+  font-size: 12px;
+  padding: 4px;
+  width: 76px;
   float: right;
 }
 
@@ -341,7 +371,7 @@ footer {
   select {
     width: 350px;
   }
-  .chosen, input.datetime, input.httpProxy {
+  .chosen, input.datetime, input.httpProxy, input.idp {
     float: none;
     margin-bottom: 0;
   }

@@ -5,6 +5,7 @@
 window.jQuery = require('../deps/jquery-2.1.0.js');
 var N3 = require('n3');
 var resolve = require('relative-to-absolute-iri').resolve;
+var solidAuth = require('@inrupt/solid-client-authn-browser');
 
 // This exports map-related dependencies
 var L = require('leaflet');
@@ -269,6 +270,52 @@ require('leaflet/dist/images/marker-shadow.png');
           zoomOffset: -1,
         }).addTo(this.map);
         $mapWrapper.hide();
+        break;
+      // Initialize Solid auth
+      case 'solidAuth':
+        if (value === true) {
+          $('.solid-auth', this.element).show();
+          const $idp = $('.idp', this.element);
+          const $login = $('.login', this.element);
+          const $webid = $('.webid', this.element);
+          const $solidSession = this.$solidSession = new solidAuth.Session();
+
+          this._createQueryWorkerSessionHandler();
+          $solidSession
+            .handleIncomingRedirect(window.location.href)
+            .then(() => {
+              $login.removeAttr('disabled');
+              if ($solidSession.info.isLoggedIn) {
+                $login.text('Log out');
+                $idp.hide();
+                $webid.text('Logged in as ' + $solidSession.info.webId);
+                $webid.show();
+              }
+              else {
+                $login.text('Log in');
+                $webid.hide();
+                $idp.show();
+              }
+
+              // Handle login
+              $login.on('click', function () {
+                if ($solidSession.info.isLoggedIn) {
+                  $solidSession.logout();
+                  $login.text('Log in');
+                  $webid.hide();
+                  $idp.show();
+                }
+                else {
+                  $solidSession.login({
+                    oidcIssuer: $idp.val(),
+                    redirectUrl: window.location.href,
+                    clientName: 'Comunica Web Client',
+                  });
+                }
+                return false;
+              });
+            });
+        }
         break;
       // Disable unused query formats
       case 'queryFormats':
@@ -616,6 +663,7 @@ require('leaflet/dist/images/marker-shadow.png');
         datetime: parseDate(this.options.datetime),
         queryFormat: this.options.queryFormat,
         httpProxy: this.options.httpProxy,
+        workerSolidAuth: !!this.$solidSession,
       };
       if (this.options.queryContext) {
         try {
@@ -668,6 +716,7 @@ require('leaflet/dist/images/marker-shadow.png');
       // Kill the worker and restart
       this._queryWorker.terminate();
       this._createQueryWorker();
+      this._createQueryWorkerSessionHandler();
 
       this._stopExecutionBase(error);
     },
@@ -843,7 +892,11 @@ require('leaflet/dist/images/marker-shadow.png');
     _createQueryWorker: function () {
       var self = this;
       this._queryWorker = new Worker('scripts/ldf-client-worker.min.js');
+      this._queryWorkerSessionHandler = undefined;
       this._queryWorker.onmessage = function (message) {
+        if (self._queryWorkerSessionHandler && self._queryWorkerSessionHandler.onmessage(message))
+          return;
+
         var data = message.data;
         switch (data.type) {
         case 'queryInfo': return self._initResults(data.queryType);
@@ -856,6 +909,12 @@ require('leaflet/dist/images/marker-shadow.png');
       this._queryWorker.onerror = function (error) {
         self._stopExecution(error);
       };
+    },
+
+    // Bind the handler that takes care of fetch header authentication for the worker
+    _createQueryWorkerSessionHandler: function () {
+      if (this.$solidSession)
+        this._queryWorkerSessionHandler = new solidAuth.WindowToWorkerHandler(this, this._queryWorker, this.$solidSession);
     },
   };
 

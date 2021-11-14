@@ -3,6 +3,7 @@ var RdfString = require('rdf-string');
 var LoggerPretty = require('@comunica/logger-pretty').LoggerPretty;
 var bindingsStreamToGraphQl = require('@comunica/actor-sparql-serialize-tree').bindingsStreamToGraphQl;
 var ProxyHandlerStatic = require('@comunica/actor-http-proxy').ProxyHandlerStatic;
+var WorkerToWindowHandler = require('@inrupt/solid-client-authn-browser').WorkerToWindowHandler;
 
 // The active fragments client and the current results
 var resultsIterator;
@@ -14,6 +15,7 @@ logger.log = function (level, message, data) {
 };
 
 // Handlers of incoming messages
+const workerToWindowHandler = new WorkerToWindowHandler(self); // For authenticating fetch requests within main window
 var handlers = {
   // Execute the given query with the given options
   query: function (config) {
@@ -24,6 +26,10 @@ var handlers = {
     // Set up a proxy handler
     if (config.context.httpProxy)
       config.context.httpProxyHandler = new ProxyHandlerStatic(config.context.httpProxy);
+
+    // Set up authenticated fetch
+    if (config.context.workerSolidAuth)
+      config.context.fetch = workerToWindowHandler.buildAuthenticatedFetch();
 
     // Create a client to fetch the fragments through HTTP
     config.context.log = logger;
@@ -92,4 +98,8 @@ function postError(error) {
 }
 
 // Send incoming message to the appropriate handler
-self.onmessage = function (m) { handlers[m.data.type](m.data); };
+self.onmessage = function (m) {
+  if (workerToWindowHandler.onmessage(m))
+    return;
+  handlers[m.data.type](m.data);
+};
