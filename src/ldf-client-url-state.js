@@ -14,7 +14,16 @@ jQuery(function ($) {
 
   // Loads the UI state from the URL
   function loadStateFromUrl() {
-    var uiState = location.hash.substr(1).split('&').reduce(function (uiState, item) {
+    // Special handling because OIDC does not allow hash fragments, so we decode it from query param
+    var hash = location.hash;
+    if (!location.hash && location.search && location.search.indexOf('&state') < 0) {
+      hash = location.search.replace(/\+/g, '%20');
+      history.replaceState(null, null, window.location.href
+        .replace('?', '#')
+        .replace(/\+/g, '%20'));
+    }
+
+    var uiState = hash.substr(1).split('&').reduce(function (uiState, item) {
       var keyvalue = item.match(/^([^=]+)=(.*)/);
       if (keyvalue) uiState[decodeURIComponent(keyvalue[1])] = decodeURIComponent(keyvalue[2]);
       return uiState;

@@ -291,6 +291,7 @@ require('leaflet/dist/images/marker-shadow.png');
               restorePreviousSession: true,
             })
             .then(() => {
+              self.element.trigger('loadStateFromUrl');
               $login.removeAttr('disabled');
               if ($solidSession.info.isLoggedIn) {
                 $login.text('Log out');
@@ -315,7 +316,7 @@ require('leaflet/dist/images/marker-shadow.png');
                 else {
                   $solidSession.login({
                     oidcIssuer: $idp.val(),
-                    redirectUrl: window.location.href,
+                    redirectUrl: window.location.href.replace('#', '?'), // OIDC does not allow hash fragments, so we encode it as query param
                     clientName: 'Comunica Web Client',
                   });
                 }
