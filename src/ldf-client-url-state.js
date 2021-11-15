@@ -10,6 +10,7 @@ jQuery(function ($) {
     if (history.replaceState)
       $queryui.on('change', saveStateToUrl);
   });
+  $('.ldf-client').on('loadStateFromUrl', loadStateFromUrl);
 
   // Loads the UI state from the URL
   function loadStateFromUrl() {

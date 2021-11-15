@@ -280,9 +280,16 @@ require('leaflet/dist/images/marker-shadow.png');
           const $webid = $('.webid', this.element);
           const $solidSession = this.$solidSession = new solidAuth.Session();
 
+          $solidSession.onSessionRestore((url) => {
+            history.pushState(null, null, url);
+            self.element.trigger('loadStateFromUrl');
+          });
           this._createQueryWorkerSessionHandler();
           $solidSession
-            .handleIncomingRedirect(window.location.href)
+            .handleIncomingRedirect({
+              url: window.location.href,
+              restorePreviousSession: true,
+            })
             .then(() => {
               $login.removeAttr('disabled');
               if ($solidSession.info.isLoggedIn) {
