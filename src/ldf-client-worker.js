@@ -14,22 +14,28 @@ logger.log = function (level, message, data) {
   postMessage({ type: 'log', log: message + (data ? (' ' + JSON.stringify(data)) : '') + '\n' });
 };
 
+// Handler for authenticating fetch requests within main window
+const workerToWindowHandler = new WorkerToWindowHandler(self);
+
+function initEngine(config) {
+  // Create an engine lazily
+  if (!engine)
+    engine = require('my-comunica-engine');
+
+  // Set up a proxy handler
+  if (config.context.httpProxy)
+    config.context.httpProxyHandler = new ProxyHandlerStatic(config.context.httpProxy);
+
+  // Set up authenticated fetch
+  if (config.context.workerSolidAuth)
+    config.context.fetch = workerToWindowHandler.buildAuthenticatedFetch();
+}
+
 // Handlers of incoming messages
-const workerToWindowHandler = new WorkerToWindowHandler(self); // For authenticating fetch requests within main window
 var handlers = {
   // Execute the given query with the given options
   query: function (config) {
-    // Create an engine lazily
-    if (!engine)
-      engine = require('my-comunica-engine');
-
-    // Set up a proxy handler
-    if (config.context.httpProxy)
-      config.context.httpProxyHandler = new ProxyHandlerStatic(config.context.httpProxy);
-
-    // Set up authenticated fetch
-    if (config.context.workerSolidAuth)
-      config.context.fetch = workerToWindowHandler.buildAuthenticatedFetch();
+    initEngine(config);
 
     // Create a client to fetch the fragments through HTTP
     config.context.log = logger;
@@ -91,7 +97,26 @@ var handlers = {
     }
   },
 
-  //
+  // Obtain the foaf:name of a WebID
+  getWebIdName: function ({ webId }) {
+    const config = {
+      query: `
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT ?name WHERE {
+  <${webId}> foaf:name ?name.
+}`,
+      context: { sources: [webId] },
+    };
+    initEngine(config);
+    engine.query(config.query, config.context)
+      .then(function (result) {
+        result.bindings()
+          .then(bindings => {
+            if (bindings.length > 0)
+              postMessage({ type: 'webIdName', name: bindings[0].get('?name').value });
+          });
+      });
+  },
 };
 
 function postError(error) {

@@ -300,7 +300,7 @@ require('leaflet/dist/images/marker-shadow.png');
               if ($solidSession.info.isLoggedIn) {
                 $login.text('Log out');
                 $idp.hide();
-                $webid.text('Logged in as ' + shortenUrl($solidSession.info.webId, 40));
+                self._setWebIdName();
                 $webid.show();
 
                 // Add profile to datasources
@@ -311,6 +311,12 @@ require('leaflet/dist/images/marker-shadow.png');
                   },
                   ...self.options.datasources,
                 ]);
+
+                // Request the user's name from the worker
+                this._queryWorker.postMessage({
+                  type: 'getWebIdName',
+                  webId: $solidSession.info.webId,
+                });
               }
               else {
                 $login.text('Log in');
@@ -935,6 +941,7 @@ require('leaflet/dist/images/marker-shadow.png');
         case 'end':       return self._endResults();
         case 'log':       return self._logAppender(data.log);
         case 'error':     return this.onerror(data.error);
+        case 'webIdName': return self._setWebIdName(data.name);
         }
       };
       this._queryWorker.onerror = function (error) {
@@ -946,6 +953,12 @@ require('leaflet/dist/images/marker-shadow.png');
     _createQueryWorkerSessionHandler: function () {
       if (this.$solidSession)
         this._queryWorkerSessionHandler = new solidAuth.WindowToWorkerHandler(this, this._queryWorker, this.$solidSession);
+    },
+
+    // Set the name inside the WebID field, or a shortened version of the WebID URL if name is undefined
+    _setWebIdName: function (name) {
+      const $webid = $('.webid', this.element);
+      $webid.html(`Logged in as <a href="${this.$solidSession.info.webId}" target="_blank">${name || shortenUrl(this.$solidSession.info.webId, 35)}</\a>`);
     },
   };
 
@@ -1043,7 +1056,7 @@ require('leaflet/dist/images/marker-shadow.png');
   // Shortens an URL to the given length
   function shortenUrl(url, length) {
     if (url.length > length)
-      return '…' + url.slice(url.length - length, url.length);
+      return '&hellip;' + url.slice(url.length - length, url.length);
     return url;
   }
 
