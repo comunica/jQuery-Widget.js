@@ -102,9 +102,9 @@ require('leaflet/dist/images/marker-shadow.png');
           $datetime = this.$datetime = $('.datetime', $element),
           $httpProxy = this.$httpProxy = $('.httpProxy', $element),
           $bypassCache = this.$bypassCache = $('.bypassCache', $element),
-          $details = this.$details = $('.details', $element),
           $showDetails = this.$showDetails = $('.details-toggle', $element),
           $proxyDefault = $('.proxy-default', $element);
+      this.$details = $('.details', $element);
 
       // Replace non-existing elements by an empty text box
       if (!$datasources.length) $datasources = this.$datasources = $('<select>');
@@ -229,7 +229,7 @@ require('leaflet/dist/images/marker-shadow.png');
 
       // Set up details toggling
       $showDetails.click(function () {
-        $details.is(':visible') ? self._hideDetails() : self._showDetails();
+        self.$details.is(':visible') ? self._hideDetails() : self._showDetails();
       });
 
       // Set up results
@@ -277,8 +277,13 @@ require('leaflet/dist/images/marker-shadow.png');
         break;
       // Initialize Solid auth
       case 'solidAuth':
-        if (value === true) {
-          $('.solid-auth', this.element).show();
+        if (value) {
+          if (!value.settingsOnly) {
+            $('.solid-auth', this.element)
+              .removeClass('details')
+              .show();
+            this.$details = $('.details', this.$element); // Refresh selector
+          }
           const $idp = $('.idp', this.element);
           const $login = $('.login', this.element);
           const $webid = $('.webid', this.element);
