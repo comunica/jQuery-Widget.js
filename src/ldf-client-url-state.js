@@ -54,6 +54,8 @@ jQuery(function ($) {
       $queryui.queryui('option', 'datetime', uiState.datetime);
     if (uiState.httpProxy)
       $queryui.queryui('option', 'httpProxy', uiState.httpProxy);
+    if (uiState.bypassCache)
+      $queryui.queryui('option', 'bypassCache', uiState.bypassCache);
   }
 
   // Stores the current UI state in the URL
@@ -82,6 +84,8 @@ jQuery(function ($) {
       queryString.push('datetime=' + encodeURIComponent(options.datetime));
     if (options.httpProxy)
       queryString.push('httpProxy=' + encodeURIComponent(options.httpProxy));
+    if (options.bypassCache)
+      queryString.push('bypassCache=' + encodeURIComponent(options.bypassCache));
 
     // Compose new URL with query string
     queryString = queryString.length ? '#' + queryString.join('&') : '';

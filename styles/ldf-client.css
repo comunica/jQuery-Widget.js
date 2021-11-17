@@ -70,6 +70,10 @@ input {
   padding: 1px 5px;
   font-size: 10pt;
 }
+label {
+  display: inline-block;
+  width: 212px;
+}
 label:after {
   content: ":";
 }
@@ -371,7 +375,7 @@ footer {
   select {
     width: 350px;
   }
-  .chosen, input.datetime, input.httpProxy, input.idp {
+  .chosen, input.datetime, input.httpProxy, input.idp, input.bypassCache {
     float: none;
     margin-bottom: 0;
   }

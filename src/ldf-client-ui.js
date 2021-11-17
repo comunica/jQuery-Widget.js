@@ -101,6 +101,7 @@ require('leaflet/dist/images/marker-shadow.png');
           $datasources = this.$datasources = $('.datasources', $element),
           $datetime = this.$datetime = $('.datetime', $element),
           $httpProxy = this.$httpProxy = $('.httpProxy', $element),
+          $bypassCache = this.$bypassCache = $('.bypassCache', $element),
           $details = this.$details = $('.details', $element),
           $showDetails = this.$showDetails = $('.details-toggle', $element),
           $proxyDefault = $('.proxy-default', $element);
@@ -218,6 +219,9 @@ require('leaflet/dist/images/marker-shadow.png');
 
       // Update http proxy on change
       $httpProxy.change(function () { self._setOption('httpProxy', $httpProxy.val()); });
+
+      // Update bypass cache on change
+      $bypassCache.change(function () { self._setOption('bypassCache', $bypassCache.is(':checked')); });
 
       // Set up starting and stopping
       $start.click(this._startExecution.bind(this));
@@ -476,6 +480,9 @@ require('leaflet/dist/images/marker-shadow.png');
           this._showDetails();
         this.$httpProxy.val(value).change();
         break;
+      case 'bypassCache':
+        this.$bypassCache.prop('checked', value).change();
+        break;
       // Set the list of selectable queries
       case 'relevantQueries':
         value = value || [];
@@ -647,6 +654,10 @@ require('leaflet/dist/images/marker-shadow.png');
       this._resultsScroller.removeAll();
       this._resultAppender.clear();
       this._logAppender.clear();
+
+      // Reset worker if we want to bypass the cache
+      if (this.options.bypassCache)
+        this._stopExecutionForcefully();
 
       // Scroll page to the results
       $('html,body').animate({ scrollTop: this.$stop.offset().top });
