@@ -302,6 +302,15 @@ require('leaflet/dist/images/marker-shadow.png');
                 $idp.hide();
                 $webid.text('Logged in as ' + $solidSession.info.webId);
                 $webid.show();
+
+                // Add profile to datasources
+                self._setOption('datasources', [
+                  {
+                    name: 'My Solid Profile',
+                    url: $solidSession.info.webId,
+                  },
+                  ...self.options.datasources,
+                ]);
               }
               else {
                 $login.text('Log in');
@@ -365,6 +374,9 @@ require('leaflet/dist/images/marker-shadow.png');
           }
           datasourceDict[datasource.url] = datasource.name;
         });
+
+        // Clear existing options
+        $datasources.find('option:not(.extra-information)').remove();
 
         // Create options for each datasource
         $datasources.append((value || []).map(function (datasource, index) {
