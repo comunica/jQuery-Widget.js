@@ -300,7 +300,7 @@ require('leaflet/dist/images/marker-shadow.png');
               if ($solidSession.info.isLoggedIn) {
                 $login.text('Log out');
                 $idp.hide();
-                $webid.text('Logged in as ' + $solidSession.info.webId);
+                $webid.text('Logged in as ' + shortenUrl($solidSession.info.webId, 40));
                 $webid.show();
 
                 // Add profile to datasources
@@ -1038,6 +1038,13 @@ require('leaflet/dist/images/marker-shadow.png');
       return [$('<dt>', { text: variable }), $('<dd>', { html: escape(value) })];
     }));
     return container;
+  }
+
+  // Shortens an URL to the given length
+  function shortenUrl(url, length) {
+    if (url.length > length)
+      return '…' + url.slice(url.length - length, url.length);
+    return url;
   }
 
   // TODO: Dynamically expose the version in ActorInitSparql so that we can retrieve it from there instead of relying on package.json reading.

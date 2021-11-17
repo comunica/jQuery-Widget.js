@@ -90,6 +90,8 @@ var handlers = {
       resultsIterator = null;
     }
   },
+
+  //
 };
 
 function postError(error) {

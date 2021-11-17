@@ -162,11 +162,12 @@ input.idp, .webid {
 }
 
 .webid {
-  font-size: 10px;
+  font-size: 12px;
+  width: 340px;
   display: inline-block;
   float: right;
   padding: 4px 6px 1px;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .proxy-default {
