@@ -102,6 +102,7 @@ require('leaflet/dist/images/marker-shadow.png');
           $datetime = this.$datetime = $('.datetime', $element),
           $httpProxy = this.$httpProxy = $('.httpProxy', $element),
           $bypassCache = this.$bypassCache = $('.bypassCache', $element),
+          $solidIdp = this.$solidIdp = $('.solid-auth .idp', $element),
           $showDetails = this.$showDetails = $('.details-toggle', $element),
           $proxyDefault = $('.proxy-default', $element);
       this.$details = $('.details', $element);
@@ -223,6 +224,9 @@ require('leaflet/dist/images/marker-shadow.png');
       // Update bypass cache on change
       $bypassCache.change(function () { self._setOption('bypassCache', $bypassCache.is(':checked')); });
 
+      // Update IDP on change
+      $solidIdp.change(function () { self._setOption('solidIdp', $solidIdp.val()); });
+
       // Set up starting and stopping
       $start.click(this._startExecution.bind(this));
       $stop.click(this._stopExecutionForcefully.bind(this));
@@ -284,6 +288,8 @@ require('leaflet/dist/images/marker-shadow.png');
               .show();
             this.$details = $('.details', this.$element); // Refresh selector
           }
+          if (value.defaultIdp)
+            self._setOption('solidIdp', value.defaultIdp);
           const $idp = $('.idp', this.element);
           const $login = $('.login', this.element);
           const $webid = $('.webid', this.element);
@@ -348,6 +354,10 @@ require('leaflet/dist/images/marker-shadow.png');
               });
             });
         }
+        break;
+      // Initialize Solid IDP
+      case 'solidIdp':
+        this.$solidIdp.val(value).change();
         break;
       // Disable unused query formats
       case 'queryFormats':
