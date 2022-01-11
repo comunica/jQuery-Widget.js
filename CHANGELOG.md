@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v1.4.0"></a>
+## [v1.4.0](https://github.com/comunica/jQuery-Widget/compare/v1.3.2...v1.4.0) - 2022-01-11
+
+### Added
+
+* Add Solid authentication support
+
 <a name="v1.3.2"></a>
 ## [v1.3.2](https://github.com/comunica/jQuery-Widget/compare/v1.3.1...v1.3.2) - 2021-09-30
 
