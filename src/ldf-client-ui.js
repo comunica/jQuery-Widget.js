@@ -5,7 +5,7 @@
 window.jQuery = require('../deps/jquery-2.1.0.js');
 var N3 = require('n3');
 var resolve = require('relative-to-absolute-iri').resolve;
-var solidAuth = require('@inrupt/solid-client-authn-browser');
+var solidAuth = require('@rubensworks/solid-client-authn-browser');
 
 // This exports map-related dependencies
 var L = require('leaflet');

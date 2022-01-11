@@ -2403,46 +2403,16 @@
   dependencies:
     jose "3.15.4"
 
-"@inrupt/oidc-client-ext@^1.11.2":
-  version "1.11.2"
-  resolved "https://registry.yarnpkg.com/@inrupt/oidc-client-ext/-/oidc-client-ext-1.11.2.tgz#90b8810fe350e6bab3cb17e051778ae0008dc7ab"
-  integrity sha512-htdqsFnLOSUhi+AkhyYCTA1vjUsZT8TeQOiXEtLDgneCRxwxCGfRwVSgXSC30OeophlgrZ7/QVixaz3BB5yXEA==
+"@inrupt/oidc-client@^1.11.6":
+  version "1.11.6"
+  resolved "https://registry.yarnpkg.com/@inrupt/oidc-client/-/oidc-client-1.11.6.tgz#5b1ba7e84d0ca4da356f44db1ae8056881502027"
+  integrity sha512-1rCTk1T6pdm/7gKozutZutk7jwmYBADlnkGGoI5ypke099NOCa5KFXjkQpbjsps0PRkKZ+0EaR70XN5+xqmViA==
   dependencies:
-    "@inrupt/jose-legacy-modules" "0.0.3-3.15.4"
-    "@inrupt/solid-client-authn-core" "^1.11.2"
-    "@types/uuid" "^8.3.0"
-    form-urlencoded "~6.0.3"
-    oidc-client "^1.11.3"
-    uuid "^8.3.1"
-
-"@inrupt/solid-client-authn-browser@^1.11.2":
-  version "1.11.2"
-  resolved "https://registry.yarnpkg.com/@inrupt/solid-client-authn-browser/-/solid-client-authn-browser-1.11.2.tgz#f8bac9966894bccefe147c16a110fc29aa51be65"
-  integrity sha512-DifF7hSMuFEB9+lDAYjRq6E7DOIZjQwdk9gUkPj93tdIb4icHXQ9JTMwBAxXmdTruPC2g5Pzu0PQ0PCvbIpuDA==
-  dependencies:
-    "@inrupt/jose-legacy-modules" "0.0.3-3.15.4"
-    "@inrupt/oidc-client-ext" "^1.11.2"
-    "@inrupt/solid-client-authn-core" "^1.11.2"
-    "@types/lodash.clonedeep" "^4.5.6"
-    "@types/node" "^15.0.1"
-    "@types/uuid" "^8.3.0"
-    events "^3.3.0"
-    lodash.clonedeep "^4.5.0"
-    uuid "^8.3.1"
-
-"@inrupt/solid-client-authn-core@^1.11.2":
-  version "1.11.2"
-  resolved "https://registry.yarnpkg.com/@inrupt/solid-client-authn-core/-/solid-client-authn-core-1.11.2.tgz#47b3648bffc7bf22ffcd4cb8e04f03178d581eb5"
-  integrity sha512-hL+BC81lE4V0EXZE8PJ418y/vFvW+rfcmHgHqi0ZKSSxLNVE08Ok4W2d+g6wcW3wyePZ9FOL2K8BIh7/jCGj8Q==
-  dependencies:
-    "@inrupt/jose-legacy-modules" "0.0.3-3.15.4"
-    "@inrupt/solid-common-vocab" "^1.0.0"
-    "@types/lodash.clonedeep" "^4.5.6"
-    "@types/uuid" "^8.3.0"
-    cross-fetch "^3.0.6"
-    events "^3.3.0"
-    lodash.clonedeep "^4.5.0"
-    uuid "^8.3.1"
+    acorn "^7.4.1"
+    base64-js "^1.5.1"
+    core-js "^3.8.3"
+    crypto-js "^4.0.0"
+    serialize-javascript "^4.0.0"
 
 "@inrupt/solid-common-vocab@^1.0.0":
   version "1.0.0"
@@ -2455,6 +2425,47 @@
   integrity sha512-YxVkH0XrCNG3MWeZxfg596GFe+oorTVusmNxRP6ZHTsGczZ8AGvG3UchRNkg3Fy4MyysI7vBAA5YZbESL+VmHQ==
   dependencies:
     "@types/node" "*"
+
+"@rubensworks/oidc-client-ext@^1.12.0":
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/@rubensworks/oidc-client-ext/-/oidc-client-ext-1.12.0.tgz#1cf062c101f5c06ea413f1cf4f63b42d4f0603e8"
+  integrity sha512-v5bLJjMm+J4iJfuSw3OGcf7Dc3aN6VNCzXRk2saEpx5NA5Qrb1tqEyroN9fHa3YmLTR4HS8ejzp9n8d81dsUfw==
+  dependencies:
+    "@inrupt/jose-legacy-modules" "0.0.3-3.15.4"
+    "@inrupt/oidc-client" "^1.11.6"
+    "@rubensworks/solid-client-authn-core" "^1.12.0"
+    "@types/uuid" "^8.3.0"
+    form-urlencoded "~6.0.3"
+    uuid "^8.3.1"
+
+"@rubensworks/solid-client-authn-browser@^1.12.0":
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/@rubensworks/solid-client-authn-browser/-/solid-client-authn-browser-1.12.0.tgz#618e9c8ea8358fcc632f04e13cff3bbef8ff55a1"
+  integrity sha512-GrUCsfygzV0xfcPKHSaSj9N9znRb0w7ubHQ57zJTMgIVLYS1QmGEN9GDCdhqbS2aMSBl+J9TiFEcey8JJEvsvw==
+  dependencies:
+    "@inrupt/jose-legacy-modules" "0.0.3-3.15.4"
+    "@rubensworks/oidc-client-ext" "^1.12.0"
+    "@rubensworks/solid-client-authn-core" "^1.12.0"
+    "@types/lodash.clonedeep" "^4.5.6"
+    "@types/node" "^15.0.1"
+    "@types/uuid" "^8.3.0"
+    events "^3.3.0"
+    lodash.clonedeep "^4.5.0"
+    uuid "^8.3.1"
+
+"@rubensworks/solid-client-authn-core@^1.12.0":
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/@rubensworks/solid-client-authn-core/-/solid-client-authn-core-1.12.0.tgz#800edfda2df2de9b4136db128ac0a0bd488bc62a"
+  integrity sha512-TkucEj3kjKwbJ1mUbeqijC1mzkoKVjHxLjHIbVULsDyZFLQkxS1nV+aakBwGGzO9NILq3C6441OngOl5mkdg6A==
+  dependencies:
+    "@inrupt/jose-legacy-modules" "0.0.3-3.15.4"
+    "@inrupt/solid-common-vocab" "^1.0.0"
+    "@types/lodash.clonedeep" "^4.5.6"
+    "@types/uuid" "^8.3.0"
+    cross-fetch "^3.0.6"
+    events "^3.3.0"
+    lodash.clonedeep "^4.5.0"
+    uuid "^8.3.1"
 
 "@types/glob@^7.1.1":
   version "7.1.3"
@@ -6414,17 +6425,6 @@ obuf@^1.0.0, obuf@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/obuf/-/obuf-1.1.2.tgz#09bea3343d41859ebd446292d11c9d4db619084e"
   integrity sha512-PX1wu0AmAdPqOL1mWhqmlOd8kOIZQwGZw6rh7uby9fTc5lhaOWFLX3I6R1hrF9k3zUY40e6igsLGkDXK92LJNg==
-
-oidc-client@^1.11.3:
-  version "1.11.5"
-  resolved "https://registry.yarnpkg.com/oidc-client/-/oidc-client-1.11.5.tgz#020aa193d68a3e1f87a24fcbf50073b738de92bb"
-  integrity sha512-LcKrKC8Av0m/KD/4EFmo9Sg8fSQ+WFJWBrmtWd+tZkNn3WT/sQG3REmPANE9tzzhbjW6VkTNy4xhAXCfPApAOg==
-  dependencies:
-    acorn "^7.4.1"
-    base64-js "^1.5.1"
-    core-js "^3.8.3"
-    crypto-js "^4.0.0"
-    serialize-javascript "^4.0.0"
 
 on-finished@~2.3.0:
   version "2.3.0"

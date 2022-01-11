@@ -61,7 +61,7 @@
     "@babel/preset-env": "^7.0.0",
     "@comunica/actor-init-sparql": "^1.22.3",
     "@comunica/runner": "1.21.1",
-    "@inrupt/solid-client-authn-browser": "^1.11.2",
+    "@rubensworks/solid-client-authn-browser": "^1.12.0",
     "babel-loader": "^8.0.4",
     "file-loader": "^6.0.0",
     "json-loader": "^0.5.7",

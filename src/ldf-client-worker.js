@@ -3,7 +3,7 @@ var RdfString = require('rdf-string');
 var LoggerPretty = require('@comunica/logger-pretty').LoggerPretty;
 var bindingsStreamToGraphQl = require('@comunica/actor-sparql-serialize-tree').bindingsStreamToGraphQl;
 var ProxyHandlerStatic = require('@comunica/actor-http-proxy').ProxyHandlerStatic;
-var WorkerToWindowHandler = require('@inrupt/solid-client-authn-browser').WorkerToWindowHandler;
+var WorkerToWindowHandler = require('@rubensworks/solid-client-authn-browser').WorkerToWindowHandler;
 
 // The active fragments client and the current results
 var resultsIterator;
