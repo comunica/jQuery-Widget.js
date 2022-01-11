@@ -10,10 +10,20 @@ jQuery(function ($) {
     if (history.replaceState)
       $queryui.on('change', saveStateToUrl);
   });
+  $('.ldf-client').on('loadStateFromUrl', loadStateFromUrl);
 
   // Loads the UI state from the URL
   function loadStateFromUrl() {
-    var uiState = location.hash.substr(1).split('&').reduce(function (uiState, item) {
+    // Special handling because OIDC does not allow hash fragments, so we decode it from query param
+    var hash = location.hash;
+    if (!location.hash && location.search && location.search.indexOf('&state') < 0) {
+      hash = location.search.replace(/\+/g, '%20');
+      history.replaceState(null, null, window.location.href
+        .replace('?', '#')
+        .replace(/\+/g, '%20'));
+    }
+
+    var uiState = hash.substr(1).split('&').reduce(function (uiState, item) {
       var keyvalue = item.match(/^([^=]+)=(.*)/);
       if (keyvalue) uiState[decodeURIComponent(keyvalue[1])] = decodeURIComponent(keyvalue[2]);
       return uiState;
@@ -44,6 +54,10 @@ jQuery(function ($) {
       $queryui.queryui('option', 'datetime', uiState.datetime);
     if (uiState.httpProxy)
       $queryui.queryui('option', 'httpProxy', uiState.httpProxy);
+    if (uiState.bypassCache)
+      $queryui.queryui('option', 'bypassCache', uiState.bypassCache);
+    if (uiState.solidIdp)
+      $queryui.queryui('option', 'solidIdp', uiState.solidIdp);
   }
 
   // Stores the current UI state in the URL
@@ -72,6 +86,10 @@ jQuery(function ($) {
       queryString.push('datetime=' + encodeURIComponent(options.datetime));
     if (options.httpProxy)
       queryString.push('httpProxy=' + encodeURIComponent(options.httpProxy));
+    if (options.bypassCache)
+      queryString.push('bypassCache=' + encodeURIComponent(options.bypassCache));
+    if (options.solidIdp && options.solidAuth.defaultIdp !== options.solidIdp)
+      queryString.push('solidIdp=' + encodeURIComponent(options.solidIdp));
 
     // Compose new URL with query string
     queryString = queryString.length ? '#' + queryString.join('&') : '';

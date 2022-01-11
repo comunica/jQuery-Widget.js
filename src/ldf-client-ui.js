@@ -5,6 +5,7 @@
 window.jQuery = require('../deps/jquery-2.1.0.js');
 var N3 = require('n3');
 var resolve = require('relative-to-absolute-iri').resolve;
+var solidAuth = require('@rubensworks/solid-client-authn-browser');
 
 // This exports map-related dependencies
 var L = require('leaflet');
@@ -100,9 +101,11 @@ require('leaflet/dist/images/marker-shadow.png');
           $datasources = this.$datasources = $('.datasources', $element),
           $datetime = this.$datetime = $('.datetime', $element),
           $httpProxy = this.$httpProxy = $('.httpProxy', $element),
-          $details = this.$details = $('.details', $element),
+          $bypassCache = this.$bypassCache = $('.bypassCache', $element),
+          $solidIdp = this.$solidIdp = $('.solid-auth .idp', $element),
           $showDetails = this.$showDetails = $('.details-toggle', $element),
           $proxyDefault = $('.proxy-default', $element);
+      this.$details = $('.details', $element);
 
       // Replace non-existing elements by an empty text box
       if (!$datasources.length) $datasources = this.$datasources = $('<select>');
@@ -218,13 +221,19 @@ require('leaflet/dist/images/marker-shadow.png');
       // Update http proxy on change
       $httpProxy.change(function () { self._setOption('httpProxy', $httpProxy.val()); });
 
+      // Update bypass cache on change
+      $bypassCache.change(function () { self._setOption('bypassCache', $bypassCache.is(':checked')); });
+
+      // Update IDP on change
+      $solidIdp.change(function () { self._setOption('solidIdp', $solidIdp.val()); });
+
       // Set up starting and stopping
       $start.click(this._startExecution.bind(this));
       $stop.click(this._stopExecutionForcefully.bind(this));
 
       // Set up details toggling
       $showDetails.click(function () {
-        $details.is(':visible') ? self._hideDetails() : self._showDetails();
+        self.$details.is(':visible') ? self._hideDetails() : self._showDetails();
       });
 
       // Set up results
@@ -270,6 +279,86 @@ require('leaflet/dist/images/marker-shadow.png');
         }).addTo(this.map);
         $mapWrapper.hide();
         break;
+      // Initialize Solid auth
+      case 'solidAuth':
+        if (value) {
+          if (!value.settingsOnly) {
+            $('.solid-auth', this.element)
+              .removeClass('details')
+              .show();
+            this.$details = $('.details', this.$element); // Refresh selector
+          }
+          if (value.defaultIdp)
+            self._setOption('solidIdp', value.defaultIdp);
+          const $idp = $('.idp', this.element);
+          const $login = $('.login', this.element);
+          const $webid = $('.webid', this.element);
+          const $solidSession = this.$solidSession = new solidAuth.Session();
+
+          $solidSession.onSessionRestore((url) => {
+            history.pushState(null, null, url);
+            self.element.trigger('loadStateFromUrl');
+          });
+          this._createQueryWorkerSessionHandler();
+          $solidSession
+            .handleIncomingRedirect({
+              url: window.location.href,
+              restorePreviousSession: true,
+            })
+            .then(() => {
+              self.element.trigger('loadStateFromUrl');
+              $login.removeAttr('disabled');
+              if ($solidSession.info.isLoggedIn) {
+                $login.text('Log out');
+                $idp.hide();
+                self._setWebIdName();
+                $webid.show();
+
+                // Add profile to datasources
+                self._setOption('datasources', [
+                  {
+                    name: 'My Solid Profile',
+                    url: $solidSession.info.webId,
+                  },
+                  ...self.options.datasources,
+                ]);
+
+                // Request the user's name from the worker
+                this._queryWorker.postMessage({
+                  type: 'getWebIdName',
+                  webId: $solidSession.info.webId,
+                });
+              }
+              else {
+                $login.text('Log in');
+                $webid.hide();
+                $idp.show();
+              }
+
+              // Handle login
+              $login.on('click', function () {
+                if ($solidSession.info.isLoggedIn) {
+                  $solidSession.logout();
+                  $login.text('Log in');
+                  $webid.hide();
+                  $idp.show();
+                }
+                else {
+                  $solidSession.login({
+                    oidcIssuer: $idp.val(),
+                    redirectUrl: window.location.href.replace('#', '?'), // OIDC does not allow hash fragments, so we encode it as query param
+                    clientName: 'Comunica Web Client',
+                  });
+                }
+                return false;
+              });
+            });
+        }
+        break;
+      // Initialize Solid IDP
+      case 'solidIdp':
+        this.$solidIdp.val(value).change();
+        break;
       // Disable unused query formats
       case 'queryFormats':
         var firstActiveFormat = null;
@@ -306,6 +395,9 @@ require('leaflet/dist/images/marker-shadow.png');
           }
           datasourceDict[datasource.url] = datasource.name;
         });
+
+        // Clear existing options
+        $datasources.find('option:not(.extra-information)').remove();
 
         // Create options for each datasource
         $datasources.append((value || []).map(function (datasource, index) {
@@ -420,6 +512,9 @@ require('leaflet/dist/images/marker-shadow.png');
         if (value)
           this._showDetails();
         this.$httpProxy.val(value).change();
+        break;
+      case 'bypassCache':
+        this.$bypassCache.prop('checked', value).change();
         break;
       // Set the list of selectable queries
       case 'relevantQueries':
@@ -593,6 +688,10 @@ require('leaflet/dist/images/marker-shadow.png');
       this._resultAppender.clear();
       this._logAppender.clear();
 
+      // Reset worker if we want to bypass the cache
+      if (this.options.bypassCache)
+        this._stopExecutionForcefully();
+
       // Scroll page to the results
       $('html,body').animate({ scrollTop: this.$stop.offset().top });
 
@@ -616,6 +715,7 @@ require('leaflet/dist/images/marker-shadow.png');
         datetime: parseDate(this.options.datetime),
         queryFormat: this.options.queryFormat,
         httpProxy: this.options.httpProxy,
+        workerSolidAuth: !!this.$solidSession,
       };
       if (this.options.queryContext) {
         try {
@@ -668,6 +768,7 @@ require('leaflet/dist/images/marker-shadow.png');
       // Kill the worker and restart
       this._queryWorker.terminate();
       this._createQueryWorker();
+      this._createQueryWorkerSessionHandler();
 
       this._stopExecutionBase(error);
     },
@@ -843,7 +944,11 @@ require('leaflet/dist/images/marker-shadow.png');
     _createQueryWorker: function () {
       var self = this;
       this._queryWorker = new Worker('scripts/ldf-client-worker.min.js');
+      this._queryWorkerSessionHandler = undefined;
       this._queryWorker.onmessage = function (message) {
+        if (self._queryWorkerSessionHandler && self._queryWorkerSessionHandler.onmessage(message))
+          return;
+
         var data = message.data;
         switch (data.type) {
         case 'queryInfo': return self._initResults(data.queryType);
@@ -851,11 +956,24 @@ require('leaflet/dist/images/marker-shadow.png');
         case 'end':       return self._endResults();
         case 'log':       return self._logAppender(data.log);
         case 'error':     return this.onerror(data.error);
+        case 'webIdName': return self._setWebIdName(data.name);
         }
       };
       this._queryWorker.onerror = function (error) {
         self._stopExecution(error);
       };
+    },
+
+    // Bind the handler that takes care of fetch header authentication for the worker
+    _createQueryWorkerSessionHandler: function () {
+      if (this.$solidSession)
+        this._queryWorkerSessionHandler = new solidAuth.WindowToWorkerHandler(this, this._queryWorker, this.$solidSession);
+    },
+
+    // Set the name inside the WebID field, or a shortened version of the WebID URL if name is undefined
+    _setWebIdName: function (name) {
+      const $webid = $('.webid', this.element);
+      $webid.html(`Logged in as <a href="${this.$solidSession.info.webId}" target="_blank">${name || shortenUrl(this.$solidSession.info.webId, 35)}</\a>`);
     },
   };
 
@@ -948,6 +1066,13 @@ require('leaflet/dist/images/marker-shadow.png');
       return [$('<dt>', { text: variable }), $('<dd>', { html: escape(value) })];
     }));
     return container;
+  }
+
+  // Shortens an URL to the given length
+  function shortenUrl(url, length) {
+    if (url.length > length)
+      return '&hellip;' + url.slice(url.length - length, url.length);
+    return url;
   }
 
   // TODO: Dynamically expose the version in ActorInitSparql so that we can retrieve it from there instead of relying on package.json reading.

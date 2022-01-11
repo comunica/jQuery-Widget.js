@@ -3,6 +3,7 @@ var RdfString = require('rdf-string');
 var LoggerPretty = require('@comunica/logger-pretty').LoggerPretty;
 var bindingsStreamToGraphQl = require('@comunica/actor-sparql-serialize-tree').bindingsStreamToGraphQl;
 var ProxyHandlerStatic = require('@comunica/actor-http-proxy').ProxyHandlerStatic;
+var WorkerToWindowHandler = require('@rubensworks/solid-client-authn-browser').WorkerToWindowHandler;
 
 // The active fragments client and the current results
 var resultsIterator;
@@ -13,17 +14,28 @@ logger.log = function (level, message, data) {
   postMessage({ type: 'log', log: message + (data ? (' ' + JSON.stringify(data)) : '') + '\n' });
 };
 
+// Handler for authenticating fetch requests within main window
+const workerToWindowHandler = new WorkerToWindowHandler(self);
+
+function initEngine(config) {
+  // Create an engine lazily
+  if (!engine)
+    engine = require('my-comunica-engine');
+
+  // Set up a proxy handler
+  if (config.context.httpProxy)
+    config.context.httpProxyHandler = new ProxyHandlerStatic(config.context.httpProxy);
+
+  // Set up authenticated fetch
+  if (config.context.workerSolidAuth)
+    config.context.fetch = workerToWindowHandler.buildAuthenticatedFetch();
+}
+
 // Handlers of incoming messages
 var handlers = {
   // Execute the given query with the given options
   query: function (config) {
-    // Create an engine lazily
-    if (!engine)
-      engine = require('my-comunica-engine');
-
-    // Set up a proxy handler
-    if (config.context.httpProxy)
-      config.context.httpProxyHandler = new ProxyHandlerStatic(config.context.httpProxy);
+    initEngine(config);
 
     // Create a client to fetch the fragments through HTTP
     config.context.log = logger;
@@ -84,6 +96,27 @@ var handlers = {
       resultsIterator = null;
     }
   },
+
+  // Obtain the foaf:name of a WebID
+  getWebIdName: function ({ webId }) {
+    const config = {
+      query: `
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT ?name WHERE {
+  <${webId}> foaf:name ?name.
+}`,
+      context: { sources: [webId] },
+    };
+    initEngine(config);
+    engine.query(config.query, config.context)
+      .then(function (result) {
+        result.bindings()
+          .then(bindings => {
+            if (bindings.length > 0)
+              postMessage({ type: 'webIdName', name: bindings[0].get('?name').value });
+          });
+      });
+  },
 };
 
 function postError(error) {
@@ -92,4 +125,8 @@ function postError(error) {
 }
 
 // Send incoming message to the appropriate handler
-self.onmessage = function (m) { handlers[m.data.type](m.data); };
+self.onmessage = function (m) {
+  if (workerToWindowHandler.onmessage(m))
+    return;
+  handlers[m.data.type](m.data);
+};
