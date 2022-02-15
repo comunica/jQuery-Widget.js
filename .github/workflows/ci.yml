@@ -12,7 +12,7 @@ jobs:
           key: ${{ runner.os }}-lint-modules-${{ hashFiles('**/yarn.lock') }}
       - uses: actions/setup-node@v2
         with:
-          node-version: 14.x
+          node-version: 16.x
       - run: yarn install --ignore-scripts
       - run: yarn run lint
 
@@ -22,7 +22,6 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest]
         node-version:
-          - 12.x
           - 14.x
           - 16.x
     steps:
@@ -53,7 +52,7 @@ jobs:
           key: ${{ runner.os }}-deploy-modules-${{ hashFiles('**/yarn.lock') }}
       - uses: actions/setup-node@v2
         with:
-          node-version: 14.x
+          node-version: 16.x
       - run: yarn install --ignore-scripts
       - run: yarn run build
       - run: rm .gitignore

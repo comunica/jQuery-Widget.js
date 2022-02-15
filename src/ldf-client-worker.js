@@ -1,9 +1,10 @@
 var engine = null;
 var RdfString = require('rdf-string');
 var LoggerPretty = require('@comunica/logger-pretty').LoggerPretty;
-var bindingsStreamToGraphQl = require('@comunica/actor-sparql-serialize-tree').bindingsStreamToGraphQl;
+var bindingsStreamToGraphQl = require('@comunica/actor-query-result-serialize-tree').bindingsStreamToGraphQl;
 var ProxyHandlerStatic = require('@comunica/actor-http-proxy').ProxyHandlerStatic;
 var WorkerToWindowHandler = require('@rubensworks/solid-client-authn-browser').WorkerToWindowHandler;
+var QueryEngineBase = require('@comunica/actor-init-query').QueryEngineBase;
 
 // The active fragments client and the current results
 var resultsIterator;
@@ -20,7 +21,7 @@ const workerToWindowHandler = new WorkerToWindowHandler(self);
 function initEngine(config) {
   // Create an engine lazily
   if (!engine)
-    engine = require('my-comunica-engine');
+    engine = new QueryEngineBase(require('my-comunica-engine'));
 
   // Set up a proxy handler
   if (config.context.httpProxy)
@@ -29,6 +30,10 @@ function initEngine(config) {
   // Set up authenticated fetch
   if (config.context.workerSolidAuth)
     config.context.fetch = workerToWindowHandler.buildAuthenticatedFetch();
+
+  // Transform query format to expected structure
+  if (config.context.queryFormat)
+    config.context.queryFormat = { language: config.context.queryFormat };
 }
 
 // Handlers of incoming messages
@@ -40,22 +45,28 @@ var handlers = {
     // Create a client to fetch the fragments through HTTP
     config.context.log = logger;
     engine.query(config.query, config.context)
-      .then(function (result) {
+      .then(async function (result) {
         // Post query metadata
-        postMessage({ type: 'queryInfo', queryType: result.type });
+        postMessage({ type: 'queryInfo', queryType: result.resultType });
 
-        var bindings = result.type === 'bindings';
+        var bindings = result.resultType === 'bindings';
         var resultsToTree = config.resultsToTree;
-        switch (result.type) {
+        switch (result.resultType) {
         case 'quads':
-          resultsIterator = result.quadStream;
+          resultsIterator = await result.execute();
           break;
         case 'bindings':
-          resultsIterator = result.bindingsStream;
+          resultsIterator = await result.execute();
           break;
         case 'boolean':
-          result.booleanResult.then(function (exists) {
+          result.execute().then(function (exists) {
             postMessage({ type: 'result', result: exists });
+            postMessage({ type: 'end' });
+          }).catch(postError);
+          break;
+        case 'void':
+          result.execute().then(function () {
+            postMessage({ type: 'result', result: 'Done' });
             postMessage({ type: 'end' });
           }).catch(postError);
           break;
@@ -75,7 +86,7 @@ var handlers = {
           else {
             resultsIterator.on('data', function (result) {
               if (bindings)
-                result = result.map(RdfString.termToString).toObject();
+                result = Object.fromEntries([...result].map(([key, value]) => [RdfString.termToString(key), RdfString.termToString(value)]));
               else
                 result = RdfString.quadToStringQuad(result);
               postMessage({ type: 'result', result: result });

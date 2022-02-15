@@ -1,15 +1,16 @@
-var path = require('path');
-var webpack = require('webpack');
+const path = require('path');
+const webpack = require('webpack');
+const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
 
 // First check if we can load Comunica form cwd, if not, fallback to the default
 let pathToComunica;
 let comunicaOverride;
 try {
-  pathToComunica = require.resolve('@comunica/actor-init-sparql', { paths: [process.cwd()] });
+  pathToComunica = require.resolve('@comunica/query-sparql', { paths: [process.cwd()] });
   comunicaOverride = true;
 }
 catch {
-  pathToComunica = require.resolve('@comunica/actor-init-sparql', { paths: [__dirname] });
+  pathToComunica = require.resolve('@comunica/query-sparql', { paths: [__dirname] });
   comunicaOverride = false;
 }
 
@@ -41,13 +42,33 @@ module.exports = [
       new webpack.ProvidePlugin({
         jQuery: path.join(__dirname, '/deps/jquery-2.1.0.js'),
       }),
-      new webpack.NormalModuleReplacementPlugin(/^comunica-packagejson$/, '!!json-loader!' + pathToComunica + '/../package.json'),
+      new NodePolyfillPlugin(),
+      new webpack.NormalModuleReplacementPlugin(/^comunica-packagejson$/, '!!json-loader!' + pathToComunica + '/../../package.json'),
     ],
     module: {
       rules: [
         {
+          test: /\.js$/,
+          loader: 'babel-loader',
+          exclude: /node_modules/,
+        },
+        {
           type: 'javascript/auto',
-          test: /\.(json|html)$/,
+          test: /query-sparql\/package\.json$/,
+          use: [
+            { loader: 'file-loader', options: { name: 'scripts/[name].[ext]' } },
+          ],
+        },
+        {
+          type: 'javascript/auto',
+          test: /\.html$/,
+          use: [
+            { loader: require.resolve('file-loader'), options: { name: '[name].[ext]' } },
+          ],
+        },
+        {
+          type: 'javascript/auto',
+          test: /queries\.json$/,
           use: [
             { loader: require.resolve('file-loader'), options: { name: '[name].[ext]' } },
           ],
@@ -99,6 +120,7 @@ module.exports = [
     },
     plugins: [
       new webpack.ProgressPlugin(),
+      new NodePolyfillPlugin(),
       new webpack.NormalModuleReplacementPlugin(/^my-comunica-engine$/, path.join(process.cwd(), '.tmp-comunica-engine.js')),
       ...comunicaOverride ? [] : [
         new webpack.NormalModuleReplacementPlugin(/^\@comunica/, (resource) => {

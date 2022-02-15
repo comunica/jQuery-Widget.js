@@ -703,7 +703,7 @@ require('leaflet/dist/images/marker-shadow.png');
       var context = {
         ...(this.$contextDefault || {}),
         sources: datasources.map(function (datasource) {
-          var type = 'auto';
+          var type;
           var posAt = datasource.indexOf('@');
           if (posAt > 0) {
             type = datasource.substr(0, posAt);
