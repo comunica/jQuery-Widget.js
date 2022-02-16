@@ -43,7 +43,7 @@ module.exports = [
         jQuery: path.join(__dirname, '/deps/jquery-2.1.0.js'),
       }),
       new NodePolyfillPlugin(),
-      new webpack.NormalModuleReplacementPlugin(/^comunica-packagejson$/, '!!json-loader!' + pathToComunica + '/../../package.json'),
+      new webpack.NormalModuleReplacementPlugin(/^comunica-packagejson$/, (process.platform === 'win32' ? '' : '!!json-loader!') + path.join(pathToComunica, '../../package.json')),
     ],
     module: {
       rules: [
