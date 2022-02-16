@@ -112,15 +112,11 @@ module.exports = [
           loader: 'babel-loader',
           exclude: /node_modules/,
         },
-        {
-          test: /\.mjs$/,
-          type: 'javascript/auto',
-        },
       ],
     },
     plugins: [
       new webpack.ProgressPlugin(),
-      new NodePolyfillPlugin(),
+      new NodePolyfillPlugin({ excludeAliases: ['console'] }), // Fix for circular dependency: https://github.com/Richienb/node-polyfill-webpack-plugin/issues/18
       new webpack.NormalModuleReplacementPlugin(/^my-comunica-engine$/, path.join(process.cwd(), '.tmp-comunica-engine.js')),
       ...comunicaOverride ? [] : [
         new webpack.NormalModuleReplacementPlugin(/^\@comunica/, (resource) => {

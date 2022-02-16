@@ -5,7 +5,6 @@ const path = require('path');
 const { compileConfig } = require('componentsjs');
 const { compileSettings } = require('../lib/CompileSettings');
 const webpack = require('webpack');
-webpack.node
 
 const args = minimist(process.argv.slice(2));
 if (args.h || args.help || args._.length > 1) {
@@ -32,9 +31,9 @@ if (args.h || args.help || args._.length > 1) {
     // Compile JS version of engine to temporary file
     const comunicaConfig = args._[0] ? path.resolve(process.cwd(), args._[0]) : path.resolve(__dirname, '..', 'config/config-default.json');
     const mainModulePath = args.c || (args._[0] ? process.cwd() : path.resolve(__dirname, '..'));
-    const configResourceUri = 'urn:comunica:my';
-    const exportVariableName = 'urn:comunica:sparqlinit';
-    await compileConfig(mainModulePath, comunicaConfig, configResourceUri, exportVariableName)
+    const configResourceUri = 'urn:comunica:default:Runner';
+    const exportVariableName = 'urn:comunica:default:init/actors#query';
+    await compileConfig(mainModulePath, comunicaConfig, configResourceUri, exportVariableName, undefined, true)
         .then(out => {
             // This instantiation is unneeded (MUST be done for excluding Components.js in browser environnments)
             out = out.replace('new (require(\'@comunica/runner\').Runner)', '');
