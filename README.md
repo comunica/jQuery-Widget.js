@@ -7,7 +7,7 @@
 
 **[Try the _Comunica SPARQL jQuery Widget_ online.](http://query.linkeddatafragments.org/)**
 
-This jQuery widget is a browser-based user interface to the [Comunica SPARQL client](https://github.com/comunica/comunica/tree/master/packages/actor-init-sparql).
+This jQuery widget is a browser-based user interface to the [Comunica SPARQL client](https://github.com/comunica/comunica/tree/master/engines/query-sparql).
 It allows users to execute SPARQL queries over one or multiple heterogeneous interfaces, such as [Triple Pattern Fragments interfaces](http://www.hydra-cg.com/spec/latest/triple-pattern-fragments/).
 
 The `@comunica/web-client-generator` allows this widget to be generated for any Comunica configuration.
@@ -34,7 +34,7 @@ After installation, the `comunica-web-client-generator` CLI tool allows you to g
 
 _If installed from the GitHub sources, use `./bin/generate.js` instead of `comunica-web-client-generator`._
 
-Generating the widget for the default [Comunica SPARQL](https://github.com/comunica/comunica/tree/master/packages/actor-init-sparql) config can be done as follows:
+Generating the widget for the default [Comunica SPARQL](https://github.com/comunica/comunica/tree/master/engines/query-sparql) config can be done as follows:
 
 ```bash
 $ comunica-web-client-generator
