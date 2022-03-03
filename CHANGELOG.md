@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v1.5.0"></a>
+## [v1.5.0](https://github.com/comunica/jQuery-Widget/compare/v1.4.0...v1.5.0) - 2022-03-03
+
+### Changed
+* [Update to Comunica 2](https://github.com/comunica/jQuery-Widget/commit/9e6df729e1788dd989af20843281c1bafaa44261)
+* [Reduce bundle size by using smaller Turf package](https://github.com/comunica/jQuery-Widget/commit/b7be9a10face5d426fbc5abde207d2dab39e341f)
+
 <a name="v1.4.0"></a>
 ## [v1.4.0](https://github.com/comunica/jQuery-Widget/compare/v1.3.2...v1.4.0) - 2022-01-11
 
