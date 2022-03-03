@@ -59,10 +59,9 @@
     "@babel/core": "^7.16.0",
     "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.16.4",
-    "@comunica/actor-http-native": "^2.0.1-alpha.8.0",
-    "@comunica/config-query-sparql": "^2.0.1-alpha.8.0",
-    "@comunica/query-sparql": "^2.0.1-alpha.8.0",
-    "@comunica/runner": "^2.0.1-alpha.8.0",
+    "@comunica/config-query-sparql": "^2.0.1",
+    "@comunica/query-sparql": "^2.0.3",
+    "@comunica/runner": "^2.0.3",
     "@rubensworks/solid-client-authn-browser": "^1.12.0",
     "babel-loader": "^8.2.3",
     "file-loader": "^6.0.0",
@@ -89,10 +88,5 @@
   },
   "pre-commit": [
     "lint"
-  ],
-  "resolutions": {
-    "@rdfjs/types": "1.1.0-next.1",
-    "@comunica/bindings-factory": "^2.0.1-alpha.8.0",
-    "componentsjs": "5.0.0-beta.3"
-  }
+  ]
 }
