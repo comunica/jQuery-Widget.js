@@ -9,7 +9,7 @@ var solidAuth = require('@rubensworks/solid-client-authn-browser');
 
 // This exports map-related dependencies
 var L = require('leaflet');
-var turf = require('turf');
+var turf = require('@turf/centroid');
 var Wkt = require('wicket/wicket-leaflet');
 
 // Comment out the following two lines if you want to disable YASQE
