@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v1.5.4"></a>
+## [v1.5.4](https://github.com/comunica/jQuery-Widget/compare/v1.5.3...v1.5.4) - 2022-03-11
+
+### Fixed
+* [Add workaround for Solid name lookup conflict during link traversel](https://github.com/comunica/jQuery-Widget/commit/07923066cde8327ac5309b12bb9c1d4d094d1807)
+
 <a name="v1.5.3"></a>
 ## [v1.5.3](https://github.com/comunica/jQuery-Widget/compare/v1.5.2...v1.5.3) - 2022-03-11
 

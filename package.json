@@ -1,6 +1,6 @@
 {
   "name": "@comunica/web-client-generator",
-  "version": "1.5.3",
+  "version": "1.5.4",
   "description": "A tool to generate a Web-based client for a given Comunica config.",
   "repository": {
     "type": "git",
