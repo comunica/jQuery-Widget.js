@@ -125,7 +125,11 @@ SELECT ?name WHERE {
           .then(bindings => {
             if (bindings.length > 0)
               postMessage({ type: 'webIdName', name: bindings[0].get('?name').value });
+          }).catch(() => {
+            // Ignore errors
           });
+      }).catch(() => {
+        // Ignore errors
       });
   },
 };
