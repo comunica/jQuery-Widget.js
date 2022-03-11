@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v1.5.3"></a>
+## [v1.5.3](https://github.com/comunica/jQuery-Widget/compare/v1.5.2...v1.5.3) - 2022-03-11
+
+### Fixed
+* [Fix query context not being passed when fetching Solid name](https://github.com/comunica/jQuery-Widget/commit/2ca958e47c651056efd063729b98cc970a0b4078)
+
 <a name="v1.5.2"></a>
 ## [v1.5.2](https://github.com/comunica/jQuery-Widget/compare/v1.5.1...v1.5.2) - 2022-03-11
 
