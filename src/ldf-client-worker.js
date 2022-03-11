@@ -119,9 +119,9 @@ SELECT ?name WHERE {
       context: { sources: [webId] },
     };
     initEngine(config);
-    engine.query(config.query, config.context)
+    engine.queryBindings(config.query, config.context)
       .then(function (result) {
-        result.bindings()
+        result.toArray()
           .then(bindings => {
             if (bindings.length > 0)
               postMessage({ type: 'webIdName', name: bindings[0].get('?name').value });
