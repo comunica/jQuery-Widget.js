@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v1.5.1"></a>
+## [v1.5.1](https://github.com/comunica/jQuery-Widget/compare/v1.5.0...v1.5.1) - 2022-03-11
+
+### Fixed
+* [Fix Solid name loading not working anymore](https://github.com/comunica/jQuery-Widget/commit/bad732ad8d750a03607ec3a454a03bf7cf54190b)
+
 <a name="v1.5.0"></a>
 ## [v1.5.0](https://github.com/comunica/jQuery-Widget/compare/v1.4.0...v1.5.0) - 2022-03-03
 
