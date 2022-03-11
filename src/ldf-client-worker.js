@@ -116,7 +116,12 @@ PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 SELECT ?name WHERE {
   <${webId}> foaf:name ?name.
 }`,
-      context: { ...context, sources: [webId] },
+      context: {
+        ...context,
+        'sources': [webId],
+        // TODO: this can be removed once this issue is fixed: https://github.com/comunica/comunica/issues/950
+        '@comunica/actor-rdf-resolve-hypermedia-links-traverse:traverse': false,
+      },
     };
     initEngine(config);
     config.context.log = logger;
@@ -126,7 +131,10 @@ SELECT ?name WHERE {
           .then(bindings => {
             if (bindings.length > 0)
               postMessage({ type: 'webIdName', name: bindings[0].get('name').value });
-            result.destroy();
+
+            // Clear HTTP cache to make sure we re-fetch all next URL
+            // TODO: this can be removed once this issue is fixed: https://github.com/comunica/comunica/issues/950
+            engine.invalidateHttpCache();
           }).catch(postError);
       }).catch(postError);
   },
