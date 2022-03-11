@@ -327,6 +327,7 @@ require('leaflet/dist/images/marker-shadow.png');
                 this._queryWorker.postMessage({
                   type: 'getWebIdName',
                   webId: $solidSession.info.webId,
+                  context: self._getQueryContext(),
                 });
               }
               else {
@@ -701,7 +702,7 @@ require('leaflet/dist/images/marker-shadow.png');
 
       // Let the worker execute the query
       var context = {
-        ...(this.$contextDefault || {}),
+        ...this._getQueryContext(),
         sources: datasources.map(function (datasource) {
           var type;
           var posAt = datasource.indexOf('@');
@@ -712,6 +713,24 @@ require('leaflet/dist/images/marker-shadow.png');
           datasource = resolve(datasource, window.location.href);
           return { type: type, value: datasource };
         }),
+      };
+      var prefixesString = '';
+      if (this.options.queryFormat === 'sparql') {
+        for (var prefix in this.options.prefixes)
+          prefixesString += 'PREFIX ' + prefix + ': <' + this.options.prefixes[prefix] + '>\n';
+      }
+      var query = prefixesString + this.$queryTextsIndexed[this.options.queryFormat].val();
+      this._queryWorker.postMessage({
+        type: 'query',
+        query: query,
+        context: context,
+        resultsToTree: this.options.resultsToTree,
+      });
+    },
+
+    _getQueryContext: function () {
+      var context = {
+        ...(this.$contextDefault || {}),
         datetime: parseDate(this.options.datetime),
         queryFormat: this.options.queryFormat,
         httpProxy: this.options.httpProxy,
@@ -726,18 +745,7 @@ require('leaflet/dist/images/marker-shadow.png');
           this._resultAppender(e.message + '\n');
         }
       }
-      var prefixesString = '';
-      if (this.options.queryFormat === 'sparql') {
-        for (var prefix in this.options.prefixes)
-          prefixesString += 'PREFIX ' + prefix + ': <' + this.options.prefixes[prefix] + '>\n';
-      }
-      var query = prefixesString + this.$queryTextsIndexed[this.options.queryFormat].val();
-      this._queryWorker.postMessage({
-        type: 'query',
-        query: query,
-        context: context,
-        resultsToTree: this.options.resultsToTree,
-      });
+      return context;
     },
 
     _stopExecutionBase: function (error) {

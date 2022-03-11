@@ -109,28 +109,26 @@ var handlers = {
   },
 
   // Obtain the foaf:name of a WebID
-  getWebIdName: function ({ webId }) {
+  getWebIdName: function ({ webId, context }) {
     const config = {
       query: `
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 SELECT ?name WHERE {
   <${webId}> foaf:name ?name.
 }`,
-      context: { sources: [webId] },
+      context: { ...context, sources: [webId] },
     };
     initEngine(config);
+    config.context.log = logger;
     engine.queryBindings(config.query, config.context)
       .then(function (result) {
-        result.toArray()
+        result.toArray({ limit: 1 })
           .then(bindings => {
             if (bindings.length > 0)
-              postMessage({ type: 'webIdName', name: bindings[0].get('?name').value });
-          }).catch(() => {
-            // Ignore errors
-          });
-      }).catch(() => {
-        // Ignore errors
-      });
+              postMessage({ type: 'webIdName', name: bindings[0].get('name').value });
+            result.destroy();
+          }).catch(postError);
+      }).catch(postError);
   },
 };
 
