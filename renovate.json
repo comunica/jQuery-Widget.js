@@ -5,7 +5,7 @@
   "rangeStrategy": "replace",
   "packageRules": [
     {
-      "sourceUrlPrefixes": ["https://github.com/comunica/comunica"],
+      "matchSourceUrlPrefixes": ["https://github.com/comunica/comunica"],
       "groupName": "Comunica monorepo packages",
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "automerge": true,
