@@ -1,5 +1,5 @@
 ## Build the website
-FROM node:18.0.0 as builder
+FROM node:18.1.0 as builder
 
 WORKDIR /webapp
 
