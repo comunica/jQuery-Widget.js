@@ -13,8 +13,8 @@ var turf = require('@turf/centroid');
 var Wkt = require('wicket/wicket-leaflet');
 
 // Comment out the following two lines if you want to disable YASQE
-var YASQE = require('yasgui-yasqe/src/main.js');
-require('yasgui-yasqe/dist/yasqe.css'); // Make webpack import the css as well
+var YASQE = require('@triply/yasqe/build/yasqe.min.js');
+require('@triply/yasqe/build/yasqe.min.css'); // Make webpack import the css as well
 
 // Import leaflet styles
 require('leaflet/dist/leaflet.css');
