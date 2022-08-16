@@ -245,7 +245,7 @@ require('leaflet/dist/images/marker-shadow.png');
 
       // Set the default proxy
       $proxyDefault.on('click', function () {
-        $httpProxy.val('http://proxy.linkeddatafragments.org/').change();
+        $httpProxy.val(document.location.protocol + '//proxy.linkeddatafragments.org/').change();
         return false;
       });
 
