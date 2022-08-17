@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v1.6.0"></a>
+## [v1.6.0](https://github.com/comunica/jQuery-Widget.js/compare/v1.5.4...v1.6.0) - 2022-08-17
+
+### Changed
+* [Include current protocol in default proxy, Closes #120](https://github.com/comunica/jQuery-Widget.js/commit/d7fcd74b6f03f935037026274cac08d76e328878)
+
 <a name="v1.5.4"></a>
 ## [v1.5.4](https://github.com/comunica/jQuery-Widget/compare/v1.5.3...v1.5.4) - 2022-03-11
 
