@@ -16,7 +16,7 @@
   },
   "solidAuth": {
     "settingsOnly": true,
-    "defaultIdp": "https://broker.pod.inrupt.com/"
+    "defaultIdp": "https://login.inrupt.com/"
   },
   "datasources": [
     {
