@@ -778,14 +778,6 @@
     "@babel/helper-create-regexp-features-plugin" "^7.18.6"
     "@babel/helper-plugin-utils" "^7.18.6"
 
-"@babel/polyfill@^7.12.1":
-  version "7.12.1"
-  resolved "https://registry.yarnpkg.com/@babel/polyfill/-/polyfill-7.12.1.tgz#1f2d6371d1261bbd961f3c5d5909150e12d0bd96"
-  integrity sha512-X0pi0V6gxLi6lFZpGmeNa4zxtwEmCs42isWLNjZZDE0Y8yVfgu0T2OAHlzBbdYlqbW/YXVvoBHpATEM+goCj8g==
-  dependencies:
-    core-js "^2.6.5"
-    regenerator-runtime "^0.13.4"
-
 "@babel/preset-env@^7.16.4":
   version "7.18.10"
   resolved "https://registry.yarnpkg.com/@babel/preset-env/-/preset-env-7.18.10.tgz#83b8dfe70d7eea1aae5a10635ab0a5fe60dfc0f4"
@@ -2589,7 +2581,7 @@
   dependencies:
     "@comunica/core" "^2.4.0"
 
-"@comunica/query-sparql@^2.2.1":
+"@comunica/query-sparql@^2.4.0":
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/@comunica/query-sparql/-/query-sparql-2.4.0.tgz#be7a5d6ae19b0f7b4b494cc7f66850a404609ccc"
   integrity sha512-CqCYETB+/pexa4PSchtd8lsCjD/9NrZO7+lLnUM7UusVME44buNKQW8Ld0juOeviugDNpp0Pn62uieLQ45tKaQ==
@@ -2725,7 +2717,7 @@
     "@comunica/runner" "^2.4.0"
     "@comunica/types" "^2.4.0"
 
-"@comunica/runner@^2.0.3", "@comunica/runner@^2.4.0":
+"@comunica/runner@^2.4.0":
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/@comunica/runner/-/runner-2.4.0.tgz#7c399a991fc053ed5013c794c92e1edeef28ae1b"
   integrity sha512-1BUBW++DURuA/zwf3ve0Y/ccUqJLpjMXglwSR14p2Vnzr0eaC90d+F5zdsPHCUchwzMU4jHVD8RuBFJQBRnuag==
@@ -3939,11 +3931,6 @@ core-js-compat@^3.21.0, core-js-compat@^3.22.1:
   dependencies:
     browserslist "^4.21.3"
     semver "7.0.0"
-
-core-js@^2.6.5:
-  version "2.6.12"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.12.tgz#d9333dfa7b065e347cc5682219d6f690859cc2ec"
-  integrity sha512-Kb2wC0fvsWfQrgk8HU5lW6U/Lcs8+9aaYcy4ZFc6DDlo4nZ7n70dEgE5rtR0oG6ufKDUnrwfWL1mXR5ljDatrQ==
 
 core-js@^3.8.3:
   version "3.24.1"
@@ -6048,7 +6035,7 @@ rdf-string-ttl@^1.1.0:
     "@rdfjs/types" "*"
     rdf-data-factory "^1.1.0"
 
-rdf-string@1.6.1, rdf-string@^1.5.0, rdf-string@^1.6.0:
+rdf-string@^1.5.0, rdf-string@^1.6.0, rdf-string@^1.6.1:
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/rdf-string/-/rdf-string-1.6.1.tgz#be576118b07fc59984ee44c3253004f72aed953b"
   integrity sha512-EDNVQs9jDgm4hkY8TZLhQI3rYUduecMRxLu3szldAdS2CHEo8aFqlHcZDFgBcaJN2XJWoRJU8YQT85wmb8gPEA==
@@ -7367,7 +7354,7 @@ yasgui-utils@^1.6.7:
   dependencies:
     store "^2.0.4"
 
-yasgui-yasqe@2.11.22:
+yasgui-yasqe@^2.11.22:
   version "2.11.22"
   resolved "https://registry.yarnpkg.com/yasgui-yasqe/-/yasgui-yasqe-2.11.22.tgz#6da6cc234157924e986cc566f319b09519edd5f3"
   integrity sha512-8yNcjune6ONTJXJ2s6bZhRXBxyvuNErXjNAIQCbVyQbnG1feZBTR1SPjTKxkFWaCB/f0f19hmJPtcOkLOcOjUw==
