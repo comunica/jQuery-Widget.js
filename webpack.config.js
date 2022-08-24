@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
 
 // First check if we can load Comunica form cwd, if not, fallback to the default
 let pathToComunica;
@@ -42,7 +41,6 @@ module.exports = [
       new webpack.ProvidePlugin({
         jQuery: path.join(__dirname, '/deps/jquery-2.1.0.js'),
       }),
-      new NodePolyfillPlugin(),
       new webpack.NormalModuleReplacementPlugin(/^comunica-packagejson$/, (process.platform === 'win32' ? '' : '!!json-loader!') + path.join(pathToComunica, '../../package.json')),
     ],
     module: {
@@ -116,7 +114,6 @@ module.exports = [
     },
     plugins: [
       new webpack.ProgressPlugin(),
-      new NodePolyfillPlugin({ excludeAliases: ['console'] }), // Fix for circular dependency: https://github.com/Richienb/node-polyfill-webpack-plugin/issues/18
       new webpack.NormalModuleReplacementPlugin(/^my-comunica-engine$/, path.join(process.cwd(), '.tmp-comunica-engine.js')),
       ...comunicaOverride ? [] : [
         new webpack.NormalModuleReplacementPlugin(/^\@comunica/, (resource) => {
