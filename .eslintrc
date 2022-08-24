@@ -4,7 +4,7 @@
     node: true,
     browser: true
   },
-  parser: babel-eslint,
+  parser: "@babel/eslint-parser",
 
   globals: {
     jQuery: true,
