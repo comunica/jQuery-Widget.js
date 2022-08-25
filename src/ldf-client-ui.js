@@ -4,6 +4,7 @@
 // This exports the webpacked jQuery.
 window.jQuery = require('../deps/jquery-2.1.0.js');
 var N3 = require('n3');
+var RdfString = require('rdf-string');
 var resolve = require('relative-to-absolute-iri').resolve;
 var solidAuth = require('@rubensworks/solid-client-authn-browser');
 
@@ -23,6 +24,10 @@ require('leaflet/dist/images/layers-2x.png');
 require('leaflet/dist/images/marker-icon.png');
 require('leaflet/dist/images/marker-icon-2x.png');
 require('leaflet/dist/images/marker-shadow.png');
+
+// Polyfill process for readable-stream when it is not defined
+if (typeof global.process === 'undefined')
+  global.process = require('process');
 
 (function ($) {
   // Query UI main entry point, which mimics the jQuery UI widget interface:
@@ -798,13 +803,11 @@ require('leaflet/dist/images/marker-shadow.png');
       // For CONSTRUCT and DESCRIBE queries,
       // write a Turtle representation of the triples
       case 'quads':
-        var writer = new N3.Writer({
-          write: function (chunk, encoding, done) {
-            resultAppender(chunk), done && done();
-          },
-        }, this.options);
-        this._writeResult = function (triple) { writer.addTriple(triple); };
-        this._writeEnd = function () { writer.end(); };
+        var streamWriter = new N3.StreamWriter(this.options)
+          .on('data', resultAppender)
+          .on('error', (err) => { throw err; });
+        this._writeResult = function (triple) { streamWriter.write(RdfString.stringQuadToQuad(triple)); };
+        this._writeEnd = function () { streamWriter.end(); };
         break;
       // For ASK queries, write whether an answer exists
       case 'boolean':
