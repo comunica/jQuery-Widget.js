@@ -799,9 +799,11 @@ require('leaflet/dist/images/marker-shadow.png');
       // For CONSTRUCT and DESCRIBE queries,
       // write a Turtle representation of the triples
       case 'quads':
-        var writer = new N3.Writer(this.options);
-        this._writeResult = function (triple) { writer.addQuad(RdfString.stringQuadToQuad(triple)); };
-        this._writeEnd = function () { writer.end((error, result) => { if (error) throw error; resultAppender(result); }); };
+        var streamWriter = new N3.StreamWriter(this.options)
+          .on('data', (chunk) => resultAppender(chunk))
+          .on('error', (err) => { throw err; });
+        this._writeResult = function (triple) { streamWriter.addQuad(RdfString.stringQuadToQuad(triple)); };
+        this._writeEnd = function () { streamWriter.end(); };
         break;
       // For ASK queries, write whether an answer exists
       case 'boolean':
