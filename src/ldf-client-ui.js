@@ -25,6 +25,10 @@ require('leaflet/dist/images/marker-icon.png');
 require('leaflet/dist/images/marker-icon-2x.png');
 require('leaflet/dist/images/marker-shadow.png');
 
+// Polyfill process for readable-stream when it is not defined
+if (typeof global.process === 'undefined')
+  global.process = require('process');
+
 (function ($) {
   // Query UI main entry point, which mimics the jQuery UI widget interface:
   // - $(element).queryui(options) initializes the widget
@@ -800,9 +804,9 @@ require('leaflet/dist/images/marker-shadow.png');
       // write a Turtle representation of the triples
       case 'quads':
         var streamWriter = new N3.StreamWriter(this.options)
-          .on('data', (chunk) => resultAppender(chunk))
+          .on('data', resultAppender)
           .on('error', (err) => { throw err; });
-        this._writeResult = function (triple) { streamWriter.addQuad(RdfString.stringQuadToQuad(triple)); };
+        this._writeResult = function (triple) { streamWriter.write(RdfString.stringQuadToQuad(triple)); };
         this._writeEnd = function () { streamWriter.end(); };
         break;
       // For ASK queries, write whether an answer exists
