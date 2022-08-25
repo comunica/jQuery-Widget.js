@@ -4,6 +4,7 @@
 // This exports the webpacked jQuery.
 window.jQuery = require('../deps/jquery-2.1.0.js');
 var N3 = require('n3');
+var RdfString = require('rdf-string');
 var resolve = require('relative-to-absolute-iri').resolve;
 var solidAuth = require('@rubensworks/solid-client-authn-browser');
 
@@ -798,13 +799,9 @@ require('leaflet/dist/images/marker-shadow.png');
       // For CONSTRUCT and DESCRIBE queries,
       // write a Turtle representation of the triples
       case 'quads':
-        var writer = new N3.Writer({
-          write: function (chunk, encoding, done) {
-            resultAppender(chunk), done && done();
-          },
-        }, this.options);
-        this._writeResult = function (triple) { writer.addTriple(triple); };
-        this._writeEnd = function () { writer.end(); };
+        var writer = new N3.Writer(this.options);
+        this._writeResult = function (triple) { writer.addQuad(RdfString.stringQuadToQuad(triple)); };
+        this._writeEnd = function () { writer.end((error, result) => { if (error) throw error; resultAppender(result); }); };
         break;
       // For ASK queries, write whether an answer exists
       case 'boolean':
