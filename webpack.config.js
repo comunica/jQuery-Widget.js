@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
 
 // First check if we can load Comunica form cwd, if not, fallback to the default
 let pathToComunica;
@@ -114,6 +115,9 @@ module.exports = [
     },
     plugins: [
       new webpack.ProgressPlugin(),
+      new NodePolyfillPlugin({
+        includeAliases: ['Buffer'], // Buffer global is still needed due to the jsonparser library
+      }),
       new webpack.NormalModuleReplacementPlugin(/^my-comunica-engine$/, path.join(process.cwd(), '.tmp-comunica-engine.js')),
       ...comunicaOverride ? [] : [
         new webpack.NormalModuleReplacementPlugin(/^\@comunica/, (resource) => {
