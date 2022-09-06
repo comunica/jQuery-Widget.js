@@ -28,8 +28,21 @@ function initEngine(config) {
     config.context.httpProxyHandler = new ProxyHandlerStatic(config.context.httpProxy);
 
   // Set up authenticated fetch
-  if (config.context.workerSolidAuth)
-    config.context.fetch = workerToWindowHandler.buildAuthenticatedFetch();
+  if (config.context.workerSolidAuth) {
+    const authenticatedFetch = workerToWindowHandler.buildAuthenticatedFetch();
+
+    async function comunicaFetch(...args) {
+      const response = await global.fetch(...args);
+
+      if (response.status === 401)
+        return await authenticatedFetch(...args);
+
+
+      return response;
+    }
+
+    config.context.fetch = comunicaFetch;
+  }
 
   // Transform query format to expected structure
   if (config.context.queryFormat)
