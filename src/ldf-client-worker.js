@@ -37,7 +37,6 @@ function initEngine(config) {
       if (response.status === 401)
         return await authenticatedFetch(...args);
 
-
       return response;
     }
 
