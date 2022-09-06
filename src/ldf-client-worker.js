@@ -29,13 +29,31 @@ function initEngine(config) {
 
   // Set up authenticated fetch
   if (config.context.workerSolidAuth) {
+    function getNamespace(input) {
+      const url = new URL(new Request(input).url);
+      return url.origin + url.pathname;
+    }
+
     const authenticatedFetch = workerToWindowHandler.buildAuthenticatedFetch();
+    const authUrls = {};
 
     async function comunicaFetch(...args) {
+      if (authUrls[getNamespace(args[0])]) {
+        // In future we should check if this is a 403? (double check code) response
+        // and if so try the *unathenticated* fetch. This handles cases like a qpf endpoint
+        // changing an endpoint from being auth-required to public halfway through a session
+        return await authenticatedFetch(...args);
+      }
+
+
       const response = await global.fetch(...args);
 
-      if (response.status === 401)
+      if (response.status === 401) {
+        // In the future we should probably also cache any URLs that we
+        // are redirected to as well as the URL we started with
+        authUrls[getNamespace(args[0])] = true;
         return await authenticatedFetch(...args);
+      }
 
       return response;
     }
