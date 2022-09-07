@@ -45,7 +45,6 @@ function initEngine(config) {
         return await authenticatedFetch(...args);
       }
 
-
       const response = await global.fetch(...args);
 
       if (response.status === 401) {
