@@ -56,7 +56,7 @@ jobs:
       - run: yarn install --ignore-scripts
       - run: yarn run build
       - run: rm .gitignore
-      - uses: JamesIves/github-pages-deploy-action@3.7.1
+      - uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
