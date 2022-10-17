@@ -30,7 +30,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Checkout
-        uses: actions/checkout@v2.4.2
+        uses: actions/checkout@v2.5.0
         with:
           persist-credentials: false
       - uses: actions/cache@v2
