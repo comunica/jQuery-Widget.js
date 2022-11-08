@@ -63,7 +63,7 @@
     "@comunica/runner": "^2.4.0",
     "@rubensworks/solid-client-authn-browser": "^1.13.0",
     "@turf/centroid": "^6.5.0",
-    "babel-loader": "^8.2.3",
+    "babel-loader": "^9.0.0",
     "file-loader": "^6.0.0",
     "json-loader": "^0.5.7",
     "leaflet": "^1.7.1",
