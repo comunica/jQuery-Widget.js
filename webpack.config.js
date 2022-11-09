@@ -31,6 +31,7 @@ module.exports = [
       path.join(__dirname, './images/settings.svg'),
       path.join(__dirname, './images/sparql.png'),
       path.join(__dirname, './favicon.ico'),
+      path.join(__dirname, './solid-client-id.json'),
       path.join(process.cwd(), './queries.json'),
     ],
     output: {
@@ -68,6 +69,13 @@ module.exports = [
         {
           type: 'javascript/auto',
           test: /queries\.json$/,
+          use: [
+            { loader: require.resolve('file-loader'), options: { name: '[name].[ext]' } },
+          ],
+        },
+        {
+          type: 'javascript/auto',
+          test: /solid-client-id\.json$/,
           use: [
             { loader: require.resolve('file-loader'), options: { name: '[name].[ext]' } },
           ],

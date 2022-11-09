@@ -354,6 +354,7 @@ if (typeof global.process === 'undefined')
                     oidcIssuer: $idp.val(),
                     redirectUrl: window.location.href.replace('#', '?'), // OIDC does not allow hash fragments, so we encode it as query param
                     clientName: 'Comunica Web Client',
+                    clientId: 'https://query.linkeddatafragments.org/solid-client-id.json',
                   });
                 }
                 return false;
