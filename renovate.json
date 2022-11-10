@@ -7,9 +7,8 @@
     {
       "matchSourceUrlPrefixes": ["https://github.com/comunica/comunica"],
       "groupName": "Comunica monorepo packages",
-      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "rangeStrategy": "bump",
       "automerge": true,
-      "automergeType": "branch",
       "stabilityDays": 0,
       "schedule": null,
       "prConcurrentLimit": 0,
