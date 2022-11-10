@@ -11,7 +11,9 @@
       "automerge": true,
       "automergeType": "branch",
       "stabilityDays": 0,
-      "schedule": null
+      "schedule": null,
+      "prConcurrentLimit": 0,
+      "branchConcurrentLimit": 0
     }
   ]
 }
