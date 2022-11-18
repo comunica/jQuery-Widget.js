@@ -1725,10 +1725,10 @@
     rdf-terms "^1.9.1"
     readable-stream "^4.2.0"
 
-"@comunica/actor-query-result-serialize-tree@^2.5.1":
-  version "2.5.1"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-result-serialize-tree/-/actor-query-result-serialize-tree-2.5.1.tgz#2c1c1dabd0062d85d4da3c46db2df6948c833857"
-  integrity sha512-TTujdnyv/kC7sFRzXCfa0gx5GuePzr5gpjT/oXODCBhiD//C/hqlDmmMamwZ+cXEi5vbmJSM5FzfNvgpdZeh9w==
+"@comunica/actor-query-result-serialize-tree@^2.5.2":
+  version "2.5.2"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-result-serialize-tree/-/actor-query-result-serialize-tree-2.5.2.tgz#15a8223d3b8a776a5a5fd69682242c953d8a876f"
+  integrity sha512-ZmIRwklu7gO7y6lRl+E4t5ygqk3diHf+ttKem+380CwZymxfbPiMGgI7kwGvEU/+MsjzQvJjboViL2R5bFWHOw==
   dependencies:
     "@comunica/bus-query-result-serialize" "^2.5.1"
     "@comunica/context-entries" "^2.5.1"
@@ -2841,10 +2841,10 @@
   dependencies:
     "@comunica/core" "^2.5.1"
 
-"@comunica/query-sparql@^2.5.1":
-  version "2.5.1"
-  resolved "https://registry.yarnpkg.com/@comunica/query-sparql/-/query-sparql-2.5.1.tgz#615606673065c29bd34ef88b41688ee5834cfcca"
-  integrity sha512-MtTKBPU26Vq8urGWz4GNKmosbT9EiVUxkKibntXfMXMdkbeRvQTY9jHFOCcMDsNQgcDWVi5X07E2dAQmVfP6Zw==
+"@comunica/query-sparql@^2.5.2":
+  version "2.5.2"
+  resolved "https://registry.yarnpkg.com/@comunica/query-sparql/-/query-sparql-2.5.2.tgz#841dcc738d38459f18a674ba0046e506034bcb7a"
+  integrity sha512-ZUqKB23Qouq5rew5Ef/u5xMkqGJ9J/G4SQSE633uiMcIz8oVWLYFTbCuqOfnmQZ3gmct+B2szuFmyBvlH8hJkQ==
   dependencies:
     "@comunica/actor-context-preprocess-source-to-destination" "^2.5.1"
     "@comunica/actor-dereference-fallback" "^2.5.1"
@@ -2908,7 +2908,7 @@
     "@comunica/actor-query-result-serialize-sparql-xml" "^2.5.1"
     "@comunica/actor-query-result-serialize-stats" "^2.5.1"
     "@comunica/actor-query-result-serialize-table" "^2.5.1"
-    "@comunica/actor-query-result-serialize-tree" "^2.5.1"
+    "@comunica/actor-query-result-serialize-tree" "^2.5.2"
     "@comunica/actor-rdf-join-entries-sort-cardinality" "^2.5.1"
     "@comunica/actor-rdf-join-inner-hash" "^2.5.1"
     "@comunica/actor-rdf-join-inner-multi-bind" "^2.5.1"
