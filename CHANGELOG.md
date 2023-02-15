@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v1.7.1"></a>
+## [v1.7.1](https://github.com/comunica/jQuery-Widget.js/compare/v1.7.0...v1.7.1) - 2023-02-15
+
+### Fixed
+* [Fix solid-client-id.json not being packaged](https://github.com/comunica/jQuery-Widget.js/commit/41c8c56756c3bf32490aee17f09b5329c2fc3d44)
+
 <a name="v1.7.0"></a>
 ## [v1.7.0](https://github.com/comunica/jQuery-Widget.js/compare/v1.6.0...v1.7.0) - 2023-02-15
 
