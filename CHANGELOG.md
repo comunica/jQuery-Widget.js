@@ -1,6 +1,18 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v1.7.0"></a>
+## [v1.7.0](https://github.com/comunica/jQuery-Widget.js/compare/v1.6.0...v1.7.0) - 2023-02-15
+
+### Added
+* [Add allowNoSources to settings to disable sources check](https://github.com/comunica/jQuery-Widget.js/commit/60a3e094c758622d94cd60b763b13af8c8160342)
+
+### Changed
+* [Update to Comunica 2.6.6](https://github.com/comunica/jQuery-Widget.js/commit/ca4396f3467b6f246d47ad7f9894f5428c487634)
+* [Expose Solid client id, Closes #123](https://github.com/comunica/jQuery-Widget.js/commit/41986a7cef242cb1aaec39c7c1ef3e438bc7bcbd)
+* [Add back Buffer global polyfill for jsonparser (#124)](https://github.com/comunica/jQuery-Widget.js/commit/049b4f3828338bfb0b11a998218c7e229513755a)
+* [Update to new Inrupt IDP URL](https://github.com/comunica/jQuery-Widget.js/commit/8c0d46cc3daaaef903e065835a1441839e197e9e)
+
 <a name="v1.6.0"></a>
 ## [v1.6.0](https://github.com/comunica/jQuery-Widget.js/compare/v1.5.4...v1.6.0) - 2022-08-17
 
