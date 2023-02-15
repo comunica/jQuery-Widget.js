@@ -46,7 +46,8 @@
     "favicon.ico",
     "index.html",
     "settings.json",
-    "webpack.config.js"
+    "webpack.config.js",
+    "solid-client-id.json"
   ],
   "scripts": {
     "lint": "eslint src/*.js",
