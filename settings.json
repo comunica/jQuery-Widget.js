@@ -3,6 +3,7 @@
     "sparql": true,
     "graphql": true
   },
+  "allowNoSources": false,
   "branding": {
     "title": "Query the Web of Linked Data",
     "title_href": "https://comunica.dev/",

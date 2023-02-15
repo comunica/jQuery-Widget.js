@@ -555,6 +555,9 @@ if (typeof global.process === 'undefined')
         if (value.page_title)
           $('head title').text(value.page_title);
         break;
+      case 'allowNoSources':
+        this.$allowNoSources = value;
+        break;
       // Load settings from a JSON resource
       case 'settings':
         $.getJSON(value, function (settings) {
@@ -677,8 +680,8 @@ if (typeof global.process === 'undefined')
 
     // Starts query execution
     _startExecution: function () {
-      var datasources = this.$datasources.val();
-      if (!datasources || !datasources.length)
+      var datasources = this.$datasources.val() || [];
+      if (!datasources.length && !this.$allowNoSources)
         return alert('Please choose a datasource to execute the query.');
 
       // Hide and clear map
