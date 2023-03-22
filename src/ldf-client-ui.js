@@ -12,6 +12,7 @@ var solidAuth = require('@rubensworks/solid-client-authn-browser');
 var L = require('leaflet');
 var turf = require('@turf/centroid');
 var Wkt = require('wicket/wicket-leaflet');
+var join = require('url-join');
 
 // Comment out the following two lines if you want to disable YASQE
 var YASQE = require('yasgui-yasqe/src/main.js');
@@ -350,11 +351,12 @@ if (typeof global.process === 'undefined')
                   $idp.show();
                 }
                 else {
+                  const href = window.location.href.replace('#', '?');
                   $solidSession.login({
                     oidcIssuer: $idp.val(),
-                    redirectUrl: window.location.href.replace('#', '?'), // OIDC does not allow hash fragments, so we encode it as query param
+                    redirectUrl: href, // OIDC does not allow hash fragments, so we encode it as query param
                     clientName: 'Comunica Web Client',
-                    clientId: 'https://query.linkeddatafragments.org/solid-client-id.json',
+                    clientId: join(href, 'solid-client-id.json'),
                   });
                 }
                 return false;
