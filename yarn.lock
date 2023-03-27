@@ -7614,6 +7614,14 @@ streamify-string@^1.0.1:
   resolved "https://registry.npmjs.org/streamify-string/-/streamify-string-1.0.1.tgz"
   integrity sha512-RXvBglotrvSIuQQ7oC55pdV40wZ/17gTb68ipMC4LA0SqMN4Sqfsf31Dpei7qXpYqZQ8ueVnPglUvtep3tlhqw==
 
+string-replace-loader@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.npmjs.org/string-replace-loader/-/string-replace-loader-3.1.0.tgz"
+  integrity sha512-5AOMUZeX5HE/ylKDnEa/KKBqvlnFmRZudSOjVJHxhoJg9QYTwl1rECx7SLR8BBH7tfxb4Rp7EM2XVfQFxIhsbQ==
+  dependencies:
+    loader-utils "^2.0.0"
+    schema-utils "^3.0.0"
+
 string-width@^4.1.0, string-width@^4.2.0, string-width@^4.2.3:
   version "4.2.3"
   resolved "https://registry.npmjs.org/string-width/-/string-width-4.2.3.tgz"
@@ -7915,11 +7923,6 @@ uritemplate@0.3.4:
   version "0.3.4"
   resolved "https://registry.npmjs.org/uritemplate/-/uritemplate-0.3.4.tgz"
   integrity sha512-enADBvHfhjrwxFMTVWeIIYz51SZ91uC6o2MR/NQTVljJB6HTZ8eQL3Q7JBj3RxNISA14MOwJaU3vpf5R6dyxHA==
-
-url-join@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/url-join/-/url-join-5.0.0.tgz#c2f1e5cbd95fa91082a93b58a1f42fecb4bdbcf1"
-  integrity sha512-n2huDr9h9yzd6exQVnH/jU5mr+Pfx08LRXXZhkLLetAMESRj+anQsTAh940iMrIetKAmry9coFuZQ2jY8/p3WA==
 
 url@^0.11.0:
   version "0.11.0"
