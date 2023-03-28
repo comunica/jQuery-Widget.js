@@ -1,6 +1,6 @@
 {
   "@context": ["https://www.w3.org/ns/solid/oidc-context.jsonld"],
-  "client_id": "https://query.linkeddatafragments.org/solid-client-id.json",
+  "client_id": "https://query.linkeddatafragments.org/solid-client-id.jsonld",
   "client_name": "Comunica Web Client",
   "redirect_uris": ["https://query.linkeddatafragments.org/"],
   "post_logout_redirect_uris": ["https://query.linkeddatafragments.org/"],
