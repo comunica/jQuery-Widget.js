@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v1.8.0"></a>
+## [v1.8.0](https://github.com/comunica/jQuery-Widget.js/compare/v1.7.1...v1.8.0) - 2023-03-28
+
+### Added
+* [Add baseURL parameter to support different hosts in Solid auth](https://github.com/comunica/jQuery-Widget.js/commit/c22ea7e7e4777a1c42893ff797fa74d222d174b8)
+
 <a name="v1.7.1"></a>
 ## [v1.7.1](https://github.com/comunica/jQuery-Widget.js/compare/v1.7.0...v1.7.1) - 2023-02-15
 
