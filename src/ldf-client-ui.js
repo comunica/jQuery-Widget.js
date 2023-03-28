@@ -352,9 +352,9 @@ if (typeof global.process === 'undefined')
                 else {
                   $solidSession.login({
                     oidcIssuer: $idp.val(),
-                    redirectUrl: window.location.href.replace('#', '?'), // OIDC does not allow hash fragments, so we encode it as query param
+                    redirectUrl: '<%= baseURL %>',
                     clientName: 'Comunica Web Client',
-                    clientId: 'https://query.linkeddatafragments.org/solid-client-id.json',
+                    clientId: '<%= baseURL %>solid-client-id.jsonld',
                   });
                 }
                 return false;

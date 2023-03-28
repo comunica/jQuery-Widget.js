@@ -16,6 +16,7 @@ if (args.h || args.help || args._.length > 1) {
     comunica-web-client-generator config/config-default.json -w my-webpack.config.js
 
   Options:
+    -b            The base URL at which the Web Client will be deployed [default: https://query.linkeddatafragments.org/]
     -d            Destination of the built output (defaults to build)
     -m            The compilation mode (defaults to production, can also be development)
     -c            Path to the main Comunica module (defaults to cwd)
@@ -27,7 +28,7 @@ if (args.h || args.help || args._.length > 1) {
     process.exit(1);
 }
 
-(async function() {
+(async function () {
     // Compile JS version of engine to temporary file
     const comunicaConfig = args._[0] ? path.resolve(process.cwd(), args._[0]) : path.resolve(__dirname, '..', 'config/config-default.json');
     const mainModulePath = args.c || (args._[0] ? process.cwd() : path.resolve(__dirname, '..'));
@@ -53,7 +54,12 @@ if (args.h || args.help || args._.length > 1) {
     // Compile Web version
     const destinationPath = args.d || 'build';
     const mode = args.m || 'production';
+    const baseURL = args.b || 'https://query.linkeddatafragments.org/';
     const webpackConfig = require(args.w ? path.resolve(process.cwd(), args.w) : '../webpack.config.js');
+
+    // Override the baseURL in the webpack config
+    webpackConfig.baseURL.replace = baseURL;
+
     for (const entry of webpackConfig) {
         entry.mode = mode;
         if (entry.output) {

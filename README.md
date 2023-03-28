@@ -82,6 +82,7 @@ comunica-web-client-generator generates Comunica Web clients
     comunica-web-client-generator config/config-default.json -w my-webpack.config.js
 
   Options:
+    -b            The base URL at which the Web Client will be deployed [default: https://query.linkeddatafragments.org/]
     -d            Destination of the built output (defaults to build)
     -m            The compilation mode (defaults to production, can also be development)
     -c            Path to the main Comunica module (defaults to cwd)

@@ -14,6 +14,16 @@ catch {
   comunicaOverride = false;
 }
 
+// Make this an object so we can mutate it from the top level of the config
+// and have the options propagated to the plugins
+const baseURL = {
+  search: '<%= baseURL %>',
+  // Default to the localhost for dev mode. The generate.js script should replace this
+  // value in production mode.
+  replace: 'http://localhost:8080/',
+  flags: 'g'
+}
+
 module.exports = [
   {
     entry: [
@@ -31,7 +41,7 @@ module.exports = [
       path.join(__dirname, './images/settings.svg'),
       path.join(__dirname, './images/sparql.png'),
       path.join(__dirname, './favicon.ico'),
-      path.join(__dirname, './solid-client-id.json'),
+      path.join(__dirname, './solid-client-id.jsonld'),
       path.join(process.cwd(), './queries.json'),
     ],
     output: {
@@ -75,9 +85,19 @@ module.exports = [
         },
         {
           type: 'javascript/auto',
-          test: /solid-client-id\.json$/,
+          test: /solid-client-id\.jsonld$/,
           use: [
             { loader: require.resolve('file-loader'), options: { name: '[name].[ext]' } },
+          ],
+        },
+        {
+          type: 'javascript/auto',
+          test: /((solid-client-id\.jsonld)|(\.js))$/,
+          use: [
+            {
+              loader: require.resolve('string-replace-loader'),
+              options: baseURL
+            },
           ],
         },
         {
@@ -138,3 +158,7 @@ module.exports = [
     },
   },
 ];
+
+// Export the baseURL object so we can mutated it
+// in the generate script
+module.exports.baseURL = baseURL;
