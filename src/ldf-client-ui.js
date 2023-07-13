@@ -319,14 +319,16 @@ if (typeof global.process === 'undefined')
                 self._setWebIdName();
                 $webid.show();
 
-                // Add profile to datasources
-                self._setOption('datasources', [
-                  {
-                    name: 'My Solid Profile',
-                    url: $solidSession.info.webId,
-                  },
-                  ...self.options.datasources,
-                ]);
+                // Add profile to datasources, unless it's already in
+                if (!self.options.datasources.find(ds => ds.url === $solidSession.info.webId)) {
+                  self._setOption('datasources', [
+                    {
+                      name: 'My Solid Profile',
+                      url: $solidSession.info.webId,
+                    },
+                    ...self.options.datasources,
+                  ]);
+                }
 
                 // Request the user's name from the worker
                 this._queryWorker.postMessage({
