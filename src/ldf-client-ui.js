@@ -1051,7 +1051,6 @@ if (typeof global.process === 'undefined')
     return lt && '&lt;' || gt && '&gt;' || amp && '&amp;';
   }
   function escapeMatchUrl(match, preUrl, url) {
-    url = escape(url);
     return preUrl + '<a href="' + url + '" target=_blank>' + url + '</a>';
   }
 
