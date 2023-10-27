@@ -928,6 +928,14 @@
   resolved "https://registry.npmjs.org/@colors/colors/-/colors-1.5.0.tgz"
   integrity sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==
 
+"@comunica/actor-abstract-mediatyped@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-abstract-mediatyped/-/actor-abstract-mediatyped-2.10.0.tgz#fa410f30735c8f0ac6cde6d861fd9b7fd3d1f666"
+  integrity sha512-0o6WBujsMnIVcwvRJv6Nj+kKPLZzqBS3On48rm01Rh9T1/My0E/buJMXwgcARKCfMonc2mJ9zxpPCh5ilGEU2A==
+  dependencies:
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
+
 "@comunica/actor-abstract-mediatyped@^2.4.0":
   version "2.4.0"
   resolved "https://registry.npmjs.org/@comunica/actor-abstract-mediatyped/-/actor-abstract-mediatyped-2.4.0.tgz"
@@ -936,13 +944,13 @@
     "@comunica/core" "^2.4.0"
     "@comunica/types" "^2.4.0"
 
-"@comunica/actor-abstract-mediatyped@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-abstract-mediatyped/-/actor-abstract-mediatyped-2.8.2.tgz#18265089afb5c0da7253a3476fd59d3193d98382"
-  integrity sha512-WXkvFfDjWSJw1KRknNtqOIC9cLc9Jg24ItHfpqQ9p4slq/448j2kOZEaxi0PhfDbw2wfUuF92nyo7tuajzSnSg==
+"@comunica/actor-abstract-parse@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-abstract-parse/-/actor-abstract-parse-2.10.0.tgz#438c570f9c40e80eab86de95d456ff4e257e4f98"
+  integrity sha512-0puCWF+y24EDOOAUUVVbC+tOf4UV+LzEbqi8T5v25jcVGCXyTqfra+bDywfrcv3adrVp18jLCJ46ycaH5xhy9Q==
   dependencies:
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/core" "^2.10.0"
+    readable-stream "^4.4.2"
 
 "@comunica/actor-abstract-parse@^2.4.0":
   version "2.4.0"
@@ -952,76 +960,68 @@
     "@comunica/core" "^2.4.0"
     readable-stream "^4.0.0"
 
-"@comunica/actor-abstract-parse@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-abstract-parse/-/actor-abstract-parse-2.8.2.tgz#d018d22c38586661bb2375149752d67cb6e38187"
-  integrity sha512-ruFphf3Xil+oZGUJw2N0UF/E/Jo7v+mCER8RUiTJi/94etZSa7jEZ9wCZQNfZmmQy8X4cTJkls4ItSxyJ0yu2w==
+"@comunica/actor-abstract-path@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-abstract-path/-/actor-abstract-path-2.10.0.tgz#68bf588591d5b1979cb4560e4b0fac811fc578f6"
+  integrity sha512-cfVzA4inMufpFcLIlwMCFhRFAzxPvoJPwEd4NTr0k9VLMFLL070bUEEa03uFf6VC2dXiEgB1dZ51QTTj6FPX0g==
   dependencies:
-    "@comunica/core" "^2.8.2"
-    readable-stream "^4.2.0"
-
-"@comunica/actor-abstract-path@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-abstract-path/-/actor-abstract-path-2.9.0.tgz#e4ada3f0d6c6773c3eee09d43f96a99198c5703a"
-  integrity sha512-47p1k4joxLhQcj05qVeFOJefqDZNI6V12Ihi80ZLC6Q/6JJql3lhuNHxoa4ypSivHQgMh2HnQI5gaQQdUS4EzQ==
-  dependencies:
-    "@comunica/bindings-factory" "^2.7.0"
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/context-entries" "^2.8.2"
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bindings-factory" "^2.10.0"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/context-entries" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     "@rdfjs/types" "*"
     asynciterator "^3.8.1"
     rdf-data-factory "^1.1.1"
     rdf-string "^1.6.1"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-context-preprocess-source-to-destination@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-context-preprocess-source-to-destination/-/actor-context-preprocess-source-to-destination-2.8.2.tgz#bf93e6062963369e569135c50c61fd7140fc17a4"
-  integrity sha512-m/VAc8dXNuz2thZ7Ey7lnPlHfY5y68b6YNdTsGLX8XRJGT7v8xb8gL7p46KKSj6N+ywQg3pdExADUlmQFJGCuw==
+"@comunica/actor-context-preprocess-source-to-destination@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-context-preprocess-source-to-destination/-/actor-context-preprocess-source-to-destination-2.10.0.tgz#ff076eaae1e677b452481327020dcde0ecf13d8f"
+  integrity sha512-sQc42Sd4cuVumZ9+PDnWBTBYneqCFShFliK8Et83GR3wBGzu9x0tS/M2o3e63sBbb6ZkWHyO5jl/O8AbrjhcTg==
   dependencies:
-    "@comunica/bus-context-preprocess" "^2.8.2"
-    "@comunica/context-entries" "^2.8.2"
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-context-preprocess" "^2.10.0"
+    "@comunica/context-entries" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
 
-"@comunica/actor-dereference-fallback@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-dereference-fallback/-/actor-dereference-fallback-2.8.2.tgz#8c128db4722b39918fe90dfad6d13b1a40bc9ec5"
-  integrity sha512-XDEUN54hyX/phxzJQFbkemoO92CIwa30YHys6bQV1mtfy8oINqfpabFXNr9VSsMO3CpQE5FsfJfFWUD8vdcSVw==
+"@comunica/actor-dereference-fallback@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-dereference-fallback/-/actor-dereference-fallback-2.10.0.tgz#9095faf4f667f9f4b8e6e42f2689aa82be497240"
+  integrity sha512-RSc/ScPdC7l13aZjz/6r4niWA8WDETbzuESQKKSWXi/HAlFOyOxdrDADdayVY2oyeZHIQibeNRtSi2ItzU7OPQ==
   dependencies:
-    "@comunica/bus-dereference" "^2.8.2"
-    "@comunica/core" "^2.8.2"
+    "@comunica/bus-dereference" "^2.10.0"
+    "@comunica/core" "^2.10.0"
 
-"@comunica/actor-dereference-http@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-dereference-http/-/actor-dereference-http-2.8.2.tgz#90bea997db993d1223170b82043bef85d12add6f"
-  integrity sha512-3yaGR+3o+t1avUYmgeZzvYqQvQ1fMGn2Ji0FrYuEwbx9Wty0kCr7jRjDYB4VyagwPx6lzQy0RVoNb6LbUNSiXA==
+"@comunica/actor-dereference-http@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-dereference-http/-/actor-dereference-http-2.10.0.tgz#7f7b4b500d899387c200f466a09fb9400a2c52ad"
+  integrity sha512-q+sJDjiyO/pwY9OwfzK6lS/gROhaqwFgWQNEjz1IuXLalqcFOjIiYqBuzhKLbtcFmXM+cnqWS2ZBtSFD4JLDhg==
   dependencies:
-    "@comunica/bus-dereference" "^2.8.2"
-    "@comunica/bus-http" "^2.8.2"
-    "@comunica/core" "^2.8.2"
+    "@comunica/bus-dereference" "^2.10.0"
+    "@comunica/bus-http" "^2.10.0"
+    "@comunica/core" "^2.10.0"
     cross-fetch "^4.0.0"
     relative-to-absolute-iri "^1.0.7"
     stream-to-string "^1.2.0"
 
-"@comunica/actor-dereference-rdf-parse@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-dereference-rdf-parse/-/actor-dereference-rdf-parse-2.8.2.tgz#8279645060aef6af22893fdbd7c67c122921fd39"
-  integrity sha512-/jMUiTUuizIF5fCrZtbCYv4HWTU762TsYEIf6slmr8DyRum8DKzSL/ototK50bkush9xltFL/Kmsvhp0fBBFVQ==
+"@comunica/actor-dereference-rdf-parse@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-dereference-rdf-parse/-/actor-dereference-rdf-parse-2.10.0.tgz#5f7f44c906dc73a22fd593248fcded309a4a044c"
+  integrity sha512-ANWL6Bv+2WHUjVRS7hfkOfVBNJs8xYZ9KHlgBOQ94CKtQZB9uSMjdb1hLp/cQjiDmFIWLn0+GM5Xi0KFwBkVAw==
   dependencies:
-    "@comunica/bus-dereference" "^2.8.2"
-    "@comunica/bus-dereference-rdf" "^2.8.2"
-    "@comunica/bus-rdf-parse" "^2.8.2"
+    "@comunica/bus-dereference" "^2.10.0"
+    "@comunica/bus-dereference-rdf" "^2.10.0"
+    "@comunica/bus-rdf-parse" "^2.10.0"
 
-"@comunica/actor-hash-bindings-sha1@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-hash-bindings-sha1/-/actor-hash-bindings-sha1-2.8.2.tgz#3540d8a4b1216d25e95484dfc31a60352c015df1"
-  integrity sha512-JwBY+edoVkTleEMhQjws/ojOSTtVvO1PY0jTfBHh8V5d8c5V6XodJs7AshMbnss3/qu/6T11aIUSyyBDepkyJA==
+"@comunica/actor-hash-bindings-sha1@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-hash-bindings-sha1/-/actor-hash-bindings-sha1-2.10.0.tgz#6b4f992c2065ee796b056f8474bdf625cdc74ad4"
+  integrity sha512-f981PcCiDWbdZfM1ct1v1q/VII14y18lo1enEdHB25SF0hCkzIDwh9IrfDfJDju5I6luSWNE/MYMMeAAmF9e3g==
   dependencies:
-    "@comunica/bus-hash-bindings" "^2.8.2"
-    "@comunica/core" "^2.8.2"
+    "@comunica/bus-hash-bindings" "^2.10.0"
+    "@comunica/core" "^2.10.0"
     canonicalize "^2.0.0"
     hash.js "^1.1.7"
     rdf-string "^1.6.1"
@@ -1037,14 +1037,14 @@
     abort-controller "^3.0.0"
     cross-fetch "^3.0.5"
 
-"@comunica/actor-http-fetch@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-http-fetch/-/actor-http-fetch-2.8.2.tgz#a9fd75cdcb684688394bb7fe35c99749b959732b"
-  integrity sha512-XKPWbWihnBGPn3fnf7kxq2wVENDbCtTOl+9hFgsspoh1ew8fc0Fri85iE5dE5Z82s5PfW/oxQBFZVeiwKHwAZw==
+"@comunica/actor-http-fetch@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-http-fetch/-/actor-http-fetch-2.10.0.tgz#583a211f0ae38cacffeaa197a17500206dc32dad"
+  integrity sha512-4rcRFQ7HQ1qCNNnlSYl1gE58M2AsJZsUg7CoKT2NM2TvvnB1A4KaRQVfM185t9dhrbs595bIcA8WUUVIY+ofCw==
   dependencies:
-    "@comunica/bus-http" "^2.8.2"
-    "@comunica/context-entries" "^2.8.2"
-    "@comunica/mediatortype-time" "^2.8.2"
+    "@comunica/bus-http" "^2.10.0"
+    "@comunica/context-entries" "^2.10.0"
+    "@comunica/mediatortype-time" "^2.10.0"
     abort-controller "^3.0.0"
     cross-fetch "^4.0.0"
 
@@ -1058,367 +1058,367 @@
     "@comunica/mediatortype-time" "^2.4.0"
     "@comunica/types" "^2.4.0"
 
-"@comunica/actor-http-proxy@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-http-proxy/-/actor-http-proxy-2.8.2.tgz#aec3147132934649c969c7e586db390014e66b35"
-  integrity sha512-OOFWfWVdi5mpRRgrNIqFx+C1wv3ulcDaBYojzbQdktwl6Vsz79Hlh3EHsgyTVxKHLjuhGeb/3aNbj2cFMVlF+A==
+"@comunica/actor-http-proxy@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-http-proxy/-/actor-http-proxy-2.10.0.tgz#b4ca3fe3a6d4326eb1f7c38766e935bb246540b8"
+  integrity sha512-WpwjGRZcIPcnR8OVumrlmLPfYR5livQsUbOPqmYFDxjI+xDfuOYvCPc/uLyYyBpMH10dejmaRWeCUsIguZz5ZQ==
   dependencies:
-    "@comunica/bus-http" "^2.8.2"
-    "@comunica/context-entries" "^2.8.2"
-    "@comunica/mediatortype-time" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-http" "^2.10.0"
+    "@comunica/context-entries" "^2.10.0"
+    "@comunica/mediatortype-time" "^2.10.0"
+    "@comunica/types" "^2.10.0"
 
-"@comunica/actor-http-wayback@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-http-wayback/-/actor-http-wayback-2.8.2.tgz#37c6ea96fc71f15133dd810e1d2b78ff25241e53"
-  integrity sha512-rTb0srYPLAv2jGLXEyT8bFbqiasUSpQiC/Mu3eezJQ4lXLe30gmiaiw+eBiHmNeX1TAp4By2IAZbxgB/+Z3lCw==
+"@comunica/actor-http-wayback@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-http-wayback/-/actor-http-wayback-2.10.0.tgz#63f0fe044de3e8d4f23c316f57c5ae0e82543c24"
+  integrity sha512-dwSTkXgXhWrVeBURJWvRrdRnPiCa0ywhSq58+UPE+6w6y4MgHH3v1Ee7SuC3zVl39vLx1i0LtiyA8Oi1qqRGBg==
   dependencies:
-    "@comunica/bus-http" "^2.8.2"
-    "@comunica/context-entries" "^2.8.2"
-    "@comunica/core" "^2.8.2"
+    "@comunica/bus-http" "^2.10.0"
+    "@comunica/context-entries" "^2.10.0"
+    "@comunica/core" "^2.10.0"
     cross-fetch "^4.0.0"
     stream-to-string "^1.2.0"
 
-"@comunica/actor-init-query@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-init-query/-/actor-init-query-2.9.0.tgz#23508587d51820759c119091042666f8b6eae88b"
-  integrity sha512-7ZOfx2KjKWXzUnjWRSggArAF1ati2YjezqV0yf1nxUVwLyb2+Pwjnojg8sOc0jEpb0HRihZJO2ERDmsqKtg3fQ==
+"@comunica/actor-init-query@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-init-query/-/actor-init-query-2.10.0.tgz#e36d37e58701272290563e62a9ca9576bcbe998f"
+  integrity sha512-YKazN0RIpRXWuFK2YYEWE1XJSKvFIsdoUH//8BakbGbDoewrXYF0rMRRfaHMZdxl83rqM/M5cQ+kQqfhX2A4mQ==
   dependencies:
-    "@comunica/actor-http-proxy" "^2.8.2"
-    "@comunica/bus-context-preprocess" "^2.8.2"
-    "@comunica/bus-http-invalidate" "^2.8.2"
-    "@comunica/bus-init" "^2.8.2"
-    "@comunica/bus-optimize-query-operation" "^2.8.2"
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/bus-query-parse" "^2.8.2"
-    "@comunica/bus-query-result-serialize" "^2.8.2"
-    "@comunica/context-entries" "^2.8.2"
-    "@comunica/core" "^2.8.2"
-    "@comunica/logger-pretty" "^2.8.2"
-    "@comunica/runner" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/actor-http-proxy" "^2.10.0"
+    "@comunica/bus-context-preprocess" "^2.10.0"
+    "@comunica/bus-http-invalidate" "^2.10.0"
+    "@comunica/bus-init" "^2.10.0"
+    "@comunica/bus-optimize-query-operation" "^2.10.0"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/bus-query-parse" "^2.10.0"
+    "@comunica/bus-query-result-serialize" "^2.10.0"
+    "@comunica/context-entries" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/logger-pretty" "^2.10.0"
+    "@comunica/runner" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     "@rdfjs/types" "*"
-    "@types/yargs" "^17.0.13"
+    "@types/yargs" "^17.0.24"
     asynciterator "^3.8.1"
     negotiate "^1.0.1"
     rdf-quad "^1.5.0"
     rdf-string "^1.6.1"
     sparqlalgebrajs "^4.2.0"
     streamify-string "^1.0.1"
-    yargs "^17.6.2"
+    yargs "^17.7.2"
   optionalDependencies:
     process "^0.11.10"
 
-"@comunica/actor-optimize-query-operation-bgp-to-join@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-optimize-query-operation-bgp-to-join/-/actor-optimize-query-operation-bgp-to-join-2.8.2.tgz#f21281f1d9b9282ae56b78b5ae289fcfec54c272"
-  integrity sha512-ECTnXBeDc3d2mgTYobuPGpxh0jRyALVsju4gcwpu50IADcQWmoZ//fvscIsYfnly35MLL3QpxNOO4FeaLtB6yw==
+"@comunica/actor-optimize-query-operation-bgp-to-join@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-optimize-query-operation-bgp-to-join/-/actor-optimize-query-operation-bgp-to-join-2.10.0.tgz#026c518196a2091eebb2379eaccafb75a4f3e675"
+  integrity sha512-M9vwM4a3VQA/ir8Q7eGRNzzx52u6RJFIXBW8p+Zkn+zv+4fsket3zLYJGhJU7dcvaSXcOi68rDP/r8KfgNXr4Q==
   dependencies:
-    "@comunica/bus-optimize-query-operation" "^2.8.2"
-    "@comunica/core" "^2.8.2"
+    "@comunica/bus-optimize-query-operation" "^2.10.0"
+    "@comunica/core" "^2.10.0"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-optimize-query-operation-join-bgp@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-optimize-query-operation-join-bgp/-/actor-optimize-query-operation-join-bgp-2.8.2.tgz#de954c32e40f699b2c9ef53be4f6b5b9b1a4396c"
-  integrity sha512-hDnimckCwvDOFTCeqQR+iR+seDoJRvl53MgiXxlywmspJNpCKM9azTE2Q4Xii1VmijsZDCEt55yb/9nQClNrTw==
+"@comunica/actor-optimize-query-operation-join-bgp@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-optimize-query-operation-join-bgp/-/actor-optimize-query-operation-join-bgp-2.10.0.tgz#b0302c6fedee03d908f80ab361088c9ef310f8ba"
+  integrity sha512-tzZojWPbWn/S0DZGjGfV90ZRJVWT/yX3DKGgZ1ur33U5TW8n/fBQxHNMPCLu0GkMQ1dyx6bU+ekILTqm+21Jyw==
   dependencies:
-    "@comunica/bus-optimize-query-operation" "^2.8.2"
-    "@comunica/core" "^2.8.2"
+    "@comunica/bus-optimize-query-operation" "^2.10.0"
+    "@comunica/core" "^2.10.0"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-optimize-query-operation-join-connected@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-optimize-query-operation-join-connected/-/actor-optimize-query-operation-join-connected-2.8.2.tgz#facc3cc231093a1a0fb7489a2d0c9c45588129de"
-  integrity sha512-KEjOHKS4M0LIuJZHRWSED1vKc7rEzmJ+T1ByqyTDvURfnUEl0I6KOcfYfpiWELfSliOSFBLqirwlrJvSaYN8Ug==
+"@comunica/actor-optimize-query-operation-join-connected@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-optimize-query-operation-join-connected/-/actor-optimize-query-operation-join-connected-2.10.0.tgz#01e72fe5b4af6ac717749177bd3fe4660f4df5df"
+  integrity sha512-RsbKIAxX1HyoR/AUzqIV++dTcLiEElRIVDHYTaXVVvGgHECYdh9s+oc8cvv/lDbLVpfnc6P9C9BTAfrqOjKkhA==
   dependencies:
-    "@comunica/bus-optimize-query-operation" "^2.8.2"
-    "@comunica/core" "^2.8.2"
+    "@comunica/bus-optimize-query-operation" "^2.10.0"
+    "@comunica/core" "^2.10.0"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-query-operation-ask@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-ask/-/actor-query-operation-ask-2.9.0.tgz#256388face2ce322f9f3f35b923dc54abf027f6b"
-  integrity sha512-ZidenVEKJGUjXosl75VtCDyHyVlR7HUTBN1Y+o68ZIGTfES+WizFFLGarGFUUsbSEJs/rwhms4fe6TPuDjB4Qw==
+"@comunica/actor-query-operation-ask@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-ask/-/actor-query-operation-ask-2.10.0.tgz#2fd77bb1c905589638b435ec6b24d8240d353e9f"
+  integrity sha512-3VxOBLa9W8D76S0UJ8kvEsBv58uu2uDcOurxdPrcP7rFP2+NJRcR7U4U6173CBZ7JOF3kz6iOX2CJQfTncTSDQ==
   dependencies:
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-query-operation-bgp-join@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-bgp-join/-/actor-query-operation-bgp-join-2.9.0.tgz#fd93442c379f1c069daa6b71aa720fd52e33ff84"
-  integrity sha512-1w6CNfh3G+n5946pu8CksT6mbBenR7rwhwxOZd3izvRIkBCmFNYhQoSTJcyoxu+Bkp95GbXpsMO8wjQsov7ezA==
+"@comunica/actor-query-operation-bgp-join@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-bgp-join/-/actor-query-operation-bgp-join-2.10.0.tgz#7ffed078365bd1809eeb74fc3975a04e807f049e"
+  integrity sha512-U/ZMvuhhCQYFFqqp4m0Ww5hoj/qcxPnlskh8O0TMgSVk4ozkhYE5wbpXRvFN1DyqkFTvMqOm/FbnoJbVPOw8wg==
   dependencies:
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-query-operation-construct@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-construct/-/actor-query-operation-construct-2.9.0.tgz#4e8abd064e7d92ac91520b6e92dddc25bb6c27b7"
-  integrity sha512-hfgCgN5ky/rhCNaHOt3KY6m5cZrfd0GO3/gb6Xk69do8MPqUxkAohwAql8DIysXCs6vfDDe8Xi8W8by6X6wsvA==
+"@comunica/actor-query-operation-construct@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-construct/-/actor-query-operation-construct-2.10.0.tgz#977167aab388cf7f68bc4c4b93bcd8025c943381"
+  integrity sha512-7boEkt3MHlfHe5hxDJzolrSps+uCFvIZPWRiSQ1EJhT4el8WES9kWhveo8guJuMMHanVLC42FfHwUA+xF879RA==
   dependencies:
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     "@rdfjs/types" "*"
     asynciterator "^3.8.1"
     rdf-data-factory "^1.1.1"
     rdf-terms "^1.11.0"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-query-operation-describe-subject@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-describe-subject/-/actor-query-operation-describe-subject-2.9.0.tgz#6804002e6fcb9f729f1b5c668080e43a63405fdf"
-  integrity sha512-1h6QFLijFKgZl/PRh4tBYkfGv/oAsY/itX5YCjk6gvHkYh7P31YyzTOZY5fJgJtK74fClFpORtfey7lnd8OCyQ==
+"@comunica/actor-query-operation-describe-subject@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-describe-subject/-/actor-query-operation-describe-subject-2.10.0.tgz#746e7c1758bc1db1b5f6d08b64a7cdbb19e8f0dc"
+  integrity sha512-hN/kY1C9P9xwo4p+LAqVme70spr+MIyojzf6sh0kYHyA+Ea57QS8cX4diWU3LYJXcHg5Eqxq/9M8bgThORctcA==
   dependencies:
-    "@comunica/actor-query-operation-union" "^2.9.0"
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/actor-query-operation-union" "^2.10.0"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     asynciterator "^3.8.1"
     rdf-data-factory "^1.1.1"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-query-operation-distinct-hash@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-distinct-hash/-/actor-query-operation-distinct-hash-2.9.0.tgz#8a8fee00d0139af24b90daaf1750e9f0ef4cf8bd"
-  integrity sha512-djMP2j9OGFk6TL53KzaDx9BuZ3Xj6ZaNxDwfpv9TKo7y3cS2NRV6t3ndWIj9yJEn4E8s/WR3ups0Eb2JAozCIw==
+"@comunica/actor-query-operation-distinct-hash@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-distinct-hash/-/actor-query-operation-distinct-hash-2.10.0.tgz#07187578da99a30e1cee10fe9b7a2b3b00dbe475"
+  integrity sha512-KxMhQbc0sSexlORdAdOe20juVHruWHWsPDMnImj8vkIU4RheVq5H+jz7sQcDPGCH0jBL6UJUA2wo/n9PNhMoFw==
   dependencies:
-    "@comunica/bus-hash-bindings" "^2.8.2"
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-hash-bindings" "^2.10.0"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-query-operation-extend@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-extend/-/actor-query-operation-extend-2.9.0.tgz#43746bb2ac86955feb8daaff4f036c1fa77e29d4"
-  integrity sha512-pfGJMbM/mmfcEnGkTDm0nBB+Ea/EH7+UW6+hWXd/ibyXjtYcLK/kz58MfGjOalodXKAkyVEzE7eD8TKgd4BjSg==
+"@comunica/actor-query-operation-extend@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-extend/-/actor-query-operation-extend-2.10.0.tgz#4fc17d480cf05b0790c0da552c2b9ea93b1ff65b"
+  integrity sha512-db3qX4bf9xgSd/s65ZTjiQJDxVJ6pnCBQBdI/qIgoR2e24z/+maNkvbp2g6WWdks82q6/yJhd33EzVjjJ/bOKA==
   dependencies:
-    "@comunica/bindings-factory" "^2.7.0"
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/core" "^2.8.2"
-    "@comunica/expression-evaluator" "^2.9.0"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bindings-factory" "^2.10.0"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/expression-evaluator" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-query-operation-filter-sparqlee@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-filter-sparqlee/-/actor-query-operation-filter-sparqlee-2.9.0.tgz#c5ae06e349cabcd3bdcd924a1e01736eed5765e7"
-  integrity sha512-Sa2mtcmx1htv2jKrd9dzu6TlErppzhBNku0ZUxhtKAwI3SFM5+jK5lokkZSRM2KM/GPFcsXvcj98ACBND2GG8g==
+"@comunica/actor-query-operation-filter-sparqlee@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-filter-sparqlee/-/actor-query-operation-filter-sparqlee-2.10.0.tgz#e9e54d798c91c0cd858022eaab11a81e9a72965a"
+  integrity sha512-TK2CAcceJQFpleksSGGsVbIM+NepBTcfKex1r9TjbJ8LXsyB5pdNCd+iRGdyzDFGGuha80gkoYUVfis2z/1lsA==
   dependencies:
-    "@comunica/bindings-factory" "^2.7.0"
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/core" "^2.8.2"
-    "@comunica/expression-evaluator" "^2.9.0"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bindings-factory" "^2.10.0"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/expression-evaluator" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-query-operation-from-quad@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-from-quad/-/actor-query-operation-from-quad-2.9.0.tgz#400709a7551d493931ef9caf7a93b5f2acf48c0f"
-  integrity sha512-3bHJcGZI4Jz9BzKER1daHXqFdp7njK+O9lGtT0PkPJaZTIXO9bJDmXJdLFQYqx3dv7INiWzXE02zDDZrT4D8Lg==
+"@comunica/actor-query-operation-from-quad@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-from-quad/-/actor-query-operation-from-quad-2.10.0.tgz#4aad23c45d36749cbdab6af992e3471c5379cc4a"
+  integrity sha512-SoSwY2M83JudywsiaK7KqUCbeFdwhrD7sInu+35SiLOCUY24cFImyuwAVGCzujuawJlDROfV/fp2vAz9wcn01w==
   dependencies:
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     "@rdfjs/types" "*"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-query-operation-group@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-group/-/actor-query-operation-group-2.9.0.tgz#eacae761736b7fb313a9f6b3523a6caf57600209"
-  integrity sha512-FjdHQWy1xCOYeg8DnlPDIOEIk061542Qsc74TcCCefW8J+0bjWbfbF3HTntFEjgM0uytFrtNF9ITxk+wiwb6sg==
+"@comunica/actor-query-operation-group@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-group/-/actor-query-operation-group-2.10.0.tgz#38469d8ae0c8cb12318ee41737eb2a4f8e033d52"
+  integrity sha512-epiCodZm1573luWbw3sN3ELniPhVRz/8Gu7Y1tLFE2ogEWtwQIAR7YtsnrGFlrG95ZxOiFEUldjy1g4TpvciVQ==
   dependencies:
-    "@comunica/bindings-factory" "^2.7.0"
-    "@comunica/bus-hash-bindings" "^2.8.2"
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/core" "^2.8.2"
-    "@comunica/expression-evaluator" "^2.9.0"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bindings-factory" "^2.10.0"
+    "@comunica/bus-hash-bindings" "^2.10.0"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/expression-evaluator" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     "@rdfjs/types" "*"
     asynciterator "^3.8.1"
     rdf-data-factory "^1.1.1"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-query-operation-join@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-join/-/actor-query-operation-join-2.9.0.tgz#16a2264546077b043d37409451ef46ec720803f8"
-  integrity sha512-xs7oFa0tNh8Md8mKsShOjt3zXATJrq3BAAuIsbTb7tDeKfmburyP6qFYA8cmTx1GE+uA0KXzo5BAA3Q45Cqn0Q==
+"@comunica/actor-query-operation-join@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-join/-/actor-query-operation-join-2.10.0.tgz#ca23958fedfa5ad8f18e9ac101a04c1bcf7932a9"
+  integrity sha512-xO+fgRqZIf/O4+Jn97cp00PbZ5gPoYrXKL00K+V7/fKS9cBIsEqMMyV0qXIPAM3Zxuj7QBJiqLxW/JvtpjjqSQ==
   dependencies:
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/bus-rdf-join" "^2.9.0"
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/bus-rdf-join" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-query-operation-leftjoin@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-leftjoin/-/actor-query-operation-leftjoin-2.9.0.tgz#40960f664f6e429b944fd25c7c1e2c0e93091bce"
-  integrity sha512-JhYGAZb5DmlGAve+HLbPeBG6ZmZT+ID7EfhJx7sChHlbpmHlY7grq8M3fNw9A1tdZcVVILoMvFFV07gih0fDcA==
+"@comunica/actor-query-operation-leftjoin@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-leftjoin/-/actor-query-operation-leftjoin-2.10.0.tgz#80ad475782175239782f222f1b1332ab407a3792"
+  integrity sha512-Q8Omkn3FB6kx9h40PHv+lX639SH9PcR1eEAJazIWvnA2ilSgy0IsZWDnTQFfWtR1SrIyGJVg9GaxzxAY5QflZw==
   dependencies:
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/bus-rdf-join" "^2.9.0"
-    "@comunica/core" "^2.8.2"
-    "@comunica/expression-evaluator" "^2.9.0"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/bus-rdf-join" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/expression-evaluator" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-query-operation-minus@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-minus/-/actor-query-operation-minus-2.9.0.tgz#fdfca376117dcc0f672ca315a3c0fd933688e37b"
-  integrity sha512-TepoSg+anPQVSvez9tG8yqppGrufdrNrjpMTCdBwht7DnCC0nwcTXA21m73YnTEeXugHHH9ze+jZoY0Zh5Q67g==
+"@comunica/actor-query-operation-minus@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-minus/-/actor-query-operation-minus-2.10.0.tgz#5f9abf2d65361add031d20175fcb5a333d094794"
+  integrity sha512-2e/1kGrT/bgfNf6k8wLMhn13dK3XzRWMNSvjXOTFtvbPC3/xc8WJ9hYWZ1LEyaAufNBck3nWFqsvyuhYox/7UA==
   dependencies:
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/bus-rdf-join" "^2.9.0"
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/bus-rdf-join" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-query-operation-nop@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-nop/-/actor-query-operation-nop-2.9.0.tgz#154a1968ad01c27f0541c6c8ea2f153a3c2944d8"
-  integrity sha512-Z+YMf9nGiQDXpXcXgIn+Qlw2G86OT5A5UiFMaQNBsNZ3uIV5c15uwcV6fLqSETwZdE232i9ZUX1BRqowyBYUxQ==
+"@comunica/actor-query-operation-nop@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-nop/-/actor-query-operation-nop-2.10.0.tgz#71353526649b1a0d120f7b4716616aaa73adbccb"
+  integrity sha512-uI2lk5NNKJ/yOUmIuuCTMlv2N9XUqh7AgoLU+Nwg7cgN+Bi71SNVYatYi7v32C8NNAbC28Tqt35ww71k5eLOHg==
   dependencies:
-    "@comunica/bindings-factory" "^2.7.0"
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/core" "^2.8.2"
-    "@comunica/metadata" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bindings-factory" "^2.10.0"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/metadata" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     asynciterator "^3.8.1"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-query-operation-orderby-sparqlee@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-orderby-sparqlee/-/actor-query-operation-orderby-sparqlee-2.9.0.tgz#f313d31681185e70b385f0b7437c9b7a97342a87"
-  integrity sha512-tLPrgRxAeLPkOn60lCyf1EIwb1y6Rb/jSjdYFzo0vdrNrGWJM8wWmK39EtYvEnWYzZUluQu5pNPOKDQtrDnssA==
+"@comunica/actor-query-operation-orderby-sparqlee@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-orderby-sparqlee/-/actor-query-operation-orderby-sparqlee-2.10.0.tgz#f56fa943607e11604d05ec9fb83a08a17aeb743e"
+  integrity sha512-EJsHAaAspedG5ZSk/Dx8Xtrn9JSnQVuelRIVxtTnVLfIkCO59N/gvE1FBrenof583PQEzZOmxaweSuEyeCnhgQ==
   dependencies:
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/core" "^2.8.2"
-    "@comunica/expression-evaluator" "^2.9.0"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/expression-evaluator" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     asynciterator "^3.8.1"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-query-operation-path-alt@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-path-alt/-/actor-query-operation-path-alt-2.9.0.tgz#8c083c2397c1b2c7d47092cd4179701d6251abfc"
-  integrity sha512-0wfe5/w3Tkm2HySmWgmV9EGlK6GjZmeEiFMRePLR7lJIXKGaa8yMndErhIzZsDvn12NH0U+in4ij6SKgFQGP1Q==
+"@comunica/actor-query-operation-path-alt@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-path-alt/-/actor-query-operation-path-alt-2.10.0.tgz#3926d3476dfc383c1701d5415758f72c5c6f7350"
+  integrity sha512-vDDfR4VX8r6iCqoeBfwYB1Y+Ljypw/fJe+6Qj0ZwfuvCllmmNwNASAUKPraEjZXpBEGr3RW2BSPBPhOdN50Wzw==
   dependencies:
-    "@comunica/actor-abstract-path" "^2.9.0"
-    "@comunica/actor-query-operation-union" "^2.9.0"
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/types" "^2.8.2"
+    "@comunica/actor-abstract-path" "^2.10.0"
+    "@comunica/actor-query-operation-union" "^2.10.0"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     asynciterator "^3.8.1"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-query-operation-path-inv@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-path-inv/-/actor-query-operation-path-inv-2.9.0.tgz#2f34b15fc2424768bce89e64de6f11affd1043d1"
-  integrity sha512-SDxj6Uzo66FKSTt4Qbmeu+zLecBapRnd2JKHEJ6Pbi/+UwCAdK04VqLVChyMFNYQ30fVGnUyA2ErBWU1ICsDug==
+"@comunica/actor-query-operation-path-inv@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-path-inv/-/actor-query-operation-path-inv-2.10.0.tgz#f68eab786888626d73191aa829c5df084bb960b0"
+  integrity sha512-m2ilqayHTt4io4+0nuaW6c9KjbyXltHQbIqlvaRJS0ZAkJLoZhiSbbOtff83W/RmezaafikdNt0ELVJuxhbTYg==
   dependencies:
-    "@comunica/actor-abstract-path" "^2.9.0"
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/types" "^2.8.2"
+    "@comunica/actor-abstract-path" "^2.10.0"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-query-operation-path-link@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-path-link/-/actor-query-operation-path-link-2.9.0.tgz#84f61e2824797e6b5b5b78b4f4cbd2e491c27851"
-  integrity sha512-w4nal/IAN/0qNwjuzecguRZqdhs0vRpQK79zfdmgkCHGM/Sn0seV3iwShgOhvLghcW+qwyKxkk8ZrGNyjNNLmw==
+"@comunica/actor-query-operation-path-link@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-path-link/-/actor-query-operation-path-link-2.10.0.tgz#04328403d50a5a7b86311efdd4523b6c326d83eb"
+  integrity sha512-jtc9AWO826Qq2GWYRv4r8T1AD/BulWHrUFTD5znxV4Z8WoULv3MbCtIZIt/ckTaFBTzNCfbJaFkX3FjJGFSdvQ==
   dependencies:
-    "@comunica/actor-abstract-path" "^2.9.0"
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/types" "^2.8.2"
+    "@comunica/actor-abstract-path" "^2.10.0"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-query-operation-path-nps@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-path-nps/-/actor-query-operation-path-nps-2.9.0.tgz#d10aa55f4c7b03d6147331ef5583691e4b2633cf"
-  integrity sha512-6nWhRPBsQtID8dfdv4WxskpDtF247xd2wNVmeEMC9yGUT1u1c5GXZFueXSEbBeUpHMPIYkkK0J61KCRzjI0T/w==
+"@comunica/actor-query-operation-path-nps@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-path-nps/-/actor-query-operation-path-nps-2.10.0.tgz#5ff07c59ea7efcffaf5aecd3d37810673b57cd0f"
+  integrity sha512-Xthe3I1CbEY8GcYgRaZOD4waIdE0Hrl8+uEO3CEpDLYPm0Ppt/oieV6ZktwhRccnoFCkNrK0lWtq6KbtqnbDTg==
   dependencies:
-    "@comunica/actor-abstract-path" "^2.9.0"
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/types" "^2.8.2"
+    "@comunica/actor-abstract-path" "^2.10.0"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-query-operation-path-one-or-more@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-path-one-or-more/-/actor-query-operation-path-one-or-more-2.9.0.tgz#88b7fdd6bc6c58bd42b442dedc7da537745619fd"
-  integrity sha512-r/5QfWYaMPKM94MWnEYg1YCyt2SnFFrnUC3mMm20s4eIzKa4SkkgncomrgjcVyHlus7JgWhMq8DXDzCOxk9P8A==
+"@comunica/actor-query-operation-path-one-or-more@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-path-one-or-more/-/actor-query-operation-path-one-or-more-2.10.0.tgz#f872e49a223ae7d392da798dce90f263a204e3ee"
+  integrity sha512-EyTLkwvp1xe9Kw3LRP5W93rgyKjzsJ8KdTo/zd2WYqII5B90NID91k5hR//FTB/GR1a0Brqyq69cSbqcA0gRTQ==
   dependencies:
-    "@comunica/actor-abstract-path" "^2.9.0"
-    "@comunica/bindings-factory" "^2.7.0"
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/types" "^2.8.2"
+    "@comunica/actor-abstract-path" "^2.10.0"
+    "@comunica/bindings-factory" "^2.10.0"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     asynciterator "^3.8.1"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-query-operation-path-seq@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-path-seq/-/actor-query-operation-path-seq-2.9.0.tgz#e62fde164a84592767ad73136909e68ba4d45b74"
-  integrity sha512-koPMW9yWM2MCZUzSXl8biQfnM2xuW35cBuoCUK+n+QAXwJnsPxkm/uZW+MfRfhYd2YbnycEbzpfNq6zChPVVqw==
+"@comunica/actor-query-operation-path-seq@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-path-seq/-/actor-query-operation-path-seq-2.10.0.tgz#3685790e0587767a42474862e69715c58a644ba1"
+  integrity sha512-vBxmaT96abaaPtGNsedEMHSv0iRRqTlFhy5pI/k6MnyD8d6Y8jPAvhWrxNHCNIctPdb/y4N9liGkNoaZYmSptw==
   dependencies:
-    "@comunica/actor-abstract-path" "^2.9.0"
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/bus-rdf-join" "^2.9.0"
-    "@comunica/types" "^2.8.2"
+    "@comunica/actor-abstract-path" "^2.10.0"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/bus-rdf-join" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-query-operation-path-zero-or-more@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-path-zero-or-more/-/actor-query-operation-path-zero-or-more-2.9.0.tgz#773805e2b5e8b0dc4f658b09951f29b3c6e29e94"
-  integrity sha512-lzk01byqqCkCGqIziazGyEeYr2Ht5taXK4czYEqbe6igsJ4JL8Gfql9FPm71iOHrSbp4V2Hs1S1SmADDM45YWw==
+"@comunica/actor-query-operation-path-zero-or-more@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-path-zero-or-more/-/actor-query-operation-path-zero-or-more-2.10.0.tgz#33e57dd62b41d7804b93ace460504f0b4b576485"
+  integrity sha512-+esvBhyji/+0hHOTtupDYIYzKdja5u7qE5kObJrGV4jhcJBpR4npOrkcA3cptN2jGe4+5/ePmWpWdZc+OEjv+w==
   dependencies:
-    "@comunica/actor-abstract-path" "^2.9.0"
-    "@comunica/bindings-factory" "^2.7.0"
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/types" "^2.8.2"
+    "@comunica/actor-abstract-path" "^2.10.0"
+    "@comunica/bindings-factory" "^2.10.0"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     asynciterator "^3.8.1"
     rdf-string "^1.6.1"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-query-operation-path-zero-or-one@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-path-zero-or-one/-/actor-query-operation-path-zero-or-one-2.9.0.tgz#0319a7cebb2759254a36870fd7894f46bb8a0d71"
-  integrity sha512-mjXyB86HMmVairepY2d+gjO02ITAUEDj48reoJ7nzUBe5DO9Uokg9srdKueQuf/i7Z4Jy2hl90dKVzUqXQKe0w==
+"@comunica/actor-query-operation-path-zero-or-one@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-path-zero-or-one/-/actor-query-operation-path-zero-or-one-2.10.0.tgz#f00c62698ca9183d4a82f8392416c8d577fce082"
+  integrity sha512-W338CAj8RFFve6UYm43nlWXlRhnZCa6ASVvggnMxJ49g68QOkaWpjbUqP3+lOSLYuSxyp0GK6zBmdrGzP4/e+w==
   dependencies:
-    "@comunica/actor-abstract-path" "^2.9.0"
-    "@comunica/bindings-factory" "^2.7.0"
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/metadata" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/actor-abstract-path" "^2.10.0"
+    "@comunica/bindings-factory" "^2.10.0"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/metadata" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     asynciterator "^3.8.1"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-query-operation-project@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-project/-/actor-query-operation-project-2.9.0.tgz#dc5b16194bc7862bde38c84904847bd8844fa0b6"
-  integrity sha512-5uFKETsTMgP0dm0Y7gZt7dtJC+NfO3IwvCn7kmgidxiYhlghX2dOHHOxa4NGeVlxlLsP0DtZNZwUS/0uVIDzEg==
+"@comunica/actor-query-operation-project@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-project/-/actor-query-operation-project-2.10.0.tgz#63866d368c84be37ff1a5320772e7a786c60b28b"
+  integrity sha512-u7z/2njFQC+GqI3/SYthYgG69Wr3PzlIR/7GkelIXNYQW4RAkwGyfIBvC6fgncnVsyhXHBkI/iS5tE1L8HmboA==
   dependencies:
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/core" "^2.8.2"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/core" "^2.10.0"
     "@comunica/data-factory" "^2.7.0"
-    "@comunica/types" "^2.8.2"
+    "@comunica/types" "^2.10.0"
     "@rdfjs/types" "*"
     rdf-data-factory "^1.1.1"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-query-operation-quadpattern@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-quadpattern/-/actor-query-operation-quadpattern-2.9.0.tgz#052b609b57f7627e0d90a4a34da50243ac858bd3"
-  integrity sha512-GagxKnFxua6hrld/SMugRu/2+re6ZMUS5FvtWmpTyuNA5vd6a7EocRj5CPeBz062AiFj3dw5qHVm9KS2M+EfnQ==
+"@comunica/actor-query-operation-quadpattern@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-quadpattern/-/actor-query-operation-quadpattern-2.10.0.tgz#3c6212713ca1348447dd87512d6384533a7a3e1f"
+  integrity sha512-XSJ+hu5DqDUl/NhRYAuKdbG7iGBkK+QpHBpClb/x2DXwqIDdAw2Yh0iYhSObEHVu1rhDjjp9W7gx6SZqo3c0og==
   dependencies:
-    "@comunica/bindings-factory" "^2.7.0"
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/bus-rdf-resolve-quad-pattern" "^2.8.2"
-    "@comunica/context-entries" "^2.8.2"
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bindings-factory" "^2.10.0"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/bus-rdf-resolve-quad-pattern" "^2.10.0"
+    "@comunica/context-entries" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     "@rdfjs/types" "*"
     asynciterator "^3.8.1"
     rdf-data-factory "^1.1.1"
@@ -1426,601 +1426,601 @@
     rdf-terms "^1.11.0"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-query-operation-reduced-hash@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-reduced-hash/-/actor-query-operation-reduced-hash-2.9.0.tgz#d4d02a5b33c98b4dce8e3ded555ba11d4c3591a8"
-  integrity sha512-0yfDRfgxWK7USih0EEizspXG8bYD/+tZDjhsiYBqBleMhFLN4Gk9YZgy9DuCoEY8EODUZO/y72DyzgzMgtQ0Aw==
+"@comunica/actor-query-operation-reduced-hash@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-reduced-hash/-/actor-query-operation-reduced-hash-2.10.0.tgz#5a7f867a3736113db89b16dd6c763fb5fa8c538f"
+  integrity sha512-cLAW1gi8MJIMtruWRCd879X769PSJ3Rlsxm/xxLp/rQj3qaBcyJpw5Z8Y9z4F43LZIebYDcRzjijCM6Ri8j6Tg==
   dependencies:
-    "@comunica/bus-hash-bindings" "^2.8.2"
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-hash-bindings" "^2.10.0"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     lru-cache "^10.0.0"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-query-operation-service@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-service/-/actor-query-operation-service-2.9.0.tgz#74f9f76eb7d255ad99ec9a035b5a75b8a9d4a96f"
-  integrity sha512-K7uVBzdiidvP+rnfy+UH5DSMn8Whs/47Y/FHRBGJCfjAjU4XgzEpPUYsqE0BrOBtM7k/vp9CwHM1kDlKX1o7GA==
+"@comunica/actor-query-operation-service@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-service/-/actor-query-operation-service-2.10.0.tgz#4f6a9930379523628649a9159f640f19c2bacb92"
+  integrity sha512-2IdqDBEMkxEzopR1+nC51OHCxTqEoVD/diVtItKu5+uOcmj7lvIi3pChCzqDCL+dG2yhnfFW3DPpWsCcf4R1fA==
   dependencies:
-    "@comunica/bindings-factory" "^2.7.0"
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/context-entries" "^2.8.2"
-    "@comunica/core" "^2.8.2"
-    "@comunica/metadata" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bindings-factory" "^2.10.0"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/context-entries" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/metadata" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     asynciterator "^3.8.1"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-query-operation-slice@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-slice/-/actor-query-operation-slice-2.9.0.tgz#da519644ce77fd5312484b8a241a4ae3558e18df"
-  integrity sha512-ndGWtzhY41RP+sLerNWDta/BsAe5EHTtw5ehB+CG+rm2AyZTLPiYVujjwWCNHavQjruPYN/SPXaVBfBpyk9QPw==
+"@comunica/actor-query-operation-slice@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-slice/-/actor-query-operation-slice-2.10.0.tgz#ace41e4f151eccd14c9c197ed16879108598f91a"
+  integrity sha512-QXfEthQG1AlNhhnEHBSwC8P2p048QJVL5QByYm7fWy2F+WmEpxF3zN4JCqNi5JsD/lAH8B81UeAWagyoh+PaRA==
   dependencies:
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/context-entries" "^2.8.2"
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/context-entries" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-query-operation-sparql-endpoint@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-sparql-endpoint/-/actor-query-operation-sparql-endpoint-2.9.0.tgz#9d21fb4d3e7c4272dd82ae0add63cab93b3f2f44"
-  integrity sha512-0TWj3ieuZdfmIR9YbbEJl0rnyB6RfEplck4jIgYysPQpgoXJWTXEAHIhoQgQ30q26SaGrMyjAmPq9BMjOqPE+Q==
+"@comunica/actor-query-operation-sparql-endpoint@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-sparql-endpoint/-/actor-query-operation-sparql-endpoint-2.10.0.tgz#9ac42dd4cb1d4d9a5884021ecf8406862bef53c3"
+  integrity sha512-9/QDHzFpEGK3P7n5NcYqFOn63szwCcgxStPbGuWwEwKQpUX6fXCiu1q1ul859nruBvK6HTIIeoa1dXaB/sYZGw==
   dependencies:
-    "@comunica/bindings-factory" "^2.7.0"
-    "@comunica/bus-http" "^2.8.2"
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/bus-rdf-resolve-quad-pattern" "^2.8.2"
-    "@comunica/bus-rdf-update-quads" "^2.9.0"
-    "@comunica/context-entries" "^2.8.2"
-    "@comunica/core" "^2.8.2"
-    "@comunica/mediatortype-httprequests" "^2.8.2"
-    "@comunica/metadata" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bindings-factory" "^2.10.0"
+    "@comunica/bus-http" "^2.10.0"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/bus-rdf-resolve-quad-pattern" "^2.10.0"
+    "@comunica/bus-rdf-update-quads" "^2.10.0"
+    "@comunica/context-entries" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/mediatortype-httprequests" "^2.10.0"
+    "@comunica/metadata" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     "@rdfjs/types" "*"
     asynciterator "^3.8.1"
     fetch-sparql-endpoint "^4.1.0"
     rdf-data-factory "^1.1.1"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-query-operation-union@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-union/-/actor-query-operation-union-2.9.0.tgz#c4fcb8fe04723a0889e2f3aa6dc3d969be5aeb83"
-  integrity sha512-pT76OxvEG1S4Df0dpVrUcLfojEAy99D2gk3AEv1l8K5UNettH1HK2NsG0+kBN4scu1G81cXghFvg0BTiyrj3vg==
+"@comunica/actor-query-operation-union@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-union/-/actor-query-operation-union-2.10.0.tgz#838f966fb0920bbc41289f0d02d854bc4b987b11"
+  integrity sha512-YMnLa7cqlDFl5bXWJDE/zYaZbFuQTjh2vxvTYMOy7ieK559VpndQX5OBRna9liFYfjS8zgImyFn5lPTrHhen4g==
   dependencies:
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/core" "^2.8.2"
-    "@comunica/metadata" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/metadata" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     "@rdfjs/types" "*"
     asynciterator "^3.8.1"
     rdf-terms "^1.11.0"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-query-operation-update-add-rewrite@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-update-add-rewrite/-/actor-query-operation-update-add-rewrite-2.9.0.tgz#3d4b7d846bc24bbdb0e6711716ba50251e22988d"
-  integrity sha512-5Y9euKhm455x0hXLCf23R6gVQJwuZYV5oAx8jVNCyTrlNAVd3MlboA5aV9aIRC8cGScT9BM9Y/ZBHgANjfhJ5w==
+"@comunica/actor-query-operation-update-add-rewrite@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-update-add-rewrite/-/actor-query-operation-update-add-rewrite-2.10.0.tgz#b141b5175d8579071d3c89d2cd8513d005583897"
+  integrity sha512-JgnydGXz7ep+8J53H/gvlVxJv1NjmuRpcxYbUN3sZe6KqV1fhUnNuVr+5ZKZeniIZFMwWD2hNder/afsrF7jZA==
   dependencies:
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     rdf-data-factory "^1.1.1"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-query-operation-update-clear@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-update-clear/-/actor-query-operation-update-clear-2.9.0.tgz#4e0eee2e608773b08ce10cb12ce4d97513285046"
-  integrity sha512-Esz4ghxRocXlSOmyF0bKntVudmbnSOAJMswF9DIVPmAWDO/SFnWHOynShOnZzKXbWUt+mRKsg+Fz2OEIqaLzkw==
+"@comunica/actor-query-operation-update-clear@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-update-clear/-/actor-query-operation-update-clear-2.10.0.tgz#f24a662ace13edf0473fb1e538b9dc7cf8efc2d3"
+  integrity sha512-bvgg74cLu28zj0m9roPPvpe2tXQEUyqbpVJ2K+aLkqfzl9OSedam5EoL+DkCW6OkojpI7+vzGKr+c94ucLZG7g==
   dependencies:
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/bus-rdf-update-quads" "^2.9.0"
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/bus-rdf-update-quads" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     "@rdfjs/types" "*"
     rdf-data-factory "^1.1.1"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-query-operation-update-compositeupdate@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-update-compositeupdate/-/actor-query-operation-update-compositeupdate-2.9.0.tgz#426b4494aaa92aaf7d8b6ea03e691a12af9f8e64"
-  integrity sha512-fEisHDEmKDlL3vCSPJEjR9dMgN3CQXClBZQNTC74sSnGd6+iUFuUUrfhI6DC3s4fRr3P3L7yt7q/6HVLPpbkTw==
+"@comunica/actor-query-operation-update-compositeupdate@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-update-compositeupdate/-/actor-query-operation-update-compositeupdate-2.10.0.tgz#f7ccaea4db935a115d89239c055302418649019c"
+  integrity sha512-e6SMmk5TIkXhmVNFGLqSbD+cgbJL9Kw+jX/18Fzw6AuR1bku4Z6tbznBJi41GnDNHbhRNEpZLbtroXKyCfl2KQ==
   dependencies:
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-query-operation-update-copy-rewrite@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-update-copy-rewrite/-/actor-query-operation-update-copy-rewrite-2.9.0.tgz#9eac33b2d6f6a97948f45466a5a9b1241a649320"
-  integrity sha512-UQKpssa/498FrtcHrxRZy+3Q0rHdHEU4UKekRT95t4rUFhpHTyrnwI/TeKJTWa/5iDnRd7PxriKAnTO98Mxz9g==
+"@comunica/actor-query-operation-update-copy-rewrite@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-update-copy-rewrite/-/actor-query-operation-update-copy-rewrite-2.10.0.tgz#8a3d595cb16eb9085484482ba0bd210699e9fa4d"
+  integrity sha512-/yIixdqQfSIDI1l5lLKAspENxTFXmIHE7wYnHflQ1UPKEG0kjOyu3v5O7RFTJixHlaqXJhm6baByWYwU5olEXA==
   dependencies:
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-query-operation-update-create@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-update-create/-/actor-query-operation-update-create-2.9.0.tgz#7fa0e7f3e01074559f5740e31aaf0d06dddbf586"
-  integrity sha512-Ibwcae2FgOkmnBmORDYYKWRuX4AG+IawpRqouJjEQpaR8ZuYRWqmjLqQNzPcHOMEwovTshPp66F/i25LZQ/TFg==
+"@comunica/actor-query-operation-update-create@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-update-create/-/actor-query-operation-update-create-2.10.0.tgz#44eae5157b1f0b6556e99ace7effe2e474adc21b"
+  integrity sha512-lmOzf21okmwCVkCzmJYmcuD/xXRcej7BCdoWp9cVbajLeSHNeaDFyjfM0hWOFWAm9bW8lhpVkMgNaSt7JpXJFw==
   dependencies:
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/bus-rdf-update-quads" "^2.9.0"
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/bus-rdf-update-quads" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-query-operation-update-deleteinsert@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-update-deleteinsert/-/actor-query-operation-update-deleteinsert-2.9.0.tgz#d82c3af4fa69872c723801e55bcd744beb78652d"
-  integrity sha512-RNVR2DoLQacbj/mtW8qIKmfUmEhiTsev9S4Yd4g64rt/wiISYtO66CJBHxh9Fiy2wyO3OeLGVbj/MSeeg8FI7Q==
+"@comunica/actor-query-operation-update-deleteinsert@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-update-deleteinsert/-/actor-query-operation-update-deleteinsert-2.10.0.tgz#c26be36c3e963fb86a9c700703e8521de9ffe928"
+  integrity sha512-FSwHDqihRlELg93JFq9/sfU53fZeeuCMh7yjYkztfmefZf8aDtUQ4S1K99ivfuGAlbg36mSahW4s8ZZplC8pWg==
   dependencies:
-    "@comunica/actor-query-operation-construct" "^2.9.0"
-    "@comunica/bindings-factory" "^2.7.0"
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/bus-rdf-update-quads" "^2.9.0"
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/actor-query-operation-construct" "^2.10.0"
+    "@comunica/bindings-factory" "^2.10.0"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/bus-rdf-update-quads" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     "@rdfjs/types" "*"
     asynciterator "^3.8.1"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-query-operation-update-drop@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-update-drop/-/actor-query-operation-update-drop-2.9.0.tgz#89bebfa39b04a78973ceb9b5570ca2df28bbbb68"
-  integrity sha512-FCKMtWj89fcywPIp9SAhiTEJGLpI+yXIhIlz/lA44WFzFrqRsGK9unrHv4Xy20LZWZk6XavaQrE2Sdyw1LJGSA==
+"@comunica/actor-query-operation-update-drop@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-update-drop/-/actor-query-operation-update-drop-2.10.0.tgz#65950a7b8f2868f448244275dbb6e2490e01e9f2"
+  integrity sha512-ErOkzlyoO9t32QhrFdjYMJTeEnH/Gkb7ldEvpUtmOIFnsYvH8e2TpPiVOEicbhgQitiOATKpYpgG07vvqvTTyg==
   dependencies:
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/bus-rdf-update-quads" "^2.9.0"
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/bus-rdf-update-quads" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     "@rdfjs/types" "*"
     rdf-data-factory "^1.1.1"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-query-operation-update-load@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-update-load/-/actor-query-operation-update-load-2.9.0.tgz#d9113bd0a94f9c697bf2fd88a873734e93501288"
-  integrity sha512-4i2ngHJOrKDDt3BYuTyOxraqKLbLqxu7uZKgpF82RIk/JgySFWHbsn4KTdhZ3FRNdWeW0c5BXk6Igt70L0RQKg==
+"@comunica/actor-query-operation-update-load@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-update-load/-/actor-query-operation-update-load-2.10.0.tgz#471dca6322a7d410ce1f478e60188d0044b82a14"
+  integrity sha512-Rt3b/zfuvYJiBXAh/ORePbnEkouC5zzJbMJCPUyngXhqzVcMIIzuI/uTmXBVUdnSGuxi6IEg5Q03Hs8Sy5QalA==
   dependencies:
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/bus-rdf-update-quads" "^2.9.0"
-    "@comunica/context-entries" "^2.8.2"
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/bus-rdf-update-quads" "^2.10.0"
+    "@comunica/context-entries" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     rdf-data-factory "^1.1.1"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-query-operation-update-move-rewrite@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-update-move-rewrite/-/actor-query-operation-update-move-rewrite-2.9.0.tgz#80f9a576e0db2e706068ffb5895b966f553f0982"
-  integrity sha512-VEy9TgdbtluXXpz4/zMZ+NIKt5McRJD5LVcfD9Sj0e1PFY2nO97ar5v2QTUWM7eddV0dHHLP/JaXAlgkce8Xhw==
+"@comunica/actor-query-operation-update-move-rewrite@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-update-move-rewrite/-/actor-query-operation-update-move-rewrite-2.10.0.tgz#6b5fff0afb07db1c9ff44702ab515275d7f74ea7"
+  integrity sha512-YNHbN9zRoKEFikgZGTt8VzO86hxXa8/s4aVR6t3xRfjTgn5Y7OOlMOotijWXYjBkdW4kGCcJye6Kp8zxP8fNOQ==
   dependencies:
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-query-operation-values@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-values/-/actor-query-operation-values-2.9.0.tgz#52087112a2b3ea9fb8dd8822a5eaf0084e0ae254"
-  integrity sha512-UbQ7vWoSfbMOJ75GhX0jb9agFMumwujaZiV+dzm9aaAHQcC7qw+wzoLPRKjTuD4V9wyDBe84Q4BAPZSYG2SXDQ==
+"@comunica/actor-query-operation-values@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-values/-/actor-query-operation-values-2.10.0.tgz#573f815d88508c933f8c772ae8a1bcee28eca5f8"
+  integrity sha512-v59HOc2Xn4Hmn75VfjBRoIg8q5Klf9aPDLbpJ7FHqj4CKwevAiDCwFpENe04o0fJdv4Nfivh8oPQIX8cxyLKYQ==
   dependencies:
-    "@comunica/bindings-factory" "^2.7.0"
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/core" "^2.8.2"
-    "@comunica/metadata" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bindings-factory" "^2.10.0"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/metadata" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     asynciterator "^3.8.1"
     rdf-data-factory "^1.1.1"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-query-parse-graphql@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-parse-graphql/-/actor-query-parse-graphql-2.8.2.tgz#926ecea49c07b43087637420d41edfdeb857d016"
-  integrity sha512-XDyGti12+Sz9iQkO1tzoM7rO4FlcTSN2S3FgheJXIb+Ebx5L9j/31xYvROvM1XIEKTWYex1F7mAOJzwVGalqLQ==
+"@comunica/actor-query-parse-graphql@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-parse-graphql/-/actor-query-parse-graphql-2.10.0.tgz#56115b68398ec3666b22346fd95b7a58ccbd3cc9"
+  integrity sha512-l3RrkxElDYV4weXt3vpC0Q0She4AhbvPbPDronQulgN9nFAZhz4z9k8800T5uWMsL98wHNNXDFlnFk5S38lsow==
   dependencies:
-    "@comunica/bus-query-parse" "^2.8.2"
-    "@comunica/context-entries" "^2.8.2"
-    "@comunica/core" "^2.8.2"
+    "@comunica/bus-query-parse" "^2.10.0"
+    "@comunica/context-entries" "^2.10.0"
+    "@comunica/core" "^2.10.0"
     graphql-to-sparql "^3.0.1"
 
-"@comunica/actor-query-parse-sparql@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-parse-sparql/-/actor-query-parse-sparql-2.8.2.tgz#a123ab23ff6addc13bb6987448f1ea8e863c27af"
-  integrity sha512-qH2fVHTX93UwtIeQKL95G/dWsLD3ThMA683hbfv7uZZwQv+SEE0MvJKcz+jcZlqtt5NWlIPPKz7TM/vL2Cf+Bg==
+"@comunica/actor-query-parse-sparql@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-parse-sparql/-/actor-query-parse-sparql-2.10.0.tgz#14dff59fb81009b6ddc4fe685256ba164ced2620"
+  integrity sha512-DUVAuSSNn0AyvLruOpRpLZBsr96Q4LuV1gcO+alKZALtfOZikRKY/3sXz1NUkaRQc7qDH9xFFTFrfJd0jLvlDA==
   dependencies:
-    "@comunica/bus-query-parse" "^2.8.2"
-    "@comunica/core" "^2.8.2"
+    "@comunica/bus-query-parse" "^2.10.0"
+    "@comunica/core" "^2.10.0"
     "@types/sparqljs" "^3.1.3"
     sparqlalgebrajs "^4.2.0"
     sparqljs "^3.7.1"
 
-"@comunica/actor-query-result-serialize-json@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-result-serialize-json/-/actor-query-result-serialize-json-2.8.2.tgz#9e395999b1c1813c48c07b5f0ebb6808fcaa398a"
-  integrity sha512-NFPEFSibNGAnQbbyY2xjwauCq+DpvakMsDZItIWDKtQ78G9oYUc3u9vsR19sfkBFhNrVUeN/n697QLISRiOdYg==
+"@comunica/actor-query-result-serialize-json@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-result-serialize-json/-/actor-query-result-serialize-json-2.10.0.tgz#2c00f99fb3b960ea74b3ecd9013d4918cb425903"
+  integrity sha512-GuVcsOEhKgnVPT0AaCn8sJl/Uj5UUjUktEJpuMx1UAYt0//jcQsezJslYWmJrfXE/WJYidynyDxm8z3+jwLF7A==
   dependencies:
-    "@comunica/bus-query-result-serialize" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-query-result-serialize" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     rdf-string "^1.6.1"
-    readable-stream "^4.2.0"
+    readable-stream "^4.4.2"
 
-"@comunica/actor-query-result-serialize-rdf@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-result-serialize-rdf/-/actor-query-result-serialize-rdf-2.8.2.tgz#f94a9a3cfc3ace07fa9661b9db453a533562baad"
-  integrity sha512-mhhTW6ksmj5MYxaNMAEarsP3sFlCJ3qci8hgqAIW/nr8aXsZua+6xIcgyJb42Go3UhOTCJYwyQJCXAPm8s6d5g==
+"@comunica/actor-query-result-serialize-rdf@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-result-serialize-rdf/-/actor-query-result-serialize-rdf-2.10.0.tgz#2be66ba1c49a6472c808ac652bb2e0eaf8f6689f"
+  integrity sha512-TBXJrDs5brRMFg8UisXS/F1vJw8nUtLhjugNZcd4ST8J965Ho1aNopydp4PMmwINMRxHhHtWJGwIB2Z5xD2lDw==
   dependencies:
-    "@comunica/bus-query-result-serialize" "^2.8.2"
-    "@comunica/bus-rdf-serialize" "^2.8.2"
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-query-result-serialize" "^2.10.0"
+    "@comunica/bus-rdf-serialize" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
 
-"@comunica/actor-query-result-serialize-simple@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-result-serialize-simple/-/actor-query-result-serialize-simple-2.8.2.tgz#66321fd65a3f9e17fbeb3985a3f5d205b421aa3a"
-  integrity sha512-EIzCuH7iOkKT2etXcW2nV7UoX6LBLISsXksGb5YnCewS6LrTjzud9ZjBANjdAZZGneHkjp/vuS3Inkx6jJjLIQ==
+"@comunica/actor-query-result-serialize-simple@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-result-serialize-simple/-/actor-query-result-serialize-simple-2.10.0.tgz#b8b6d9cbdc420a0756dec1a0077a38d16e8b5579"
+  integrity sha512-pS7+aB9Rym1B5oi+O68NFjEq+EwpCRYtTIxGBp39CTQ0F7m4edt9QwqmARqveJPryK5X66ACvjxvutEaTgWI8w==
   dependencies:
-    "@comunica/bus-query-result-serialize" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-query-result-serialize" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     "@rdfjs/types" "*"
     rdf-string "^1.6.3"
-    readable-stream "^4.2.0"
+    readable-stream "^4.4.2"
 
-"@comunica/actor-query-result-serialize-sparql-csv@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-result-serialize-sparql-csv/-/actor-query-result-serialize-sparql-csv-2.8.2.tgz#21e90c28692d321615bd70b3936efee6796f55d9"
-  integrity sha512-haCiP2Tr8vJsR60ebigW5Pv35aJXtN1c4hckpjIHsyHX0b0Qa08wnb2KNgP0K+MPRbu83siaju7PcPVi1rDHNQ==
+"@comunica/actor-query-result-serialize-sparql-csv@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-result-serialize-sparql-csv/-/actor-query-result-serialize-sparql-csv-2.10.0.tgz#c413afbf589a0049ea16f73e7476a7ce0458aa63"
+  integrity sha512-Vk+7oTIPigDENK3CnV56vLfvMZVjHc3p2F4a49WDHfMgRrfQKJSQkx603vjW35n3tmUB8JSgRXr/+v7LK83KYQ==
   dependencies:
-    "@comunica/bus-query-result-serialize" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-query-result-serialize" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     "@rdfjs/types" "*"
-    readable-stream "^4.2.0"
+    readable-stream "^4.4.2"
 
-"@comunica/actor-query-result-serialize-sparql-json@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-result-serialize-sparql-json/-/actor-query-result-serialize-sparql-json-2.8.2.tgz#ed371a70b8b29cbd3f76f6af0e1b42bb05661fd5"
-  integrity sha512-XtiSEuzCnmP2IkTlW2pQRQ/ErLZWgPcSw/J/cgS1Bg4RKl5q/njvZv2fhqsY3a79OAgRptMySVLmzcNIW59+qw==
+"@comunica/actor-query-result-serialize-sparql-json@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-result-serialize-sparql-json/-/actor-query-result-serialize-sparql-json-2.10.0.tgz#f24fae22be2bc80d7fcd2d36f49b3b2d7c1f9615"
+  integrity sha512-Y0z9qy30tkVWZVwSAfYOhhbfwoPO15s6XHTY8iPIZw9w/5CrbAD0wo9L0XAUimiiB6xx2mbtdexpuzu/2qVeYA==
   dependencies:
-    "@comunica/bus-http" "^2.8.2"
-    "@comunica/bus-http-invalidate" "^2.8.2"
-    "@comunica/bus-query-result-serialize" "^2.8.2"
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-http" "^2.10.0"
+    "@comunica/bus-http-invalidate" "^2.10.0"
+    "@comunica/bus-query-result-serialize" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     "@rdfjs/types" "*"
-    readable-stream "^4.2.0"
+    readable-stream "^4.4.2"
 
-"@comunica/actor-query-result-serialize-sparql-tsv@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-result-serialize-sparql-tsv/-/actor-query-result-serialize-sparql-tsv-2.8.2.tgz#d34fbd0c8ebba0641e831afb782e98c56a9f66c1"
-  integrity sha512-off09bx4VvyKMtkAXmaB+Y0iFqsnBPL8/QDN1kdDeqnJNY9n0fV5XPwB9C1XBZjqAmzcdzS3+Ac9hyOkhr1wrw==
+"@comunica/actor-query-result-serialize-sparql-tsv@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-result-serialize-sparql-tsv/-/actor-query-result-serialize-sparql-tsv-2.10.0.tgz#84273c3f3859434665cc0b3ee8d5c7921084fdd1"
+  integrity sha512-TgA2WIXKdu/SrbHEP8HvGoLjhDOZnBoHsGsLFSHpxY/Uwk21rZqJLBEkhuhkUtGYzQPJ1n6Wmpjz9lBrUHGJPw==
   dependencies:
-    "@comunica/bus-query-result-serialize" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-query-result-serialize" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     "@rdfjs/types" "*"
     rdf-string-ttl "^1.3.2"
-    readable-stream "^4.2.0"
+    readable-stream "^4.4.2"
 
-"@comunica/actor-query-result-serialize-sparql-xml@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-result-serialize-sparql-xml/-/actor-query-result-serialize-sparql-xml-2.8.2.tgz#f6207e8b3df58ddc58cf1f7ad67082e6b1ba74b2"
-  integrity sha512-fNpMstEwEnl7JsLmh9mA5mznuPnfrv3r2vezzmUmTXRFN4IrxjeSQvXY2oSUygQuWqLBoybsGxPxX9VhncHbgA==
+"@comunica/actor-query-result-serialize-sparql-xml@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-result-serialize-sparql-xml/-/actor-query-result-serialize-sparql-xml-2.10.0.tgz#4db78cc4bc241b1f8917341310ebd20068e63e8d"
+  integrity sha512-8RDj5ZN23HnIc6zI5pD5XKi2pyg2cx6DhI7VDRcboi7v0DxfROuQqSEtbQ8m/W6Pngdz01ySogRcIVJCzRzBLQ==
   dependencies:
-    "@comunica/bus-query-result-serialize" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-query-result-serialize" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     "@rdfjs/types" "*"
-    readable-stream "^4.2.0"
+    readable-stream "^4.4.2"
 
-"@comunica/actor-query-result-serialize-stats@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-result-serialize-stats/-/actor-query-result-serialize-stats-2.8.2.tgz#09e9d948601702ef9c0f73edb9667374def7d372"
-  integrity sha512-DLO5mZ+Y8AVrKpK4W0gERUUM5b++i9GwPUqvLIps9wG+RPNWV4TbthY9PQmdG7WLefJBfHOiUSia6v86BTsk0g==
+"@comunica/actor-query-result-serialize-stats@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-result-serialize-stats/-/actor-query-result-serialize-stats-2.10.0.tgz#f6e106a532c643a6a68b2f742d6b451a28e6a9ec"
+  integrity sha512-Aa2ijQLLgnMFefmyrEBE1CZjlyDIPFDQXfMJfphCjEzN5nOOsZax2E5DK31tEaJyOQV/8Af5X1YamiOoNMZSWw==
   dependencies:
-    "@comunica/bus-http" "^2.8.2"
-    "@comunica/bus-http-invalidate" "^2.8.2"
-    "@comunica/bus-query-result-serialize" "^2.8.2"
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-http" "^2.10.0"
+    "@comunica/bus-http-invalidate" "^2.10.0"
+    "@comunica/bus-query-result-serialize" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     process "^0.11.10"
-    readable-stream "^4.2.0"
+    readable-stream "^4.4.2"
 
-"@comunica/actor-query-result-serialize-table@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-result-serialize-table/-/actor-query-result-serialize-table-2.8.2.tgz#7adbff0cd8d08952f5c3ba1cdcb91d474476d071"
-  integrity sha512-IK/LUY055QDqCFBXGLIl8nyd3cVcy3Y9adBYCxRDvAIdHqKZi/wBdZA35RuXfaWAbFRARABtJVJM7b7ekUzKJg==
+"@comunica/actor-query-result-serialize-table@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-result-serialize-table/-/actor-query-result-serialize-table-2.10.0.tgz#4b6b29aa26672d3dc563eb8a7fada81be1c7c674"
+  integrity sha512-AAPrgM/rbsSThRu9jkfJhBUeTUwQTLHNVbIn8El+Akvz+Fueoi6oSi3SslpPMHOvIUiOAgCZ05f2RbBLlhP03g==
   dependencies:
-    "@comunica/bus-query-result-serialize" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-query-result-serialize" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     "@rdfjs/types" "*"
     rdf-data-factory "^1.1.1"
     rdf-string "^1.6.3"
     rdf-terms "^1.11.0"
-    readable-stream "^4.2.0"
+    readable-stream "^4.4.2"
 
-"@comunica/actor-query-result-serialize-tree@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-result-serialize-tree/-/actor-query-result-serialize-tree-2.8.2.tgz#029322cd3981ae5f14f153117655a40c1a0d191f"
-  integrity sha512-oDG+84J6yAV7rnZWzWy9r7RDCjrWnVoBwYuieJBi3TrhQ1p5Ed69Jp5dpvqgeBVC6xANnEoUvPzk0QYLfEvyUA==
+"@comunica/actor-query-result-serialize-tree@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-result-serialize-tree/-/actor-query-result-serialize-tree-2.10.0.tgz#01663d36abd9da024322f706bb4a54f586992b1b"
+  integrity sha512-sEyIzoSTV11YPY6r4fn6fwrf3WjLD6GrwXMTuevsDAKDYaMYxyriH3T/LMLLBEURy8SLD1I1Fpw/qaZisRmLTg==
   dependencies:
-    "@comunica/bus-query-result-serialize" "^2.8.2"
-    "@comunica/context-entries" "^2.8.2"
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
-    readable-stream "^4.2.0"
+    "@comunica/bus-query-result-serialize" "^2.10.0"
+    "@comunica/context-entries" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
+    readable-stream "^4.4.2"
     sparqljson-to-tree "^3.0.1"
 
-"@comunica/actor-rdf-join-entries-sort-cardinality@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-join-entries-sort-cardinality/-/actor-rdf-join-entries-sort-cardinality-2.8.2.tgz#4f4dbb84f4dee0b8f7bdf8050fecef0b04c28af6"
-  integrity sha512-zQiGXcmu9obRxa0H1zEdEQ3oIjnnw9v0GZtafNSoYc/0GJxMJvo9phmAdAsftB6Yf9SvpqKIcbPhMIS1QiXD5A==
+"@comunica/actor-rdf-join-entries-sort-cardinality@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-join-entries-sort-cardinality/-/actor-rdf-join-entries-sort-cardinality-2.10.0.tgz#48f274e43a4031753efc5fbe593837933e0dd0a7"
+  integrity sha512-6dd/29q6QuQN2Ap090VA0KUFmmnHalPxFJb4MGh5nIbWZH0F/EvI+uK5vPx29cttr1yXL5u+MbJWaLb3IxwILg==
   dependencies:
-    "@comunica/bus-rdf-join-entries-sort" "^2.8.2"
-    "@comunica/core" "^2.8.2"
+    "@comunica/bus-rdf-join-entries-sort" "^2.10.0"
+    "@comunica/core" "^2.10.0"
 
-"@comunica/actor-rdf-join-inner-hash@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-join-inner-hash/-/actor-rdf-join-inner-hash-2.9.0.tgz#21c097b66cd089de2ade6e213cd71cd88d4bc500"
-  integrity sha512-LuTfAaua8w+TdtYx47yz3RO8hEGj/b6asiqxmPhlsT8eRf7/fr4YCvKUqYGzv0B88Zj9jMawOWjRWhL2lqt+Ng==
+"@comunica/actor-rdf-join-inner-hash@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-join-inner-hash/-/actor-rdf-join-inner-hash-2.10.0.tgz#932dd3877331650213721ffc739ae35638c066f5"
+  integrity sha512-kgbCQsuvXke+dSY+J2YMdMnFLGx5XPaeV++l+Wy6lCVrSltCi06O874b68i4sHxPC4B49KczTBAvnzfC31lWHw==
   dependencies:
-    "@comunica/bus-rdf-join" "^2.9.0"
-    "@comunica/mediatortype-join-coefficients" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-rdf-join" "^2.10.0"
+    "@comunica/mediatortype-join-coefficients" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     asyncjoin "^1.1.1"
 
-"@comunica/actor-rdf-join-inner-multi-bind@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-join-inner-multi-bind/-/actor-rdf-join-inner-multi-bind-2.9.0.tgz#b3f4e84e8fd1aec8a3bb3e2753871b65957669de"
-  integrity sha512-BXetAide8cRJtdmluyoG+hPeIfo4lq+RDRBgMCtYgCbQVMeMcA6XexrA3azoqH+67z3asye7ZSkUh7BanM2nWw==
+"@comunica/actor-rdf-join-inner-multi-bind@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-join-inner-multi-bind/-/actor-rdf-join-inner-multi-bind-2.10.0.tgz#e0bb18ae0fcfe6ed6ddffe155b07958b8a9f1674"
+  integrity sha512-T5fLuQ4SStX6xAwwBHJG+1Fv//0Z2zzXrqPeg3zkJxfQzFkB5KZ15hLUUPZ//w9QFnsheQdUbTe8XKhF4QKOWA==
   dependencies:
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/bus-rdf-join" "^2.9.0"
-    "@comunica/bus-rdf-join-entries-sort" "^2.8.2"
-    "@comunica/context-entries" "^2.8.2"
-    "@comunica/mediatortype-join-coefficients" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/bus-rdf-join" "^2.10.0"
+    "@comunica/bus-rdf-join-entries-sort" "^2.10.0"
+    "@comunica/context-entries" "^2.10.0"
+    "@comunica/mediatortype-join-coefficients" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     asynciterator "^3.8.1"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-rdf-join-inner-multi-empty@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-join-inner-multi-empty/-/actor-rdf-join-inner-multi-empty-2.9.0.tgz#4ac0c595a10445111cc1b3de0a09cd55597753c6"
-  integrity sha512-L7IMYD3WRjaDdN5DP2zIDPScVkLWsY+7oTYxlzT+fmZXakPkbxse4MUnsZBzBLCRYLhq4wN5Dd87CSjmzqqOeQ==
+"@comunica/actor-rdf-join-inner-multi-empty@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-join-inner-multi-empty/-/actor-rdf-join-inner-multi-empty-2.10.0.tgz#5a95fb832603a7aee3aad782efe72a1ffbfb5989"
+  integrity sha512-WoadMgBFKYzQoWsyqqITO7rORkVuTjP+O2nm37nQAW3rVo6DqVDwboki106p2PdJpnGQonAgE3eoBHzMAEyfEw==
   dependencies:
-    "@comunica/bus-rdf-join" "^2.9.0"
-    "@comunica/mediatortype-join-coefficients" "^2.8.2"
-    "@comunica/metadata" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-rdf-join" "^2.10.0"
+    "@comunica/mediatortype-join-coefficients" "^2.10.0"
+    "@comunica/metadata" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     asynciterator "^3.8.1"
 
-"@comunica/actor-rdf-join-inner-multi-smallest@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-join-inner-multi-smallest/-/actor-rdf-join-inner-multi-smallest-2.9.0.tgz#c1a6e7c00f5cf6bd79be4b2827079e243c913d9f"
-  integrity sha512-gqa4ATeXAhG7HPq73kUs/swBZ7sM+3bJyU/J6ppwQXEFnG6NDSSuyD+0DxxT9erb9K1lTLCHfHTH3W7/RQW1nA==
+"@comunica/actor-rdf-join-inner-multi-smallest@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-join-inner-multi-smallest/-/actor-rdf-join-inner-multi-smallest-2.10.0.tgz#2a0e04b19098c56f7c09ac9c181c3c0799716ba8"
+  integrity sha512-l6slyNdG2Add1Gpw/nkjsncUUD8G9qJbbfK3glJh7AtsaZ9H2uxVlGWQ3grP5yBbGtQU5Mvzmk0U9Wh+jLQHKA==
   dependencies:
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/bus-rdf-join" "^2.9.0"
-    "@comunica/bus-rdf-join-entries-sort" "^2.8.2"
-    "@comunica/mediatortype-join-coefficients" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/bus-rdf-join" "^2.10.0"
+    "@comunica/bus-rdf-join-entries-sort" "^2.10.0"
+    "@comunica/mediatortype-join-coefficients" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-rdf-join-inner-nestedloop@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-join-inner-nestedloop/-/actor-rdf-join-inner-nestedloop-2.9.0.tgz#510b15386e2e5404ccba472be55905ec6586a36a"
-  integrity sha512-7Om/0MXIw0+D6TOw9PUMVOxj6Owbpj2S+hlyKVDHOQxhr+T6Mh6KcfTfvYVviLoYikC4DFgGHPCzo/6jM6szxw==
+"@comunica/actor-rdf-join-inner-nestedloop@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-join-inner-nestedloop/-/actor-rdf-join-inner-nestedloop-2.10.0.tgz#bc6a4aeccbc2e81bb7ba729a5f7e884af0dff1e0"
+  integrity sha512-G/1ePePut3NeNx1+umeM8oiw2RjMMpmhzTDmnuz+ULcoW3dIhHQYZax/mSpN7T195jTFSS/CfNSFUFfOF5Rghg==
   dependencies:
-    "@comunica/bus-rdf-join" "^2.9.0"
-    "@comunica/mediatortype-join-coefficients" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-rdf-join" "^2.10.0"
+    "@comunica/mediatortype-join-coefficients" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     asyncjoin "^1.1.1"
 
-"@comunica/actor-rdf-join-inner-none@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-join-inner-none/-/actor-rdf-join-inner-none-2.9.0.tgz#68a309b51be0e8e9b8a75fafd7ab478205789f8c"
-  integrity sha512-xZSeJ9Y6x2L9nd+Ygy8VykArM7lGE1PnffH6WHHah2nepTm+o4lwsZiQGs9bTefwqX7Wj+xP3jR9klujQTLzlA==
+"@comunica/actor-rdf-join-inner-none@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-join-inner-none/-/actor-rdf-join-inner-none-2.10.0.tgz#4475905031f17d7bdec3a28c5b3bc597e448ddd0"
+  integrity sha512-vyl0ZxTWgdX0XQEO34Ih5FKhegMP6v+baILjToFRacMP56w4TviG0F6EAInW2WFdj8MhecD7C7ZQlgpCZ7BnGg==
   dependencies:
-    "@comunica/bindings-factory" "^2.7.0"
-    "@comunica/bus-rdf-join" "^2.9.0"
-    "@comunica/mediatortype-join-coefficients" "^2.8.2"
-    "@comunica/metadata" "^2.8.2"
+    "@comunica/bindings-factory" "^2.10.0"
+    "@comunica/bus-rdf-join" "^2.10.0"
+    "@comunica/mediatortype-join-coefficients" "^2.10.0"
+    "@comunica/metadata" "^2.10.0"
     asynciterator "^3.8.1"
 
-"@comunica/actor-rdf-join-inner-single@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-join-inner-single/-/actor-rdf-join-inner-single-2.9.0.tgz#e9f2fa203860cdea423cdf3620a3f983d22a602e"
-  integrity sha512-vIDNkK6xBgVsj+Rq3wqyJPmSHZ8SFuZ6oS1wCYFcrkFDJNV20ORGPKvjUWRoqs8ci1bzyri+EOOaEvWDZV9yfQ==
+"@comunica/actor-rdf-join-inner-single@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-join-inner-single/-/actor-rdf-join-inner-single-2.10.0.tgz#9fb99c5381884b9d1c8bfb24af5f05fd6bc10532"
+  integrity sha512-uH9AqJ5AVSYBBUns29PMl5zvXuWHpZr2C2XW/uoV2rYItGgqOGWpKM88v+uI9AaAPgUhBpVtcUkN1ssn6mXCkw==
   dependencies:
-    "@comunica/bus-rdf-join" "^2.9.0"
-    "@comunica/mediatortype-join-coefficients" "^2.8.2"
+    "@comunica/bus-rdf-join" "^2.10.0"
+    "@comunica/mediatortype-join-coefficients" "^2.10.0"
 
-"@comunica/actor-rdf-join-inner-symmetrichash@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-join-inner-symmetrichash/-/actor-rdf-join-inner-symmetrichash-2.9.0.tgz#6cfe26e5ca7d0b74a3cba61db03d19f20a9a3eca"
-  integrity sha512-apECfM9fZSLDKSPOr/GNYQD7xlW49BUpz1LUzvhXOUSLEz4VSulucb8k8Lh1hVofZBKaJIf0tbNNGY2wL1Xk2A==
+"@comunica/actor-rdf-join-inner-symmetrichash@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-join-inner-symmetrichash/-/actor-rdf-join-inner-symmetrichash-2.10.0.tgz#14c708316e956194e2f42af0a34f5583ef32d8de"
+  integrity sha512-0ZFOwx86k3bbSSBkA+nvyQBxZDnadCeSLXHPnF/pEOKNt2IKOZp9lFWVS8fqjfbOwLuXWEIg9mGG5TUWxauEqw==
   dependencies:
-    "@comunica/bus-rdf-join" "^2.9.0"
-    "@comunica/mediatortype-join-coefficients" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-rdf-join" "^2.10.0"
+    "@comunica/mediatortype-join-coefficients" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     asyncjoin "^1.1.1"
 
-"@comunica/actor-rdf-join-minus-hash-undef@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-join-minus-hash-undef/-/actor-rdf-join-minus-hash-undef-2.9.0.tgz#829560517d1d8690d3d24b28dd8ffc86c6672034"
-  integrity sha512-txJfFlmFi2+a7FKoHGtW7b4XUqFbqBitTBDbnRf5qiSmf1t/zMXgOJsMUYc3G7Xl0qI2s+BBwUYDid+M4LdZqw==
+"@comunica/actor-rdf-join-minus-hash-undef@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-join-minus-hash-undef/-/actor-rdf-join-minus-hash-undef-2.10.0.tgz#eb2764d5256f5f9c3d92099c1f839c30cdd4ebb4"
+  integrity sha512-JQAz8KI8SsUlYyup8oLzUJRZ5O9bBBmn+myQ/J5bgV1k0WB0/F3NiW2dQN9ew7usFvHEQulg2sv0/4KBCAR8MQ==
   dependencies:
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/bus-rdf-join" "^2.9.0"
-    "@comunica/mediatortype-join-coefficients" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/bus-rdf-join" "^2.10.0"
+    "@comunica/mediatortype-join-coefficients" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     "@rdfjs/types" "*"
     rdf-string "^1.6.1"
 
-"@comunica/actor-rdf-join-minus-hash@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-join-minus-hash/-/actor-rdf-join-minus-hash-2.9.0.tgz#d52bdbf430d6c90f101ad51a8ab613b06eef6700"
-  integrity sha512-twhwuvIRm32kzQUPVGa2I2kgazsqUVjAljC32SIFo20vPfgop/C2q9hlXKpHbw1n2aRBYngfdizAK+jim5sl+Q==
+"@comunica/actor-rdf-join-minus-hash@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-join-minus-hash/-/actor-rdf-join-minus-hash-2.10.0.tgz#7c40408bbdedc2579346366d3c4147a0c5be7b21"
+  integrity sha512-vHe3xz+DVtZ7GeGQU7EsXb7cnUaOqQ3WYuDINCffY3ht7JLiUXHPw/nPs3uODgqeNa29qwIs54Na+2IfQJlauQ==
   dependencies:
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/bus-rdf-join" "^2.9.0"
-    "@comunica/mediatortype-join-coefficients" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/bus-rdf-join" "^2.10.0"
+    "@comunica/mediatortype-join-coefficients" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     "@rdfjs/types" "*"
 
-"@comunica/actor-rdf-join-optional-bind@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-join-optional-bind/-/actor-rdf-join-optional-bind-2.9.0.tgz#b50e60c23316a6c6061b94703cc5f6fce88275b1"
-  integrity sha512-P4TIfHrf9UNd97hD4CT8gmrXQSe2XL6gwJ5yBh947oJEeO8coi3uj9GvRq5vaUN2Cb/a31jbmBFpWC10f8PSXA==
+"@comunica/actor-rdf-join-optional-bind@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-join-optional-bind/-/actor-rdf-join-optional-bind-2.10.0.tgz#88897ab8a4034a73290ff4735605aff82442a7b8"
+  integrity sha512-YcEgDP6k1E+ymSGcCJVotWALnpu4KT1QbSlry/4TFS2AVFOVpfkNEaJ9g7sojq4bC83KlQ1kEm0zIVdeKUBdVA==
   dependencies:
-    "@comunica/actor-rdf-join-inner-multi-bind" "^2.9.0"
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/bus-rdf-join" "^2.9.0"
-    "@comunica/context-entries" "^2.8.2"
-    "@comunica/mediatortype-join-coefficients" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/actor-rdf-join-inner-multi-bind" "^2.10.0"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/bus-rdf-join" "^2.10.0"
+    "@comunica/context-entries" "^2.10.0"
+    "@comunica/mediatortype-join-coefficients" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-rdf-join-optional-nestedloop@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-join-optional-nestedloop/-/actor-rdf-join-optional-nestedloop-2.9.0.tgz#e5ca98f2777dfa1ee8e61f049e81aca57352fd57"
-  integrity sha512-chnzNSjUZqIsmBCkU4+Joxc0ZZDS3vM5SCpNlpVrdgVNAjkxmFg27JZjR6MGFoDIub1DG8K5/saQ/cLjpgDDMg==
+"@comunica/actor-rdf-join-optional-nestedloop@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-join-optional-nestedloop/-/actor-rdf-join-optional-nestedloop-2.10.0.tgz#56e28348a13430a84003d59537ac0f02e44a4636"
+  integrity sha512-ImvAeYAbafIuyc1i0Yzm/UkFI7MRhkb0rRkgj5KxTtA4bd22zPvNIt4DBsSiBTtdlWxL1UsaAQ5pfbFxRFLVQg==
   dependencies:
-    "@comunica/bus-rdf-join" "^2.9.0"
-    "@comunica/mediatortype-join-coefficients" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-rdf-join" "^2.10.0"
+    "@comunica/mediatortype-join-coefficients" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     asyncjoin "^1.1.1"
 
-"@comunica/actor-rdf-join-selectivity-variable-counting@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-join-selectivity-variable-counting/-/actor-rdf-join-selectivity-variable-counting-2.8.2.tgz#1f5db2f416484c3c974b2aed79625e45d516ea45"
-  integrity sha512-NGUcIMpqvSTARJfhLDmiRDd4WY3dEAv4jYga1zB/4tJ+DnQhgDIrbKGjneTbv65taDQ7MTzeNfbhCNv8Luc63Q==
+"@comunica/actor-rdf-join-selectivity-variable-counting@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-join-selectivity-variable-counting/-/actor-rdf-join-selectivity-variable-counting-2.10.0.tgz#28e944643b5ae79f5e78dcdd8b183e5cfcd0219a"
+  integrity sha512-D7tdzxA93bpZGXI5emJyvzk6LabeAnzcQMU/V5x2QwJxyoNr+LFbesBHDDP3/u4UJwmeP0a+dU0e5mbpJujSXw==
   dependencies:
-    "@comunica/bus-rdf-join-selectivity" "^2.8.2"
-    "@comunica/core" "^2.8.2"
-    "@comunica/mediatortype-accuracy" "^2.8.2"
+    "@comunica/bus-rdf-join-selectivity" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/mediatortype-accuracy" "^2.10.0"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-rdf-metadata-accumulate-cancontainundefs@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-metadata-accumulate-cancontainundefs/-/actor-rdf-metadata-accumulate-cancontainundefs-2.8.2.tgz#e6d4c6589807264f9ef8a5844abd5a9ee40277c0"
-  integrity sha512-tQTP+496kavL1uEfSksXhOrmzcYVjlsXpCnsOwO5l7niW3UO1YAw+T8cG0qVFmgneNk/jRH+JZm1Q0QdoqSo/Q==
+"@comunica/actor-rdf-metadata-accumulate-cancontainundefs@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-metadata-accumulate-cancontainundefs/-/actor-rdf-metadata-accumulate-cancontainundefs-2.10.0.tgz#1cd7f16d51a6e4a6a0e5b316ab704c8b59ed2b8e"
+  integrity sha512-N3rwX4kT9rkW+89q4xCjO3KKG0DbeNIyeMWDzeh2vTw8nAXYyTiPjHYvx/6VUMzhFUWF+50VtVv8ZJPO6nEapw==
   dependencies:
-    "@comunica/bus-rdf-metadata-accumulate" "^2.8.2"
-    "@comunica/core" "^2.8.2"
+    "@comunica/bus-rdf-metadata-accumulate" "^2.10.0"
+    "@comunica/core" "^2.10.0"
 
-"@comunica/actor-rdf-metadata-accumulate-cardinality@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-metadata-accumulate-cardinality/-/actor-rdf-metadata-accumulate-cardinality-2.8.2.tgz#db5e84bab2251a45159edf5f8c1ea07af2602db8"
-  integrity sha512-5wrc2F/iCvfQq8quHUnXQyEDlNRjIwNPVqYkiXW9Ux85UZy8ytpSvqd+qZ/7XLL/U7Xr5+reBygQmu9+J3iIug==
+"@comunica/actor-rdf-metadata-accumulate-cardinality@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-metadata-accumulate-cardinality/-/actor-rdf-metadata-accumulate-cardinality-2.10.0.tgz#66537c23a3d7ff7d620ad9457c558b8464f96ccd"
+  integrity sha512-UpC5PbhzEDCAxTUqETH89uRaFRqmP6YuWt67OAPo5wocv2tQDs6/SdLwS695XnfeMJdfDHsXyoUzQg3r8dwydw==
   dependencies:
-    "@comunica/bus-rdf-metadata-accumulate" "^2.8.2"
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-rdf-metadata-accumulate" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
 
-"@comunica/actor-rdf-metadata-accumulate-pagesize@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-metadata-accumulate-pagesize/-/actor-rdf-metadata-accumulate-pagesize-2.8.2.tgz#b489374193f5da29a9579749fbf4aaa39c6d8b0a"
-  integrity sha512-W6O2adLYU400x1limh7U7/Q8sLA6yZiAPGie8mu/W6Kg/1ht/kPUtcIeCU70mxOQqSYMEfmVOl3uL/pIusWkLw==
+"@comunica/actor-rdf-metadata-accumulate-pagesize@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-metadata-accumulate-pagesize/-/actor-rdf-metadata-accumulate-pagesize-2.10.0.tgz#f1049212cc6229394ce479022096016200fb2eaf"
+  integrity sha512-r364CWGr5rMpV2ec3TsD+9Yhvi1JUuRXLBQqtgzjAPbpWjfDSM1Q4h0P1z9h3D+sdUMEX/0iGAY3AH2FjJAxwA==
   dependencies:
-    "@comunica/bus-rdf-metadata-accumulate" "^2.8.2"
-    "@comunica/core" "^2.8.2"
+    "@comunica/bus-rdf-metadata-accumulate" "^2.10.0"
+    "@comunica/core" "^2.10.0"
 
-"@comunica/actor-rdf-metadata-accumulate-requesttime@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-metadata-accumulate-requesttime/-/actor-rdf-metadata-accumulate-requesttime-2.8.2.tgz#892e7831658f3a4959fb4de35ec9b387d73c7205"
-  integrity sha512-IUZqSEFZE1hHWAXkc1MFoosbbCmDMyGyICP7AKsRKDyEo5f09UEXbL9M6aIslx5oSBzEwGRYcPrdTOOZi/+eqw==
+"@comunica/actor-rdf-metadata-accumulate-requesttime@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-metadata-accumulate-requesttime/-/actor-rdf-metadata-accumulate-requesttime-2.10.0.tgz#a374ec7b2e3e93dbeede736a9e8e3706639ea5f2"
+  integrity sha512-SpG7gxxAPoW2NbgyZ2UNpwluJ+IvCOYIRDTXmVTAK8bntav+/ZG30yfESFBjB3LmJEwAnktAsTgM6OhldohPKw==
   dependencies:
-    "@comunica/bus-rdf-metadata-accumulate" "^2.8.2"
-    "@comunica/core" "^2.8.2"
+    "@comunica/bus-rdf-metadata-accumulate" "^2.10.0"
+    "@comunica/core" "^2.10.0"
 
-"@comunica/actor-rdf-metadata-all@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-metadata-all/-/actor-rdf-metadata-all-2.8.2.tgz#af8e307ab938cbf895d871a27e85edd195e8d25f"
-  integrity sha512-gpQtNeB7Y65CRMMWPU7ybKfm1ETh1O9Q576pKaRwhfN1OdeTcK99bMRPCwu2FMZq5fpXgpFEz6+pNPod+NMovw==
+"@comunica/actor-rdf-metadata-all@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-metadata-all/-/actor-rdf-metadata-all-2.10.0.tgz#72772cd5273313833f1cbad2ee7be497eab00d33"
+  integrity sha512-dHaSxHTdneWVBMAF6WqZrGD+u4TPpHQaJ2WutK1NvQNPIiF0N7249aGTvXBIXZfsKYyQ73PUORDeLEOjX+tT7g==
   dependencies:
-    "@comunica/bus-rdf-metadata" "^2.8.2"
-    "@comunica/core" "^2.8.2"
-    readable-stream "^4.2.0"
+    "@comunica/bus-rdf-metadata" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    readable-stream "^4.4.2"
 
-"@comunica/actor-rdf-metadata-extract-allow-http-methods@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-metadata-extract-allow-http-methods/-/actor-rdf-metadata-extract-allow-http-methods-2.8.2.tgz#3f3830ce7244d231a697e4f6306d73240d1642fc"
-  integrity sha512-blySkab/iCI6OZ5dXSycUBO2Og8i9FSPOfz0d67ELeFk01MULocUHNRPU9IvBVLMOJgt9SbY6xISsnNDYqNgjg==
+"@comunica/actor-rdf-metadata-extract-allow-http-methods@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-metadata-extract-allow-http-methods/-/actor-rdf-metadata-extract-allow-http-methods-2.10.0.tgz#b3c87b60e27cfff47ea7c1f7cec136d3abd73565"
+  integrity sha512-aCSX+lWcmz5Q/g34VJEblczqDS6N+gJ3AlcOcGuqhd6qHRU17dMeCIZCk8p6p+AhbJ30w4BTsrZRY2sF0MGCVA==
   dependencies:
-    "@comunica/bus-rdf-metadata-extract" "^2.8.2"
-    "@comunica/core" "^2.8.2"
+    "@comunica/bus-rdf-metadata-extract" "^2.10.0"
+    "@comunica/core" "^2.10.0"
 
-"@comunica/actor-rdf-metadata-extract-hydra-controls@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-metadata-extract-hydra-controls/-/actor-rdf-metadata-extract-hydra-controls-2.8.2.tgz#b768eff4c728f9207065464212761c8daadefcc8"
-  integrity sha512-cID6mNBpyvrA+kSMxxHjX/bi4IYtqWjaaitzSHaRihQeBmwpX0UhjapRm8qcLdIOhTHzOUgSqayml6lOpFAuBQ==
+"@comunica/actor-rdf-metadata-extract-hydra-controls@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-metadata-extract-hydra-controls/-/actor-rdf-metadata-extract-hydra-controls-2.10.0.tgz#a3e2272f6319311d9d1f1b075cfac0a820b2b8f4"
+  integrity sha512-T6F5OaQNqrHVIwSGNRX6YPDBoAOYBQj3NTPID7vQae7J80oEX+CLoTkeJJwfHpoUWx0ihs8J0UkABgK3AWeylA==
   dependencies:
-    "@comunica/bus-rdf-metadata-extract" "^2.8.2"
-    "@comunica/core" "^2.8.2"
+    "@comunica/bus-rdf-metadata-extract" "^2.10.0"
+    "@comunica/core" "^2.10.0"
     "@rdfjs/types" "*"
     "@types/uritemplate" "^0.3.4"
     uritemplate "0.3.4"
 
-"@comunica/actor-rdf-metadata-extract-hydra-count@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-metadata-extract-hydra-count/-/actor-rdf-metadata-extract-hydra-count-2.8.2.tgz#5ad15b78ff2ef45e55c541f6836a546b6e338929"
-  integrity sha512-c/+zAzmEaraMX2HsK0E1pEFciioT18UKAGk6ZNT+lJ1q86LMx+Ky5RFH8FtvCB8dYdc7K6AuLWsRiIvVzw/K4g==
+"@comunica/actor-rdf-metadata-extract-hydra-count@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-metadata-extract-hydra-count/-/actor-rdf-metadata-extract-hydra-count-2.10.0.tgz#8af7f3afd3dd166e368a8b1315550e90708433f8"
+  integrity sha512-nOMLN+9OSLFOVz6jc9pcyDizhcBBVT2azn7StTMK5ukFCcPCENS4y6lYhC5cijKZY7vUa7U6VzhX2vvw20MKDA==
   dependencies:
-    "@comunica/bus-rdf-metadata-extract" "^2.8.2"
-    "@comunica/core" "^2.8.2"
+    "@comunica/bus-rdf-metadata-extract" "^2.10.0"
+    "@comunica/core" "^2.10.0"
 
-"@comunica/actor-rdf-metadata-extract-hydra-pagesize@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-metadata-extract-hydra-pagesize/-/actor-rdf-metadata-extract-hydra-pagesize-2.8.2.tgz#d81b37085d507da6a66d272a557d818fa5a823e0"
-  integrity sha512-hYkc5UTcnBFkbGgfx261amIqnlLTg8rhky74UjY5h6eSlXRCA/viAQuZhuK4jmguQsL4qfv0tAG+ASKC0ZEyGQ==
+"@comunica/actor-rdf-metadata-extract-hydra-pagesize@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-metadata-extract-hydra-pagesize/-/actor-rdf-metadata-extract-hydra-pagesize-2.10.0.tgz#eed8ce3b350d1bd2b8a89bfcc9c82621d6f1f0c6"
+  integrity sha512-mD8KS2ENr2rbfBWxtVpxkB/Y2LyyAnwQU5UYKkpet8ELhlostdGROzYCNIAgfOgirOAsLgVkbmrX0XBGouI7rA==
   dependencies:
-    "@comunica/bus-rdf-metadata-extract" "^2.8.2"
-    "@comunica/core" "^2.8.2"
+    "@comunica/bus-rdf-metadata-extract" "^2.10.0"
+    "@comunica/core" "^2.10.0"
 
-"@comunica/actor-rdf-metadata-extract-patch-sparql-update@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-metadata-extract-patch-sparql-update/-/actor-rdf-metadata-extract-patch-sparql-update-2.8.2.tgz#e9abadaf5a733580dcf199f3e37797211d8e165b"
-  integrity sha512-UHVqYWGBOkVaE0gMvoj2kHIj4k2tSOPM4SnVX0y0x1vw5dpJk+NEwohbEPhYK70WUAzqDxPFHE2pPa8eeClE9g==
+"@comunica/actor-rdf-metadata-extract-patch-sparql-update@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-metadata-extract-patch-sparql-update/-/actor-rdf-metadata-extract-patch-sparql-update-2.10.0.tgz#b77532658bcad6d2a42dd310bb7bf1fde33d74f5"
+  integrity sha512-U5ARpeWKShbbSfdtJeb6nyPcsdtMwEo2dp56T4aSTNSBKtAhQ78DjOxb23WIU/VR/qpw2yWcsbPnNJvSaLpRVQ==
   dependencies:
-    "@comunica/bus-rdf-metadata-extract" "^2.8.2"
-    "@comunica/core" "^2.8.2"
+    "@comunica/bus-rdf-metadata-extract" "^2.10.0"
+    "@comunica/core" "^2.10.0"
 
-"@comunica/actor-rdf-metadata-extract-put-accepted@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-metadata-extract-put-accepted/-/actor-rdf-metadata-extract-put-accepted-2.8.2.tgz#b6c34618562e33c40d5512b91293284a6feec6a5"
-  integrity sha512-nOkk6WC4aRNq7JpfiwYTOfZeLCKfe5sJgfG2yLFpeea8lUkwQBUTn6UM6ZkMy78euIkIpMuu19DuxmMdFwAWDA==
+"@comunica/actor-rdf-metadata-extract-put-accepted@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-metadata-extract-put-accepted/-/actor-rdf-metadata-extract-put-accepted-2.10.0.tgz#b31cdbc639a688d41e3ddc620524696768e8aa52"
+  integrity sha512-cGJg6tMMCOSGcitkUBN7b9/Sg5zgwWQC52g+Zk22o4i+Zgt24WLjfXXbnGWGoV+h9YZo8pkg7v1cpE5GpapNCg==
   dependencies:
-    "@comunica/bus-rdf-metadata-extract" "^2.8.2"
-    "@comunica/core" "^2.8.2"
+    "@comunica/bus-rdf-metadata-extract" "^2.10.0"
+    "@comunica/core" "^2.10.0"
 
-"@comunica/actor-rdf-metadata-extract-request-time@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-metadata-extract-request-time/-/actor-rdf-metadata-extract-request-time-2.8.2.tgz#4218c54ed22170370f03cb23a27090704902ade1"
-  integrity sha512-shluvPWbNXBovQd837+JT7EwAWwQTbnYW1h1DgbH7hI3RjNj+0rSRFUAGvXFe1wSC3xno/sHMAxjVFJ5CzKl8A==
+"@comunica/actor-rdf-metadata-extract-request-time@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-metadata-extract-request-time/-/actor-rdf-metadata-extract-request-time-2.10.0.tgz#572f0793bcbc8892b2203e986787cc1bcb17dfb2"
+  integrity sha512-zh3coTPZMbgF4mXKCO3bzn99INt9HFraKMZWc9s/kwBE6vhNZ5246Ql/6z1v7mccoIbanhI72gtjFTGGHru80Q==
   dependencies:
-    "@comunica/bus-rdf-metadata-extract" "^2.8.2"
-    "@comunica/core" "^2.8.2"
+    "@comunica/bus-rdf-metadata-extract" "^2.10.0"
+    "@comunica/core" "^2.10.0"
 
-"@comunica/actor-rdf-metadata-extract-sparql-service@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-metadata-extract-sparql-service/-/actor-rdf-metadata-extract-sparql-service-2.8.2.tgz#e025ea7e3aba3665311925704ddb45874a2b0ec3"
-  integrity sha512-uWOMyccUI2qX/fE70pgMrb2cJDIDc75LPe3UfCRodHaIeIW+2kYcQZDDR/f43EtrISbJrgLu4MMZVeislroyuA==
+"@comunica/actor-rdf-metadata-extract-sparql-service@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-metadata-extract-sparql-service/-/actor-rdf-metadata-extract-sparql-service-2.10.0.tgz#e6ad80df1a7b5a6669f8fc297b5a6e7fd6c6ddeb"
+  integrity sha512-Xc+id8FURTmY3ccb4hcVuAaOou5UqD+1YkTnGfMWQxVgMlFC1eeBvwWVzvedj0sHhnfbLgDwbCVYLCK1lNndSg==
   dependencies:
-    "@comunica/bus-rdf-metadata-extract" "^2.8.2"
-    "@comunica/core" "^2.8.2"
+    "@comunica/bus-rdf-metadata-extract" "^2.10.0"
+    "@comunica/core" "^2.10.0"
     relative-to-absolute-iri "^1.0.7"
 
-"@comunica/actor-rdf-metadata-primary-topic@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-metadata-primary-topic/-/actor-rdf-metadata-primary-topic-2.8.2.tgz#36c99dffeffb054e10159e1c8a97ec642d3fc59c"
-  integrity sha512-Wq4Z+03kQv9eaukTS9tW7FloZd7ggkbCgYUyKvevVKAmHQiZmX/YamxCsvuIPQBNUQedpUFCXhitD3uLZ4GwJg==
+"@comunica/actor-rdf-metadata-primary-topic@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-metadata-primary-topic/-/actor-rdf-metadata-primary-topic-2.10.0.tgz#5747ecb5f9ecf665bec52de458420dea5ce36916"
+  integrity sha512-nabxkiYSPGPRylhYjGxF0KiJ/K8QiG1N/am/t8eaqwyjn/fo2/tHl0yXUaLLx0E8fChfbBv10sVlmLhsLrg8DQ==
   dependencies:
-    "@comunica/bus-rdf-metadata" "^2.8.2"
-    "@comunica/core" "^2.8.2"
+    "@comunica/bus-rdf-metadata" "^2.10.0"
+    "@comunica/core" "^2.10.0"
     "@rdfjs/types" "*"
-    readable-stream "^4.2.0"
+    readable-stream "^4.4.2"
 
 "@comunica/actor-rdf-parse-html-microdata@^2.0.1":
   version "2.4.0"
@@ -2031,13 +2031,13 @@
     "@comunica/core" "^2.4.0"
     microdata-rdf-streaming-parser "^2.0.0"
 
-"@comunica/actor-rdf-parse-html-microdata@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-parse-html-microdata/-/actor-rdf-parse-html-microdata-2.8.2.tgz#df447b1bcfc1641d1434424ec395267f6731241e"
-  integrity sha512-vJOjT0xNpUpwqf46oZoXj4hjEK5FrstyjHeuVe1nJruPCE2QMDIdt/wcc9SP2T/Px5uvEjDUgEoxAEOPWkADAQ==
+"@comunica/actor-rdf-parse-html-microdata@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-parse-html-microdata/-/actor-rdf-parse-html-microdata-2.10.0.tgz#dd84930382d4877394eb16ddd9e39d28ea129787"
+  integrity sha512-JLfiDauq4SmpI6TDS4HaHzI6iJe1j8lSk5FRRYK6YVEu8eO28jPmxQJiOiwbQiYqsjsV7kON/WIZSoUELoI4Ig==
   dependencies:
-    "@comunica/bus-rdf-parse-html" "^2.8.2"
-    "@comunica/core" "^2.8.2"
+    "@comunica/bus-rdf-parse-html" "^2.10.0"
+    "@comunica/core" "^2.10.0"
     microdata-rdf-streaming-parser "^2.0.1"
 
 "@comunica/actor-rdf-parse-html-rdfa@^2.0.1":
@@ -2049,13 +2049,13 @@
     "@comunica/core" "^2.4.0"
     rdfa-streaming-parser "^2.0.0"
 
-"@comunica/actor-rdf-parse-html-rdfa@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-parse-html-rdfa/-/actor-rdf-parse-html-rdfa-2.8.2.tgz#37bee07c35b957994eec35f7178c263d7c3247b4"
-  integrity sha512-Ipe5NWHZJsnGs8KZE1GbNIRIV5DyF+IOt4BR8z4QmQu1IjzkE2zFG/tT7hI4ZQ7jYjMwkW3xcfsK4FJp+MnhQQ==
+"@comunica/actor-rdf-parse-html-rdfa@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-parse-html-rdfa/-/actor-rdf-parse-html-rdfa-2.10.0.tgz#21ee3aec806a085db93e8f216647dfc0fede480e"
+  integrity sha512-9K3iaws9+FGl50oZi53hqyzhwjNKZ3mIr2zg/TAJZoapKvc14cthH17zKSSJrqI/NgBStRmZhBBkXcwfu1CANw==
   dependencies:
-    "@comunica/bus-rdf-parse-html" "^2.8.2"
-    "@comunica/core" "^2.8.2"
+    "@comunica/bus-rdf-parse-html" "^2.10.0"
+    "@comunica/core" "^2.10.0"
     rdfa-streaming-parser "^2.0.1"
 
 "@comunica/actor-rdf-parse-html-script@^2.0.1":
@@ -2072,18 +2072,18 @@
     readable-stream "^4.0.0"
     relative-to-absolute-iri "^1.0.5"
 
-"@comunica/actor-rdf-parse-html-script@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-parse-html-script/-/actor-rdf-parse-html-script-2.8.2.tgz#23c726a874c11eab204da16a092b9f63f4c19512"
-  integrity sha512-4Y87tzHJREywzjCbS/A7lwPtrFXIdb6pEnyWK/UROsj8nw8M7UacKog6hyB0iyeZGPM43S9x0RC/u5RWA9PHrw==
+"@comunica/actor-rdf-parse-html-script@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-parse-html-script/-/actor-rdf-parse-html-script-2.10.0.tgz#6d5ca058c24a0a909f72c8e3b5f80bab82524e85"
+  integrity sha512-7XYqWchDquWnBLjG7rmmY+tdE81UZ8fPCU0Hn+vI39/MikNOpaiyr/ZYFqhogWFa9SkjmH0a7idVUzmjiwKRZQ==
   dependencies:
-    "@comunica/bus-rdf-parse" "^2.8.2"
-    "@comunica/bus-rdf-parse-html" "^2.8.2"
-    "@comunica/context-entries" "^2.8.2"
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-rdf-parse" "^2.10.0"
+    "@comunica/bus-rdf-parse-html" "^2.10.0"
+    "@comunica/context-entries" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     "@rdfjs/types" "*"
-    readable-stream "^4.2.0"
+    readable-stream "^4.4.2"
     relative-to-absolute-iri "^1.0.7"
 
 "@comunica/actor-rdf-parse-html@^2.0.1":
@@ -2099,18 +2099,18 @@
     htmlparser2 "^8.0.0"
     readable-stream "^4.0.0"
 
-"@comunica/actor-rdf-parse-html@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-parse-html/-/actor-rdf-parse-html-2.8.2.tgz#77a22e973465367386a615a2077e3211bfaf631d"
-  integrity sha512-SV7iBGETX8igGyB84TVxM/2ylvugDAfDNgxkZPxuEjJfi65YHSt/pqnXPYYcuZ5QCO59gjBVMoeSIdNvmCHoOA==
+"@comunica/actor-rdf-parse-html@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-parse-html/-/actor-rdf-parse-html-2.10.0.tgz#411d9e068524fe8b135159e299c8c8300b0a5419"
+  integrity sha512-zgImXKpc+BN1i6lQiN1Qhlb1HbKdMIeJMOys6qbzRIijdK8GkGGChwhQp7Cso3lY1Nf4K7M3jPLZeQXeED2w7g==
   dependencies:
-    "@comunica/bus-rdf-parse" "^2.8.2"
-    "@comunica/bus-rdf-parse-html" "^2.8.2"
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-rdf-parse" "^2.10.0"
+    "@comunica/bus-rdf-parse-html" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     "@rdfjs/types" "*"
     htmlparser2 "^9.0.0"
-    readable-stream "^4.2.0"
+    readable-stream "^4.4.2"
 
 "@comunica/actor-rdf-parse-jsonld@^2.0.1":
   version "2.4.0"
@@ -2126,16 +2126,16 @@
     jsonld-streaming-parser "^3.0.0"
     stream-to-string "^1.2.0"
 
-"@comunica/actor-rdf-parse-jsonld@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-parse-jsonld/-/actor-rdf-parse-jsonld-2.8.2.tgz#94d3e89fa3f733eb3f067bac1abb0a00d7fb34c5"
-  integrity sha512-6H5HmiMujyISzxMAGWDjpMjWb1VD/GYw7Jzx6GWy6M9tjxcvkJRlgUl0dXOhIOlh/0LohrV18bKnA8uUcILzZw==
+"@comunica/actor-rdf-parse-jsonld@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-parse-jsonld/-/actor-rdf-parse-jsonld-2.10.0.tgz#078c41d6d0b420d7ca93d61908a1e876fea88894"
+  integrity sha512-A6TczotUsFyceQf2Nqp4+99c28ZnfkCqUrm7IXPhYUSA6p+KyMew52dr1nC0H7AJ6hRozqY3ZeOrvTjHOWytNg==
   dependencies:
-    "@comunica/bus-http" "^2.8.2"
-    "@comunica/bus-rdf-parse" "^2.8.2"
-    "@comunica/context-entries" "^2.8.2"
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-http" "^2.10.0"
+    "@comunica/bus-rdf-parse" "^2.10.0"
+    "@comunica/context-entries" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     jsonld-context-parser "^2.2.2"
     jsonld-streaming-parser "^3.0.1"
     stream-to-string "^1.2.0"
@@ -2149,13 +2149,13 @@
     "@comunica/types" "^2.4.0"
     n3 "^1.6.3"
 
-"@comunica/actor-rdf-parse-n3@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-parse-n3/-/actor-rdf-parse-n3-2.8.2.tgz#bc607db929bfbae18e1edd14db0377bb5916f39b"
-  integrity sha512-vNbIA8MsZ4AGUTdxm1wcccjPyH4moMV2gGH3ZLhf2c7/zvVHbRiVcD7FB3ELU0yHUD9o5H9UBSwsmLMWQTSxcA==
+"@comunica/actor-rdf-parse-n3@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-parse-n3/-/actor-rdf-parse-n3-2.10.0.tgz#94b28690d4a06f8944dc62930adc3346d2d61f0c"
+  integrity sha512-o1MAbwJxW4Br2WCZdhFoRmAiOP4mfogeQqJ4nqlsOkoMtQ45EvLHsotb3Kqhuk5V+vsTxyK5v/a4zylGtcU7VQ==
   dependencies:
-    "@comunica/bus-rdf-parse" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-rdf-parse" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     n3 "^1.17.0"
 
 "@comunica/actor-rdf-parse-rdfxml@^2.0.1":
@@ -2167,25 +2167,25 @@
     "@comunica/types" "^2.4.0"
     rdfxml-streaming-parser "^2.0.0"
 
-"@comunica/actor-rdf-parse-rdfxml@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-parse-rdfxml/-/actor-rdf-parse-rdfxml-2.8.2.tgz#3576c968f5ce3f3ea0fe1bd951f7bb3d4544ed0d"
-  integrity sha512-5SoYBhrPicqHQKUTK20mYZqILctrIcxjk9R+tdhlAHzWOIT3Usmx87t2/5V8Tf/mr6ld9snQIaYS19QtU8MQYg==
+"@comunica/actor-rdf-parse-rdfxml@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-parse-rdfxml/-/actor-rdf-parse-rdfxml-2.10.0.tgz#8e8de2765428e8ea3f3c84bcf5f60f8e444c187e"
+  integrity sha512-HoJN52shXY3cvYtsS0cpin9KXpW3L7g1leebyCRSqnlnHdJv5D6G0Ep8vyt2xhquKNbOQ7LnP5VhiDiqz73XDg==
   dependencies:
-    "@comunica/bus-rdf-parse" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-rdf-parse" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     rdfxml-streaming-parser "^2.2.3"
 
-"@comunica/actor-rdf-parse-shaclc@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-parse-shaclc/-/actor-rdf-parse-shaclc-2.8.2.tgz#c477544aaae5209e0a2c6ad2ddc64f11698d0b34"
-  integrity sha512-O27yF5qi1wQ9KhHrdLpZ3+l6w8FuJiWnFvMWVlsGbs+9xCu5kC/LacAemhzfXFAXPHQ9siNjznNZ5g/ZV/cIgw==
+"@comunica/actor-rdf-parse-shaclc@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-parse-shaclc/-/actor-rdf-parse-shaclc-2.10.0.tgz#90ca0c4c426df8134934983e590c72e00da0a080"
+  integrity sha512-i6tmuZuS+RtDiSXpQc3s/PxtCqwIguo4ANmVB20PK4VWgQgBwoPG7LlNcJ0xmuH/3Bv6C2Agn18PLF6dZX+fKw==
   dependencies:
-    "@comunica/bus-rdf-parse" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-rdf-parse" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     "@rdfjs/types" "*"
     asynciterator "^3.8.1"
-    readable-stream "^4.2.0"
+    readable-stream "^4.4.2"
     shaclc-parse "^1.4.0"
     stream-to-string "^1.2.0"
 
@@ -2198,69 +2198,69 @@
     "@comunica/types" "^2.4.0"
     rdfa-streaming-parser "^2.0.0"
 
-"@comunica/actor-rdf-parse-xml-rdfa@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-parse-xml-rdfa/-/actor-rdf-parse-xml-rdfa-2.8.2.tgz#99902af8794f6e98d1d2bf02db5fabb07aedf8a2"
-  integrity sha512-8bGTXpDbUqNowoSmLXapC/4blKQHWicVoV5NfdTcCrB0Nxs+oHa3I5DJMShQ6EBwCWVaScYcCcGFWIvE2tQPyA==
+"@comunica/actor-rdf-parse-xml-rdfa@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-parse-xml-rdfa/-/actor-rdf-parse-xml-rdfa-2.10.0.tgz#e3d1c2d2bf823da6f8a195fa69d22c964e371c48"
+  integrity sha512-68r/6B/fEyA1/OYleVuaPq47J+g4xJcJijpdL1wEj7CqjV+Xa+sDWRpNCyLcD/e1Y/g9UQmLz0ZnSpR00PFddA==
   dependencies:
-    "@comunica/bus-rdf-parse" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-rdf-parse" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     rdfa-streaming-parser "^2.0.1"
 
-"@comunica/actor-rdf-resolve-hypermedia-links-next@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-resolve-hypermedia-links-next/-/actor-rdf-resolve-hypermedia-links-next-2.8.2.tgz#3959fcf9e5b544ca3c372d1b080adcccd0e9480a"
-  integrity sha512-bHNpHoBoJgzaHgpTLZ22VrVs4fWLbA9PcNOQau1Po2yHB9FUq27n7Hg3Tw049CipnFu8cFcBIU74kNFJcwoWzA==
+"@comunica/actor-rdf-resolve-hypermedia-links-next@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-resolve-hypermedia-links-next/-/actor-rdf-resolve-hypermedia-links-next-2.10.0.tgz#ef7e4fffe2d2422ba8de90f961f525554df7bb32"
+  integrity sha512-SpW46Tx8ksAxotGK2UEpvGcYjKwxB0x2KnbGmKHvo59embRjcUL/bmq3uHqZe7UwfynR2wDaRzMdVVSQccWSyA==
   dependencies:
-    "@comunica/bus-rdf-resolve-hypermedia-links" "^2.8.2"
-    "@comunica/core" "^2.8.2"
+    "@comunica/bus-rdf-resolve-hypermedia-links" "^2.10.0"
+    "@comunica/core" "^2.10.0"
 
-"@comunica/actor-rdf-resolve-hypermedia-links-queue-fifo@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-resolve-hypermedia-links-queue-fifo/-/actor-rdf-resolve-hypermedia-links-queue-fifo-2.8.2.tgz#9bd5dd8034f47637947ca214c411caa9f6b8322a"
-  integrity sha512-S8DfXtVC9T/T8vlIjpAPjTfz05k3pojfZtb/5H6xYDUml3dv1xJbaj7BFCzAm83+pnZlbQMrcacVQJZgG0zE7g==
+"@comunica/actor-rdf-resolve-hypermedia-links-queue-fifo@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-resolve-hypermedia-links-queue-fifo/-/actor-rdf-resolve-hypermedia-links-queue-fifo-2.10.0.tgz#8d65360e3d3162c432b3d1a20785b14ba9c8d78f"
+  integrity sha512-Hh53Ts6z6MxKXhZZxgpXfc1hgNzIX/xbA9mD2Au7ZfAa5V5j8zPaVVKe06sxILQBTPMsFh1idP3vIqRwRXpsvg==
   dependencies:
-    "@comunica/bus-rdf-resolve-hypermedia-links" "^2.8.2"
-    "@comunica/bus-rdf-resolve-hypermedia-links-queue" "^2.8.2"
-    "@comunica/core" "^2.8.2"
+    "@comunica/bus-rdf-resolve-hypermedia-links" "^2.10.0"
+    "@comunica/bus-rdf-resolve-hypermedia-links-queue" "^2.10.0"
+    "@comunica/core" "^2.10.0"
 
-"@comunica/actor-rdf-resolve-hypermedia-none@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-resolve-hypermedia-none/-/actor-rdf-resolve-hypermedia-none-2.8.2.tgz#a002b5b3518243596f65a10a9842e075b6f5787c"
-  integrity sha512-jJ37VyGSQqUKFvrzEJpWmNMeEfoBo9XXzFpSaUsca7EG1JTdqOByIf/mNO+LW9R/zs2s/28Q4C1P/kNbZc7UQQ==
+"@comunica/actor-rdf-resolve-hypermedia-none@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-resolve-hypermedia-none/-/actor-rdf-resolve-hypermedia-none-2.10.0.tgz#a7cc6427f8b3a497b615cca2702ec796103d0550"
+  integrity sha512-C4sJ0QJetq3QxsRkYstK5YXRYDGkcVTfyBOFUMYj7PbVakapnl8qPZkVL7VPMLVLVOfyBQHTT43Yp6Nl8VvmSA==
   dependencies:
-    "@comunica/actor-rdf-resolve-quad-pattern-rdfjs-source" "^2.8.2"
-    "@comunica/bus-rdf-resolve-hypermedia" "^2.8.2"
+    "@comunica/actor-rdf-resolve-quad-pattern-rdfjs-source" "^2.10.0"
+    "@comunica/bus-rdf-resolve-hypermedia" "^2.10.0"
     rdf-store-stream "^2.0.0"
 
-"@comunica/actor-rdf-resolve-hypermedia-qpf@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-resolve-hypermedia-qpf/-/actor-rdf-resolve-hypermedia-qpf-2.8.2.tgz#fa8521a923e041814973f5272444e047652d9733"
-  integrity sha512-RTZpu24oKIIlgZ8V/h76/1CaKZMojnkKCrPbrZz/H22TkCvAEhHL4QHblOExePOPM/Rd9jgpkDFV2FBPp3cVrA==
+"@comunica/actor-rdf-resolve-hypermedia-qpf@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-resolve-hypermedia-qpf/-/actor-rdf-resolve-hypermedia-qpf-2.10.0.tgz#b53a685491417c625d62f9b45ec0495aea10333f"
+  integrity sha512-1iP9xD72bxFBLpbfC7Ev0Xoc+0rwusPFdnoYbEtqMHRfiM0h3nNrsSxyzdGJMAZaJeQzmBZIEiwR5pbo9qpmaQ==
   dependencies:
-    "@comunica/actor-rdf-metadata-extract-hydra-controls" "^2.8.2"
-    "@comunica/bus-dereference-rdf" "^2.8.2"
-    "@comunica/bus-rdf-metadata" "^2.8.2"
-    "@comunica/bus-rdf-metadata-extract" "^2.8.2"
-    "@comunica/bus-rdf-resolve-hypermedia" "^2.8.2"
-    "@comunica/bus-rdf-resolve-quad-pattern" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/actor-rdf-metadata-extract-hydra-controls" "^2.10.0"
+    "@comunica/bus-dereference-rdf" "^2.10.0"
+    "@comunica/bus-rdf-metadata" "^2.10.0"
+    "@comunica/bus-rdf-metadata-extract" "^2.10.0"
+    "@comunica/bus-rdf-resolve-hypermedia" "^2.10.0"
+    "@comunica/bus-rdf-resolve-quad-pattern" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     "@rdfjs/types" "*"
     asynciterator "^3.8.1"
     rdf-data-factory "^1.1.1"
     rdf-string "^1.6.1"
     rdf-terms "^1.11.0"
 
-"@comunica/actor-rdf-resolve-hypermedia-sparql@^2.8.3":
-  version "2.8.3"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-resolve-hypermedia-sparql/-/actor-rdf-resolve-hypermedia-sparql-2.8.3.tgz#0c7ae17adb46515a0f25fe2e840c0290009dfdf3"
-  integrity sha512-BWoD/wSnmDQou9KyrjbVH4C8t6VYRLL1Q4w+7KRWieu+qEtQTzeS5rPg1z5vS2EZf7Al1D3lc1/hsHn3LShCvA==
+"@comunica/actor-rdf-resolve-hypermedia-sparql@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-resolve-hypermedia-sparql/-/actor-rdf-resolve-hypermedia-sparql-2.10.0.tgz#e995c1ee040506de0c89d1d560a6ffdc885164d8"
+  integrity sha512-pg4ZzmeeqoUhNS9xT6w8A9eKg3fBbGD01mAc9Dqn3qm0lNhHLgPczKuYy4TQuzkVmBlkce5GD8xBK+2c5WeqwQ==
   dependencies:
-    "@comunica/bindings-factory" "^2.7.0"
-    "@comunica/bus-http" "^2.8.2"
-    "@comunica/bus-rdf-resolve-hypermedia" "^2.8.2"
-    "@comunica/bus-rdf-resolve-quad-pattern" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bindings-factory" "^2.10.0"
+    "@comunica/bus-http" "^2.10.0"
+    "@comunica/bus-rdf-resolve-hypermedia" "^2.10.0"
+    "@comunica/bus-rdf-resolve-quad-pattern" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     "@rdfjs/types" "*"
     asynciterator "^3.8.1"
     fetch-sparql-endpoint "^4.0.0"
@@ -2269,239 +2269,239 @@
     rdf-terms "^1.11.0"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-rdf-resolve-quad-pattern-federated@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-resolve-quad-pattern-federated/-/actor-rdf-resolve-quad-pattern-federated-2.9.0.tgz#87d67c4df84f4b452d5faacc6fd7fbf3070a556e"
-  integrity sha512-rRPCviH1sQuG8KoUVlZ4XV4YCeKpSNq12umHjdTg5FWGbe4XmnY5MEOCjYpg8ESNBWFEYXGlpwGf3tIDI0Uc1Q==
+"@comunica/actor-rdf-resolve-quad-pattern-federated@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-resolve-quad-pattern-federated/-/actor-rdf-resolve-quad-pattern-federated-2.10.0.tgz#a2e3e1dd0aed9ca76ec9c9b4bf6d0287a7c76dbb"
+  integrity sha512-j1JtNhxknP2iKxAqeRP6Atq+m3yX1MPZ6kttfNWOjaDW0zDhw1I3PItYFvP2HgNQK4aN6S7uGFWy45UR7rc3gg==
   dependencies:
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/bus-rdf-metadata-accumulate" "^2.8.2"
-    "@comunica/bus-rdf-resolve-quad-pattern" "^2.8.2"
-    "@comunica/context-entries" "^2.8.2"
-    "@comunica/core" "^2.8.2"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/bus-rdf-metadata-accumulate" "^2.10.0"
+    "@comunica/bus-rdf-resolve-quad-pattern" "^2.10.0"
+    "@comunica/context-entries" "^2.10.0"
+    "@comunica/core" "^2.10.0"
     "@comunica/data-factory" "^2.7.0"
-    "@comunica/metadata" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/metadata" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     "@rdfjs/types" "*"
     asynciterator "^3.8.1"
     rdf-data-factory "^1.1.1"
     rdf-terms "^1.11.0"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-rdf-resolve-quad-pattern-hypermedia@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-resolve-quad-pattern-hypermedia/-/actor-rdf-resolve-quad-pattern-hypermedia-2.9.0.tgz#b833ceb73031a6c2a58649735182c8338c05b877"
-  integrity sha512-IBwwp0NdMEBhE0gtRJ/v+TSzTBw/GoApRZJeFdrDR6S25n8UiD/UCjvYCKvEAUQQXXniV0IcPDKCYEflkX9uIw==
+"@comunica/actor-rdf-resolve-quad-pattern-hypermedia@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-resolve-quad-pattern-hypermedia/-/actor-rdf-resolve-quad-pattern-hypermedia-2.10.0.tgz#878d0b0a779d0794308c344cbf6e392d096db93c"
+  integrity sha512-D4yIQcr937/Z4Z3dJ0Cjo978xz52FuN126tB+bST0griDI5jV/o0VKuLGpjRKHbjUWJrBxS9MQLeHa4Zbeqe+Q==
   dependencies:
-    "@comunica/bus-dereference-rdf" "^2.8.2"
-    "@comunica/bus-http-invalidate" "^2.8.2"
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/bus-rdf-metadata" "^2.8.2"
-    "@comunica/bus-rdf-metadata-accumulate" "^2.8.2"
-    "@comunica/bus-rdf-metadata-extract" "^2.8.2"
-    "@comunica/bus-rdf-resolve-hypermedia" "^2.8.2"
-    "@comunica/bus-rdf-resolve-hypermedia-links" "^2.8.2"
-    "@comunica/bus-rdf-resolve-hypermedia-links-queue" "^2.8.2"
-    "@comunica/bus-rdf-resolve-quad-pattern" "^2.8.2"
-    "@comunica/context-entries" "^2.8.2"
-    "@comunica/core" "^2.8.2"
-    "@comunica/metadata" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-dereference-rdf" "^2.10.0"
+    "@comunica/bus-http-invalidate" "^2.10.0"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/bus-rdf-metadata" "^2.10.0"
+    "@comunica/bus-rdf-metadata-accumulate" "^2.10.0"
+    "@comunica/bus-rdf-metadata-extract" "^2.10.0"
+    "@comunica/bus-rdf-resolve-hypermedia" "^2.10.0"
+    "@comunica/bus-rdf-resolve-hypermedia-links" "^2.10.0"
+    "@comunica/bus-rdf-resolve-hypermedia-links-queue" "^2.10.0"
+    "@comunica/bus-rdf-resolve-quad-pattern" "^2.10.0"
+    "@comunica/context-entries" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/metadata" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     "@rdfjs/types" "*"
     asynciterator "^3.8.1"
     lru-cache "^10.0.0"
     rdf-data-factory "^1.1.2"
     rdf-streaming-store "^1.1.0"
-    readable-stream "^4.2.0"
+    readable-stream "^4.4.2"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/actor-rdf-resolve-quad-pattern-rdfjs-source@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-resolve-quad-pattern-rdfjs-source/-/actor-rdf-resolve-quad-pattern-rdfjs-source-2.8.2.tgz#49f09a07c2bd234ed9a2c791dc2977906e0ff626"
-  integrity sha512-J8QAN/fJDn7TWPICDkg30bkqUHtQdrNzvTZt1B8UHKjxMfhdsFgT49yoLtiT8opjs/y1nV069Yhb55xXxRh+bA==
+"@comunica/actor-rdf-resolve-quad-pattern-rdfjs-source@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-resolve-quad-pattern-rdfjs-source/-/actor-rdf-resolve-quad-pattern-rdfjs-source-2.10.0.tgz#331cd8c62d8fd23dadcbb31d1c636c151de775ed"
+  integrity sha512-d6AlrngvZaVgoiiyMhkf6uiYaFZZdn/UZLo0FhZ++or1NZXo5KxK4UMgdiIygvPEiuuVzy0W1djHgOQ1rgh50g==
   dependencies:
-    "@comunica/bus-rdf-resolve-quad-pattern" "^2.8.2"
-    "@comunica/core" "^2.8.2"
-    "@comunica/metadata" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-rdf-resolve-quad-pattern" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/metadata" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     "@rdfjs/types" "*"
     asynciterator "^3.8.1"
     rdf-data-factory "^1.1.2"
     rdf-terms "^1.11.0"
 
-"@comunica/actor-rdf-resolve-quad-pattern-string-source@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-resolve-quad-pattern-string-source/-/actor-rdf-resolve-quad-pattern-string-source-2.8.2.tgz#bbf2803d810448fc01fe2d6b9a10e3993dd66709"
-  integrity sha512-n7w5u+xvUVLvx4BPagYfJAMRwgC5pAGB3OMmWZBOix0Wid2MnUduXudyvllIsulgzy4i1o957jLRaDFoyr0pbA==
+"@comunica/actor-rdf-resolve-quad-pattern-string-source@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-resolve-quad-pattern-string-source/-/actor-rdf-resolve-quad-pattern-string-source-2.10.0.tgz#c0c4904af8b5ef680a49c7e48a19f36cd7cc629b"
+  integrity sha512-v6QOBtXTXrDUZRHocrm2OYCsxGpyTScka/n85cewCcInqVGJP9J6zpdwetzvIy7wVJkac7JQabd96OEyDMK3sg==
   dependencies:
-    "@comunica/bus-rdf-parse" "^2.8.2"
-    "@comunica/bus-rdf-resolve-quad-pattern" "^2.8.2"
-    "@comunica/context-entries" "^2.8.2"
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-rdf-parse" "^2.10.0"
+    "@comunica/bus-rdf-resolve-quad-pattern" "^2.10.0"
+    "@comunica/context-entries" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     "@rdfjs/types" "*"
     lru-cache "^10.0.0"
     rdf-store-stream "^2.0.0"
-    readable-stream "^4.2.0"
+    readable-stream "^4.4.2"
 
-"@comunica/actor-rdf-serialize-jsonld@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-serialize-jsonld/-/actor-rdf-serialize-jsonld-2.8.2.tgz#111c8e90c37066561042684bb12f10cf948b8203"
-  integrity sha512-PChSSIqoRm7Kml565iiT735hcEdDDlNP9gjE00CSng8ByFf8chjl2E+6fQG0xiQS2Mfi2QgD6tLCEK9+O18PHw==
+"@comunica/actor-rdf-serialize-jsonld@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-serialize-jsonld/-/actor-rdf-serialize-jsonld-2.10.0.tgz#5d11ef89ed3f3572b8905c67a013a186ae0cb97d"
+  integrity sha512-u1M5N7BSrkhS461fV6QXKMh6TnvpoEiSHPru7wJg1kGqR9q3reuQeKLf/U23JDYb1kom8uU3R7aBpDIjgVc49Q==
   dependencies:
-    "@comunica/bus-rdf-serialize" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-rdf-serialize" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     jsonld-streaming-serializer "^2.1.0"
 
-"@comunica/actor-rdf-serialize-n3@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-serialize-n3/-/actor-rdf-serialize-n3-2.8.2.tgz#91c3af69220ae3ab4e04fd9957a80b03425a9f7c"
-  integrity sha512-ZlHdt6DpE5oRU13tlAlO7R14mwP/zGlooSSniUmbuh0vO1t8CjPe7iD1V8kj1KDH7E+aadIp50uc+nirGJKeQA==
+"@comunica/actor-rdf-serialize-n3@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-serialize-n3/-/actor-rdf-serialize-n3-2.10.0.tgz#0aa597cb9c077064b79cff90cb4f66aaa72ade64"
+  integrity sha512-CoDktUI3YQuI7UBV+fQOdKl+5XjBx0XTOF9XxEDiNg5nwndEmDvq6C23fSHfkqX3/xDlnsuS/YysHAqXCrYoiA==
   dependencies:
-    "@comunica/bus-rdf-serialize" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-rdf-serialize" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     n3 "^1.17.0"
 
-"@comunica/actor-rdf-serialize-shaclc@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-serialize-shaclc/-/actor-rdf-serialize-shaclc-2.8.2.tgz#1e83a447e9aaae820e7ba0b5870591e41991d6f2"
-  integrity sha512-rySVO0zN9S3B3CjKpbCU/yyIxD+QroaJ509iBbHmriGeV8HfefE427ZpwKjObrd6m3VVLdtyZz2dVW+bUMChXg==
+"@comunica/actor-rdf-serialize-shaclc@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-serialize-shaclc/-/actor-rdf-serialize-shaclc-2.10.0.tgz#613988a8170d994b5e1f54550e4e6542684c0b4e"
+  integrity sha512-gp4bu4+aPtMk4bavXP27uD9X9bpa2F5u6/JtsaX2qwcqVI0x1tkVQOkm2RkUhafcHNj0Fz6lQ3aXmRIAQvaefg==
   dependencies:
-    "@comunica/bus-rdf-serialize" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-rdf-serialize" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     arrayify-stream "^2.0.1"
-    readable-stream "^4.3.0"
+    readable-stream "^4.4.2"
     shaclc-write "^1.4.2"
 
-"@comunica/actor-rdf-update-hypermedia-patch-sparql-update@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-update-hypermedia-patch-sparql-update/-/actor-rdf-update-hypermedia-patch-sparql-update-2.9.0.tgz#c50fddce7a4da9ddb1bfef28278938f7556ba59f"
-  integrity sha512-3nofaOSPuRRNjy5g6N6eI62kPl2X0KYEjDBeKAYG9EExTlm7aUg5bKH9N/6KVfdufLm5+V1zYBz0fJwwbASwuw==
+"@comunica/actor-rdf-update-hypermedia-patch-sparql-update@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-update-hypermedia-patch-sparql-update/-/actor-rdf-update-hypermedia-patch-sparql-update-2.10.0.tgz#732674c3ea9d1b01d344c6e9a4476e5500c4252f"
+  integrity sha512-dKy4qFjxdcBk1E41OzvuiiCsMYAX0S3rToDivpMSX8fV1m6tjXxVndmX5c/7Zlc8CckimGRmChienkaI3tIjHg==
   dependencies:
-    "@comunica/bus-http" "^2.8.2"
-    "@comunica/bus-rdf-update-hypermedia" "^2.9.0"
-    "@comunica/bus-rdf-update-quads" "^2.9.0"
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-http" "^2.10.0"
+    "@comunica/bus-rdf-update-hypermedia" "^2.10.0"
+    "@comunica/bus-rdf-update-quads" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     "@rdfjs/types" "*"
     asynciterator "^3.8.1"
     cross-fetch "^4.0.0"
     rdf-string-ttl "^1.3.2"
-    readable-stream "^4.2.0"
+    readable-stream "^4.4.2"
 
-"@comunica/actor-rdf-update-hypermedia-put-ldp@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-update-hypermedia-put-ldp/-/actor-rdf-update-hypermedia-put-ldp-2.9.0.tgz#9e187dab181ce15e1c0fb5453087eee5635443e6"
-  integrity sha512-393gzoz1OrSEfjNFK8bQOkPXxEkdXRa5CvHrXILEiQQazm8vs6m2MKUaq3v5abmditcVYNwJCca92UtVC1EpFw==
+"@comunica/actor-rdf-update-hypermedia-put-ldp@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-update-hypermedia-put-ldp/-/actor-rdf-update-hypermedia-put-ldp-2.10.0.tgz#b58e8eb7f861583765c7f1a66c9ce84f8fc5e550"
+  integrity sha512-iKrXqyKvulP0kL14gxQra3E3zt57IR9fGFXpkFRdmACyMaVOaBnc/vRI/YKAhKauXT6VWacPRH5iI8BEeywf4A==
   dependencies:
-    "@comunica/bus-http" "^2.8.2"
-    "@comunica/bus-rdf-serialize" "^2.8.2"
-    "@comunica/bus-rdf-update-hypermedia" "^2.9.0"
-    "@comunica/bus-rdf-update-quads" "^2.9.0"
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-http" "^2.10.0"
+    "@comunica/bus-rdf-serialize" "^2.10.0"
+    "@comunica/bus-rdf-update-hypermedia" "^2.10.0"
+    "@comunica/bus-rdf-update-quads" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     "@rdfjs/types" "*"
     asynciterator "^3.8.1"
     cross-fetch "^4.0.0"
 
-"@comunica/actor-rdf-update-hypermedia-sparql@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-update-hypermedia-sparql/-/actor-rdf-update-hypermedia-sparql-2.9.0.tgz#74bba7c85d793511acc9b3a96aac209fbdb0ce37"
-  integrity sha512-Vgdcdqkesq5zVMi/k0vdgqRWEaDRYaT3sqyFuxMySXT901dB6N2QQS9iki1OkjfX8h/8SZYsZSnfRy7rLPEyOQ==
+"@comunica/actor-rdf-update-hypermedia-sparql@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-update-hypermedia-sparql/-/actor-rdf-update-hypermedia-sparql-2.10.0.tgz#b3f36c535abcec650be74d9bd52bc844a0e17521"
+  integrity sha512-eVVqB4rHTBR4axV/Y4OMGQ0t5pvGjJHhuYq80gLBh4jvBVN9FD9ZlGiVRUTzHA2akXwEK18Mxwhm/vGVI52e9A==
   dependencies:
-    "@comunica/bus-http" "^2.8.2"
-    "@comunica/bus-rdf-update-hypermedia" "^2.9.0"
-    "@comunica/bus-rdf-update-quads" "^2.9.0"
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-http" "^2.10.0"
+    "@comunica/bus-rdf-update-hypermedia" "^2.10.0"
+    "@comunica/bus-rdf-update-quads" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     "@rdfjs/types" "*"
     asynciterator "^3.8.1"
     fetch-sparql-endpoint "^4.0.0"
     rdf-string-ttl "^1.3.2"
     stream-to-string "^1.2.0"
 
-"@comunica/actor-rdf-update-quads-hypermedia@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-update-quads-hypermedia/-/actor-rdf-update-quads-hypermedia-2.9.0.tgz#3d1f9b578e23a3bcf9e650c3a8605f8e855f40f9"
-  integrity sha512-u9NLftIL7Lqq9c8hPOvHDVaCxod8uTTPXlhuOd7y6Sb0v0c5lJgqLo3VHRm+LqGjelR3Pcd7nCZC+VuonaBFzA==
+"@comunica/actor-rdf-update-quads-hypermedia@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-update-quads-hypermedia/-/actor-rdf-update-quads-hypermedia-2.10.0.tgz#b3ae07cb8f6eb938b1b08065567d926809ae121e"
+  integrity sha512-redFnJhn6QpN6TyTztV+oKz1RsWO4kyKhFcNZss//55Klg9u4VqhPmOYhlxEtOIyYAdgfR0vNv7TNT0KrtdB6A==
   dependencies:
-    "@comunica/bus-dereference-rdf" "^2.8.2"
-    "@comunica/bus-http-invalidate" "^2.8.2"
-    "@comunica/bus-rdf-metadata" "^2.8.2"
-    "@comunica/bus-rdf-metadata-extract" "^2.8.2"
-    "@comunica/bus-rdf-update-hypermedia" "^2.9.0"
-    "@comunica/bus-rdf-update-quads" "^2.9.0"
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-dereference-rdf" "^2.10.0"
+    "@comunica/bus-http-invalidate" "^2.10.0"
+    "@comunica/bus-rdf-metadata" "^2.10.0"
+    "@comunica/bus-rdf-metadata-extract" "^2.10.0"
+    "@comunica/bus-rdf-update-hypermedia" "^2.10.0"
+    "@comunica/bus-rdf-update-quads" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     lru-cache "^10.0.0"
 
-"@comunica/actor-rdf-update-quads-rdfjs-store@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-update-quads-rdfjs-store/-/actor-rdf-update-quads-rdfjs-store-2.9.0.tgz#dd3bab09b1fb91ea183e9c5a4c257ecd241c7b5e"
-  integrity sha512-uFB7kTJqjOXd8v6bmQHzIKW+AJLLUp11YxPnxtYz3UeDZvAG5pxkaZSTjaURHjB3AvTHE1QolnoIpJiRUBtC0Q==
+"@comunica/actor-rdf-update-quads-rdfjs-store@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-update-quads-rdfjs-store/-/actor-rdf-update-quads-rdfjs-store-2.10.0.tgz#0d51dcdb1ed5c82958a4bc8db9ab5c711a1364c7"
+  integrity sha512-iurPiRo8N1+Wb+arvMjZCJAY+CosjpkiVOSIW5VA5ara11a3BLomwCX7jc/CqwmSf5jGes+cqfZgxyTq1Lv4UQ==
   dependencies:
-    "@comunica/bus-rdf-update-quads" "^2.9.0"
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-rdf-update-quads" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     "@rdfjs/types" "*"
     asynciterator "^3.8.1"
     rdf-data-factory "^1.1.1"
     rdf-string "^1.6.1"
 
-"@comunica/bindings-factory@^2.7.0":
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/@comunica/bindings-factory/-/bindings-factory-2.7.0.tgz#b35810178beed08803ba1891faf50bcd017f52c8"
-  integrity sha512-NeLbBmqiNhyUCZSfqZfwZD50dQ5+DABgPbzfuZnbHq9uSfhxAzuGCzgrK0hmuwRHWOPBtmeRnyZTJorePuxTzQ==
+"@comunica/bindings-factory@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/bindings-factory/-/bindings-factory-2.10.0.tgz#09da8367a100a8821217cefb9db3dfba1b058d50"
+  integrity sha512-RmjOPg3wAGKH3Pe6FyRu9ydUU6wXlnF1N5hEIoFd0ENO5Y0Oo5V5fABsoNjosZn4UNKTupIvZ1+Zw4FP4fox9A==
   dependencies:
     "@rdfjs/types" "*"
     immutable "^4.1.0"
     rdf-data-factory "^1.1.1"
     rdf-string "^1.6.1"
 
-"@comunica/bus-context-preprocess@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/bus-context-preprocess/-/bus-context-preprocess-2.8.2.tgz#d0b9d066602d9803034a9088467730f2d31a0ffc"
-  integrity sha512-cDfiCiqBZkx+ApuZCxMgBpTEYIkbo4j1So+5pF0O3wMx+gQ0Y9rnfd2Xhw4WDZFZTGW7As52WKtBB419E+EG4w==
+"@comunica/bus-context-preprocess@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/bus-context-preprocess/-/bus-context-preprocess-2.10.0.tgz#3061799c2f8a3889c0579777587f0638a7c8a9c4"
+  integrity sha512-eJ5CkzbnmxB9fkr2F05jnnjcaowp+yxd0+pAtvx5MLl2Kpx3nWLqHPcl4/EVVDPD+i0TEkq4AXQ1BD9BMuXK0A==
   dependencies:
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
 
-"@comunica/bus-dereference-rdf@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/bus-dereference-rdf/-/bus-dereference-rdf-2.8.2.tgz#3af17791b6c70447f6f45c26d9b5c35a4f83d152"
-  integrity sha512-Q/4oM6AsVi2kr9e040kZtOaeHeFao8zeV8VUgC8WceATkT6FVK/+STzOFabny1yQHSIKC54kj24pfvXJftEYhQ==
+"@comunica/bus-dereference-rdf@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/bus-dereference-rdf/-/bus-dereference-rdf-2.10.0.tgz#ae6a64c0fe754499a31c2a8e762d287ce1c7ca0a"
+  integrity sha512-WY/wPmFpO76wwJ2D5Aus43ZbYnBRLvQ0EOp4yywO0lBiq6F0JisjCVCM4EtWouOEAAfqEoIjHXGyC3gPWqm+SQ==
   dependencies:
-    "@comunica/bus-dereference" "^2.8.2"
-    "@comunica/bus-rdf-parse" "^2.8.2"
-    "@comunica/core" "^2.8.2"
+    "@comunica/bus-dereference" "^2.10.0"
+    "@comunica/bus-rdf-parse" "^2.10.0"
+    "@comunica/core" "^2.10.0"
     "@rdfjs/types" "*"
 
-"@comunica/bus-dereference@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/bus-dereference/-/bus-dereference-2.8.2.tgz#3adacaac3fed627c721a0e49daa469746dbb781c"
-  integrity sha512-bg4A6fdkNv1CZkBJ33JvG3Xb6zloq7ElwtVMEBytzeuQV4/UuOrF8MYe9s6my+qRb3v4gDw9UYgIfePIDZMEsA==
+"@comunica/bus-dereference@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/bus-dereference/-/bus-dereference-2.10.0.tgz#07fb5d023139820cad6431f488430c680b834b85"
+  integrity sha512-nWyQXiH7zbiPTVttWVKJHykhV4IuahfhfUwPx3Op+cVsK489Su84dnGeSmPkxTAFFuxe6wU6ZEH4i7PDu48YvQ==
   dependencies:
-    "@comunica/actor-abstract-mediatyped" "^2.8.2"
-    "@comunica/actor-abstract-parse" "^2.8.2"
-    "@comunica/context-entries" "^2.8.2"
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
-    readable-stream "^4.2.0"
+    "@comunica/actor-abstract-mediatyped" "^2.10.0"
+    "@comunica/actor-abstract-parse" "^2.10.0"
+    "@comunica/context-entries" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
+    readable-stream "^4.4.2"
 
-"@comunica/bus-hash-bindings@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/bus-hash-bindings/-/bus-hash-bindings-2.8.2.tgz#bb5b98ff44f03f668e614a2313fdec856dc5c4e5"
-  integrity sha512-u9ug7e08mw24NZraeOuo3qO5IFjGv88c3XPanhrtvy44xoV+uoU94KgQCwcirnjJDGHO0+tBc5ubC2+GAA/zVQ==
+"@comunica/bus-hash-bindings@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/bus-hash-bindings/-/bus-hash-bindings-2.10.0.tgz#8b78d17b9f86e61025eff6c1c1e9bc4e3fda90e6"
+  integrity sha512-EdzIUgpSWMtFVxEJSesuQpMkfgznDap+U0F9epotxXc20Gg/qjTzs1gF6NkpDpaidQ7cFlV16vdbdfi8uiZ+mQ==
   dependencies:
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
 
-"@comunica/bus-http-invalidate@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/bus-http-invalidate/-/bus-http-invalidate-2.8.2.tgz#a761d527bc1b2d2c018ed531052084b4d17aa31c"
-  integrity sha512-hG+s+fo9o2h69DVS7VuMpnNeHzW8MJexyyzmnK1MsfGeyGIq/NmAmQGJw7kN6wYiJUgP+DlGTKlle7iCiqwgBA==
+"@comunica/bus-http-invalidate@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/bus-http-invalidate/-/bus-http-invalidate-2.10.0.tgz#7e368ee92167f543b10123e7baeb6d27d45b0204"
+  integrity sha512-9DevRUzuCOfHFtsryIvTU6rOz6vMbnuDzerloBoNsLFVzQCU4wPNZbxiOn0+GMDXxw7M3KgYd+KFxI2kGObVWA==
   dependencies:
-    "@comunica/core" "^2.8.2"
+    "@comunica/core" "^2.10.0"
 
 "@comunica/bus-http@^2.0.1", "@comunica/bus-http@^2.4.0":
   version "2.4.0"
@@ -2514,12 +2514,12 @@
     readable-web-to-node-stream "^3.0.2"
     web-streams-ponyfill "^1.4.2"
 
-"@comunica/bus-http@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/bus-http/-/bus-http-2.8.2.tgz#b51b237383db1bda2b0f0315d84ecb53cc0981d3"
-  integrity sha512-Seh7NXgTCuXbExJYgMKQDNSl8tdxaQWg5GtNiZAePE0aUwaosa2SsLifex1DJN7P1dW2OAaGzZhTB6+v9dKX4Q==
+"@comunica/bus-http@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/bus-http/-/bus-http-2.10.0.tgz#4dce53523ebbb3bf503be045ccd5580242e742fc"
+  integrity sha512-wITLxYFvAuFsml4txgxYfxzgroVtWCi+Ja3TTN1l+MpeN1CyDfcA3oL30W8jLMJStjxt1SUmtuOoUjM1lzsbFA==
   dependencies:
-    "@comunica/core" "^2.8.2"
+    "@comunica/core" "^2.10.0"
     is-stream "^2.0.1"
     readable-stream-node-to-web "^1.0.1"
     readable-web-to-node-stream "^3.0.2"
@@ -2533,112 +2533,112 @@
     "@comunica/core" "^2.4.0"
     readable-stream "^4.0.0"
 
-"@comunica/bus-init@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/bus-init/-/bus-init-2.8.2.tgz#8fb8225531de05b55008b5ac470dfd204ce00b3e"
-  integrity sha512-KvRHO0j7Z4YS1Czxm985US7/fa7aL8jUlmS1AyJnw9jcl1+gYhtDRbopyJ4DGBgfV1fxve+UFXs7gpROrrh3Ow==
+"@comunica/bus-init@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/bus-init/-/bus-init-2.10.0.tgz#9ce88843482cc48e0fb35b6ca40e8f74795d55a5"
+  integrity sha512-hJejHa8sLVhQLFlduCVnhOd5aW3FCEz8wmWjyeLI3kiHFaQibnGVMhUuuNRX5f8bnnPuTdEiHc1nnYHuSi+j8A==
   dependencies:
-    "@comunica/core" "^2.8.2"
-    readable-stream "^4.2.0"
+    "@comunica/core" "^2.10.0"
+    readable-stream "^4.4.2"
 
-"@comunica/bus-optimize-query-operation@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/bus-optimize-query-operation/-/bus-optimize-query-operation-2.8.2.tgz#d61476c2d6691205f842f91d3d9bb6b6bc82f94f"
-  integrity sha512-jF2qNmpduRwYbCOMHJBXphCY4VOUV3tpsLDboFAzUxCD+SAzNQJ3KdlW5vBwKN2bhu2Trn/b9baRcZxPBiorDg==
+"@comunica/bus-optimize-query-operation@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/bus-optimize-query-operation/-/bus-optimize-query-operation-2.10.0.tgz#55a0e8c9cde38ea1c9b2e2e6197ad5e0a6a3db0f"
+  integrity sha512-qawKJprbVc+dfjBgVzV45UEo+jZBzY3dRo0a8UkXSvgSWPcX18SGrURl2VL4sZZSAyXQBMrGUwH2eUD8l26ZJQ==
   dependencies:
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/bus-query-operation@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/bus-query-operation/-/bus-query-operation-2.9.0.tgz#e28f1689c4fb1d94b64d95c7abfb770237d84708"
-  integrity sha512-2+5xq2sK8za+ijhjjEX0p3FHMVDIoS0P+RZOsQzsx54bnbI7ET9XHx9vn4AZYwGrUQRbH5+0x3UXrGrZVGRC3w==
+"@comunica/bus-query-operation@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/bus-query-operation/-/bus-query-operation-2.10.0.tgz#d5dfd032a830f38c64c9c25ba90b77ed30a0cadf"
+  integrity sha512-OSPjD5BO9dfnbkY6oNBZ4/ofqNvczwTs6fgJG2GdcCP4WKJQmhv5wTuDYa9ksQkaYcqs0WiIYMiMABbILLrjjQ==
   dependencies:
-    "@comunica/bindings-factory" "^2.7.0"
-    "@comunica/context-entries" "^2.8.2"
-    "@comunica/core" "^2.8.2"
+    "@comunica/bindings-factory" "^2.10.0"
+    "@comunica/context-entries" "^2.10.0"
+    "@comunica/core" "^2.10.0"
     "@comunica/data-factory" "^2.7.0"
-    "@comunica/types" "^2.8.2"
+    "@comunica/types" "^2.10.0"
     "@rdfjs/types" "*"
     asynciterator "^3.8.1"
     rdf-string "^1.6.1"
     rdf-terms "^1.11.0"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/bus-query-parse@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/bus-query-parse/-/bus-query-parse-2.8.2.tgz#482a4e5a510d42f208680340ebe26ac8d272f1b1"
-  integrity sha512-FN8ZC3rPS1p9J7zk1VllXd5cg5DSwLjFQ2wuKgsTlJLiw5nlcpc8ufwRolVsywCRVxqaHPFIKZGTXUKFh2kPeQ==
+"@comunica/bus-query-parse@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/bus-query-parse/-/bus-query-parse-2.10.0.tgz#04be580243076d72870f3caa8d82161b758caf90"
+  integrity sha512-1LynxACgCYTuBH/JMRG/IGaWtTVwr2O8wxOosCId2W3BDW9nf2DSCyOdnxnCSMSKfnLFWiaVuKybn24OLXW2dQ==
   dependencies:
-    "@comunica/core" "^2.8.2"
+    "@comunica/core" "^2.10.0"
     "@rdfjs/types" "*"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/bus-query-result-serialize@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/bus-query-result-serialize/-/bus-query-result-serialize-2.8.2.tgz#491fec95827f5ecb6ce309bb3791a4dfaaceaea2"
-  integrity sha512-DN1J0ZT6lHh3s24wvZzLZ4wsaJxQ/P16Oax+mTXaMf/zlXhu2ZgtXkiPt/BGtz+bVDESJjaCnq/aVSrEh28dkQ==
+"@comunica/bus-query-result-serialize@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/bus-query-result-serialize/-/bus-query-result-serialize-2.10.0.tgz#98e7ab9d318d5c994565f8361f2697a936a94679"
+  integrity sha512-9P5KUzmXvjtLbd44UVxYNB0yqAHx7molBUc7aysUQ3pbIcP/A57GXzAfiKueeiZ9cVRRG/BGsVoDGVj59tGWNg==
   dependencies:
-    "@comunica/actor-abstract-mediatyped" "^2.8.2"
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/actor-abstract-mediatyped" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
 
-"@comunica/bus-rdf-join-entries-sort@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/bus-rdf-join-entries-sort/-/bus-rdf-join-entries-sort-2.8.2.tgz#12a4b84c3168bb9cb9bfe8f04898c59dac00d63b"
-  integrity sha512-qU06NvVdcBOl4zOHyCzA41REH/6mf708pdUNcyUZgJYfsBO3i9XQ28AHAmK+W/4AWY0sYojiIzTarWeFZ9D5yQ==
+"@comunica/bus-rdf-join-entries-sort@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/bus-rdf-join-entries-sort/-/bus-rdf-join-entries-sort-2.10.0.tgz#e1831650870b20468315c4c8fd16b5bb8dedf12d"
+  integrity sha512-17FQrdYtzjY84OI/ZvipJKD0ei3IySmsWwaGC9sIJn+1W4LBVKudTu5S0tzGTKTb0URhS4mrCliUBzyINtIZMQ==
   dependencies:
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
 
-"@comunica/bus-rdf-join-selectivity@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/bus-rdf-join-selectivity/-/bus-rdf-join-selectivity-2.8.2.tgz#cf040111bde8f2da5908fdbb9e657f6bb878e5c2"
-  integrity sha512-0baorPXbBlOa/X5qL7RzjpGflWt4zTFNVBR79/KFIQZZ10kjCA+wGnooqnlUuEkXqxfKACs7dAcMsh0pM6TePw==
+"@comunica/bus-rdf-join-selectivity@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/bus-rdf-join-selectivity/-/bus-rdf-join-selectivity-2.10.0.tgz#eda873317bb4c142086712531074482eaf6eeb45"
+  integrity sha512-YjoygSiH6r4SAYqz6gpvUql2vnznPVE62IsWqYnjFWeH1kBsxO5yEOO01s2FfN3jLcfsytTyG7VNTCN788YbaA==
   dependencies:
-    "@comunica/core" "^2.8.2"
-    "@comunica/mediatortype-accuracy" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/core" "^2.10.0"
+    "@comunica/mediatortype-accuracy" "^2.10.0"
+    "@comunica/types" "^2.10.0"
 
-"@comunica/bus-rdf-join@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/bus-rdf-join/-/bus-rdf-join-2.9.0.tgz#b171f30b7660eebc097b28447b5707e7159d2bf2"
-  integrity sha512-c430gnw3Zvhe/YV/0XXcKp7xhV7mxB0vjGir1ZN6/ONqTioD7UF38JCOCgWBxmGEGU5sGIhfMK0HpPcQPtKMxg==
+"@comunica/bus-rdf-join@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/bus-rdf-join/-/bus-rdf-join-2.10.0.tgz#253eb0c66c23e51ec221170f7e30523dd43c7090"
+  integrity sha512-PkfemBRaODavpp7qlUho7cvu+LyTSZqpvxby9pPx1+h4AJe3BvH1/i0hjLvsM5IBR16rWeWPYOBBx5YtUkEZfw==
   dependencies:
-    "@comunica/bus-query-operation" "^2.9.0"
-    "@comunica/bus-rdf-join-selectivity" "^2.8.2"
-    "@comunica/context-entries" "^2.8.2"
-    "@comunica/core" "^2.8.2"
-    "@comunica/mediatortype-join-coefficients" "^2.8.2"
-    "@comunica/metadata" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-query-operation" "^2.10.0"
+    "@comunica/bus-rdf-join-selectivity" "^2.10.0"
+    "@comunica/context-entries" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/mediatortype-join-coefficients" "^2.10.0"
+    "@comunica/metadata" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     "@rdfjs/types" "*"
     rdf-data-factory "^1.1.1"
     rdf-string "^1.6.1"
 
-"@comunica/bus-rdf-metadata-accumulate@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/bus-rdf-metadata-accumulate/-/bus-rdf-metadata-accumulate-2.8.2.tgz#8e04d2e7144b525c0cad57a07aaf832b8163f6e7"
-  integrity sha512-Tl/DfkqLsn800rqcfj+/ntY2CiDs0YYoCPfMV6WL4xpaVVWTjWTUXSjDEpEzXdMTlrje0A66N5nSt88qDAlc2Q==
+"@comunica/bus-rdf-metadata-accumulate@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/bus-rdf-metadata-accumulate/-/bus-rdf-metadata-accumulate-2.10.0.tgz#16e45c63928395d2e14477f1824e9a7361df402d"
+  integrity sha512-XG/3s4a3yGpYt4H+sn9T2zTaUxLG+37dmhRhXv2cBmR4gaCXkglERPaOrQygHldEF+4ITF3RmXHCgANsQ1AwQg==
   dependencies:
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
 
-"@comunica/bus-rdf-metadata-extract@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/bus-rdf-metadata-extract/-/bus-rdf-metadata-extract-2.8.2.tgz#e26b1d7dda09e47d125230d57c91c2c21f57ae3a"
-  integrity sha512-9PofdgPuun5lcRjpO6DlpLlnsVlcy1qBAx2mqe3mzIYVEfOHXWrdE+Dn54AEIic5PkZGJT4k6xxelv8G3HDwXg==
+"@comunica/bus-rdf-metadata-extract@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/bus-rdf-metadata-extract/-/bus-rdf-metadata-extract-2.10.0.tgz#440b93a3fe42bfdd50285cd8955cd223ae4c8553"
+  integrity sha512-KcMZh+7kHjdCIMkLFki99tQH1arVp/evVnk0BGXfWd+ca3eCLrr42tb1tGfN2JkaCSxgtzWO4DRZcSzJ4sI2dQ==
   dependencies:
-    "@comunica/core" "^2.8.2"
+    "@comunica/core" "^2.10.0"
     "@rdfjs/types" "*"
 
-"@comunica/bus-rdf-metadata@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/bus-rdf-metadata/-/bus-rdf-metadata-2.8.2.tgz#983b8c61f1a1aa6942b2b245dd6d21b16a6f0229"
-  integrity sha512-g1JznI5motRlGwlZbX9IwflJfnt81QQqfdlDLmHZQxMdjvVeDPNcmdvimguBTW6MoU3VLJhiDchXp9rh9vweZA==
+"@comunica/bus-rdf-metadata@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/bus-rdf-metadata/-/bus-rdf-metadata-2.10.0.tgz#d1672cc727966af10ef4dbf334decb6de0971b3b"
+  integrity sha512-LRUnHVqIzyUlmPKPNAYOusCF53iN8KEX7l/VinlA7NH3XBLhTkFoth26MVqIVtjtdH0hVfUVpkwy2kFEJpGldw==
   dependencies:
-    "@comunica/core" "^2.8.2"
+    "@comunica/core" "^2.10.0"
     "@rdfjs/types" "*"
 
 "@comunica/bus-rdf-parse-html@^2.0.1", "@comunica/bus-rdf-parse-html@^2.4.0":
@@ -2649,12 +2649,12 @@
     "@comunica/core" "^2.4.0"
     "@rdfjs/types" "*"
 
-"@comunica/bus-rdf-parse-html@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/bus-rdf-parse-html/-/bus-rdf-parse-html-2.8.2.tgz#a2e07b39ea64b0759b61a7f33a6787d8c8e5fb43"
-  integrity sha512-r20sl/NPC2YJCPFfWUCSYVZzYhoKK1ZJ0UJ8HubKte8EURG3TqUb9hQKSMcq9GbqSASR/lPUwSLL4VuKKD3aTw==
+"@comunica/bus-rdf-parse-html@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/bus-rdf-parse-html/-/bus-rdf-parse-html-2.10.0.tgz#6ef479009b9c25cc1fe557348d0dd1883287e301"
+  integrity sha512-RZliz4TtKP63QggoohGuIkGb6lq0BoYJ4aztKtGldWtPAVP/pdEvlDpiZWLB/j19g7S2aDLNY/lJtZ5efM1tHQ==
   dependencies:
-    "@comunica/core" "^2.8.2"
+    "@comunica/core" "^2.10.0"
     "@rdfjs/types" "*"
 
 "@comunica/bus-rdf-parse@^2.0.1", "@comunica/bus-rdf-parse@^2.4.0":
@@ -2667,81 +2667,81 @@
     "@comunica/core" "^2.4.0"
     "@rdfjs/types" "*"
 
-"@comunica/bus-rdf-parse@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/bus-rdf-parse/-/bus-rdf-parse-2.8.2.tgz#cec32710484186e103fbba1e958fd59fc513538a"
-  integrity sha512-XimvJuWJGuolpUs4w+im4fw8Lc8jPj6gKM/2fE/cenWO/m6RafnvcOqjMs80toueuoFRaF/TIxOY09t6G+p0VA==
+"@comunica/bus-rdf-parse@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/bus-rdf-parse/-/bus-rdf-parse-2.10.0.tgz#3f1ad4f26a1451d8da4f64ad8f85e43a8962a98f"
+  integrity sha512-EgCMZACfTG/+mayQpExWt0HoBT32BBVC1aS1lC43fXKBTxJ8kYrSrorVUuMACoh4dQVGTb+7j1j4K0hGNVzXGA==
   dependencies:
-    "@comunica/actor-abstract-mediatyped" "^2.8.2"
-    "@comunica/actor-abstract-parse" "^2.8.2"
-    "@comunica/core" "^2.8.2"
+    "@comunica/actor-abstract-mediatyped" "^2.10.0"
+    "@comunica/actor-abstract-parse" "^2.10.0"
+    "@comunica/core" "^2.10.0"
     "@rdfjs/types" "*"
 
-"@comunica/bus-rdf-resolve-hypermedia-links-queue@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/bus-rdf-resolve-hypermedia-links-queue/-/bus-rdf-resolve-hypermedia-links-queue-2.8.2.tgz#fee89493c8c6086560d39634b8e4a29edf542734"
-  integrity sha512-oUHYfWHNczCq6CHN2wKWV5+SeMlp9lEsJ+2GycrHPKFsLxwSAFelxi3FZgNowwFFR62Wp/UkPi4RjcA6UN46og==
+"@comunica/bus-rdf-resolve-hypermedia-links-queue@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/bus-rdf-resolve-hypermedia-links-queue/-/bus-rdf-resolve-hypermedia-links-queue-2.10.0.tgz#1d01a7e03f70e9fe8bfc6620be5a0b0601b26147"
+  integrity sha512-f9amJk7ikktRfOoRnwag1KMTuo9v+PiDEVQA0dijl+jhcispKdjG6XK0MdZ1KSEmtUWejjS6nMRGvfJdM37eog==
   dependencies:
-    "@comunica/bus-rdf-resolve-hypermedia-links" "^2.8.2"
-    "@comunica/core" "^2.8.2"
+    "@comunica/bus-rdf-resolve-hypermedia-links" "^2.10.0"
+    "@comunica/core" "^2.10.0"
 
-"@comunica/bus-rdf-resolve-hypermedia-links@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/bus-rdf-resolve-hypermedia-links/-/bus-rdf-resolve-hypermedia-links-2.8.2.tgz#1691b68b264aa2433ba9320561a0c416b29cd218"
-  integrity sha512-RFHEcPs/UGziKfxLKJhufVVusVH4rMvwEI7y1QQ2rlDFErL8fNjzz4vUioBnigS5KqNVJHphszZkgSpSWDrdWw==
+"@comunica/bus-rdf-resolve-hypermedia-links@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/bus-rdf-resolve-hypermedia-links/-/bus-rdf-resolve-hypermedia-links-2.10.0.tgz#29516fc67b1f358b0c4cc23007323cacb6b5a7ff"
+  integrity sha512-Mcz6bUdZySLK2om0cMt86n5TOThZOTpEFq2M42n7YAE3LL2KMnMDdhkaOC6SyY4tS0HGAuhce21Uq+Gz8Veq2g==
   dependencies:
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     "@rdfjs/types" "*"
 
-"@comunica/bus-rdf-resolve-hypermedia@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/bus-rdf-resolve-hypermedia/-/bus-rdf-resolve-hypermedia-2.8.2.tgz#4736f2ed69f81b8cfb3c2aa082b372ca56aa1d8a"
-  integrity sha512-Jyepb3vCQ63T217e5AJcUZp+5EmJI8y2ZHAvzl050x8YKZRUTST2gfMoY3rB8WCPs7TFn9R2T5bR9ez/QRwOZg==
+"@comunica/bus-rdf-resolve-hypermedia@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/bus-rdf-resolve-hypermedia/-/bus-rdf-resolve-hypermedia-2.10.0.tgz#fd9d0e7edcec68baaa7595e5a4c3b66531706c41"
+  integrity sha512-DjCoAg62pPzEOH5gKM9gaL4CVUmhBsmyOzao0tRu20G7L6RnTIFtRaOwMN2z+2uC7AkJRHZY12bPUb+yM8V0UQ==
   dependencies:
-    "@comunica/bus-rdf-resolve-quad-pattern" "^2.8.2"
-    "@comunica/core" "^2.8.2"
+    "@comunica/bus-rdf-resolve-quad-pattern" "^2.10.0"
+    "@comunica/core" "^2.10.0"
     "@rdfjs/types" "*"
 
-"@comunica/bus-rdf-resolve-quad-pattern@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/bus-rdf-resolve-quad-pattern/-/bus-rdf-resolve-quad-pattern-2.8.2.tgz#ecebf39061020b2ad3b972ce1cd57686de7b4f39"
-  integrity sha512-TZPa/h5dERgL8oJY8wZn9fR4lxaE9cgiwPRJKgZjGN4mM8MaBY76qZXa55EqbcZnj4YihpLUoHcizj1cqC1mKA==
+"@comunica/bus-rdf-resolve-quad-pattern@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/bus-rdf-resolve-quad-pattern/-/bus-rdf-resolve-quad-pattern-2.10.0.tgz#44f386724f37131bee534f4923650ce9884ce2e1"
+  integrity sha512-JEI4DqSprGmrbfmiIwc8PbS+HCoxXwmMtp7gDpoB1HyYKIHzzu9DOIiwmYEDRO5dwV+uTwaYKZz/mUPm2U6EEg==
   dependencies:
-    "@comunica/context-entries" "^2.8.2"
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/context-entries" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     "@rdfjs/types" "*"
     asynciterator "^3.8.1"
     sparqlalgebrajs "^4.2.0"
 
-"@comunica/bus-rdf-serialize@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/bus-rdf-serialize/-/bus-rdf-serialize-2.8.2.tgz#77660f0c66a935f926fd0633389a726255eb940d"
-  integrity sha512-HAmDo3p1uw7WM/oUERa+1/UKcoATIHk6DCJgzXBWocwniCLb7b2sHQJR/SteFyH0U01JIgIn7cYyQsFkmfewHg==
+"@comunica/bus-rdf-serialize@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/bus-rdf-serialize/-/bus-rdf-serialize-2.10.0.tgz#ce84f56630e8429f50269aca88db70805b295378"
+  integrity sha512-AmbN9MUgw6B6AfrIqR1u7PWHZFgbJz+j1SFJVtnHQ51hEpG+Ig9nNG2IWjHOsFK0xBBQ/wXgNmt/cufEMRM1SQ==
   dependencies:
-    "@comunica/actor-abstract-mediatyped" "^2.8.2"
-    "@comunica/core" "^2.8.2"
+    "@comunica/actor-abstract-mediatyped" "^2.10.0"
+    "@comunica/core" "^2.10.0"
     "@rdfjs/types" "*"
 
-"@comunica/bus-rdf-update-hypermedia@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/bus-rdf-update-hypermedia/-/bus-rdf-update-hypermedia-2.9.0.tgz#5a40dd4f6f4b4df5abb04e8a1ec8b91f0c197d09"
-  integrity sha512-wxbzF71oIrwD8qjD9XyRoOA11nb0OMZCjCAhxzJ5Dv8lkIR89TyxsCV//6/wAsz76nuuYKV3b1MCetvlO6E94A==
+"@comunica/bus-rdf-update-hypermedia@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/bus-rdf-update-hypermedia/-/bus-rdf-update-hypermedia-2.10.0.tgz#6becbb6d33eadeffd653ebee7b2857fa1241e000"
+  integrity sha512-UfQ2rDRnkoX8kkpqnsxSnyg+09AdnqL9ma/RVXP622w8V9A8bcZgr2FuXBFx7ltLbBNuXo2oY6mKHcNmLEov4g==
   dependencies:
-    "@comunica/bus-rdf-update-quads" "^2.9.0"
-    "@comunica/core" "^2.8.2"
+    "@comunica/bus-rdf-update-quads" "^2.10.0"
+    "@comunica/core" "^2.10.0"
 
-"@comunica/bus-rdf-update-quads@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/bus-rdf-update-quads/-/bus-rdf-update-quads-2.9.0.tgz#87468234705caefdab78e8f9f1b7dc89e930d962"
-  integrity sha512-n8GmXIrw00OsyWleuBpGVyfzGlFYdgzK9Y7EcePWnreu6yIf001n9P9GdRb9NN7DrF5ylFV7BthTv+PmIxXgNA==
+"@comunica/bus-rdf-update-quads@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/bus-rdf-update-quads/-/bus-rdf-update-quads-2.10.0.tgz#128d1f3c30c0b2ce2f398fc33f4366ec3ed9028b"
+  integrity sha512-tu1fBdtbBkQfQJiLaAbOZgsQdJDehGNP13Itinmvx/JsgRp40rrUYXg53HLB8CpssCRtHTzMlnSQiPQdwiYpBw==
   dependencies:
-    "@comunica/actor-rdf-resolve-quad-pattern-federated" "^2.9.0"
-    "@comunica/bus-http" "^2.8.2"
-    "@comunica/context-entries" "^2.8.2"
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/actor-rdf-resolve-quad-pattern-federated" "^2.10.0"
+    "@comunica/bus-http" "^2.10.0"
+    "@comunica/context-entries" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     "@rdfjs/types" "*"
     asynciterator "^3.8.1"
     stream-to-string "^1.2.0"
@@ -2756,6 +2756,17 @@
   resolved "https://registry.yarnpkg.com/@comunica/config-query-sparql/-/config-query-sparql-2.7.0.tgz#1030ee76d5532bc6a09a6c8af26a06c7311a5861"
   integrity sha512-rMnFgT7cz9+0z7wV4OzIMY5qM9/Z0mTGrR8y2JokoHyyTcBGOSajFmy61XCSLMCsLLG8qDXsJ4ClCCky3TGfqA==
 
+"@comunica/context-entries@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/context-entries/-/context-entries-2.10.0.tgz#6920bad7b55ffcf99ed00472fadab659147bd3ea"
+  integrity sha512-lmCYCcXxW8C6ecFH2whZCt31NT1ejb0P/sbytK7f4ctyA06Q8iYFEcYE4eWOXMdpfkwkcnz31x9XL77OGeSC2Q==
+  dependencies:
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
+    "@rdfjs/types" "*"
+    jsonld-context-parser "^2.2.2"
+    sparqlalgebrajs "^4.2.0"
+
 "@comunica/context-entries@^2.4.0":
   version "2.4.0"
   resolved "https://registry.npmjs.org/@comunica/context-entries/-/context-entries-2.4.0.tgz"
@@ -2767,17 +2778,6 @@
     jsonld-context-parser "^2.1.5"
     sparqlalgebrajs "^4.0.2"
 
-"@comunica/context-entries@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/context-entries/-/context-entries-2.8.2.tgz#d1c8e46756c05e84232679f53d35a7f4006e9998"
-  integrity sha512-Ycub6tUiK3qYjKaT74DiThv4IKq3M4SAvDB0AdFvcevwcU6OK8Z6H7M7uA5LehJiEKoBwiO4Ff8iuv3xqAF+tw==
-  dependencies:
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
-    "@rdfjs/types" "*"
-    jsonld-context-parser "^2.2.2"
-    sparqlalgebrajs "^4.2.0"
-
 "@comunica/core@^2.0.1", "@comunica/core@^2.4.0":
   version "2.4.0"
   resolved "https://registry.npmjs.org/@comunica/core/-/core-2.4.0.tgz"
@@ -2786,12 +2786,12 @@
     "@comunica/types" "^2.4.0"
     immutable "^4.0.0"
 
-"@comunica/core@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/core/-/core-2.8.2.tgz#ed1006d076ccd8f87180cc66e0b242a92c527815"
-  integrity sha512-8UrhEilUDxRTltFCI4uxz3nch02lGK1KFHBUCUxp/9EmnnQUYvwbMCMS6sLxYHTqJ18/SMFFEwgBMsTX/N+wuA==
+"@comunica/core@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/core/-/core-2.10.0.tgz#198c176443d03d6b374ee2b11fdd862b4b7c2b63"
+  integrity sha512-onsGs2iKHUPRxxMOdx42vdxslk8q9FQZdRjQtHJ6SGiCpJwIL9ciBgPIOl2RL2YfzXHemr/0umeNOppRDcWhJA==
   dependencies:
-    "@comunica/types" "^2.8.2"
+    "@comunica/types" "^2.10.0"
     immutable "^4.1.0"
 
 "@comunica/data-factory@^2.7.0":
@@ -2801,10 +2801,10 @@
   dependencies:
     "@rdfjs/types" "*"
 
-"@comunica/expression-evaluator@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/expression-evaluator/-/expression-evaluator-2.9.0.tgz#8fa5092aad809e49d8ab40a88165247a9fba7e62"
-  integrity sha512-BCIQSzuZ2BHC+lGnz4Zr+XDPdnEHX8hlK2CaT/dTYX3eo1vQ0MISxQZuPkvvMJ6GuySFAd5rjX6aluf8XoG5xw==
+"@comunica/expression-evaluator@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/expression-evaluator/-/expression-evaluator-2.10.0.tgz#aeb05df42a174e3e8b215cec568ac221850f57c6"
+  integrity sha512-gSfiVSAE+SaxpXq3jT5OnyZd+sD9KFaWtTiKT1tDDs8lD7Jj68aRP7VoEhvKwPwRlUx0aoaXUL2MYtV6JsXRbg==
   dependencies:
     "@rdfjs/types" "*"
     "@types/spark-md5" "^3.0.2"
@@ -2819,28 +2819,28 @@
     sparqlalgebrajs "^4.2.0"
     uuid "^9.0.0"
 
-"@comunica/logger-pretty@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/logger-pretty/-/logger-pretty-2.8.2.tgz#aef33c0e652280dbb9b3011f1bdbfe971ef02807"
-  integrity sha512-aeS2/+zAYMiTokAaGQ8kuP+tapGi2hjXwNUeRl0OzhPLYU7x1hZamqRScWBWLrIFNwRR3p4EVcH8mJC3y2P9PA==
+"@comunica/logger-pretty@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/logger-pretty/-/logger-pretty-2.10.0.tgz#a417728a7c5248aaa6bd62c9580aeaba844c4c96"
+  integrity sha512-JXkeM5HnbyTPnQTf5/ugRPL9R+vXT7b/hRVYzYmhAGCjkCNL7NJPTBbIgxmZHqZ+UGxprotrvmDQtwHmVA+Ddw==
   dependencies:
-    "@comunica/types" "^2.8.2"
+    "@comunica/types" "^2.10.0"
     object-inspect "^1.12.2"
     process "^0.11.10"
 
-"@comunica/logger-void@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/logger-void/-/logger-void-2.8.2.tgz#cda5aa7b25f0c343e831c0b9a4c264bff0ce534d"
-  integrity sha512-76VpfNCCO034PBSn4SUBp0CpbPhRM1g8AVJ5TV29RygOkOYBv+p3Pdzxgt/ITuyRswbuet0b553DpHkGStUTNw==
+"@comunica/logger-void@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/logger-void/-/logger-void-2.10.0.tgz#9d003a28f606616258dcd0536c177a6d8f993362"
+  integrity sha512-GFJh9hV8rIC9yXAuLGGKjQRVs8IOQOINBbaTNO+FJUWWWHlo5pDEKAoGYuysz5TBGoT3Lexz8bMfdkuHMa3uIQ==
   dependencies:
-    "@comunica/types" "^2.8.2"
+    "@comunica/types" "^2.10.0"
 
-"@comunica/mediator-all@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/mediator-all/-/mediator-all-2.8.2.tgz#46ec6361d1576f9314deb5f9da0576cfe23594fc"
-  integrity sha512-O1ZaeC70D106F38uGHZWejY1HajMhyY7PpipDrt+Kvdt8JYcfVkTx6dN1DFkyJ8PVmJnRrZkMqj1q1IunSJDag==
+"@comunica/mediator-all@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/mediator-all/-/mediator-all-2.10.0.tgz#84cad4aeadc86502010a7a5837caef44e710bc50"
+  integrity sha512-y1+A+sIW462G8iPzi6BSPIb4I9iy08ZruM2Thf1or6sytwLKro7E2RYjS6IdupwfFYafXXCeT85+lrJgTKERhQ==
   dependencies:
-    "@comunica/core" "^2.8.2"
+    "@comunica/core" "^2.10.0"
 
 "@comunica/mediator-combine-pipeline@^2.0.1":
   version "2.4.0"
@@ -2850,13 +2850,13 @@
     "@comunica/core" "^2.4.0"
     "@comunica/types" "^2.4.0"
 
-"@comunica/mediator-combine-pipeline@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/mediator-combine-pipeline/-/mediator-combine-pipeline-2.8.2.tgz#09333ee9e69202ec34a37613229f999281beb138"
-  integrity sha512-XjN3EWdKC2XDY6gr1po5GttsRuM1FewzW3KRlLoYkRzH0+S3Th5Ef6zTlgDef4tWqVgNXIzC5Ccz0HraKKEbdg==
+"@comunica/mediator-combine-pipeline@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/mediator-combine-pipeline/-/mediator-combine-pipeline-2.10.0.tgz#c977eb97a15103976ecaa7173758b837a0bf3f2e"
+  integrity sha512-j7+/oUlbhKB4Rq6g9oNKU+e9cQL8U9z8tAUNhoXUSHajcr4huj0t1+riaOD109/DRWhV793ILhBDzgiZbHd7DA==
   dependencies:
-    "@comunica/core" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/core" "^2.10.0"
+    "@comunica/types" "^2.10.0"
 
 "@comunica/mediator-combine-union@^2.0.1":
   version "2.4.0"
@@ -2865,23 +2865,23 @@
   dependencies:
     "@comunica/core" "^2.4.0"
 
-"@comunica/mediator-combine-union@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/mediator-combine-union/-/mediator-combine-union-2.8.2.tgz#71be8ca6050443a49cdbaf273434895d2c780168"
-  integrity sha512-TjSHJdtbdiV96m+GaPUT+44Q4SOG8dcESO3YuJhRklAf6oOYfXL9d+7ITixSo7tiZQSv1LlgxG1apzBDTM1BvA==
+"@comunica/mediator-combine-union@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/mediator-combine-union/-/mediator-combine-union-2.10.0.tgz#722d5b81174b167e1c3b4d365d14c2343ded3bf1"
+  integrity sha512-QbP4zP1i6nMDZ8teC0RoTz5E8pOpxDhWPBr1ylb2jzPUjPpMgrnbHYTondlN0Oau3SMEehItojg/LYDtPOP/GQ==
   dependencies:
-    "@comunica/core" "^2.8.2"
+    "@comunica/core" "^2.10.0"
 
-"@comunica/mediator-join-coefficients-fixed@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/mediator-join-coefficients-fixed/-/mediator-join-coefficients-fixed-2.9.0.tgz#b7fd40fc869b88de796e8ccf2caef8558530e88f"
-  integrity sha512-8TYvaqnV8YG1CkeGaYZA/f4OwgdxHJ4DGvv/9moJaCitHVwCbiwZWbg6c4KJ1oluntcXXNpGGmHG4c2w6JL3Og==
+"@comunica/mediator-join-coefficients-fixed@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/mediator-join-coefficients-fixed/-/mediator-join-coefficients-fixed-2.10.0.tgz#e9a0348aefbf32c810448c2957ddabfe0e6474a2"
+  integrity sha512-Mkd3WFJZTHkb6KD58ecFzh0QKMDPLst+29PvXxxbh0HhFf15sWdd3JU9hpa/+cm7MNd3MZ8m2dA9ie7bjbLLyA==
   dependencies:
-    "@comunica/bus-rdf-join" "^2.9.0"
-    "@comunica/context-entries" "^2.8.2"
-    "@comunica/core" "^2.8.2"
-    "@comunica/mediatortype-join-coefficients" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/bus-rdf-join" "^2.10.0"
+    "@comunica/context-entries" "^2.10.0"
+    "@comunica/core" "^2.10.0"
+    "@comunica/mediatortype-join-coefficients" "^2.10.0"
+    "@comunica/types" "^2.10.0"
 
 "@comunica/mediator-number@^2.0.1":
   version "2.4.0"
@@ -2890,12 +2890,12 @@
   dependencies:
     "@comunica/core" "^2.4.0"
 
-"@comunica/mediator-number@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/mediator-number/-/mediator-number-2.8.2.tgz#447f7951db02e24755b3dc477bf0326bbc5f12ad"
-  integrity sha512-7VP1bMUusiG7AecQxrPfSunK408+oW4kdNNjavEJ7+pLi/95bT/e/rq/0wbK9Wu0vVrn7JNbliekLdhdI/BIuA==
+"@comunica/mediator-number@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/mediator-number/-/mediator-number-2.10.0.tgz#5ca01d4e6a5fb9701f26596905e2747a6170f675"
+  integrity sha512-0T8D1HGTu5Sd8iKb2dBjc6VRc/U4A15TAN6m561ra9pFlP+w31kby0ZYP6WWBHBobbUsX1LCvnbRQaAC4uWwVw==
   dependencies:
-    "@comunica/core" "^2.8.2"
+    "@comunica/core" "^2.10.0"
 
 "@comunica/mediator-race@^2.0.1":
   version "2.4.0"
@@ -2904,34 +2904,41 @@
   dependencies:
     "@comunica/core" "^2.4.0"
 
-"@comunica/mediator-race@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/mediator-race/-/mediator-race-2.8.2.tgz#d77507aca27170599943c2bb1c39aeaa14134831"
-  integrity sha512-oD9bw8YLV8TTedFBigPuqWKNxu64uLwsfve0OYV2J0tZHPTiYp8XJoeWN1mxc0q4TimxqXfKn4gXD5MP06MUsQ==
+"@comunica/mediator-race@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/mediator-race/-/mediator-race-2.10.0.tgz#690bb3e8805119d282d297f548c7c813430783db"
+  integrity sha512-JiEtOLMkPnbjSLabVpE4VqDbu2ZKKnkUdATGBeWX+o+MjPw6c0hhw01RG4WY2rQhDyNl++nLQe3EowQh8xW9TA==
   dependencies:
-    "@comunica/core" "^2.8.2"
+    "@comunica/core" "^2.10.0"
 
-"@comunica/mediatortype-accuracy@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/mediatortype-accuracy/-/mediatortype-accuracy-2.8.2.tgz#a569ff4bcb16016cdfbaa3d3c3147cffa1b17a70"
-  integrity sha512-VWHhtoAhIQvwVGxWW2G75dzcnd8QIaeSSm4IAuVjteUniuXdUoktvCI1GH4kyVw/HUfVmFwslDrGs8rUh+uPKQ==
+"@comunica/mediatortype-accuracy@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/mediatortype-accuracy/-/mediatortype-accuracy-2.10.0.tgz#f8f03646a4f9a5338ad8c98705d8f24ce15252a7"
+  integrity sha512-u9Noai4yGACaBRGOoRZ65XoQhazKNx5QaFOX5nJ/p84Qq4g50woC2rpsncuyrXhW1j/rIc2WvIUGUfy/g6CDiw==
   dependencies:
-    "@comunica/core" "^2.8.2"
+    "@comunica/core" "^2.10.0"
 
-"@comunica/mediatortype-httprequests@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/mediatortype-httprequests/-/mediatortype-httprequests-2.8.2.tgz#a0973fa85029844dc9f2a6b3665bca202185beda"
-  integrity sha512-ftYYMcPNHHORpeSFFCmeBXfmZuNUeFCJS1DGkLrjMfHufDvyFpMaU1WrOXDwa8y0g9UvF5V12O7To9WcE5FPhg==
+"@comunica/mediatortype-httprequests@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/mediatortype-httprequests/-/mediatortype-httprequests-2.10.0.tgz#deb82b68adf3592ccfe3f66200ad6baa6601136e"
+  integrity sha512-uPjs/NdngHZZWomjZor6W29UeOlxganupIOa3Z6H3qdUnsSpxeoS9URXy7BICAX+4PmgebperSn18BRA+PWiSw==
   dependencies:
-    "@comunica/core" "^2.8.2"
+    "@comunica/core" "^2.10.0"
 
-"@comunica/mediatortype-join-coefficients@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/mediatortype-join-coefficients/-/mediatortype-join-coefficients-2.8.2.tgz#29b9735e1f0dd8b26b162589dedb928cf07dc6b2"
-  integrity sha512-nvu+WPs1048U19YUBBZsR8UDs+fmTVGrc2cRHiSW1w6EkcgMnIMV9OR6pvmSZAoy4XNcZb8hbV4nS+ETYb7yqw==
+"@comunica/mediatortype-join-coefficients@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/mediatortype-join-coefficients/-/mediatortype-join-coefficients-2.10.0.tgz#0859db422c1636602dbdbb27de4de776286a16ba"
+  integrity sha512-EPipAV5PDNeEVXbsd+8NsqNKu5ztCAoEJ3azcFAmD9di9ppArNJWU/mxy5yUzcBgMUX4wRp6jCa5rIF5sRHG7g==
   dependencies:
-    "@comunica/core" "^2.8.2"
+    "@comunica/core" "^2.10.0"
     "@rdfjs/types" "*"
+
+"@comunica/mediatortype-time@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/mediatortype-time/-/mediatortype-time-2.10.0.tgz#5f19b7d51cab61fb9c9b6ed7de34dd7a1b7b1294"
+  integrity sha512-nBz1exxrja1Tj8KSlSevG4Hw2u09tTh6gtNfVjI76i/e7muu4RUWVhi9b8PcwBNAfuUqRl+5OgOSa2X4W+6QlA==
+  dependencies:
+    "@comunica/core" "^2.10.0"
 
 "@comunica/mediatortype-time@^2.4.0":
   version "2.4.0"
@@ -2940,177 +2947,180 @@
   dependencies:
     "@comunica/core" "^2.4.0"
 
-"@comunica/mediatortype-time@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/mediatortype-time/-/mediatortype-time-2.8.2.tgz#c0232b9b66fcd2b7214366974bd5543c651395ad"
-  integrity sha512-ZNApJwoE5iwO9o1GGYhjYzJeNmkvWggiNGkvYyRvua0HrMa3fXzZJSzU5I9Dkoh3lzfNsgPemoO+vg/SiH8WyA==
+"@comunica/metadata@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/metadata/-/metadata-2.10.0.tgz#9e057db8573001ea60e00938e6ba35dce54970fe"
+  integrity sha512-PF7TKhuDIO4GE9tzuAkTxarQV5cmwXZ64hp0qm8Ql/V+dVHu/3xLL9v/Q67ZX26GF9hOyr7cdpNI08M7DHc86g==
   dependencies:
-    "@comunica/core" "^2.8.2"
+    "@comunica/types" "^2.10.0"
 
-"@comunica/metadata@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/metadata/-/metadata-2.8.2.tgz#1c8eafa5f3c4eaa1bd4cac4db680f062b813f712"
-  integrity sha512-/yznxjOo+/6yJkdb45wfWig5waIhAv+qKd79D2EAt26EAy43thBXgGORxDTOx8vULPG3ij5SIDcNRZ7vJwJO8Q==
+"@comunica/query-sparql@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/query-sparql/-/query-sparql-2.10.0.tgz#6147d686e9c656b16df3357b8e4e1b1940f800eb"
+  integrity sha512-BTm8mZLhs32OzPo278605kYRg8QQJ44kz/VRQp2+GKK5HjlPoXD7ULK+RiFNyAWDxJHT9QCv890QwS7+5ShPxQ==
   dependencies:
-    "@comunica/types" "^2.8.2"
-
-"@comunica/query-sparql@^2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@comunica/query-sparql/-/query-sparql-2.9.0.tgz#1c9a3538be110a9b8569fc3e4f6b2ebd08d69091"
-  integrity sha512-LW5OGVwusyWWHTbyaeWDRM/BmF6+dBrFfW82u9mVVHOOWELmCoEX5g/1bhRI9lLjEk14e1n+n0NfUeNBdCHNKQ==
-  dependencies:
-    "@comunica/actor-context-preprocess-source-to-destination" "^2.8.2"
-    "@comunica/actor-dereference-fallback" "^2.8.2"
-    "@comunica/actor-dereference-http" "^2.8.2"
-    "@comunica/actor-dereference-rdf-parse" "^2.8.2"
-    "@comunica/actor-hash-bindings-sha1" "^2.8.2"
-    "@comunica/actor-http-fetch" "^2.8.2"
-    "@comunica/actor-http-proxy" "^2.8.2"
-    "@comunica/actor-http-wayback" "^2.8.2"
-    "@comunica/actor-init-query" "^2.9.0"
-    "@comunica/actor-optimize-query-operation-bgp-to-join" "^2.8.2"
-    "@comunica/actor-optimize-query-operation-join-bgp" "^2.8.2"
-    "@comunica/actor-optimize-query-operation-join-connected" "^2.8.2"
-    "@comunica/actor-query-operation-ask" "^2.9.0"
-    "@comunica/actor-query-operation-bgp-join" "^2.9.0"
-    "@comunica/actor-query-operation-construct" "^2.9.0"
-    "@comunica/actor-query-operation-describe-subject" "^2.9.0"
-    "@comunica/actor-query-operation-distinct-hash" "^2.9.0"
-    "@comunica/actor-query-operation-extend" "^2.9.0"
-    "@comunica/actor-query-operation-filter-sparqlee" "^2.9.0"
-    "@comunica/actor-query-operation-from-quad" "^2.9.0"
-    "@comunica/actor-query-operation-group" "^2.9.0"
-    "@comunica/actor-query-operation-join" "^2.9.0"
-    "@comunica/actor-query-operation-leftjoin" "^2.9.0"
-    "@comunica/actor-query-operation-minus" "^2.9.0"
-    "@comunica/actor-query-operation-nop" "^2.9.0"
-    "@comunica/actor-query-operation-orderby-sparqlee" "^2.9.0"
-    "@comunica/actor-query-operation-path-alt" "^2.9.0"
-    "@comunica/actor-query-operation-path-inv" "^2.9.0"
-    "@comunica/actor-query-operation-path-link" "^2.9.0"
-    "@comunica/actor-query-operation-path-nps" "^2.9.0"
-    "@comunica/actor-query-operation-path-one-or-more" "^2.9.0"
-    "@comunica/actor-query-operation-path-seq" "^2.9.0"
-    "@comunica/actor-query-operation-path-zero-or-more" "^2.9.0"
-    "@comunica/actor-query-operation-path-zero-or-one" "^2.9.0"
-    "@comunica/actor-query-operation-project" "^2.9.0"
-    "@comunica/actor-query-operation-quadpattern" "^2.9.0"
-    "@comunica/actor-query-operation-reduced-hash" "^2.9.0"
-    "@comunica/actor-query-operation-service" "^2.9.0"
-    "@comunica/actor-query-operation-slice" "^2.9.0"
-    "@comunica/actor-query-operation-sparql-endpoint" "^2.9.0"
-    "@comunica/actor-query-operation-union" "^2.9.0"
-    "@comunica/actor-query-operation-update-add-rewrite" "^2.9.0"
-    "@comunica/actor-query-operation-update-clear" "^2.9.0"
-    "@comunica/actor-query-operation-update-compositeupdate" "^2.9.0"
-    "@comunica/actor-query-operation-update-copy-rewrite" "^2.9.0"
-    "@comunica/actor-query-operation-update-create" "^2.9.0"
-    "@comunica/actor-query-operation-update-deleteinsert" "^2.9.0"
-    "@comunica/actor-query-operation-update-drop" "^2.9.0"
-    "@comunica/actor-query-operation-update-load" "^2.9.0"
-    "@comunica/actor-query-operation-update-move-rewrite" "^2.9.0"
-    "@comunica/actor-query-operation-values" "^2.9.0"
-    "@comunica/actor-query-parse-graphql" "^2.8.2"
-    "@comunica/actor-query-parse-sparql" "^2.8.2"
-    "@comunica/actor-query-result-serialize-json" "^2.8.2"
-    "@comunica/actor-query-result-serialize-rdf" "^2.8.2"
-    "@comunica/actor-query-result-serialize-simple" "^2.8.2"
-    "@comunica/actor-query-result-serialize-sparql-csv" "^2.8.2"
-    "@comunica/actor-query-result-serialize-sparql-json" "^2.8.2"
-    "@comunica/actor-query-result-serialize-sparql-tsv" "^2.8.2"
-    "@comunica/actor-query-result-serialize-sparql-xml" "^2.8.2"
-    "@comunica/actor-query-result-serialize-stats" "^2.8.2"
-    "@comunica/actor-query-result-serialize-table" "^2.8.2"
-    "@comunica/actor-query-result-serialize-tree" "^2.8.2"
-    "@comunica/actor-rdf-join-entries-sort-cardinality" "^2.8.2"
-    "@comunica/actor-rdf-join-inner-hash" "^2.9.0"
-    "@comunica/actor-rdf-join-inner-multi-bind" "^2.9.0"
-    "@comunica/actor-rdf-join-inner-multi-empty" "^2.9.0"
-    "@comunica/actor-rdf-join-inner-multi-smallest" "^2.9.0"
-    "@comunica/actor-rdf-join-inner-nestedloop" "^2.9.0"
-    "@comunica/actor-rdf-join-inner-none" "^2.9.0"
-    "@comunica/actor-rdf-join-inner-single" "^2.9.0"
-    "@comunica/actor-rdf-join-inner-symmetrichash" "^2.9.0"
-    "@comunica/actor-rdf-join-minus-hash" "^2.9.0"
-    "@comunica/actor-rdf-join-minus-hash-undef" "^2.9.0"
-    "@comunica/actor-rdf-join-optional-bind" "^2.9.0"
-    "@comunica/actor-rdf-join-optional-nestedloop" "^2.9.0"
-    "@comunica/actor-rdf-join-selectivity-variable-counting" "^2.8.2"
-    "@comunica/actor-rdf-metadata-accumulate-cancontainundefs" "^2.8.2"
-    "@comunica/actor-rdf-metadata-accumulate-cardinality" "^2.8.2"
-    "@comunica/actor-rdf-metadata-accumulate-pagesize" "^2.8.2"
-    "@comunica/actor-rdf-metadata-accumulate-requesttime" "^2.8.2"
-    "@comunica/actor-rdf-metadata-all" "^2.8.2"
-    "@comunica/actor-rdf-metadata-extract-allow-http-methods" "^2.8.2"
-    "@comunica/actor-rdf-metadata-extract-hydra-controls" "^2.8.2"
-    "@comunica/actor-rdf-metadata-extract-hydra-count" "^2.8.2"
-    "@comunica/actor-rdf-metadata-extract-hydra-pagesize" "^2.8.2"
-    "@comunica/actor-rdf-metadata-extract-patch-sparql-update" "^2.8.2"
-    "@comunica/actor-rdf-metadata-extract-put-accepted" "^2.8.2"
-    "@comunica/actor-rdf-metadata-extract-request-time" "^2.8.2"
-    "@comunica/actor-rdf-metadata-extract-sparql-service" "^2.8.2"
-    "@comunica/actor-rdf-metadata-primary-topic" "^2.8.2"
-    "@comunica/actor-rdf-parse-html" "^2.8.2"
-    "@comunica/actor-rdf-parse-html-microdata" "^2.8.2"
-    "@comunica/actor-rdf-parse-html-rdfa" "^2.8.2"
-    "@comunica/actor-rdf-parse-html-script" "^2.8.2"
-    "@comunica/actor-rdf-parse-jsonld" "^2.8.2"
-    "@comunica/actor-rdf-parse-n3" "^2.8.2"
-    "@comunica/actor-rdf-parse-rdfxml" "^2.8.2"
-    "@comunica/actor-rdf-parse-shaclc" "^2.8.2"
-    "@comunica/actor-rdf-parse-xml-rdfa" "^2.8.2"
-    "@comunica/actor-rdf-resolve-hypermedia-links-next" "^2.8.2"
-    "@comunica/actor-rdf-resolve-hypermedia-links-queue-fifo" "^2.8.2"
-    "@comunica/actor-rdf-resolve-hypermedia-none" "^2.8.2"
-    "@comunica/actor-rdf-resolve-hypermedia-qpf" "^2.8.2"
-    "@comunica/actor-rdf-resolve-hypermedia-sparql" "^2.8.3"
-    "@comunica/actor-rdf-resolve-quad-pattern-federated" "^2.9.0"
-    "@comunica/actor-rdf-resolve-quad-pattern-hypermedia" "^2.9.0"
-    "@comunica/actor-rdf-resolve-quad-pattern-rdfjs-source" "^2.8.2"
-    "@comunica/actor-rdf-resolve-quad-pattern-string-source" "^2.8.2"
-    "@comunica/actor-rdf-serialize-jsonld" "^2.8.2"
-    "@comunica/actor-rdf-serialize-n3" "^2.8.2"
-    "@comunica/actor-rdf-serialize-shaclc" "^2.8.2"
-    "@comunica/actor-rdf-update-hypermedia-patch-sparql-update" "^2.9.0"
-    "@comunica/actor-rdf-update-hypermedia-put-ldp" "^2.9.0"
-    "@comunica/actor-rdf-update-hypermedia-sparql" "^2.9.0"
-    "@comunica/actor-rdf-update-quads-hypermedia" "^2.9.0"
-    "@comunica/actor-rdf-update-quads-rdfjs-store" "^2.9.0"
-    "@comunica/bus-http-invalidate" "^2.8.2"
-    "@comunica/bus-query-operation" "^2.9.0"
+    "@comunica/actor-context-preprocess-source-to-destination" "^2.10.0"
+    "@comunica/actor-dereference-fallback" "^2.10.0"
+    "@comunica/actor-dereference-http" "^2.10.0"
+    "@comunica/actor-dereference-rdf-parse" "^2.10.0"
+    "@comunica/actor-hash-bindings-sha1" "^2.10.0"
+    "@comunica/actor-http-fetch" "^2.10.0"
+    "@comunica/actor-http-proxy" "^2.10.0"
+    "@comunica/actor-http-wayback" "^2.10.0"
+    "@comunica/actor-init-query" "^2.10.0"
+    "@comunica/actor-optimize-query-operation-bgp-to-join" "^2.10.0"
+    "@comunica/actor-optimize-query-operation-join-bgp" "^2.10.0"
+    "@comunica/actor-optimize-query-operation-join-connected" "^2.10.0"
+    "@comunica/actor-query-operation-ask" "^2.10.0"
+    "@comunica/actor-query-operation-bgp-join" "^2.10.0"
+    "@comunica/actor-query-operation-construct" "^2.10.0"
+    "@comunica/actor-query-operation-describe-subject" "^2.10.0"
+    "@comunica/actor-query-operation-distinct-hash" "^2.10.0"
+    "@comunica/actor-query-operation-extend" "^2.10.0"
+    "@comunica/actor-query-operation-filter-sparqlee" "^2.10.0"
+    "@comunica/actor-query-operation-from-quad" "^2.10.0"
+    "@comunica/actor-query-operation-group" "^2.10.0"
+    "@comunica/actor-query-operation-join" "^2.10.0"
+    "@comunica/actor-query-operation-leftjoin" "^2.10.0"
+    "@comunica/actor-query-operation-minus" "^2.10.0"
+    "@comunica/actor-query-operation-nop" "^2.10.0"
+    "@comunica/actor-query-operation-orderby-sparqlee" "^2.10.0"
+    "@comunica/actor-query-operation-path-alt" "^2.10.0"
+    "@comunica/actor-query-operation-path-inv" "^2.10.0"
+    "@comunica/actor-query-operation-path-link" "^2.10.0"
+    "@comunica/actor-query-operation-path-nps" "^2.10.0"
+    "@comunica/actor-query-operation-path-one-or-more" "^2.10.0"
+    "@comunica/actor-query-operation-path-seq" "^2.10.0"
+    "@comunica/actor-query-operation-path-zero-or-more" "^2.10.0"
+    "@comunica/actor-query-operation-path-zero-or-one" "^2.10.0"
+    "@comunica/actor-query-operation-project" "^2.10.0"
+    "@comunica/actor-query-operation-quadpattern" "^2.10.0"
+    "@comunica/actor-query-operation-reduced-hash" "^2.10.0"
+    "@comunica/actor-query-operation-service" "^2.10.0"
+    "@comunica/actor-query-operation-slice" "^2.10.0"
+    "@comunica/actor-query-operation-sparql-endpoint" "^2.10.0"
+    "@comunica/actor-query-operation-union" "^2.10.0"
+    "@comunica/actor-query-operation-update-add-rewrite" "^2.10.0"
+    "@comunica/actor-query-operation-update-clear" "^2.10.0"
+    "@comunica/actor-query-operation-update-compositeupdate" "^2.10.0"
+    "@comunica/actor-query-operation-update-copy-rewrite" "^2.10.0"
+    "@comunica/actor-query-operation-update-create" "^2.10.0"
+    "@comunica/actor-query-operation-update-deleteinsert" "^2.10.0"
+    "@comunica/actor-query-operation-update-drop" "^2.10.0"
+    "@comunica/actor-query-operation-update-load" "^2.10.0"
+    "@comunica/actor-query-operation-update-move-rewrite" "^2.10.0"
+    "@comunica/actor-query-operation-values" "^2.10.0"
+    "@comunica/actor-query-parse-graphql" "^2.10.0"
+    "@comunica/actor-query-parse-sparql" "^2.10.0"
+    "@comunica/actor-query-result-serialize-json" "^2.10.0"
+    "@comunica/actor-query-result-serialize-rdf" "^2.10.0"
+    "@comunica/actor-query-result-serialize-simple" "^2.10.0"
+    "@comunica/actor-query-result-serialize-sparql-csv" "^2.10.0"
+    "@comunica/actor-query-result-serialize-sparql-json" "^2.10.0"
+    "@comunica/actor-query-result-serialize-sparql-tsv" "^2.10.0"
+    "@comunica/actor-query-result-serialize-sparql-xml" "^2.10.0"
+    "@comunica/actor-query-result-serialize-stats" "^2.10.0"
+    "@comunica/actor-query-result-serialize-table" "^2.10.0"
+    "@comunica/actor-query-result-serialize-tree" "^2.10.0"
+    "@comunica/actor-rdf-join-entries-sort-cardinality" "^2.10.0"
+    "@comunica/actor-rdf-join-inner-hash" "^2.10.0"
+    "@comunica/actor-rdf-join-inner-multi-bind" "^2.10.0"
+    "@comunica/actor-rdf-join-inner-multi-empty" "^2.10.0"
+    "@comunica/actor-rdf-join-inner-multi-smallest" "^2.10.0"
+    "@comunica/actor-rdf-join-inner-nestedloop" "^2.10.0"
+    "@comunica/actor-rdf-join-inner-none" "^2.10.0"
+    "@comunica/actor-rdf-join-inner-single" "^2.10.0"
+    "@comunica/actor-rdf-join-inner-symmetrichash" "^2.10.0"
+    "@comunica/actor-rdf-join-minus-hash" "^2.10.0"
+    "@comunica/actor-rdf-join-minus-hash-undef" "^2.10.0"
+    "@comunica/actor-rdf-join-optional-bind" "^2.10.0"
+    "@comunica/actor-rdf-join-optional-nestedloop" "^2.10.0"
+    "@comunica/actor-rdf-join-selectivity-variable-counting" "^2.10.0"
+    "@comunica/actor-rdf-metadata-accumulate-cancontainundefs" "^2.10.0"
+    "@comunica/actor-rdf-metadata-accumulate-cardinality" "^2.10.0"
+    "@comunica/actor-rdf-metadata-accumulate-pagesize" "^2.10.0"
+    "@comunica/actor-rdf-metadata-accumulate-requesttime" "^2.10.0"
+    "@comunica/actor-rdf-metadata-all" "^2.10.0"
+    "@comunica/actor-rdf-metadata-extract-allow-http-methods" "^2.10.0"
+    "@comunica/actor-rdf-metadata-extract-hydra-controls" "^2.10.0"
+    "@comunica/actor-rdf-metadata-extract-hydra-count" "^2.10.0"
+    "@comunica/actor-rdf-metadata-extract-hydra-pagesize" "^2.10.0"
+    "@comunica/actor-rdf-metadata-extract-patch-sparql-update" "^2.10.0"
+    "@comunica/actor-rdf-metadata-extract-put-accepted" "^2.10.0"
+    "@comunica/actor-rdf-metadata-extract-request-time" "^2.10.0"
+    "@comunica/actor-rdf-metadata-extract-sparql-service" "^2.10.0"
+    "@comunica/actor-rdf-metadata-primary-topic" "^2.10.0"
+    "@comunica/actor-rdf-parse-html" "^2.10.0"
+    "@comunica/actor-rdf-parse-html-microdata" "^2.10.0"
+    "@comunica/actor-rdf-parse-html-rdfa" "^2.10.0"
+    "@comunica/actor-rdf-parse-html-script" "^2.10.0"
+    "@comunica/actor-rdf-parse-jsonld" "^2.10.0"
+    "@comunica/actor-rdf-parse-n3" "^2.10.0"
+    "@comunica/actor-rdf-parse-rdfxml" "^2.10.0"
+    "@comunica/actor-rdf-parse-shaclc" "^2.10.0"
+    "@comunica/actor-rdf-parse-xml-rdfa" "^2.10.0"
+    "@comunica/actor-rdf-resolve-hypermedia-links-next" "^2.10.0"
+    "@comunica/actor-rdf-resolve-hypermedia-links-queue-fifo" "^2.10.0"
+    "@comunica/actor-rdf-resolve-hypermedia-none" "^2.10.0"
+    "@comunica/actor-rdf-resolve-hypermedia-qpf" "^2.10.0"
+    "@comunica/actor-rdf-resolve-hypermedia-sparql" "^2.10.0"
+    "@comunica/actor-rdf-resolve-quad-pattern-federated" "^2.10.0"
+    "@comunica/actor-rdf-resolve-quad-pattern-hypermedia" "^2.10.0"
+    "@comunica/actor-rdf-resolve-quad-pattern-rdfjs-source" "^2.10.0"
+    "@comunica/actor-rdf-resolve-quad-pattern-string-source" "^2.10.0"
+    "@comunica/actor-rdf-serialize-jsonld" "^2.10.0"
+    "@comunica/actor-rdf-serialize-n3" "^2.10.0"
+    "@comunica/actor-rdf-serialize-shaclc" "^2.10.0"
+    "@comunica/actor-rdf-update-hypermedia-patch-sparql-update" "^2.10.0"
+    "@comunica/actor-rdf-update-hypermedia-put-ldp" "^2.10.0"
+    "@comunica/actor-rdf-update-hypermedia-sparql" "^2.10.0"
+    "@comunica/actor-rdf-update-quads-hypermedia" "^2.10.0"
+    "@comunica/actor-rdf-update-quads-rdfjs-store" "^2.10.0"
+    "@comunica/bus-http-invalidate" "^2.10.0"
+    "@comunica/bus-query-operation" "^2.10.0"
     "@comunica/config-query-sparql" "^2.7.0"
-    "@comunica/core" "^2.8.2"
-    "@comunica/logger-void" "^2.8.2"
-    "@comunica/mediator-all" "^2.8.2"
-    "@comunica/mediator-combine-pipeline" "^2.8.2"
-    "@comunica/mediator-combine-union" "^2.8.2"
-    "@comunica/mediator-join-coefficients-fixed" "^2.9.0"
-    "@comunica/mediator-number" "^2.8.2"
-    "@comunica/mediator-race" "^2.8.2"
-    "@comunica/runner" "^2.8.2"
-    "@comunica/runner-cli" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/core" "^2.10.0"
+    "@comunica/logger-void" "^2.10.0"
+    "@comunica/mediator-all" "^2.10.0"
+    "@comunica/mediator-combine-pipeline" "^2.10.0"
+    "@comunica/mediator-combine-union" "^2.10.0"
+    "@comunica/mediator-join-coefficients-fixed" "^2.10.0"
+    "@comunica/mediator-number" "^2.10.0"
+    "@comunica/mediator-race" "^2.10.0"
+    "@comunica/runner" "^2.10.0"
+    "@comunica/runner-cli" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     process "^0.11.10"
 
-"@comunica/runner-cli@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/runner-cli/-/runner-cli-2.8.2.tgz#64aab0402ab5dc4f84cb41da1ffa21bbbb7b6757"
-  integrity sha512-FB7ciWt8YTKy1pFDNgdDCgJirPQ6tGk6xIhnpwo/vQ7cyRwIAddXOfOHCGdEqyOLFO/57PD7PB2G3GjhEJTu1Q==
+"@comunica/runner-cli@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/runner-cli/-/runner-cli-2.10.0.tgz#eb5027644c0e9be0f81f6f07c513c12e49cd65df"
+  integrity sha512-16QI0rWFHURCy5waVFcZ/fhKI/hyzNx5YyCGPaEaUX8MKyamvCCXHSWvPLLbjJbsjGZ9wXrC9dwwhRmbfmidpw==
   dependencies:
-    "@comunica/core" "^2.8.2"
-    "@comunica/runner" "^2.8.2"
-    "@comunica/types" "^2.8.2"
+    "@comunica/core" "^2.10.0"
+    "@comunica/runner" "^2.10.0"
+    "@comunica/types" "^2.10.0"
     process "^0.11.10"
 
-"@comunica/runner@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/runner/-/runner-2.8.2.tgz#453b0b0d18414165a72695bb923b237867ef3564"
-  integrity sha512-a6DzNfPT6k5zdesuytEZ7BjqShlwQoZIovqUguty49+NRIP6KbYkCousQlgYWY2uKNazmjJaSYIO6QWCJBJ7Fg==
+"@comunica/runner@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/runner/-/runner-2.10.0.tgz#21dc8b496fe1971cfcf235473ba413b24d890ca1"
+  integrity sha512-v/oEKT+IwjO6Y74bCCzlR+ZMI6oykpfz7GQrQbl1oTWQsvBbTdf0omPkoYnk1esEAsFnsJD+NGwAiRiFKeBo0A==
   dependencies:
-    "@comunica/bus-init" "^2.8.2"
-    "@comunica/core" "^2.8.2"
+    "@comunica/bus-init" "^2.10.0"
+    "@comunica/core" "^2.10.0"
     componentsjs "^5.3.2"
     process "^0.11.10"
+
+"@comunica/types@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@comunica/types/-/types-2.10.0.tgz#fbb4968734e4297eb116a7fa836ca0362d0cba89"
+  integrity sha512-1UjPGbZcYrapBjMGUZedrIGcn9rOLpEOlJo1ZkWddFUGTwndVg9d4BZnQw+UnQzXMcLJcdKt94Zns8iEmBqARw==
+  dependencies:
+    "@rdfjs/types" "*"
+    "@types/yargs" "^17.0.24"
+    asynciterator "^3.8.1"
+    sparqlalgebrajs "^4.2.0"
 
 "@comunica/types@^2.4.0":
   version "2.4.0"
@@ -3121,16 +3131,6 @@
     "@types/yargs" "^17.0.2"
     asynciterator "^3.7.0"
     sparqlalgebrajs "^4.0.0"
-
-"@comunica/types@^2.8.2":
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/@comunica/types/-/types-2.8.2.tgz#b910c1ed767118958184e47432c9cc47e9c4c884"
-  integrity sha512-gF/wlBtr0Q1VVozYna7DLYlIU528vqinpc0MJ67uvFALJJHP9uqhjOsmVokdoEirf1WIut5GkEp33IGyBvOv5Q==
-  dependencies:
-    "@rdfjs/types" "*"
-    "@types/yargs" "^17.0.13"
-    asynciterator "^3.8.1"
-    sparqlalgebrajs "^4.2.0"
 
 "@dabh/diagnostics@^2.0.2":
   version "2.0.3"
@@ -3583,10 +3583,17 @@
   resolved "https://registry.npmjs.org/@types/yargs-parser/-/yargs-parser-21.0.0.tgz"
   integrity sha512-iO9ZQHkZxHn4mSakYV0vFHAVDyEOIJQrV2uZ06HxEPcx+mt8swXoZHIbaaJ2crJYFfErySgktuTZ3BeLz+XmFA==
 
-"@types/yargs@^17.0.13", "@types/yargs@^17.0.2":
+"@types/yargs@^17.0.2":
   version "17.0.13"
   resolved "https://registry.npmjs.org/@types/yargs/-/yargs-17.0.13.tgz"
   integrity sha512-9sWaruZk2JGxIQU+IhI1fhPYRcQ0UuTNuKuCW9bR5fp7qi2Llf7WDzNa17Cy7TKnh3cdxDOiyTu6gaLS0eDatg==
+  dependencies:
+    "@types/yargs-parser" "*"
+
+"@types/yargs@^17.0.24":
+  version "17.0.29"
+  resolved "https://registry.yarnpkg.com/@types/yargs/-/yargs-17.0.29.tgz#06aabc72497b798c643c812a8b561537fea760cf"
+  integrity sha512-nacjqA3ee9zRF/++a3FUY1suHTFKZeHba2n8WeDw9cCVdmzmHpIxyzOJBcpHvvEmS8E9KqWlSnWHUkOrkhWcvA==
   dependencies:
     "@types/yargs-parser" "*"
 
@@ -7144,7 +7151,7 @@ readable-stream@^2.0.1, readable-stream@^2.2.2, readable-stream@~2.3.6:
     string_decoder "~1.1.1"
     util-deprecate "~1.0.1"
 
-readable-stream@^4.0.0, readable-stream@^4.1.0, readable-stream@^4.2.0:
+readable-stream@^4.0.0, readable-stream@^4.1.0:
   version "4.2.0"
   resolved "https://registry.npmjs.org/readable-stream/-/readable-stream-4.2.0.tgz"
   integrity sha512-gJrBHsaI3lgBoGMW/jHZsQ/o/TIWiu5ENCJG1BB7fuCKzpFM8GaS2UoBVt9NO+oI+3FcrBNbUkl3ilDe09aY4A==
@@ -7163,6 +7170,17 @@ readable-stream@^4.3.0:
     buffer "^6.0.3"
     events "^3.3.0"
     process "^0.11.10"
+
+readable-stream@^4.4.2:
+  version "4.4.2"
+  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-4.4.2.tgz#e6aced27ad3b9d726d8308515b9a1b98dc1b9d13"
+  integrity sha512-Lk/fICSyIhodxy1IDK2HazkeGjSmezAWX2egdtJnYhtzKEsBPJowlI6F6LPb5tqIQILrMbx22S5o3GuJavPusA==
+  dependencies:
+    abort-controller "^3.0.0"
+    buffer "^6.0.3"
+    events "^3.3.0"
+    process "^0.11.10"
+    string_decoder "^1.3.0"
 
 readable-stream@~2.0.0:
   version "2.0.6"
@@ -8495,10 +8513,10 @@ yargs@^16.2.0:
     y18n "^5.0.5"
     yargs-parser "^20.2.2"
 
-yargs@^17.6.2:
-  version "17.6.2"
-  resolved "https://registry.npmjs.org/yargs/-/yargs-17.6.2.tgz"
-  integrity sha512-1/9UrdHjDZc0eOU0HxOHoS78C69UD3JRMvzlJ7S79S2nTaWRA/whGCTV8o9e/N/1Va9YIV7Q4sOxD8VV4pCWOw==
+yargs@^17.7.2:
+  version "17.7.2"
+  resolved "https://registry.yarnpkg.com/yargs/-/yargs-17.7.2.tgz#991df39aca675a192b816e1e0363f9d75d2aa269"
+  integrity sha512-7dSzzRQ++CKnNI/krKnYRV7JKKPUXMEh61soaHKg9mrWEhzFWhFnxPxGl+69cD1Ou63C13NUPCnmIcrvqCuM6w==
   dependencies:
     cliui "^8.0.1"
     escalade "^3.1.1"
