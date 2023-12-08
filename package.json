@@ -70,7 +70,7 @@
     "leaflet": "^1.7.1",
     "minimist": "^1.2.5",
     "n3": "^1.16.2",
-    "node-polyfill-webpack-plugin": "^2.0.1",
+    "node-polyfill-webpack-plugin": "^3.0.0",
     "rdf-string": "^1.6.1",
     "relative-to-absolute-iri": "^1.0.6",
     "string-replace-loader": "^3.1.0",
