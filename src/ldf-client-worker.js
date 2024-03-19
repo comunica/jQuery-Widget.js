@@ -11,8 +11,8 @@ var resultsIterator;
 
 // Set up logging
 var logger = new LoggerPretty({ level: 'info' });
-logger.log = function (level, message, data) {
-  postMessage({ type: 'log', log: message + (data ? (' ' + JSON.stringify(data)) : '') + '\n' });
+logger.log = function (level, color, message, data) {
+  postMessage({ type: 'log', log: message + '\n' });
 };
 
 // Handler for authenticating fetch requests within main window
