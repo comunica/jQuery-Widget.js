@@ -1,6 +1,17 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v2.0.0"></a>
+## [v2.0.0](https://github.com/comunica/jQuery-Widget.js/compare/v1.8.0...v2.0.0) - 2024-03-20
+
+### Changed
+* [Update to Comunica v3](https://github.com/comunica/jQuery-Widget.js/commit/f15ff13659506d10c240b2753e107d8527235885)
+
+### Fixed
+* [Fixed broken API key of geo widget](https://github.com/comunica/jQuery-Widget.js/commit/d74c81c2fadf25aace861bde7e0316333fb31830)
+* [Fix logout crash if Solid profile is already in list of sources](https://github.com/comunica/jQuery-Widget.js/commit/35866d2394844be39068ea0a4450aed1fed0a5d8)
+* [Fix double escaping of ampersands in URLs in execution log](https://github.com/comunica/jQuery-Widget.js/commit/d7a99ea15fe6bca50ba446da608501678608addc)
+
 <a name="v1.8.0"></a>
 ## [v1.8.0](https://github.com/comunica/jQuery-Widget.js/compare/v1.7.1...v1.8.0) - 2023-03-28
 
