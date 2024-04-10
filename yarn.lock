@@ -2451,10 +2451,10 @@
     jsonld-streaming-parser "^3.0.1"
     stream-to-string "^1.2.0"
 
-"@comunica/actor-rdf-parse-jsonld@^3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-parse-jsonld/-/actor-rdf-parse-jsonld-3.0.1.tgz#25d61a46a6a539d2bfe89eef77bc4b8813824c4d"
-  integrity sha512-T/fxfuzPrBwe9OX1+/GKl3uqcHTpaVUS2Q0PPmbyKfz2yGqZ9vJS6QdZzejdChOlYh3O/G0QG7MynlMe5HM7nw==
+"@comunica/actor-rdf-parse-jsonld@^3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-rdf-parse-jsonld/-/actor-rdf-parse-jsonld-3.0.2.tgz#3ef948163c9194c28f0f5c3d828dad25b0c07397"
+  integrity sha512-KFI3fxDnaH3VwxP4YPuuN3n19iKI7QjiycO8zqDuaUz2WMM9a5nJS+GdYKbLgU/I/A+D72DEmY8m8fwv53GdkA==
   dependencies:
     "@comunica/bus-http" "^3.0.1"
     "@comunica/bus-rdf-parse" "^3.0.1"
@@ -3192,10 +3192,10 @@
     "@rdfjs/types" "*"
     asynciterator "^3.9.0"
 
-"@comunica/query-sparql@^3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@comunica/query-sparql/-/query-sparql-3.0.1.tgz#7b855598eb235de58eeb8eebd57162265efe7883"
-  integrity sha512-BJ8ou2s/Hink4qR5PxjRSs4bVLe0xcfth03J/OSwhxZOfr5JtYEtXURMm16ljoA5iGLm/1gB+aodNJhhza8ocg==
+"@comunica/query-sparql@^3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@comunica/query-sparql/-/query-sparql-3.0.2.tgz#71709eee9aec837fb1d7c60cb57e92509916e1b4"
+  integrity sha512-VYqm64TP1FbOtJy+7u0ogvkNJrjrTPQjOxCYgerNSSYaVP+XdktjBHxP2Sz4ZYUwR1bM7dsOhfpOoJ6VFwRsBg==
   dependencies:
     "@comunica/actor-context-preprocess-convert-shortcuts" "^3.0.1"
     "@comunica/actor-context-preprocess-query-source-identify" "^3.0.1"
@@ -3311,7 +3311,7 @@
     "@comunica/actor-rdf-parse-html-microdata" "^3.0.1"
     "@comunica/actor-rdf-parse-html-rdfa" "^3.0.1"
     "@comunica/actor-rdf-parse-html-script" "^3.0.1"
-    "@comunica/actor-rdf-parse-jsonld" "^3.0.1"
+    "@comunica/actor-rdf-parse-jsonld" "^3.0.2"
     "@comunica/actor-rdf-parse-n3" "^3.0.1"
     "@comunica/actor-rdf-parse-rdfxml" "^3.0.1"
     "@comunica/actor-rdf-parse-shaclc" "^3.0.1"
