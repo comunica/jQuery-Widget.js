@@ -405,6 +405,10 @@ footer {
   select {
     width: 250px;
   }
+
+  .ldf-client {
+    min-width: 465px;
+  }
 }
 
 
