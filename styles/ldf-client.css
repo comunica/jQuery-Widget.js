@@ -213,6 +213,7 @@ textarea {
   cursor: pointer;
   font-size: .95em;
   background-color: transparent;
+  resize: vertical;
 }
 
 .results {
