@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const MoveFilePlugin = require('./plugins/MoveFilePlugin');
 
 // First check if we can load Comunica form cwd, if not, fallback to the default
 let pathToComunica;
@@ -13,7 +14,7 @@ catch {
   comunicaOverride = false;
 }
 
-// Make this an object so we can mutate it from the top level of the config
+// Make this an object, so we can mutate it from the top level of the config
 // and have the options propagated to the plugins
 const baseURL = {
   search: '<%= baseURL %>',
@@ -21,6 +22,12 @@ const baseURL = {
   // value in production mode.
   replace: 'http://localhost:8080/',
   flags: 'g'
+}
+
+// Make this an object, so we can mutate it from the top level of the config
+// and have the options propagated to the plugins
+const buildContext = {
+  dir: 'build',
 }
 
 module.exports = [
@@ -41,7 +48,6 @@ module.exports = [
       path.join(__dirname, './images/sparql.png'),
       path.join(__dirname, './favicon.ico'),
       path.join(__dirname, './solid-client-id.jsonld'),
-      path.join(process.cwd(), './queries.json'),
     ],
     output: {
       filename: 'scripts/ldf-client-ui.min.js',
@@ -53,6 +59,11 @@ module.exports = [
         jQuery: path.join(__dirname, '/deps/jquery-2.1.0.js'),
       }),
       new webpack.NormalModuleReplacementPlugin(/^comunica-packagejson$/, (process.platform === 'win32' ? '' : '!!json-loader!') + path.join(pathToComunica, '../../package.json')),
+      // Include the generated queries.json file by moving it from the current working directory (where it was generated) to the build path.
+      new MoveFilePlugin(
+          () => path.join(process.cwd(), 'queries.json'),
+          () => path.join(__dirname, `${buildContext.dir}/queries.json`)
+      ),
     ],
     module: {
       rules: [
@@ -155,6 +166,6 @@ module.exports = [
   },
 ];
 
-// Export the baseURL object so we can mutated it
-// in the generate script
+// Export the baseURL and buildContext objects, so we can mutate it in the generate script
 module.exports.baseURL = baseURL;
+module.exports.buildContext = buildContext;
