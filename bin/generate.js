@@ -60,6 +60,9 @@ if (args.h || args.help || args._.length > 1) {
     // Override the baseURL in the webpack config
     webpackConfig.baseURL.replace = baseURL;
 
+    // Override the buildContext in the webpack config
+    webpackConfig.buildContext.dir = destinationPath;
+
     for (const entry of webpackConfig) {
         entry.mode = mode;
         if (entry.output) {
