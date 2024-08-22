@@ -1253,10 +1253,10 @@
     rdf-data-factory "^1.1.2"
     sparqlalgebrajs "^4.3.7"
 
-"@comunica/actor-optimize-query-operation-filter-pushdown@^3.2.2":
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-optimize-query-operation-filter-pushdown/-/actor-optimize-query-operation-filter-pushdown-3.2.2.tgz#ad59792adb64461908e8ff2741be81d5b9cec192"
-  integrity sha512-7zprOg1bDBsiEMHb66wGbMiN6copEQMPqj5ZZbhi9NTj9wmQKsHQQvE+FClM3xUwYOLePAKYUS8oyQtD9h/+pw==
+"@comunica/actor-optimize-query-operation-filter-pushdown@^3.2.3":
+  version "3.2.3"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-optimize-query-operation-filter-pushdown/-/actor-optimize-query-operation-filter-pushdown-3.2.3.tgz#da8d0d015101824d20043596568e3b889960256b"
+  integrity sha512-VaK6OxqTFIzVZyNNvax8nfEIvLUyzevaNKz1LNTbqMHK1wXh9qb3WDqgcx04JksWdhRa+mleqiYA823ty4PQdw==
   dependencies:
     "@comunica/bus-optimize-query-operation" "^3.2.1"
     "@comunica/bus-query-operation" "^3.2.2"
@@ -3242,10 +3242,10 @@
     "@rdfjs/types" "*"
     asynciterator "^3.9.0"
 
-"@comunica/query-sparql@^3.2.2":
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/@comunica/query-sparql/-/query-sparql-3.2.2.tgz#061e9020c71f8bda84e99a63b682827010257cfe"
-  integrity sha512-ytbA2q+ArgMfRSHp46Mcot5LQvfBB+Ju0hW7vw1IYvx6H8E8JDW59sVhbRgU0DWBJAtzzyFW9sDTABs6mPErfg==
+"@comunica/query-sparql@^3.2.3":
+  version "3.2.3"
+  resolved "https://registry.yarnpkg.com/@comunica/query-sparql/-/query-sparql-3.2.3.tgz#f01f0ceba6230414e927881d2b4739ddd6d6b450"
+  integrity sha512-uRCHZUKUbGQFv90md7f0WzXLlk+Wict7Wa4EZg7VTeHAkgsY9fyL7oLVXUQxJ/rlbw0yldxF89S/PUSNYoCF7g==
   dependencies:
     "@comunica/actor-context-preprocess-convert-shortcuts" "^3.2.1"
     "@comunica/actor-context-preprocess-query-source-identify" "^3.2.2"
@@ -3265,7 +3265,7 @@
     "@comunica/actor-optimize-query-operation-bgp-to-join" "^3.2.1"
     "@comunica/actor-optimize-query-operation-construct-distinct" "^3.2.1"
     "@comunica/actor-optimize-query-operation-describe-to-constructs-subject" "^3.2.1"
-    "@comunica/actor-optimize-query-operation-filter-pushdown" "^3.2.2"
+    "@comunica/actor-optimize-query-operation-filter-pushdown" "^3.2.3"
     "@comunica/actor-optimize-query-operation-group-sources" "^3.2.2"
     "@comunica/actor-optimize-query-operation-join-bgp" "^3.2.1"
     "@comunica/actor-optimize-query-operation-join-connected" "^3.2.1"
