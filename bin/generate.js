@@ -50,7 +50,7 @@ if (args.h || args.help || args._.length > 1) {
     const settingsFile = args.s || path.join(__dirname, '..', 'settings.json');
     const outputFile = 'queries.json';
     compileSettings(queryDir, settingsFile, outputFile);
-    
+
     // Compile Web version
     const destinationPath = args.d || 'build';
     const mode = args.m || 'production';
@@ -62,10 +62,10 @@ if (args.h || args.help || args._.length > 1) {
 
     // Override the baseURL in the webpack config
     webpackConfig.baseURL.replace = baseURL;
-    
+
     // Override the buildContext in the webpack config
     webpackConfig.buildContext.dir = destinationPath;
-    
+
     for (const entry of webpackConfig) {
         entry.mode = mode;
         if (entry.output) {
@@ -81,12 +81,12 @@ if (args.h || args.help || args._.length > 1) {
             }
             process.exit(1);
         }
-        
+
         console.error(stats.toString({ colors: true }));
         if (stats.hasErrors()) {
             process.exit(1);
         }
-        
+
         fs.unlinkSync('.tmp-comunica-engine.js');
     });
 
