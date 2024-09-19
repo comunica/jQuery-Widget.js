@@ -47,6 +47,7 @@ module.exports = [
       path.join(__dirname, './images/sparql.png'),
       path.join(__dirname, './favicon.ico'),
       path.join(__dirname, './solid-client-id.jsonld'),
+      path.join(process.cwd(), './queries.json'),
     ],
     output: {
       filename: 'scripts/ldf-client-ui.min.js',
