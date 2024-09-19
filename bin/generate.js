@@ -82,4 +82,7 @@ if (args.h || args.help || args._.length > 1) {
 
         fs.unlinkSync('.tmp-comunica-engine.js');
     });
+    if (fs.existsSync(path.join(process.cwd(), 'queries.json'))) {
+        fs.renameSync(path.join(process.cwd(), 'queries.json'), path.join(process.cwd(), `${destinationPath}/queries.json`));
+    };
 })();
