@@ -50,22 +50,29 @@ if (args.h || args.help || args._.length > 1) {
     const settingsFile = args.s || path.join(__dirname, '..', 'settings.json');
     const outputFile = 'queries.json';
     compileSettings(queryDir, settingsFile, outputFile);
-
+    
     // Compile Web version
     const destinationPath = args.d || 'build';
     const mode = args.m || 'production';
     const baseURL = args.b || 'https://query.linkeddatafragments.org/';
     const webpackConfig = require(args.w ? path.resolve(process.cwd(), args.w) : '../webpack.config.js');
 
+    // Remove the location of queries.json which shouldn't be present in the build configuration.
+    webpackConfig[0].entry=webpackConfig[0].entry.filter(x => !x.endsWith('queries.json'));
+
     // Override the baseURL in the webpack config
     webpackConfig.baseURL.replace = baseURL;
-
+    
+    // Override the buildContext in the webpack config
+    webpackConfig.buildContext.dir = destinationPath;
+    
     for (const entry of webpackConfig) {
         entry.mode = mode;
         if (entry.output) {
             entry.output.path = path.resolve(process.cwd(), destinationPath);
         }
     }
+
     webpack(webpackConfig, (err, stats) => {
         if (err) {
             console.error(err.stack || err);
@@ -74,14 +81,15 @@ if (args.h || args.help || args._.length > 1) {
             }
             process.exit(1);
         }
-
+        
         console.error(stats.toString({ colors: true }));
         if (stats.hasErrors()) {
             process.exit(1);
         }
-
+        
         fs.unlinkSync('.tmp-comunica-engine.js');
     });
+
     if (fs.existsSync(path.join(process.cwd(), 'queries.json'))) {
         fs.renameSync(path.join(process.cwd(), 'queries.json'), path.join(process.cwd(), `${destinationPath}/queries.json`));
     };

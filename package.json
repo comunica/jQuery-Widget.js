@@ -54,7 +54,7 @@
     "lint": "eslint src/*.js",
     "dev-prod-ci": "comunica-compile-config config/config-default.json > .tmp-comunica-engine.js && ./bin/queries-to-json.js && webpack --config webpack.config.js --mode production",
     "dev-ci": "comunica-compile-config config/config-default.json > .tmp-comunica-engine.js && ./bin/queries-to-json.js && webpack --config webpack.config.js --mode development",
-    "dev-prod": "comunica-compile-config config/config-default.json > .tmp-comunica-engine.js && ./bin/queries-to-json.js && webpack serve --config webpack.config.js --mode production",
+    "dev-prod": "comunica-compile-config config/config-default.json > .tmp-comunica-engine.js && ./bin/queries-to-json.js && webpack serve --config webpack.config.dev.js --mode production",
     "dev": "comunica-compile-config config/config-default.json > .tmp-comunica-engine.js && ./bin/queries-to-json.js && webpack serve --config webpack.config.js --mode development",
     "build": "node ./bin/generate.js",
     "version": "manual-git-changelog onversion"
