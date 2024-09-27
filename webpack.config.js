@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const MoveFilePlugin = require('./plugins/MoveFilePlugin');
 
 // First check if we can load Comunica form cwd, if not, fallback to the default
 let pathToComunica;
@@ -48,6 +47,7 @@ module.exports = [
       path.join(__dirname, './images/sparql.png'),
       path.join(__dirname, './favicon.ico'),
       path.join(__dirname, './solid-client-id.jsonld'),
+      path.join(__dirname, './queries.json'),
     ],
     output: {
       filename: 'scripts/ldf-client-ui.min.js',
@@ -59,11 +59,6 @@ module.exports = [
         jQuery: path.join(__dirname, '/deps/jquery-2.1.0.js'),
       }),
       new webpack.NormalModuleReplacementPlugin(/^comunica-packagejson$/, (process.platform === 'win32' ? '' : '!!json-loader!') + path.join(pathToComunica, '../../package.json')),
-      // Include the generated queries.json file by moving it from the current working directory (where it was generated) to the build path.
-      new MoveFilePlugin(
-          () => path.join(process.cwd(), 'queries.json'),
-          () => path.join(__dirname, `${buildContext.dir}/queries.json`)
-      ),
     ],
     module: {
       rules: [
