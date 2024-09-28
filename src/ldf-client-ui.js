@@ -711,6 +711,17 @@ if (typeof global.process === 'undefined')
       this._resultCount = 0;
       this._startTimer();
 
+      // Replace prefixes from queries.json with prefixes from the query
+      let queryWithoutPrefixes = '';
+      for (const line of this.$queryTextsIndexed[this.options.queryFormat].val().split('\n')) {
+        let prefixMatch = line.match(/^[ \t]*PREFIX[ \t]*([^:]+):[ \t]*<([^)]+)>/);
+        if (prefixMatch === null)
+          queryWithoutPrefixes = queryWithoutPrefixes.concat(`${line}\n`);
+        else
+          // Add or update current prefix in this.options.prefixes
+          this.options.prefixes[prefixMatch[1]] = prefixMatch[2];
+      }
+
       // Let the worker execute the query
       var context = {
         ...this._getQueryContext(),
@@ -730,7 +741,7 @@ if (typeof global.process === 'undefined')
         for (var prefix in this.options.prefixes)
           prefixesString += 'PREFIX ' + prefix + ': <' + this.options.prefixes[prefix] + '>\n';
       }
-      var query = prefixesString + this.$queryTextsIndexed[this.options.queryFormat].val();
+      let query = prefixesString + queryWithoutPrefixes;
       this._queryWorker.postMessage({
         type: 'query',
         query: query,
