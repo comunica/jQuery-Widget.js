@@ -727,21 +727,17 @@ if (typeof global.process === 'undefined')
           return { type: type, value: datasource };
         }),
       };
-      // Add pre-defined prefixes to query
-      var prefixesString = '';
-      if (this.options.queryFormat === 'sparql') {
-        for (var prefix in this.options.prefixes)
-          prefixesString += 'PREFIX ' + prefix + ': <' + this.options.prefixes[prefix] + '>\n';
-      }
-      let query = prefixesString + this.$queryTextsIndexed[this.options.queryFormat].val();
 
-      // Remove duplicate prefixes
-      const parsedQuery = new SparqlParser({ sparqlStar: true }).parse(query);
-      const generatedQuery = new SparqlGenerator({}).stringify(parsedQuery);
+      let query = this.$queryTextsIndexed[this.options.queryFormat].val();
+      if (this.options.queryFormat === 'sparql') {
+        // Add pre-defined prefixes to query and remove duplicates
+        const parsedQuery = new SparqlParser({ prefixes:this.options.prefixes, sparqlStar: true }).parse(query);
+        query = new SparqlGenerator({}).stringify(parsedQuery);
+      }
 
       this._queryWorker.postMessage({
         type: 'query',
-        query: generatedQuery,
+        query: query,
         context: context,
         resultsToTree: this.options.resultsToTree,
       });
