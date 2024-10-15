@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v3.0.0"></a>
+## [v3.0.0](https://github.com/comunica/jQuery-Widget.js/compare/v2.0.0...v3.0.0) - 2024-10-15
+
+### BREAKING CHANGES
+* [Update to Comunica v4](https://github.com/comunica/jQuery-Widget.js/commit/4d9dcb1881d8a1d3ec24a8644d564451e53448b1)
+  * Learn more on https://github.com/comunica/comunica/blob/master/CHANGELOG.md
+
 <a name="v2.0.0"></a>
 ## [v2.0.0](https://github.com/comunica/jQuery-Widget.js/compare/v1.8.0...v2.0.0) - 2024-03-20
 
