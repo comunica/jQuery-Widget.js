@@ -40,6 +40,7 @@
     "src/**/*.js",
     "lib/**/*.js",
     "bin/**/*.js",
+    "plugins/**/*.js",
     "styles/**/*.css",
     ".babelrc",
     ".browserslistrc",
