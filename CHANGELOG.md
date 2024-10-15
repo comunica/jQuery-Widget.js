@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v3.0.2"></a>
+## [v3.0.2](https://github.com/comunica/jQuery-Widget.js/compare/v3.0.1...v3.0.2) - 2024-10-15
+
+### Fixed
+* [Revert "Fix duplicate queries.json file generation"](https://github.com/comunica/jQuery-Widget.js/commit/ae8de8031dc713d888c5d72c068c509646f48f2c)
+
 <a name="v3.0.1"></a>
 ## [v3.0.1](https://github.com/comunica/jQuery-Widget.js/compare/v3.0.0...v3.0.1) - 2024-10-15
 
