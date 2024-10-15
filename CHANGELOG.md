@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v3.0.1"></a>
+## [v3.0.1](https://github.com/comunica/jQuery-Widget.js/compare/v3.0.0...v3.0.1) - 2024-10-15
+
+### Fixed
+* [Fix move plugin not being packaged](https://github.com/comunica/jQuery-Widget.js/commit/719f4f8de78e1693f96e28ce4709c4327af478ef)
+
 <a name="v3.0.0"></a>
 ## [v3.0.0](https://github.com/comunica/jQuery-Widget.js/compare/v2.0.0...v3.0.0) - 2024-10-15
 
