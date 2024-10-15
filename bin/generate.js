@@ -57,6 +57,9 @@ if (args.h || args.help || args._.length > 1) {
     const baseURL = args.b || 'https://query.linkeddatafragments.org/';
     const webpackConfig = require(args.w ? path.resolve(process.cwd(), args.w) : '../webpack.config.js');
 
+    // Remove the location of queries.json which shouldn't be present in the build configuration.
+    webpackConfig[0].entry=webpackConfig[0].entry.filter(x => !x.endsWith('queries.json'));
+
     // Override the baseURL in the webpack config
     webpackConfig.baseURL.replace = baseURL;
 
@@ -69,6 +72,7 @@ if (args.h || args.help || args._.length > 1) {
             entry.output.path = path.resolve(process.cwd(), destinationPath);
         }
     }
+
     webpack(webpackConfig, (err, stats) => {
         if (err) {
             console.error(err.stack || err);
@@ -85,4 +89,8 @@ if (args.h || args.help || args._.length > 1) {
 
         fs.unlinkSync('.tmp-comunica-engine.js');
     });
+
+    if (fs.existsSync(path.join(process.cwd(), 'queries.json'))) {
+        fs.renameSync(path.join(process.cwd(), 'queries.json'), path.join(process.cwd(), `${destinationPath}/queries.json`));
+    };
 })();
