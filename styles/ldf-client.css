@@ -14,7 +14,6 @@ html, input, textarea, button, pre {
 
 body {
   max-width: 650px;
-  min-width: fit-content;
   margin: 0 auto;
   padding: 1em 3em;
   background: white;
