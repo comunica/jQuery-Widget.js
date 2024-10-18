@@ -1,6 +1,8 @@
 /*! @license MIT ©2014–2016 Ruben Verborgh, Ghent University – imec */
 // jQuery widget for Triple Pattern Fragments query execution
 
+var SparqlParser = require('sparqljs').Parser;
+var SparqlGenerator = require('sparqljs').Generator;
 // This exports the webpacked jQuery.
 window.jQuery = require('../deps/jquery-2.1.0.js');
 var N3 = require('n3');
@@ -711,17 +713,6 @@ if (typeof global.process === 'undefined')
       this._resultCount = 0;
       this._startTimer();
 
-      // Replace prefixes from queries.json with prefixes from the query
-      let queryWithoutPrefixes = '';
-      for (const line of this.$queryTextsIndexed[this.options.queryFormat].val().split('\n')) {
-        let prefixMatch = line.match(/^[ \t]*PREFIX[ \t]*([^:]+):[ \t]*<([^)]+)>/);
-        if (prefixMatch === null)
-          queryWithoutPrefixes = queryWithoutPrefixes.concat(`${line}\n`);
-        else
-          // Add or update current prefix in this.options.prefixes
-          this.options.prefixes[prefixMatch[1]] = prefixMatch[2];
-      }
-
       // Let the worker execute the query
       var context = {
         ...this._getQueryContext(),
@@ -736,15 +727,21 @@ if (typeof global.process === 'undefined')
           return { type: type, value: datasource };
         }),
       };
+      // Add pre-defined prefixes to query
       var prefixesString = '';
       if (this.options.queryFormat === 'sparql') {
         for (var prefix in this.options.prefixes)
           prefixesString += 'PREFIX ' + prefix + ': <' + this.options.prefixes[prefix] + '>\n';
       }
-      let query = prefixesString + queryWithoutPrefixes;
+      let query = prefixesString + this.$queryTextsIndexed[this.options.queryFormat].val();
+
+      // Remove duplicate prefixes
+      const parsedQuery = new SparqlParser({ sparqlStar: true }).parse(query);
+      const generatedQuery = new SparqlGenerator({}).stringify(parsedQuery);
+
       this._queryWorker.postMessage({
         type: 'query',
-        query: query,
+        query: generatedQuery,
         context: context,
         resultsToTree: this.options.resultsToTree,
       });

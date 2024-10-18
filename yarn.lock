@@ -8371,7 +8371,18 @@ sparqljs@^3.7.1:
   dependencies:
     rdf-data-factory "^1.1.2"
 
+<<<<<<< HEAD
 sparqljson-parse@^2.0.0:
+=======
+sparqljs@^3.7.3:
+  version "3.7.3"
+  resolved "https://registry.yarnpkg.com/sparqljs/-/sparqljs-3.7.3.tgz#075821d51ef4954284e36569503fe5558cfb71b0"
+  integrity sha512-FQfHUhfwn5PD9WH6xPU7DhFfXMgqK/XoDrYDVxz/grhw66Il0OjRg3JBgwuEvwHnQt7oSTiKWEiCZCPNaUbqgg==
+  dependencies:
+    rdf-data-factory "^1.1.2"
+
+sparqljson-parse@^2.0.0, sparqljson-parse@^2.2.0:
+>>>>>>> 4b2295e (Implement deduplicating via sparql.js)
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/sparqljson-parse/-/sparqljson-parse-2.2.0.tgz#58c788e896f7d2c0d3079452d8812943049d4a7e"
   integrity sha512-2TfvNvUsaJyWfCrq3ExdDdbF9LBLzIUCricg+D1YCYbbmyTzscgCtRk4KcIyJF178DtfCt4BkKzbKl8IXMHp8w==
