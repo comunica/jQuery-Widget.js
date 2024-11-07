@@ -21,7 +21,7 @@ const workerToWindowHandler = new WorkerToWindowHandler(self);
 function initEngine(config) {
   // Create an engine lazily
   if (!engine)
-    engine = new QueryEngineBase(require('my-comunica-engine'));
+    engine = new QueryEngineBase(require('my-comunica-engine')());
 
   // Set up a proxy handler
   if (config.context.httpProxy)

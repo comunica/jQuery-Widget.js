@@ -34,7 +34,7 @@ if (args.h || args.help || args._.length > 1) {
     const mainModulePath = args.c || (args._[0] ? process.cwd() : path.resolve(__dirname, '..'));
     const configResourceUri = 'urn:comunica:default:Runner';
     const exportVariableName = 'urn:comunica:default:init/actors#query';
-    await compileConfig(mainModulePath, comunicaConfig, configResourceUri, exportVariableName, undefined, true)
+    await compileConfig(mainModulePath, comunicaConfig, configResourceUri, exportVariableName, true, true)
         .then(out => {
             // This instantiation is unneeded (MUST be done for excluding Components.js in browser environnments)
             out = out.replace('new (require(\'@comunica/runner\').Runner)', '');
