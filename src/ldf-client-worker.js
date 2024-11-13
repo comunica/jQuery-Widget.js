@@ -20,10 +20,6 @@ const workerToWindowHandler = new WorkerToWindowHandler(self);
 
 function initEngine(config) {
   // Create an engine lazily
-  console.log("engine");
-  console.log(engine);
-  console.log("require('my-comunica-engine')");
-  console.log(require('my-comunica-engine'));
   if (!engine)
     engine = new QueryEngineBase(require('my-comunica-engine')());
 
@@ -48,13 +44,8 @@ var handlers = {
 
     // Create a client to fetch the fragments through HTTP
     config.context.log = logger;
-    console.log("config.query");
-    console.log(config.query);
-    console.log("config.context");
-    console.log(config.context);
     engine.query(config.query, config.context)
       .then(async function (result) {
-        console.log("then engine.query");
         // Post query metadata
         postMessage({ type: 'queryInfo', queryType: result.resultType });
 
@@ -107,7 +98,6 @@ var handlers = {
           }
         }
       }).catch(postError);
-    console.log("2 post engine.query");
   },
 
   // Stop the execution of the current query
