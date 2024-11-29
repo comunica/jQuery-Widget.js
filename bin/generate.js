@@ -88,27 +88,10 @@ if (args.h || args.help || args._.length > 1) {
     });
 
     if (fs.existsSync(path.join(process.cwd(), 'queries.json'))) {
-        // Debug the difference between path.resolve and path.join on different systems in the CI
-        // Most likely build/ doesn't exist
-        console.log("path.resolve(process.cwd(), `${destinationPath}/queries.json`)");
-        console.log(path.resolve(process.cwd(), `${destinationPath}/queries.json`));
-        console.log("path.join(process.cwd(), `${destinationPath}/queries.json`)");
-        console.log(path.join(process.cwd(), `${destinationPath}/queries.json`));
+        // Create the build output folder if it doesn't exist
         if (! fs.existsSync(path.resolve(process.cwd(), destinationPath))) {
-            console.log("resolve destinationPath doesn't exist");
-            console.log("CREATE");
             fs.mkdirSync(path.resolve(process.cwd(), destinationPath));
-        } else {
-            console.log("resolve destinationPath exists");
         }
-        if (! fs.existsSync(path.join(process.cwd(), destinationPath))) {
-            console.log("join destinationPath doesn't exist");
-            console.log("CREATE");
-            fs.mkdirSync(path.join(process.cwd(), destinationPath));
-        } else {
-            console.log("join destinationPath exists");
-        }
-
         fs.renameSync(path.join(process.cwd(), 'queries.json'), path.resolve(process.cwd(), `${destinationPath}/queries.json`));
     };
 })();
