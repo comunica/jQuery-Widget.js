@@ -57,7 +57,8 @@
     "dev-prod": "comunica-compile-config config/config-default.json > .tmp-comunica-engine.js && ./bin/queries-to-json.js && webpack serve --config webpack.config.js --mode production",
     "dev": "comunica-compile-config config/config-default.json > .tmp-comunica-engine.js && ./bin/queries-to-json.js && webpack serve --config webpack.config.js --mode development",
     "build": "node ./bin/generate.js",
-    "version": "manual-git-changelog onversion"
+    "version": "manual-git-changelog onversion",
+    "test": "jest"
   },
   "dependencies": {
     "@babel/core": "^7.16.0",
@@ -69,6 +70,7 @@
     "@turf/centroid": "^6.5.0",
     "babel-loader": "^8.2.3",
     "file-loader": "^6.0.0",
+    "jest": "^29.7.0",
     "json-loader": "^0.5.7",
     "leaflet": "^1.7.1",
     "minimist": "^1.2.5",

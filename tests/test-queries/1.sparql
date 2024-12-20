@@ -1,0 +1,4 @@
+prefix ex: <http://example.org/>
+SELECT ?a ?b WHERE {
+  ?a ex:example ?b.
+}
