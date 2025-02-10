@@ -355,6 +355,10 @@ footer {
   border-top: 1px solid #ddd;
 }
 
+.yasqe .CodeMirror-scroll {
+  padding-bottom: 0;
+}
+
 .results-map {
   width: 100%;
   height: 400px;
