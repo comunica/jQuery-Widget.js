@@ -103,6 +103,7 @@ if (typeof global.process === 'undefined')
           $log = $('.log', $element),
           $results = $('.results', $element),
           $resultsText = $('<div>', { class: 'text' }),
+          $errorBanner = this.$errorBanner = $('.error-banner', $element),
           $datasources = this.$datasources = $('.datasources', $element),
           $datetime = this.$datetime = $('.datetime', $element),
           $httpProxy = this.$httpProxy = $('.httpProxy', $element),
@@ -243,9 +244,11 @@ if (typeof global.process === 'undefined')
 
       // Set up results
       $results.append($resultsText);
+      $errorBanner.hide();
       this._resultsScroller = new FastScroller($results, renderResult);
       this._resultAppender = appenderFor($resultsText);
       this._logAppender = appenderFor($log);
+      this._errorAppender = appenderFor($errorBanner);
       this.$timing = $('.timing', $element);
 
       // Set the default proxy
@@ -699,6 +702,8 @@ if (typeof global.process === 'undefined')
       this._resultsScroller.removeAll();
       this._resultAppender.clear();
       this._logAppender.clear();
+      this._errorAppender.clear();
+      this.$errorBanner.hide();
 
       // Reset worker if we want to bypass the cache
       if (this.options.bypassCache)
@@ -767,10 +772,14 @@ if (typeof global.process === 'undefined')
       this.$stop.hide();
       this.$start.show();
 
-      if (error && error.message)
-        this._resultAppender('# ' + error.message);
+      if (error && error.message) {
+        this._errorAppender(error.message);
+        this.$errorBanner.show();
+      }
+
       this._resultAppender.flush();
       this._logAppender.flush();
+      this._errorAppender.flush();
       this._writeResult = this._writeEnd = null;
     },
 
