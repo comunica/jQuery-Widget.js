@@ -1,6 +1,8 @@
 /*! @license MIT ©2014–2016 Ruben Verborgh, Ghent University – imec */
 // jQuery widget for Triple Pattern Fragments query execution
 
+var SparqlParser = require('sparqljs').Parser;
+var SparqlGenerator = require('sparqljs').Generator;
 // This exports the webpacked jQuery.
 window.jQuery = require('../deps/jquery-2.1.0.js');
 var N3 = require('n3');
@@ -730,12 +732,14 @@ if (typeof global.process === 'undefined')
           return { type: type, value: datasource };
         }),
       };
-      var prefixesString = '';
+
+      let query = this.$queryTextsIndexed[this.options.queryFormat].val();
       if (this.options.queryFormat === 'sparql') {
-        for (var prefix in this.options.prefixes)
-          prefixesString += 'PREFIX ' + prefix + ': <' + this.options.prefixes[prefix] + '>\n';
+        // Add pre-defined prefixes to query and remove duplicates
+        const parsedQuery = new SparqlParser({ prefixes:this.options.prefixes, sparqlStar: true }).parse(query);
+        query = new SparqlGenerator({}).stringify(parsedQuery);
       }
-      var query = prefixesString + this.$queryTextsIndexed[this.options.queryFormat].val();
+
       this._queryWorker.postMessage({
         type: 'query',
         query: query,
