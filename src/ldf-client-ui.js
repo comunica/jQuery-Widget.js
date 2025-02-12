@@ -102,7 +102,7 @@ if (typeof global.process === 'undefined')
           $queries = this.$queries = $('.query', $element),
           $log = $('.log', $element),
           $results = $('.results', $element),
-          $resultsText = this.$resultsText = $('<div>', { class: 'text' }),
+          $resultsText = $('<div>', { class: 'text' }),
           $errorBanner = this.$errorBanner = $('.error-banner', $element),
           $datasources = this.$datasources = $('.datasources', $element),
           $datetime = this.$datetime = $('.datetime', $element),
