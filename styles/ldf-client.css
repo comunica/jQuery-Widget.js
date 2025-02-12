@@ -216,6 +216,15 @@ textarea {
   resize: vertical;
 }
 
+.error-banner {
+  background-color: #be1622;
+  color: #fff;
+  padding: 8px;
+  border-radius: 3px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
 .results {
   height: 23.5em;
   font-size: 10pt;
@@ -261,11 +270,6 @@ textarea {
 .results .text {
   white-space: pre-wrap;
   margin-right: -999999px; /* avoid that long URLs alter body width */
-  background-color: #be1622;
-  color: #fff;
-  padding: 5px 8px;
-  border-radius: 3px;
-  font-weight: bold;
 }
 
 .log {
