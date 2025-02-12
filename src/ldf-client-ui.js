@@ -102,7 +102,7 @@ if (typeof global.process === 'undefined')
           $queries = this.$queries = $('.query', $element),
           $log = $('.log', $element),
           $results = $('.results', $element),
-          $resultsText = $('<div>', { class: 'text' }),
+          $resultsText = this.$resultsText = $('<div>', { class: 'text' }),
           $datasources = this.$datasources = $('.datasources', $element),
           $datetime = this.$datetime = $('.datetime', $element),
           $httpProxy = this.$httpProxy = $('.httpProxy', $element),
@@ -243,6 +243,7 @@ if (typeof global.process === 'undefined')
 
       // Set up results
       $results.append($resultsText);
+      $resultsText.hide();
       this._resultsScroller = new FastScroller($results, renderResult);
       this._resultAppender = appenderFor($resultsText);
       this._logAppender = appenderFor($log);
@@ -699,6 +700,7 @@ if (typeof global.process === 'undefined')
       this._resultsScroller.removeAll();
       this._resultAppender.clear();
       this._logAppender.clear();
+      this.$resultsText.hide();
 
       // Reset worker if we want to bypass the cache
       if (this.options.bypassCache)
@@ -767,8 +769,11 @@ if (typeof global.process === 'undefined')
       this.$stop.hide();
       this.$start.show();
 
-      if (error && error.message)
+      if (error && error.message) {
         this._resultAppender('# ' + error.message);
+        this.$resultsText.show();
+      }
+      
       this._resultAppender.flush();
       this._logAppender.flush();
       this._writeResult = this._writeEnd = null;
