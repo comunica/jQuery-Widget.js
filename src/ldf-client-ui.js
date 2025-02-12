@@ -773,7 +773,7 @@ if (typeof global.process === 'undefined')
         this._resultAppender('# ' + error.message);
         this.$resultsText.show();
       }
-      
+
       this._resultAppender.flush();
       this._logAppender.flush();
       this._writeResult = this._writeEnd = null;
