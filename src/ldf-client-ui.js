@@ -208,10 +208,10 @@ if (typeof global.process === 'undefined')
       });
       $queries.chosen({ skip_no_results: true, placeholder_text: ' ' });
       $queries.change(function (query) {
-        if ((options.query !== $queries.val()) && (query = $queries.val())) {
+        var queryContext = $queries.find(':selected').attr('queryContext');
+        if ((options.query !== $queries.val() || options.queryContext !== queryContext) && (query = $queries.val())) {
           // Set the query text
           self._setOption('queryFormat', $queries.find(':selected').attr('queryFormat'));
-          var queryContext = $queries.find(':selected').attr('queryContext');
           if ($queryContextsIndexed[options.queryFormat])
             $queryContextsIndexed[options.queryFormat].val(options.queryContext = queryContext).edited = false;
           $queryTextsIndexed[options.queryFormat].val(options.query = query).edited = false;
