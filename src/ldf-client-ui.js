@@ -849,64 +849,73 @@ if (typeof global.process === 'undefined')
           this._handleGeospatialResult(result);
       }
     },
+    _process_map_data: function () {
+      var self = this;
+      const resultsToProcess = this._mapResultsBuffer.splice(0);
+      for (const bindings of resultsToProcess) {
+        for (const variableName in bindings) {
+          // Check if the value has a geospatial datatype
+          const value = bindings[variableName];
+          if (value.endsWith('^^http://www.openlinksw.com/schemas/virtrdf#Geometry') ||
+            value.endsWith('^^http://www.opengis.net/ont/geosparql#wktLiteral')) {
+            // Look for a corresponding variable with the 'Label' suffix.
+            const variableNameLabel = `${variableName}Label`;
+            const valueLabel = bindings[variableNameLabel];
+
+            // Interpret geometry value as WKT string
+            const geometry = /^"(.*)"\^\^[^\^]*$/.exec(value)[1];
+            const wkt = new Wkt.Wkt();
+            wkt.read(geometry);
+
+            // Construct geo feature for WKT string
+            const geoFeature = { type: 'Feature', properties: {}, geometry: wkt.toJson() };
+            if (valueLabel)
+              geoFeature.properties.name = valueLabel.split('@', 1)[0].replace(/['"]+/g, '');
+
+            // Add feature to map
+            let newMapLayer = L.geoJSON(geoFeature, {
+              onEachFeature: function (feature) {
+                // Determine marker position for different geometry types
+                let lon;
+                let lat;
+                if (feature.geometry.type === 'Polygon') {
+                  const centroid = turf.centroid(feature);
+                  lon = centroid.geometry.coordinates[0];
+                  lat = centroid.geometry.coordinates[1];
+                }
+                // Handle points
+                if (feature.geometry.type === 'Point') {
+                  lon = feature.geometry.coordinates[0];
+                  lat = feature.geometry.coordinates[1];
+                }
+                if (lon && lat) {
+                  let marker = L.circleMarker([lat, lon]);
+                  self.mapLayer.addLayer(marker).addTo(self.map);
+                  self.markerArray.push(marker);
+                  if (valueLabel)
+                    marker.bindPopup(feature.properties.name);
+                }
+              },
+            });
+            self.mapLayer.addLayer(newMapLayer).addTo(self.map);
+
+            // Possibly rescale map view
+            self.map.fitBounds(L.featureGroup(self.markerArray).getBounds());
+
+            // Show map if it's not visible yet
+            if (!self.$mapWrapper.is(':visible'))
+              self.$mapWrapper.show();
+          }
+        }
+      }
+    },
 
     // If the given result contains geospatial data, show it on the map
     _handleGeospatialResult: function (bindings) {
-      var self = this;
-      for (const variableName in bindings) {
-        // Check if the value has a geospatial datatype
-        const value = bindings[variableName];
-        if (value.endsWith('^^http://www.openlinksw.com/schemas/virtrdf#Geometry') ||
-            value.endsWith('^^http://www.opengis.net/ont/geosparql#wktLiteral')) {
-          // Look for a corresponding variable with the 'Label' suffix.
-          const variableNameLabel = `${variableName}Label`;
-          const valueLabel = bindings[variableNameLabel];
+      if (!this._mapResultsBuffer) this._mapResultsBuffer = [];
+      this._mapResultsBuffer.push(bindings);
 
-          // Interpret geometry value as WKT string
-          const geometry = /^"(.*)"\^\^[^\^]*$/.exec(value)[1];
-          const wkt = new Wkt.Wkt();
-          wkt.read(geometry);
-
-          // Construct geo feature for WKT string
-          const geoFeature = { type: 'Feature', properties: {}, geometry: wkt.toJson() };
-          if (valueLabel)
-            geoFeature.properties.name = valueLabel.split('@', 1)[0].replace(/['"]+/g, '');
-
-          // Add feature to map
-          let newMapLayer = L.geoJSON(geoFeature, {
-            onEachFeature: function (feature) {
-              // Determine marker position for different geometry types
-              let lon;
-              let lat;
-              if (feature.geometry.type === 'Polygon') {
-                const centroid = turf.centroid(feature);
-                lon = centroid.geometry.coordinates[0];
-                lat = centroid.geometry.coordinates[1];
-              }
-              // Handle points
-              if (feature.geometry.type === 'Point') {
-                lon = feature.geometry.coordinates[0];
-                lat = feature.geometry.coordinates[1];
-              }
-              if (lon && lat) {
-                let marker = L.circleMarker([lat, lon]);
-                self.mapLayer.addLayer(marker).addTo(self.map);
-                self.markerArray.push(marker);
-                if (valueLabel)
-                  marker.bindPopup(feature.properties.name);
-              }
-            },
-          });
-          self.mapLayer.addLayer(newMapLayer).addTo(self.map);
-
-          // Possibly rescale map view
-          self.map.fitBounds(L.featureGroup(self.markerArray).getBounds());
-
-          // Show map if it's not visible yet
-          if (!self.$mapWrapper.is(':visible'))
-            self.$mapWrapper.show();
-        }
-      }
+      requestAnimationFrame(this._process_map_data.bind(this));
     },
 
     // Finalizes the display after all results have been added
