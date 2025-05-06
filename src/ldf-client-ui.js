@@ -849,7 +849,7 @@ if (typeof global.process === 'undefined')
           this._handleGeospatialResult(result);
       }
     },
-    _process_map_data: function () {
+    _processMapData: function () {
       var self = this;
       const resultsToProcess = this._mapResultsBuffer.splice(0);
       for (const bindings of resultsToProcess) {
@@ -908,6 +908,7 @@ if (typeof global.process === 'undefined')
           }
         }
       }
+      this._processingScheduled = false;
     },
 
     // If the given result contains geospatial data, show it on the map
@@ -915,7 +916,12 @@ if (typeof global.process === 'undefined')
       if (!this._mapResultsBuffer) this._mapResultsBuffer = [];
       this._mapResultsBuffer.push(bindings);
 
-      requestAnimationFrame(this._process_map_data.bind(this));
+      if (this._mapResultsBuffer.length > 0) {
+        if (!this._processingScheduled) {
+          this._processingScheduled = true;
+          requestAnimationFrame(this._processMapData.bind(this));
+        }
+      }
     },
 
     // Finalizes the display after all results have been added
