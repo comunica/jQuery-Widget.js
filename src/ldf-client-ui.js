@@ -916,11 +916,9 @@ if (typeof global.process === 'undefined')
       if (!this._mapResultsBuffer) this._mapResultsBuffer = [];
       this._mapResultsBuffer.push(bindings);
 
-      if (this._mapResultsBuffer.length > 0) {
-        if (!this._processingScheduled) {
-          this._processingScheduled = true;
-          requestAnimationFrame(this._processMapData.bind(this));
-        }
+      if (!this._processingScheduled) {
+        this._processingScheduled = true;
+        requestAnimationFrame(this._processMapData.bind(this));
       }
     },
 
