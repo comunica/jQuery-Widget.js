@@ -209,7 +209,7 @@ if (typeof global.process === 'undefined')
       $queries.chosen({ skip_no_results: true, placeholder_text: ' ' });
       $queries.change(function (query) {
         var queryContext = $queries.find(':selected').attr('queryContext');
-        if ((options.query !== $queries.val() || options.queryContext !== queryContext) && (query = $queries.val())) {
+        if ((options.query !== $queries.val() || (options.queryContext && options.queryContext !== queryContext)) && (query = $queries.val())) {
           // Set the query text
           self._setOption('queryFormat', $queries.find(':selected').attr('queryFormat'));
           if ($queryContextsIndexed[options.queryFormat])
