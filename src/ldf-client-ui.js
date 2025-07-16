@@ -736,8 +736,13 @@ if (typeof global.process === 'undefined')
       let query = this.$queryTextsIndexed[this.options.queryFormat].val();
       if (this.options.queryFormat === 'sparql') {
         // Add pre-defined prefixes to query and remove duplicates
-        const parsedQuery = new SparqlParser({ prefixes:this.options.prefixes, sparqlStar: true }).parse(query);
-        query = new SparqlGenerator({}).stringify(parsedQuery);
+        try {
+          const parsedQuery = new SparqlParser({ prefixes: this.options.prefixes, sparqlStar: true }).parse(query);
+          query = new SparqlGenerator({}).stringify(parsedQuery);
+        }
+        catch {
+          // Ignore parsing errors, as they will be caught later by the query engine
+        }
       }
 
       this._queryWorker.postMessage({
