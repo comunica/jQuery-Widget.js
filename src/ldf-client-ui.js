@@ -110,6 +110,7 @@ if (typeof global.process === 'undefined')
           $datetime = this.$datetime = $('.datetime', $element),
           $httpProxy = this.$httpProxy = $('.httpProxy', $element),
           $bypassCache = this.$bypassCache = $('.bypassCache', $element),
+          $executeOnLoad = this.$executeOnLoad = $('.executeOnLoad', $element),
           $solidIdp = this.$solidIdp = $('.solid-auth .idp', $element),
           $showDetails = this.$showDetails = $('.details-toggle', $element),
           $proxyDefault = $('.proxy-default', $element);
@@ -231,6 +232,9 @@ if (typeof global.process === 'undefined')
 
       // Update bypass cache on change
       $bypassCache.change(function () { self._setOption('bypassCache', $bypassCache.is(':checked')); });
+
+      // Update execute on change
+      $executeOnLoad.change(function () { self._setOption('executeOnLoad', $executeOnLoad.is(':checked')); });
 
       // Update IDP on change
       $solidIdp.change(function () { self._setOption('solidIdp', $solidIdp.val()); });
@@ -529,6 +533,11 @@ if (typeof global.process === 'undefined')
         break;
       case 'bypassCache':
         this.$bypassCache.prop('checked', value).change();
+        break;
+      case 'executeOnLoad':
+        this.$executeOnLoad.prop('checked', value).change();
+        if (value && !initialize)
+          this._startExecution();
         break;
       // Set the list of selectable queries
       case 'relevantQueries':
