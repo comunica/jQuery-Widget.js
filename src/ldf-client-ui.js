@@ -536,8 +536,10 @@ if (typeof global.process === 'undefined')
         break;
       case 'executeOnLoad':
         this.$executeOnLoad.prop('checked', value).change();
-        if (value && !initialize)
+        if (value && !initialize && !this._alreadyExecutedOnLoad) {
+          this._alreadyExecutedOnLoad = true;
           this._startExecution();
+        }
         break;
       // Set the list of selectable queries
       case 'relevantQueries':
