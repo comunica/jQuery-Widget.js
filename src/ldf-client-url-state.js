@@ -73,30 +73,37 @@ jQuery(function ($) {
     });
     // Set query string options
     if (datasources.persistent.length !== 0)
-      queryString.push('datasources=' + datasources.persistent.map(encodeURIComponent).join(';'));
+      queryString.push('datasources=' + datasources.persistent.map(encodeURIComponentExtended).join(';'));
     if (datasources.transient.length !== 0)
-      queryString.push('transientDatasources=' + datasources.transient.map(encodeURIComponent).join(';'));
+      queryString.push('transientDatasources=' + datasources.transient.map(encodeURIComponentExtended).join(';'));
     if (!hasDefaultQuery)
-      queryString.push('query=' + encodeURIComponent(options.query || ''));
+      queryString.push('query=' + encodeURIComponentExtended(options.query || ''));
     if (!hasDefaultQuery && options.queryContext)
-      queryString.push('queryContext=' + encodeURIComponent(options.queryContext || ''));
+      queryString.push('queryContext=' + encodeURIComponentExtended(options.queryContext || ''));
     if (!hasDefaultQuery && options.queryFormat !== 'sparql')
-      queryString.push('resultsToTree=' + encodeURIComponent(options.resultsToTree));
+      queryString.push('resultsToTree=' + encodeURIComponentExtended(options.resultsToTree));
     if (options.queryFormat !== 'sparql')
-      queryString.push('queryFormat=' + encodeURIComponent(options.queryFormat || ''));
+      queryString.push('queryFormat=' + encodeURIComponentExtended(options.queryFormat || ''));
     if (options.datetime)
-      queryString.push('datetime=' + encodeURIComponent(options.datetime));
+      queryString.push('datetime=' + encodeURIComponentExtended(options.datetime));
     if (options.httpProxy)
-      queryString.push('httpProxy=' + encodeURIComponent(options.httpProxy));
+      queryString.push('httpProxy=' + encodeURIComponentExtended(options.httpProxy));
     if (options.bypassCache)
-      queryString.push('bypassCache=' + encodeURIComponent(options.bypassCache));
+      queryString.push('bypassCache=' + encodeURIComponentExtended(options.bypassCache));
     if (options.executeOnLoad)
-      queryString.push('executeOnLoad=' + encodeURIComponent(options.executeOnLoad));
+      queryString.push('executeOnLoad=' + encodeURIComponentExtended(options.executeOnLoad));
     if (options.solidIdp && options.solidAuth.defaultIdp !== options.solidIdp)
-      queryString.push('solidIdp=' + encodeURIComponent(options.solidIdp));
+      queryString.push('solidIdp=' + encodeURIComponentExtended(options.solidIdp));
 
     // Compose new URL with query string
     queryString = queryString.length ? '#' + queryString.join('&') : '';
     history.replaceState(null, null, location.href.replace(/(?:#.*)?$/, queryString));
   }
 });
+
+// encodeURIComponent function extended with encoding for parenthesis
+function encodeURIComponentExtended(component) {
+  return encodeURIComponent(component)
+    .replace(/\(/g, '%28')
+    .replace(/\)/g, '%29');
+}
