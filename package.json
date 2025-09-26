@@ -63,7 +63,7 @@
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
     "@comunica/config-query-sparql": "~4.4.0",
-    "@comunica/query-sparql": "~4.4.0",
+    "@comunica/query-sparql": "~4.4.1",
     "@comunica/runner": "^4.4.0",
     "@rubensworks/solid-client-authn-browser": "^1.13.0",
     "@turf/centroid": "^6.5.0",
