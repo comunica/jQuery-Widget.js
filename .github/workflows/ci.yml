@@ -12,7 +12,7 @@ jobs:
           key: ${{ runner.os }}-lint-modules-${{ hashFiles('**/yarn.lock') }}
       - uses: actions/setup-node@v6
         with:
-          node-version: 18.x
+          node-version: 22.x
       - run: yarn install --ignore-scripts
       - run: yarn run lint
 
@@ -79,7 +79,7 @@ jobs:
           key: ${{ runner.os }}-deploy-modules-${{ hashFiles('**/yarn.lock') }}
       - uses: actions/setup-node@v6
         with:
-          node-version: 18.x
+          node-version: 22.x
       - run: yarn install --ignore-scripts
       - run: yarn run build
       - run: rm .gitignore
