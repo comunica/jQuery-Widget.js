@@ -5,7 +5,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: actions/cache@v4
         with:
           path: '**/node_modules'
@@ -31,7 +31,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           persist-credentials: false
       - uses: actions/cache@v4
@@ -57,7 +57,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           persist-credentials: false
       - uses: actions/cache@v4
@@ -72,7 +72,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: actions/cache@v4
         with:
           path: '**/node_modules'
