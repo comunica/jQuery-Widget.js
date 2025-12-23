@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-lint-modules-${{ hashFiles('**/yarn.lock') }}
@@ -34,7 +34,7 @@ jobs:
         uses: actions/checkout@v6
         with:
           persist-credentials: false
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-build-modules-${{ hashFiles('**/yarn.lock') }}
@@ -60,7 +60,7 @@ jobs:
         uses: actions/checkout@v6
         with:
           persist-credentials: false
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         with:
          path: '**/node_modules'
          key: ${{ runner.os }}-build-modules-${{ hashFiles('**/yarn.lock') }}
@@ -73,7 +73,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-deploy-modules-${{ hashFiles('**/yarn.lock') }}
