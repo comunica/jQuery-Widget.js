@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v4.0.0"></a>
+## [v4.0.0](https://github.com/comunica/jQuery-Widget.js/compare/v3.0.2...v4.0.0) - 2026-01-08
+
+### BREAKING CHANGE
+* [Update to Comunica 5 and Traqula](https://github.com/comunica/jQuery-Widget.js/commit/c85e69583524bddbc0508a6df512af86856508b8)
+    This removes 18 support.
+
 <a name="v3.0.2"></a>
 ## [v3.0.2](https://github.com/comunica/jQuery-Widget.js/compare/v3.0.1...v3.0.2) - 2024-10-15
 
