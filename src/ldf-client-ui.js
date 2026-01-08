@@ -1,8 +1,8 @@
 /*! @license MIT ©2014–2016 Ruben Verborgh, Ghent University – imec */
 // jQuery widget for Triple Pattern Fragments query execution
 
-var SparqlParser = require('sparqljs').Parser;
-var SparqlGenerator = require('sparqljs').Generator;
+var SparqlGenerator = require('@traqula/generator-sparql-1-2').Generator;
+var SparqlParser = require('@traqula/parser-sparql-1-2').Parser;
 // This exports the webpacked jQuery.
 window.jQuery = require('../deps/jquery-2.1.0.js');
 var N3 = require('n3');
@@ -748,8 +748,8 @@ if (typeof global.process === 'undefined')
       if (this.options.queryFormat === 'sparql') {
         // Add pre-defined prefixes to query and remove duplicates
         try {
-          const parsedQuery = new SparqlParser({ prefixes: this.options.prefixes, sparqlStar: true }).parse(query);
-          query = new SparqlGenerator({}).stringify(parsedQuery);
+          const parsedQuery = new SparqlParser({ prefixes: this.options.prefixes }).parse(query);
+          query = new SparqlGenerator({}).generate(parsedQuery);
         }
         catch {
           // Ignore parsing errors, as they will be caught later by the query engine
