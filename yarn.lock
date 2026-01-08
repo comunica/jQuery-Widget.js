@@ -4347,7 +4347,7 @@
   dependencies:
     "@comunica/core" "^5.0.0"
 
-"@comunica/query-sparql@~5.0.0":
+"@comunica/query-sparql@~5.0.1":
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/@comunica/query-sparql/-/query-sparql-5.0.1.tgz#4dc1fe2c0d4b477fd9c92408f29294e08cab7197"
   integrity sha512-MPk8hgLvVLRZqoQ8XI5iuyaCk2eLaQHpsTChd8eXShNMmeePO1NFXDE+m06jpg92uRXa9RdNh4JYsCM98mxmTQ==
