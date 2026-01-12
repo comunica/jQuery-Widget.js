@@ -749,7 +749,13 @@ if (typeof global.process === 'undefined')
         // Add pre-defined prefixes to query and remove duplicates
         try {
           const parsedQuery = new SparqlParser({ prefixes: this.options.prefixes }).parse(query);
-          query = new SparqlGenerator({}).generate(parsedQuery);
+          query = new SparqlGenerator().generate(parsedQuery, { prefixes: this.options.prefixes });
+
+          // TODO: this is a hack, and should be removed once Traqula adds PREFIX generation support.
+          for (const [key, value] of Object.entries(this.options.prefixes)) {
+            if (!query.includes(`PREFIX ${key}:`) && !query.includes(`prefix ${key}:`))
+              query = `PREFIX ${key}: <${value}>\n${query}`;
+          }
         }
         catch {
           // Ignore parsing errors, as they will be caught later by the query engine
@@ -771,6 +777,7 @@ if (typeof global.process === 'undefined')
         queryFormat: this.options.queryFormat,
         httpProxy: this.options.httpProxy,
         workerSolidAuth: !!this.$solidSession,
+        prefixes: this.options.prefixes,
       };
       if (this.options.queryContext) {
         try {
