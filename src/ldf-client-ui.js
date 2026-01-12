@@ -777,7 +777,6 @@ if (typeof global.process === 'undefined')
         queryFormat: this.options.queryFormat,
         httpProxy: this.options.httpProxy,
         workerSolidAuth: !!this.$solidSession,
-        prefixes: this.options.prefixes,
       };
       if (this.options.queryContext) {
         try {
