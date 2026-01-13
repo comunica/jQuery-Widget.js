@@ -73,8 +73,20 @@
       "url": "https://query.wikidata.org/bigdata/ldf"
     },
     {
+      "name": "Wikidata SPARQL",
+      "url": "https://query.wikidata.org/sparql"
+    },
+    {
       "name": "SNCB",
       "url": "https://graph.irail.be/sncb/connections"
+    },
+    {
+      "name": "Uniprot",
+      "url": "https://sparql.uniprot.org/sparql"
+    },
+    {
+      "name": "Rhea",
+      "url": "https://sparql.rhea-db.org/sparql"
     }
   ],
   "prefixes": {
