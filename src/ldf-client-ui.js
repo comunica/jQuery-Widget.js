@@ -5,7 +5,8 @@ var SparqlGenerator = require('@traqula/generator-sparql-1-2').Generator;
 var SparqlParser = require('@traqula/parser-sparql-1-2').Parser;
 // This exports the webpacked jQuery.
 window.jQuery = require('../deps/jquery-2.1.0.js');
-var N3 = require('n3');
+var rdfSerializer = require('rdf-serialize').rdfSerializer;
+var Readable = require('readable-stream').Readable;
 var RdfString = require('rdf-string');
 var resolve = require('relative-to-absolute-iri').resolve;
 var solidAuth = require('@rubensworks/solid-client-authn-browser');
@@ -110,6 +111,7 @@ if (typeof global.process === 'undefined')
           $datetime = this.$datetime = $('.datetime', $element),
           $httpProxy = this.$httpProxy = $('.httpProxy', $element),
           $bypassCache = this.$bypassCache = $('.bypassCache', $element),
+          $resultMediaType = this.$resultMediaType = $('.resultMediaType', $element),
           $executeOnLoad = this.$executeOnLoad = $('.executeOnLoad', $element),
           $solidIdp = this.$solidIdp = $('.solid-auth .idp', $element),
           $showDetails = this.$showDetails = $('.details-toggle', $element),
@@ -233,6 +235,9 @@ if (typeof global.process === 'undefined')
       // Update bypass cache on change
       $bypassCache.change(function () { self._setOption('bypassCache', $bypassCache.is(':checked')); });
 
+      // Update result media type on change
+      $resultMediaType.change(function () { self._setOption('resultMediaType', $resultMediaType.val()); });
+
       // Update execute on change
       $executeOnLoad.change(function () { self._setOption('executeOnLoad', $executeOnLoad.is(':checked')); });
 
@@ -266,6 +271,27 @@ if (typeof global.process === 'undefined')
       // Apply all options
       for (var key in options)
         this._setOption(key, options[key], true);
+
+      // Populate available content types
+      rdfSerializer.getContentTypesPrioritized()
+        .then((contentTypes) => {
+          // Remove old options
+          const oldSelectedValue = $resultMediaType.val();
+          $resultMediaType.find('option')
+            .remove()
+            .end();
+
+          // Add new options
+          for (const entry of Object.entries(contentTypes).sort((e1, e2) => e2[1] - e1[1])) {
+            const opt = document.createElement('option');
+            if (entry[0] === oldSelectedValue)
+              opt.defaultSelected = true;
+            opt.text = entry[0];
+            opt.value = entry[0];
+            $resultMediaType[0].add(opt, null);
+          }
+          // eslint-disable-next-line no-console
+        }).catch(console.error);
     },
 
     // Sets a specific widget option
@@ -533,6 +559,9 @@ if (typeof global.process === 'undefined')
         break;
       case 'bypassCache':
         this.$bypassCache.prop('checked', value).change();
+        break;
+      case 'resultMediaType':
+        this.$resultMediaType.val(value).change();
         break;
       case 'executeOnLoad':
         this.$executeOnLoad.prop('checked', value).change();
@@ -844,11 +873,13 @@ if (typeof global.process === 'undefined')
       // For CONSTRUCT and DESCRIBE queries,
       // write a Turtle representation of the triples
       case 'quads':
-        var streamWriter = new N3.StreamWriter(this.options)
+        const readable = new Readable({ objectMode: true });
+        readable._read = () => {};
+        rdfSerializer.serialize(readable, { ...this.options, contentType: this.options.resultMediaType || 'application/trig' })
           .on('data', resultAppender)
           .on('error', (err) => { throw err; });
-        this._writeResult = function (triple) { streamWriter.write(RdfString.stringQuadToQuad(triple)); };
-        this._writeEnd = function () { streamWriter.end(); };
+        this._writeResult = function (triple) { readable.push(RdfString.stringQuadToQuad(triple)); };
+        this._writeEnd = function () { readable.push(null); };
         break;
       // For ASK queries, write whether an answer exists
       case 'boolean':

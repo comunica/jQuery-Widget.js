@@ -56,6 +56,8 @@ jQuery(function ($) {
       $queryui.queryui('option', 'httpProxy', uiState.httpProxy);
     if (uiState.bypassCache)
       $queryui.queryui('option', 'bypassCache', uiState.bypassCache);
+    if (uiState.resultMediaType)
+      $queryui.queryui('option', 'resultMediaType', uiState.resultMediaType);
     if (uiState.executeOnLoad)
       $queryui.queryui('option', 'executeOnLoad', uiState.executeOnLoad);
     if (uiState.solidIdp)
@@ -90,6 +92,8 @@ jQuery(function ($) {
       queryString.push('httpProxy=' + encodeURIComponentExtended(options.httpProxy));
     if (options.bypassCache)
       queryString.push('bypassCache=' + encodeURIComponentExtended(options.bypassCache));
+    if (options.resultMediaType && options.resultMediaType !== 'application/trig')
+      queryString.push('resultMediaType=' + encodeURIComponentExtended(options.resultMediaType));
     if (options.executeOnLoad)
       queryString.push('executeOnLoad=' + encodeURIComponentExtended(options.executeOnLoad));
     if (options.solidIdp && options.solidAuth.defaultIdp !== options.solidIdp)

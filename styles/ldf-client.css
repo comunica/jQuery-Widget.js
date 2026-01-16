@@ -70,6 +70,12 @@ input {
   padding: 1px 5px;
   font-size: 10pt;
 }
+select {
+  margin-left: 4px;
+  margin-right: -1px;
+  padding: 1px 5px;
+  font-size: 10pt;
+}
 label {
   display: inline-block;
   width: 212px;
