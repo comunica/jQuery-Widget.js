@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v4.1.0"></a>
+## [v4.1.0](https://github.com/comunica/jQuery-Widget.js/compare/v4.0.1...v4.1.0) - 2026-01-16
+
+### Added
+* [Allow CONSTRUCT result format to be modified](https://github.com/comunica/jQuery-Widget.js/commit/29f2bd69c58f46a79ee12395a224ece3cb23735f)
+* [Add pure SPARQL federation example queries for Uniprot](https://github.com/comunica/jQuery-Widget.js/commit/75828493b05771710bcd003fab5ce9e0f048e2e4)
+
 <a name="v4.0.1"></a>
 ## [v4.0.1](https://github.com/comunica/jQuery-Widget.js/compare/v4.0.0...v4.0.1) - 2026-01-12
 
