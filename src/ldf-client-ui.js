@@ -476,7 +476,6 @@ if (typeof global.process === 'undefined')
         })).trigger('chosen:updated');
         // Update the query set
         this._loadQueries(value);
-        this._prefetchSources();
         break;
       // Set the query
       case 'query':
@@ -1071,21 +1070,6 @@ if (typeof global.process === 'undefined')
     _setWebIdName: function (name) {
       const $webid = $('.webid', this.element);
       $webid.html(`Logged in as <a href="${this.$solidSession.info.webId}" target="_blank">${name || shortenUrl(this.$solidSession.info.webId, 35)}</\a>`);
-    },
-
-    _prefetchSources: function () {
-      if (!this._queryWorker || this.options.bypassCache)
-        return;
-
-      const datasources = Object.keys(this.options.selectedDatasources || {});
-      if (!datasources.length)
-        return;
-
-      this._queryWorker.postMessage({
-        type: 'prefetchSources',
-        sources: datasources.map(datasource => resolve(datasource, window.location.href)),
-        context: this._getQueryContext(),
-      });
     },
   };
 

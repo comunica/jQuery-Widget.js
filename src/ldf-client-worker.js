@@ -138,24 +138,6 @@ SELECT ?name WHERE {
           }).catch(postError);
       }).catch(postError);
   },
-
-  prefetchSources: async function ({ sources, context }) {
-    if (!sources || !sources.length)
-      return;
-
-    initEngine({ context });
-    context.log = logger;
-
-    await Promise.allSettled(
-      sources.map(source =>
-        engine.queryBoolean('ASK { ?s ?p ?o }', {
-          ...context,
-          sources: [source],
-        })
-      )
-    );
-  },
-
 };
 
 function postError(error) {
