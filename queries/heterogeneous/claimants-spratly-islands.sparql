@@ -1,0 +1,15 @@
+# Claimants of the disputed Spratly Islands (RDF 1.2)
+# Datasource: https://raw.githubusercontent.com/rubensworks/rdf-12-examples/refs/heads/master/territories/data.ttl //fragments.dbpedia.org/*/en
+VERSION "1.2"
+PREFIX dbr:  <http://dbpedia.org/resource/>
+PREFIX geo:  <http://example.org/ontology/geo/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?country ?claimantName ?claimDate
+WHERE {
+    << dbr:Spratly_Islands geo:partOf ?country >> prov:wasAttributedTo ?claimantResource ;
+        geo:claimDate ?claimDate .
+    ?claimantResource rdfs:label ?claimantName .
+}
+ORDER BY ?claimDate

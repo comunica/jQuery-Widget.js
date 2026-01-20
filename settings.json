@@ -87,6 +87,10 @@
     {
       "name": "Rhea",
       "url": "https://sparql.rhea-db.org/sparql"
+    },
+    {
+      "name": "Disputed Territories",
+      "url": "https://raw.githubusercontent.com/rubensworks/rdf-12-examples/refs/heads/master/territories/data.ttl"
     }
   ],
   "prefixes": {

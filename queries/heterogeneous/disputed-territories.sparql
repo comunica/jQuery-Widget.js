@@ -1,0 +1,19 @@
+# Disputed territories and claimants (RDF 1.2)
+# Datasource: https://raw.githubusercontent.com/rubensworks/rdf-12-examples/refs/heads/master/territories/data.ttl //fragments.dbpedia.org/*/en
+VERSION "1.2"
+PREFIX dbr:  <http://dbpedia.org/resource/>
+PREFIX geo:  <http://example.org/ontology/geo/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?territoryName
+       (COUNT(?claimant) AS ?claimantsCount)
+       (GROUP_CONCAT(?claimantName; separator=", ") AS ?claimants)
+WHERE {
+    << ?territory geo:partOf ?country >> prov:wasAttributedTo ?claimant .
+    ?claimant rdfs:label ?claimantName .
+    ?territory rdfs:label ?territoryName .
+}
+GROUP BY ?territoryName
+HAVING (COUNT(?claimant) > 1)
+ORDER BY DESC(?claimantsCount)
