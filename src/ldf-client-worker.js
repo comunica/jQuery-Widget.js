@@ -52,24 +52,24 @@ var handlers = {
         var bindings = result.resultType === 'bindings';
         var resultsToTree = config.resultsToTree;
         switch (result.resultType) {
-          case 'quads':
-            resultsIterator = await result.execute();
-            break;
-          case 'bindings':
-            resultsIterator = await result.execute();
-            break;
-          case 'boolean':
-            result.execute().then(function (exists) {
-              postMessage({ type: 'result', result: exists });
-              postMessage({ type: 'end' });
-            }).catch(postError);
-            break;
-          case 'void':
-            result.execute().then(function () {
-              postMessage({ type: 'result', result: 'Done' });
-              postMessage({ type: 'end' });
-            }).catch(postError);
-            break;
+        case 'quads':
+          resultsIterator = await result.execute();
+          break;
+        case 'bindings':
+          resultsIterator = await result.execute();
+          break;
+        case 'boolean':
+          result.execute().then(function (exists) {
+            postMessage({ type: 'result', result: exists });
+            postMessage({ type: 'end' });
+          }).catch(postError);
+          break;
+        case 'void':
+          result.execute().then(function () {
+            postMessage({ type: 'result', result: 'Done' });
+            postMessage({ type: 'end' });
+          }).catch(postError);
+          break;
         }
 
         if (resultsIterator) {
