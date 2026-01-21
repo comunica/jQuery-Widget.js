@@ -730,3 +730,14 @@ li.search-choice-focus .search-choice-close {
 .extra-information.highlighted {
   background-color: grey;
 }
+
+.alternative-engines {
+  display: none;
+  label {
+    display: inline-block;
+    width: 312px;
+  }
+  select {
+    width: 330px;
+  }
+}
