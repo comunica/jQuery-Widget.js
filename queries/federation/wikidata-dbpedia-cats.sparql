@@ -1,3 +1,4 @@
+# The names of cats in DBpedia and Wikidata
 # Datasources: https://dbpedia.org/sparql https://query.wikidata.org/sparql
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
