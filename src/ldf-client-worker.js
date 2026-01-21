@@ -19,6 +19,9 @@ logger.log = function (level, color, message, data) {
 const workerToWindowHandler = new WorkerToWindowHandler(self);
 
 function initEngine(config) {
+  // Make sure we capture the full error stack trace
+  Error.stackTraceLimit = Number.MAX_SAFE_INTEGER;
+
   // Create an engine lazily
   if (!engine)
     engine = new QueryEngineBase(require('my-comunica-engine')());
