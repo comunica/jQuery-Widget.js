@@ -111,5 +111,13 @@
     "bow":         "https://betweenourworlds.org/ontology/",
     "lc":          "http://semweb.mmlab.be/ns/linkedconnections#"
   },
+  "alternativeEngines": {
+    "Default": "https://query.comunica.dev/",
+    "Link Traversal Solid (default)": "https://comunica.github.io/comunica-feature-link-traversal-web-clients/builds/solid-default/",
+    "Link Traversal Solid (single pod)": "https://comunica.github.io/comunica-feature-link-traversal-web-clients/builds/solid-single-pod/",
+    "Link Traversal (default)": "https://comunica.github.io/comunica-feature-link-traversal-web-clients/builds/default/",
+    "Link Traversal (follow all)": "https://comunica.github.io/comunica-feature-link-traversal-web-clients/builds/follow-all/",
+    "Link Traversal (TREE)": "https://comunica.github.io/comunica-feature-link-traversal-web-clients/builds/tree/"
+  },
   "queries": "(Will be generated from the 'queries' folder by running the './queries-to-json' script.)"
 }

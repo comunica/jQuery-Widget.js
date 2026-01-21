@@ -87,6 +87,7 @@ if (typeof global.process === 'undefined')
       datasources: [],
       queries: [],
       prefixes: [],
+      alternativeEngines: {},
     },
 
     // Initializes the widget
@@ -115,7 +116,9 @@ if (typeof global.process === 'undefined')
           $executeOnLoad = this.$executeOnLoad = $('.executeOnLoad', $element),
           $solidIdp = this.$solidIdp = $('.solid-auth .idp', $element),
           $showDetails = this.$showDetails = $('.details-toggle', $element),
-          $proxyDefault = $('.proxy-default', $element);
+          $proxyDefault = $('.proxy-default', $element),
+          $alternativeEngines = this.$alternativeEngines = $('.alternative-engines-select', $element);
+      this.$alternativeEnginesWrapper = $('.alternative-engines', $element);
       this.$details = $('.details', $element);
 
       // Replace non-existing elements by an empty text box
@@ -265,6 +268,12 @@ if (typeof global.process === 'undefined')
       // Set the default proxy
       $proxyDefault.on('click', function () {
         $httpProxy.val(document.location.protocol + '//proxy.linkeddatafragments.org/').change();
+        return false;
+      });
+
+      // Handle alternative engine clicks
+      $alternativeEngines.on('change', function () {
+        document.location.href = $alternativeEngines.val();
         return false;
       });
 
@@ -605,6 +614,18 @@ if (typeof global.process === 'undefined')
         break;
       case 'allowNoSources':
         this.$allowNoSources = value;
+        break;
+      // Initialize alternative engines
+      case 'alternativeEngines':
+        this.$alternativeEngines.find('option').remove().end();
+        for ([key, value] of Object.entries(value)) {
+          const option = $('<option />').text(key).val(value);
+          if (document.location.href.startsWith(value))
+            option.attr('selected', 'selected');
+          this.$alternativeEngines.append(option);
+        }
+        if (Object.keys(value).length > 1)
+          this.$alternativeEnginesWrapper.show();
         break;
       // Load settings from a JSON resource
       case 'settings':
