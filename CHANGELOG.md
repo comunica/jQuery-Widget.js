@@ -1,6 +1,21 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v4.2.0"></a>
+## [v4.2.0](https://github.com/comunica/jQuery-Widget.js/compare/v4.1.0...v4.2.0) - 2026-01-21
+
+### Added
+* [Allow sources to be prefetched (#184)](https://github.com/comunica/jQuery-Widget.js/commit/5828476ce16d90d529cb6879f6507d21acf8fc7a)
+* [Add SPARQL 1.2 example queries](https://github.com/comunica/jQuery-Widget.js/commit/b8c3af264d6249e858ce4934dcb7cc44d9ba022d)
+* [Add wikidata dbpedia cats example query](https://github.com/comunica/jQuery-Widget.js/commit/b46a9bbabb955dd6b5b4cfbcd419394d2accb38a)
+* [Allow alternativeEngines links to be defined](https://github.com/comunica/jQuery-Widget.js/commit/4cd5bde667db81fe94ea382de93dec77eff14f6e)
+* [Allow prefetching to be disabled from config](https://github.com/comunica/jQuery-Widget.js/commit/53fc43f871545667e40956b99cce477cb7aa9445)
+
+### Changed
+* [Print full stack in console on query error](https://github.com/comunica/jQuery-Widget.js/commit/df6717f78be7e8957980cb68b0df9e6d783d159c)
+* [Capture full error stack trace](https://github.com/comunica/jQuery-Widget.js/commit/25064b8f248ae92f99fb67e6d55f910bc6b7652e)
+* [Update to Comunica 5.1.2](https://github.com/comunica/jQuery-Widget.js/commit/605b3fba3f7210c859509a55626f8c6d9aac2f40)
+
 <a name="v4.1.0"></a>
 ## [v4.1.0](https://github.com/comunica/jQuery-Widget.js/compare/v4.0.1...v4.1.0) - 2026-01-16
 
