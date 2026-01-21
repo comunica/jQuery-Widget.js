@@ -159,6 +159,8 @@ SELECT ?name WHERE {
 };
 
 function postError(error) {
+  // eslint-disable-next-line no-console
+  console.log(error.stack);
   error = { message: error.message || error.toString() };
   postMessage({ type: 'error', error: error });
 }
