@@ -3029,10 +3029,10 @@
     rdf-string-ttl "^2.0.1"
     rdf-terms "^2.0.0"
 
-"@comunica/actor-query-source-identify-hypermedia-sparql@^5.1.0":
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/@comunica/actor-query-source-identify-hypermedia-sparql/-/actor-query-source-identify-hypermedia-sparql-5.1.0.tgz#581748a7bd842a03f57e87d982bbf9fecc76f02f"
-  integrity sha512-1fyzJVmYGv2uKLJzgXefF6TG40ydjvecnrebHT4zgrHf+a1BlMPi5J7XpqeGuONgdi80WaOAoxPIEJebfmitDA==
+"@comunica/actor-query-source-identify-hypermedia-sparql@^5.1.2":
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-source-identify-hypermedia-sparql/-/actor-query-source-identify-hypermedia-sparql-5.1.2.tgz#065140709d42ea7bbd6bc7d2498c7d994bab8fad"
+  integrity sha512-xyBzleJHmDP5ZUrHqc2f0N/+1+Wv8n6JyniMP1Td61Ku468hOFw84US/KgBzXEt9iDCDYANkjtMGW+GYXycepA==
   dependencies:
     "@comunica/bus-http" "^5.1.0"
     "@comunica/bus-merge-bindings-context" "^5.1.0"
@@ -4348,10 +4348,10 @@
   dependencies:
     "@comunica/core" "^5.1.0"
 
-"@comunica/query-sparql@~5.1.1":
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/@comunica/query-sparql/-/query-sparql-5.1.1.tgz#a7d14f7955fc9513966219ec6180a8953239a37f"
-  integrity sha512-jz3Lm/UrH1jSeLK/iQwLgYH+A8GpCUqbJZlglR5oQoYpgMjIJ94n6p6u3wkmTV05eqT6V17MPWD12LaxAHfb+g==
+"@comunica/query-sparql@~5.1.2":
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/@comunica/query-sparql/-/query-sparql-5.1.2.tgz#8dd5325846c57a1dce8843387830cbfaace591ef"
+  integrity sha512-QxFdR3UTAHJZTWiuIH9ySeA/6FIlVu0PY75uTRUuyxVFYu1683zJO6lAE0z0OHp8sSw2oSMQ+wx3xxadPa5WyQ==
   dependencies:
     "@comunica/actor-bindings-aggregator-factory-average" "^5.1.0"
     "@comunica/actor-bindings-aggregator-factory-count" "^5.1.0"
@@ -4536,7 +4536,7 @@
     "@comunica/actor-query-source-identify-hypermedia" "^5.1.0"
     "@comunica/actor-query-source-identify-hypermedia-none" "^5.1.0"
     "@comunica/actor-query-source-identify-hypermedia-qpf" "^5.1.1"
-    "@comunica/actor-query-source-identify-hypermedia-sparql" "^5.1.0"
+    "@comunica/actor-query-source-identify-hypermedia-sparql" "^5.1.2"
     "@comunica/actor-query-source-identify-rdfjs" "^5.1.0"
     "@comunica/actor-query-source-identify-serialized" "^5.1.0"
     "@comunica/actor-rdf-join-entries-sort-cardinality" "^5.1.0"
