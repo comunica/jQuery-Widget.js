@@ -1095,7 +1095,7 @@ if (typeof global.process === 'undefined')
     },
 
     _prefetchSources: function () {
-      if (!this._queryWorker || this.options.bypassCache)
+      if (!this._queryWorker || this.options.bypassCache || this.options.prefetchSources === false)
         return;
 
       const datasources = Object.keys(this.options.selectedDatasources || {});

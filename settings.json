@@ -4,6 +4,7 @@
     "graphql": true
   },
   "allowNoSources": false,
+  "prefetchSources": true,
   "branding": {
     "title": "Query the Web of Linked Data",
     "title_href": "https://comunica.dev/",
