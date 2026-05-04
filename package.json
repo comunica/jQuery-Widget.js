@@ -90,7 +90,7 @@
     "@babel/eslint-parser": "^7.18.9",
     "eslint": "^7.0.0",
     "manual-git-changelog": "^1.0.1",
-    "pre-commit": "^1.2.2"
+    "pre-commit": "^2.0.0"
   },
   "pre-commit": [
     "lint"
