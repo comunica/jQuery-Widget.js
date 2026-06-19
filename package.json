@@ -62,9 +62,9 @@
   "dependencies": {
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
-    "@comunica/config-query-sparql": "~5.0.0",
-    "@comunica/query-sparql": "~5.1.2",
-    "@comunica/runner": "~5.1.0",
+    "@comunica/config-query-sparql": "~5.2.1",
+    "@comunica/query-sparql": "~5.2.4",
+    "@comunica/runner": "~5.2.3",
     "@rubensworks/solid-client-authn-browser": "^1.13.0",
     "@turf/centroid": "^6.5.0",
     "babel-loader": "^8.2.3",
