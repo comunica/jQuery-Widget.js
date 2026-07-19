@@ -14,7 +14,7 @@ RUN npm run build
 
 
 ## Deploy the website using nginx
-FROM nginx:1.29.4-alpine
+FROM nginx:1.31.3-alpine
 
 # Copy build folder from 'builder' to the default nginx public folder
 RUN rm -rf /usr/share/nginx/html/*
