@@ -823,6 +823,8 @@ if (typeof global.process === 'undefined')
 
     _getQueryContext: function () {
       var context = {
+        // Allow SERVICE clauses with variable targets, as queries in this client come from the user themselves
+        serviceAllowVariableTargets: true,
         ...(this.$contextDefault || {}),
         datetime: parseDate(this.options.datetime),
         queryFormat: this.options.queryFormat,
