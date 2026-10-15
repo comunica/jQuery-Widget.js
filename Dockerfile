@@ -1,5 +1,5 @@
 ## Build the website
-FROM node:24.21.0 as builder
+FROM node:24.22.0 as builder
 
 USER node
 
