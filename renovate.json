@@ -5,14 +5,16 @@
   "rangeStrategy": "replace",
   "packageRules": [
     {
-      "matchSourceUrlPrefixes": ["https://github.com/comunica/comunica"],
       "groupName": "Comunica monorepo packages",
       "rangeStrategy": "bump",
       "automerge": true,
-      "stabilityDays": 0,
+      "minimumReleaseAge": null,
       "schedule": null,
       "prConcurrentLimit": 0,
-      "branchConcurrentLimit": 0
+      "branchConcurrentLimit": 0,
+      "matchSourceUrls": [
+        "https://github.com/comunica/comunica{/,}**"
+      ]
     }
   ]
 }
