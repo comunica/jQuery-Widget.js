@@ -4177,10 +4177,10 @@
   resolved "https://registry.yarnpkg.com/@comunica/config-query-sparql/-/config-query-sparql-5.0.0.tgz#f076c5eb451891bc441d371eadc854ead2e06434"
   integrity sha512-vS6Ik0Lbm9InWPrqnLeOFM7M2SKj+KLqGVwmOaX6N/+3TjOdOhGQJRLZCGXkiwYUDg/Jn3Z++9bQIR9/Bhj4GA==
 
-"@comunica/config-query-sparql@^5.4.0", "@comunica/config-query-sparql@~5.4.0":
-  version "5.4.0"
-  resolved "https://registry.yarnpkg.com/@comunica/config-query-sparql/-/config-query-sparql-5.4.0.tgz#3fc2e97629fcfb8e757a708538e1232e8767039f"
-  integrity sha512-H0O5cyfgkApGz5mF3pndIF6GPtWjoCnAJG/V/VX23F3+Ksy4Pa3tGmVozHpPsF4JD2oxIDaYMwdafJehlo20hw==
+"@comunica/config-query-sparql@^5.4.1", "@comunica/config-query-sparql@~5.4.1":
+  version "5.4.1"
+  resolved "https://registry.yarnpkg.com/@comunica/config-query-sparql/-/config-query-sparql-5.4.1.tgz#7ba478e31f3e7ab8aa0823b2dcfa3b6c8eddb843"
+  integrity sha512-42KbSg2ePQzgsaukeq2JK5r4WqQSkQVhr0M/2CzmLOkHXepetHJRzDt7fxT+YKhjvtG0EyFGe2SF69Vip1llzA==
 
 "@comunica/context-entries@^2.10.0":
   version "2.10.0"
@@ -4382,10 +4382,10 @@
   dependencies:
     "@comunica/core" "^5.4.0"
 
-"@comunica/query-sparql@~5.4.0":
-  version "5.4.0"
-  resolved "https://registry.yarnpkg.com/@comunica/query-sparql/-/query-sparql-5.4.0.tgz#1735def40a837eb08e7b6a9e43c1d69495256b91"
-  integrity sha512-oNM5DkTaW0IBinqmDAZL1cw9g9dcrv4IPXUBPNS4TXEtWLh95F8GNNgOeynPHkcSg0EU8JGb1fT/z/cs9Yfv8w==
+"@comunica/query-sparql@~5.4.1":
+  version "5.4.1"
+  resolved "https://registry.yarnpkg.com/@comunica/query-sparql/-/query-sparql-5.4.1.tgz#b642180ed58c14b811b3f0385cf1fae793c2cb96"
+  integrity sha512-bOkOq1TWTLckeOZxzFzG18YuLKvyadGLqJ8SO4eOtouQE13jvjH6nkevactNGQS42ToBndwGKsmnyTzjxFuQ2g==
   dependencies:
     "@comunica/actor-bindings-aggregator-factory-average" "^5.4.0"
     "@comunica/actor-bindings-aggregator-factory-count" "^5.4.0"
@@ -4637,7 +4637,7 @@
     "@comunica/bus-function-factory" "^5.4.0"
     "@comunica/bus-http-invalidate" "^5.4.0"
     "@comunica/bus-query-operation" "^5.4.0"
-    "@comunica/config-query-sparql" "^5.4.0"
+    "@comunica/config-query-sparql" "^5.4.1"
     "@comunica/core" "^5.4.0"
     "@comunica/logger-void" "^5.4.0"
     "@comunica/mediator-all" "^5.4.0"
